@@ -1,4 +1,4 @@
-package javalanguage.basic;
+package javavscode.basic;
 
 public class HelloWorld {
     public static void main(String[] args) {

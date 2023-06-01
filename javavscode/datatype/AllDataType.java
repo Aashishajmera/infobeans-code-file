@@ -1,4 +1,4 @@
-package javalanguage.datatype;
+package javavscode.datatype;
 
 public class AllDataType {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package javalanguage.operators;
+package javavscode.operators;
 
 public class RelationalOp {
     public static void main(String[] args) {

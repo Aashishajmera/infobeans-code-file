@@ -1,4 +1,4 @@
-package javalanguage.operators;
+package javavscode.operators;
 
 public class ArithmeticOp {
     public static void main(String[] args) {
@@ -33,6 +33,5 @@ public class ArithmeticOp {
         int modules = num9 % num10;
         System.out.println(modules);
 
-        
     }
 }
