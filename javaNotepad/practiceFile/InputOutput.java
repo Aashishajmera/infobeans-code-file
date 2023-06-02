@@ -6,10 +6,11 @@ class InputOutput{
 	System.out.println("Enter a number between -128 to 127 ");
 	byte num1 = sc.nextByte();
 	System.out.println("Enter number is: " +num1);
-	
-	System.out.println("Enter String value ");
+	sc.nextByte();
+	System.out.println("Enter a string value ");
 	String sInput = sc.nextLine();
 	System.out.println("Enter String value is: " +sInput);
-
+	
+	
 	}
 }
