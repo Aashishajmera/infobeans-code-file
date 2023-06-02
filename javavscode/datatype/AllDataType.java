@@ -10,8 +10,10 @@ public class AllDataType {
         float num2 = 32.3f;
         System.out.println(num2);
 
-        // double 
+        // double  
         double num3 = 33.543;
+        System.out.println(num3);
         
+       
     }
 }
