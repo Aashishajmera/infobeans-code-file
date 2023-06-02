@@ -1,3 +1,4 @@
+package javavscode.basic;
 import java.util.Scanner;
 class InputOutput{
 	public static void main(String[] args){
