@@ -21,7 +21,7 @@ class ArithmeticOperator{
 	byte num8=(byte) (num6 / num7);
 	System.out.println(num6 +" divide by " +num7 +" divide is: "+num8);
 	
-	// Modules 
+	// And Modules 
 	byte num9=(byte) (num6 % num7);
 	System.out.println(num6 +" and " +num7 +" modules is: "+num9);
 	
