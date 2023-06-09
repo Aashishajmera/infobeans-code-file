@@ -1,0 +1,21 @@
+Operator:-
+         * It is symobile which perform the operation on the operand(data)
+         * 
+         * 20 + 10
+         * 20 and 10: operand
+         * + operator
+         * instanceOf
+         * ------------------------------------
+         * Unary (-, ++, --, ~)
+         * Binary( +, -, *, / ......)
+         * Ternery (conditional operator
+         * ------------------------------)
+         * 1. Airthmetic operator (+, -, *, /, %)
+         * 2. Realation Op (>, <, >=, <=, ==, !=)
+         * 3. Logical (&&, ||, !)
+         * 4. Increment/Decrement (++ , --)
+         * 5. Assignment (=)
+         * 6. Bitwise (&, |, !, <<, >>, ^, ~)
+         * 7. Conditional Op ( ? : )
+         * 8.Shorthand (+=, -=, *=,......)
+         * 9. intanceOf

@@ -1,5 +1,8 @@
 public class RelationalOperator {
     public static void main(String[] args) {
+
+        // Realation Op (>, <, >=, <=, ==, !=)
+
         byte num1 = 4;
         byte num2 = 3;
 

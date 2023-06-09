@@ -1,6 +1,8 @@
 public class IncDecOperator {
     public static void main(String[] args) {
 
+        // Increment/Decrement (++ , --)
+
         byte num1 = 2;
         // post increment
         System.out.println(num1++);
@@ -17,7 +19,7 @@ public class IncDecOperator {
         System.out.println(num3);
 
         byte num4 = 4;
-        // pre decrement 
+        // pre decrement
         System.out.println(--num4);
         System.out.println(num4);
     }
