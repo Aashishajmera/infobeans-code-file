@@ -2,7 +2,7 @@ class TypeCasting {
 	public static void main(String[] args) {
 
 		double num = 43.7;
-		int convertNum = (int) (num);
+		int convertNum = (int)(num);
 		System.out.println(convertNum);
 
 		float num2 = 34.2f;

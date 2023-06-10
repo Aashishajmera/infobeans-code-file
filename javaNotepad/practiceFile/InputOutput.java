@@ -13,6 +13,5 @@ class InputOutput{
 	System.out.println("Enter String value is: " +sInput);
 	
 	
-	
 	}
 }
