@@ -131,46 +131,36 @@ public class Dmart {
                 System.out.println("Name: " + Name + "\t\t\t\t\t\t" + "Date: 22/05/2023");
                 System.out.println("---------------------------------------------------------------------------");
                 System.out.println("Item Name \t" + "Quantity \t" + "Price \t\t" + "Total \t\t" + "After-Discount");
-                System.out
-                                .println("item-1 \t\t   " + item1 + "\t\t " + itemAmount1 + "\t\t "
-                                                + amountIntoQuantity1 + " RS\t\t   "
-                                                + amountIntoQuantity11 + " RS");
-                System.out
-                                .println("item-2 \t\t   " + item2 + "\t\t " + itemAmount2 + "\t\t "
-                                                + amountIntoQuantity2 + " RS\t\t   "
-                                                + amountIntoQuantity2 + " RS");
-                System.out
-                                .println("item-3 \t\t   " + item3 + "\t\t " + itemAmount3 + "\t\t "
-                                                + amountIntoQuantity3 + " RS\t\t   "
-                                                + amountIntoQuantity3 + " RS");
-                System.out
-                                .println("item-4 \t\t   " + item4 + "\t\t " + itemAmount4 + "\t\t "
-                                                + amountIntoQuantity4 + " RS\t\t   "
-                                                + amountIntoQuantity4 + " RS");
-                System.out
-                                .println("item-5 \t\t   " + item5 + "\t\t " + itemAmount5 + "\t\t "
-                                                + amountIntoQuantity5 + " RS\t\t   "
-                                                + amountIntoQuantity55 + " RS");
-                System.out
-                                .println("item-6 \t\t   " + item6 + "\t\t " + itemAmount6 + "\t\t "
-                                                + amountIntoQuantity6 + " RS\t\t   "
-                                                + amountIntoQuantity6 + " RS");
-                System.out
-                                .println("item-7 \t\t   " + item7 + "\t\t " + itemAmount7 + "\t\t "
-                                                + amountIntoQuantity7 + " RS\t\t   "
-                                                + amountIntoQuantity7 + " RS");
-                System.out
-                                .println("item-8 \t\t   " + item8 + "\t\t " + itemAmount8 + "\t\t "
-                                                + amountIntoQuantity8 + " RS\t\t   "
-                                                + amountIntoQuantity8 + " RS");
-                System.out
-                                .println("item-9 \t\t   " + item9 + "\t\t " + itemAmount9 + "\t\t "
-                                                + amountIntoQuantity9 + " RS\t\t   "
-                                                + amountIntoQuantity9 + " RS");
-                System.out.println(
-                                "item-10 \t   " + item10 + "\t\t" + itemAmount10 + "\t\t " + amountIntoQuantity10
-                                                + " RS\t\t   "
-                                                + amountIntoQuantity1010 + " RS");
+                System.out.println("item-1 \t\t   " + item1 + "\t\t " + itemAmount1 + "\t\t "
+                                + amountIntoQuantity1 + " RS\t\t   "
+                                + amountIntoQuantity11 + " RS");
+                System.out.println("item-2 \t\t   " + item2 + "\t\t " + itemAmount2 + "\t\t "
+                                + amountIntoQuantity2 + " RS\t\t   "
+                                + amountIntoQuantity2 + " RS");
+                System.out.println("item-3 \t\t   " + item3 + "\t\t " + itemAmount3 + "\t\t "
+                                + amountIntoQuantity3 + " RS\t\t   "
+                                + amountIntoQuantity3 + " RS");
+                System.out.println("item-4 \t\t   " + item4 + "\t\t " + itemAmount4 + "\t\t "
+                                + amountIntoQuantity4 + " RS\t\t   "
+                                + amountIntoQuantity4 + " RS");
+                System.out.println("item-5 \t\t   " + item5 + "\t\t " + itemAmount5 + "\t\t "
+                                + amountIntoQuantity5 + " RS\t\t   "
+                                + amountIntoQuantity55 + " RS");
+                System.out.println("item-6 \t\t   " + item6 + "\t\t " + itemAmount6 + "\t\t "
+                                + amountIntoQuantity6 + " RS\t\t   "
+                                + amountIntoQuantity6 + " RS");
+                System.out.println("item-7 \t\t   " + item7 + "\t\t " + itemAmount7 + "\t\t "
+                                + amountIntoQuantity7 + " RS\t\t   "
+                                + amountIntoQuantity7 + " RS");
+                System.out.println("item-8 \t\t   " + item8 + "\t\t " + itemAmount8 + "\t\t "
+                                + amountIntoQuantity8 + " RS\t\t   "
+                                + amountIntoQuantity8 + " RS");
+                System.out.println("item-9 \t\t   " + item9 + "\t\t " + itemAmount9 + "\t\t "
+                                + amountIntoQuantity9 + " RS\t\t   "
+                                + amountIntoQuantity9 + " RS");
+                System.out.println("item-10 \t   " + item10 + "\t\t" + itemAmount10 + "\t\t " + amountIntoQuantity10
+                                + " RS\t\t   "
+                                + amountIntoQuantity1010 + " RS");
                 System.out.println("---------------------------------------------------------------------------");
                 System.out.println("\t\t\t\t\t\t  A.P \t\t    D.P");
                 System.out.println("\t\t\t\t\t\t " + totalAmount + "\t\t    " + discountOfTotalAmount);
