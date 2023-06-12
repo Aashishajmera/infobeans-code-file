@@ -5,7 +5,7 @@ public class Medical {
         System.out.println("medical cause or not ( 'y' or 'n' )");
         char medical = sc.next().charAt(0);
         if(medical == 'y'){
-            System.out.println("sit: ");
+            System.out.println("you can sit: ");
         }else{
             System.out.println("you can't sit: ");
         }

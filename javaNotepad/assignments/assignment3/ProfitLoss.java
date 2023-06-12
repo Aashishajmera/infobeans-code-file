@@ -8,12 +8,12 @@ public class ProfitLoss {
         System.out.println("Enter selling price: ");
         int sellingPrice = sc.nextInt();
 
-        int profit = purchasePrice - sellingPrice;
+        // int loss = sellingPrice - purchasePrice;
+        // int profit =  
 
-        if(profit > 0 ){
-            
-        }
+        // if (loss > 0) {
+        //     System.out.println("loss of " + loss);
+        // }
 
-  
-    }           
+    }
 }

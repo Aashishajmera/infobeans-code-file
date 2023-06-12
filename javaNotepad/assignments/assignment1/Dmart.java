@@ -84,7 +84,11 @@ public class Dmart {
 
                 // total amount condition
                 float discount;
-                float discountOfTotalAmount = totalAmount;
+                // float discountOfTotalAmount = totalAmount;
+                float discountOfTotalAmount = (amountIntoQuantity11 + amountIntoQuantity2 + amountIntoQuantity3
+                                + amountIntoQuantity4 +
+                                amountIntoQuantity55 + amountIntoQuantity6 + amountIntoQuantity7 + amountIntoQuantity8 +
+                                amountIntoQuantity9 + amountIntoQuantity1010);
 
                 if ((totalAmount > 5000) && (totalAmount < 10000)) {
                         discount = (totalAmount * 10) / 100;
