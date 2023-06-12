@@ -12,15 +12,15 @@ public class Youngest {
 
 		if (age1 > age2 && age1 > age3) {
 			System.out.println(age1 + " is oldest: ");
-		} else if (age2 > age3 && age2 > age1) {
-			System.out.println(age2 + " is oldest: ");
-		} else if (age3 > age2 && age3 > age1) {
-			System.out.println(age3 + " is oldest: ");
 		} else if (age1 < age2 && age1 < age3) {
 			System.out.println(age1 + " is youngest: ");
-		} else if (age2 < age1 && age2 < age3) {
+		}else if (age2 > age3 && age2 > age1) {
+			System.out.println(age2 + " is oldest: ");
+		}else if (age2 < age1 && age2 < age3) {
 			System.out.println(age2 + " is youngest: ");
-		} else if (age3 < age1 && age3 < age2) {
+		} else if (age3 > age2 && age3 > age1) {
+			System.out.println(age3 + " is oldest: ");
+		}   else if (age3 < age1 && age3 < age2) {
 			System.out.println(age3 + " is youngest: ");
 		}
 	}

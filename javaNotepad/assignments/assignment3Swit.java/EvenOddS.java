@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EvenOddSwit {
+public class EvenOddS {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number: ");
@@ -11,10 +11,12 @@ public class EvenOddSwit {
                 System.out.println("given number is Even: ");
                 break;
             case 1:
-                System.out.println("given number is Odd: ");
+                // System.out.println("given number is odd: ");
+                // break;
+            case -1:
+                System.out.println("given number odd: ");
                 break;
-            default:
-                System.out.println("case not match: ");
+            
         }
     }
 }

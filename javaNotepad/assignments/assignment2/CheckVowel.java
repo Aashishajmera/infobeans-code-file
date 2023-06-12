@@ -5,7 +5,7 @@ public class CheckVowel {
                 || ch == 'O' || ch == 'U') {
             System.out.println(ch + " is a Vowel: ");
         } else {
-            System.out.println(ch + " is a  consonants: ");
+            System.out.println(ch + " is not a Vowel: ");
         }
     }
 }
