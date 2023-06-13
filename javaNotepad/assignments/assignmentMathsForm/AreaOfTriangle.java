@@ -5,7 +5,7 @@ public class AreaOfTriangle {
         int height = 10;
         int base = 9;
         // int perimeter = 36;
-        float area = (1/2)*(base*height);
+        float area = (base*height)/2
 
         System.out.println("The are of triangle is: " +area);
     }

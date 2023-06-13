@@ -2,13 +2,14 @@
 
 public class PerimeterOfRactangle {
     public static void main(String[] args) {
-        int area = 230;
-        int breadth = 8;
+        float area = 96;
+        float breadth = 8;
         
-        int length = (area/breadth);
-        int perimeter = 2*(length+breadth);
+        float length = (area/breadth);
+        float perimeter = 2*(length+breadth);
 
         System.out.println("The length of ractangle is: " +length);
         System.out.println("The perimeter of ractangle is: " +perimeter);
+        
     }
 }

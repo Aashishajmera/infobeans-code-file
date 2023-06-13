@@ -3,8 +3,9 @@
 public class BaseOfTriangle {
     public static void main(String[] args) {
         int altitude = 20;
-        float area = 0.8f;
+        float area = 800;
 
-        // float base = 
+        float base = (area )/(altitude/2);
+        System.out.println("The base of a triangle is: " +base);
     }
 }
