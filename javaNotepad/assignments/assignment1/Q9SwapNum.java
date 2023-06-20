@@ -1,4 +1,6 @@
-public class SwapNum2 {
+// 9. Write a program to to swap to number without using third variable
+
+public class Q9SwapNum {
     public static void main(String[] args) {
         int a = 4;
         int b = 3;

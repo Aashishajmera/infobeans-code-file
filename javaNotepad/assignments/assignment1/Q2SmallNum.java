@@ -1,4 +1,6 @@
-public class SmallNum {
+// 2. Write A Java Program to Find Out the smallest between 3 distinct number
+
+public class Q2SmallNum {
     public static void main(String[] args) {
         byte num1 = 3;
         byte num2 = 8;

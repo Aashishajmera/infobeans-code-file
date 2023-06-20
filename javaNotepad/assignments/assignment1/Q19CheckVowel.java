@@ -1,4 +1,6 @@
-public class CheckVowel {
+// 19. WAP to enter a character and check it is vowel or not
+
+public class Q19CheckVowel {
     public static void main(String[] args) {
         char ch = 'o';
         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I'

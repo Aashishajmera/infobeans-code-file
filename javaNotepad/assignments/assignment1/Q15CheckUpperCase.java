@@ -1,4 +1,6 @@
-public class CheckUpperCase {
+// 15. program to check whether entered character is in uppercase
+
+public class Q15CheckUpperCase {
     public static void main(String[] args) {
         char ch = 'a';
         if(ch >= 65 && ch <= 90){

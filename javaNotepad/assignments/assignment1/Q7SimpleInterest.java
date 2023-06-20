@@ -1,4 +1,4 @@
-class SimpleInterest {
+class Q7SimpleInterest {
 	public static void main(String[] args) {
 		int principal = 2000;
 		int rate = 3;

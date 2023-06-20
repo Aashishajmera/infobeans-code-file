@@ -1,4 +1,4 @@
-public class Average {
+public class Q6Average {
     public static void main(String[] args) {
         byte num1 = 34;
         byte num2 = 44;

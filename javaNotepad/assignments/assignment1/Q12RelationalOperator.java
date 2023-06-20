@@ -1,4 +1,6 @@
-public class RelationalOperator {
+// 12. Perform all relational operation
+
+public class Q12RelationalOperator {
     public static void main(String[] args) {
 
         // Realation Op (>, <, >=, <=, ==, !=)

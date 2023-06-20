@@ -1,4 +1,6 @@
-public class SwapNum {
+// 8. Write a program to swap to number.
+
+public class Q8SwapNum {
     public static void main(String[] args) {
         byte a = 3;
         byte b = 45;

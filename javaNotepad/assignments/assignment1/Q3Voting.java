@@ -1,6 +1,8 @@
+// 3. Write A Java Program to input an age of person and check he is eligible for voting or not.
+
 import java.util.Scanner;
 
-class voting{
+class Q3voting{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your age: ");
