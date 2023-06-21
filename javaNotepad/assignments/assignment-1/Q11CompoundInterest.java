@@ -13,7 +13,7 @@ public class Q11CompoundInterest {
         System.out.println("Enter time in month: ");
         double year = sc.nextDouble();
 
-        double ci = principal*(1+((rate/100)/12))*(year/12)
+        double ci = principal*(1+(rate/100))*(year/12);
         System.out.println("The compound interest is: "+ci);
 
     }

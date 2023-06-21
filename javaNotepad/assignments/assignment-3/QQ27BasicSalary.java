@@ -12,18 +12,30 @@ public class QQ27BasicSalary {
         int basicSalary = sc.nextInt();
         int HRA = 0;
         int DA = 0;
+        int grossSalary = 0;
         if (basicSalary <= 10000) {
             HRA = (basicSalary * 20) / 100;
             DA = (basicSalary * 80) / 100;
+            grossSalary = basicSalary + HRA + DA;
             System.out.println("HRA is " + HRA + " and DA is " + DA);
+            System.out.println("your gross Salary is: " + grossSalary);
+
         } else if (basicSalary <= 20000) {
             HRA = (basicSalary * 25) / 100;
             DA = (basicSalary * 90) / 100;
+            grossSalary = basicSalary + HRA + DA;
+
             System.out.println("HRA is " + HRA + " and DA is " + DA);
+            System.out.println("your gross Salary is: " + grossSalary);
+
         } else if (basicSalary > 20000) {
             HRA = (basicSalary * 30) / 100;
             DA = (basicSalary * 95) / 100;
+            grossSalary = basicSalary + HRA + DA;
+
             System.out.println("HRA is " + HRA + " and DA is " + DA);
+            System.out.println("your gross Salary is: " + grossSalary);
+
         }
     }
 }

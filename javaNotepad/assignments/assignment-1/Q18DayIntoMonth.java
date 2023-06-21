@@ -9,6 +9,6 @@ public class Q18DayIntoMonth {
         String days = sc.nextLine();
         if(days == "sunday" || days == "Sunday"){
             System.out.println("january");
-        }k
+        }
     }
 }

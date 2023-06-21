@@ -28,10 +28,10 @@
 
 15 WAP to to input 3 digit number and check it is armstron or not
 
-16. WAP to enter an integer number and check it is prime or not
+----16. WAP to enter an integer number and check it is prime or not---- 
 17. WAP to calculate x^y (x to the power y)
-// 18. WAP to calculate the sum of given series x^1 + x^2 + x ^3.........x^n 
-// 19. WAP to calculate the sum of series 1/1! + 2/2! + 3/3!.......n\n! 
+18. WAP to calculate the sum of given series x^1 + x^2 + x ^3.........x^n 
+19. WAP to calculate the sum of series 1/1! + 2/2! + 3/3!.......n\n! 
 20. WAP to print all prime number from 101 to 199 
 21. WAP to print the reverse of all number from 101 to 199 
 22. WAP to print all palindrome number from 101 to 199 
