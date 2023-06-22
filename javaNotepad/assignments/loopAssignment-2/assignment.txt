@@ -8,9 +8,9 @@
 
 5) WAP to find out the factorial of a number.
 
-6) WAP to find out the factors of a number.
++++Double+++ 6) WAP to find out the factors of a number.
 
-// 7) WAP to check whether entered number is prime or not.
+7) WAP to check whether entered number is prime or not.
 
 8) WAP to print Fibonacci series.
 
@@ -28,9 +28,9 @@
 
 15) WAP to print alphabets in lowercase
 
-16) …... -6 -3 0 3 6 9 ……. n terms
+/// 16) …... -6 -3 0 3 6 9 ……. n terms
 
-17) 1 2 4 7 11 16 …… n terms
+/// 17) 1 2 4 7 11 16 …… n terms
 
 18) 1 2 2 4 8 32 …… n terms
 

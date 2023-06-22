@@ -7,7 +7,7 @@ public class Q15Armstron {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any number:  ");
         int n = sc.nextInt();
-        int lastDigit = 0, reverse = 0, temp = n, sum =0;
+        int lastDigit = 0, temp = n, sum =0;
         while(n!=0){
             lastDigit = n % 10;
             sum += lastDigit *lastDigit*lastDigit;

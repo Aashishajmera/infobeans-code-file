@@ -33,7 +33,7 @@
 18. WAP to calculate the sum of given series x^1 + x^2 + x ^3.........x^n 
 19. WAP to calculate the sum of series 1/1! + 2/2! + 3/3!.......n\n! 
 20. WAP to print all prime number from 101 to 199 
-21. WAP to print the reverse of all number from 101 to 199 
+----21. WAP to print the reverse of all number from 101 to 199 
 22. WAP to print all palindrome number from 101 to 199 
 23. WAP to print all armstrong number from 101 to 999
 24. WAP in C to display the n terms of harmonic series and
