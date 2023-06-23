@@ -44,7 +44,7 @@
 
 23) 1 9 25 49 81 …..
 
-24) 0 4 16 36 64 ….. 1 2 3 4 5 6 7 8
+/// 24) 0 4 16 36 64 ….. 1 2 3 4 5 6 7 8
 
 25) 1 27 125 343 …………
 
@@ -60,7 +60,7 @@
 
 31) 9 99 999 9999 99999 …….
 
-32) A b C d E f G h …… n terms
+/// 32) A b C d E f G h …… n terms
 
 33) WAP to print Alphabets in reversing order.
 
@@ -74,15 +74,15 @@
 
 38) WAP to check whether entered number is Armstrong or not
 
-39) WAP to check whether entered number is strong or not
++++++++++39) WAP to check whether entered number is strong or not
 
 40) WAP to count no. Of even and odd digits in a number
 
-41) WAP to find out LCM of a number
+/// 41) WAP to find out LCM of a number
 
-42) WAP to find out HCF of a number
+/// 42) WAP to find out HCF of a number
 
-43) WAP to convert binary number into decimal number
+/// 43) WAP to convert binary number into decimal number
 
 44) WAP to interchange first and last digit of a number
 
