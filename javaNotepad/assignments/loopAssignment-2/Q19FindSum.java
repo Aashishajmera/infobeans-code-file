@@ -1,16 +1,16 @@
-// 17) 1 2 4 7 11 16 …… n terms
+// 19) 1 + 1/2 + 1/3 + 1/4 + 1/5 ….. n terms(find out sum)
 
 import java.util.Scanner;
 
-public class Q17DropeTerm {
+public class Q19FindSum {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any positive number: ");
         int n = sc.nextInt();
-        int p = 1;
-        for(int i = 0; i < n; i++){
-            p += i;
-           System.out.println(p);
+        float sum = 0;
+        for(int i = 1; i<=n; i++){
+            sum += 1.0f/i;
         }
+       System.out.println("Sum is this: "+sum); 
     }
 }

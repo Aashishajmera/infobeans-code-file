@@ -1,16 +1,17 @@
-// 17) 1 2 4 7 11 16 …… n terms
-
 import java.util.Scanner;
 
-public class Q17DropeTerm {
+public class Q28Hello {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any positive number: ");
         int n = sc.nextInt();
-        int p = 1;
-        for(int i = 0; i < n; i++){
-            p += i;
-           System.out.println(p);
+        for(int i = 1; i <= n; i++){
+            if(i%5 == 0){
+                System.out.println("Hello");
+            }else{
+                System.out.println(i);
+            }
+
         }
     }
 }
