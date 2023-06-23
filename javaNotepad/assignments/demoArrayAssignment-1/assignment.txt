@@ -9,7 +9,7 @@ order
 
 5 wap to find and print even numbers in given array
 
-6 wap to find and print prime numbers in given array
+/// 6 wap to find and print prime numbers in given array
 
 7 wap to search a particular number in given array and print its position
 
