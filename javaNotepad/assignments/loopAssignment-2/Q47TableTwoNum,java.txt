@@ -1,0 +1,6 @@
+47) WAP to print tables of all the numbers between two entered numbers
+
+import java.util.Scanner;
+class Q47TableTwoNum{
+	
+}

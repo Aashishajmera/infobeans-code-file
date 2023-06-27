@@ -84,11 +84,11 @@
 
 /// 43) WAP to convert binary number into decimal number
 
-44) WAP to interchange first and last digit of a number
+/// 44) WAP to interchange first and last digit of a number
 
 45) WAP to find out the sum of all the digits of a number
 
-46) WAP to find out the sum of first and last digit of a user entered number
+/// 46) WAP to find out the sum of first and last digit of a user entered number
 
 47) WAP to print tables of all the numbers between two entered numbers
 
