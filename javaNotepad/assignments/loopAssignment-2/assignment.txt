@@ -92,7 +92,7 @@
 
 47) WAP to print tables of all the numbers between two entered numbers
 
-48) WAP to find out the factors of all the numbers between two entered numbers
+====48) WAP to find out the factors of all the numbers between two entered numbers
 
 49) WAP to find out all the perfect numbers between two entered numbers
 
