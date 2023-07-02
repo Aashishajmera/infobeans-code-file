@@ -6,6 +6,7 @@ class Q46SumFirstLast{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter any natural number: ");
 		int n = sc.nextInt();
+		int tempp = n;
 		int lastDigit= 0, rem = 0, temp=0;
 		for(int i = n; n != 0; n = n/10){
 			if(i==n){
@@ -14,7 +15,12 @@ class Q46SumFirstLast{
 			rem = n%10;
 			temp = n;
 		}
-		int sum = lastDigit+temp;
-		System.out.println("First and last digit sum is: " +sum);
+		if(tempp <= 10 && tempp >= 1){
+			System.out.println(tempp+" this is single digit ");
+		}else{
+			int sum = lastDigit+temp;
+			System.out.println("First and last digit sum is: " +sum);
+		}
+		
 	}
 }

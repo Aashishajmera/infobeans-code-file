@@ -10,7 +10,17 @@ class Q60SqureRoot{
 		for(int i = 1; i <= n; i++){
 			System.out.println(i +" Squre is: " +(i*i));
 			System.out.println(i +" Cube is: " +(i*i*i));
-			System.out.println(i +" Squre root is: " +(i/2));
+			for(int j = 1; j <= i; j++){
+				if(j*j == i){
+					System.out.println("Squre root is: "+j);
+					System.out.println();
+				}if(j*j != i){
+					System.out.println("root" +i);
+					System.out.println();
+					break;
+				}
+				
+			}
 		}
 	}
 }

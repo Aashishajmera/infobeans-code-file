@@ -6,7 +6,7 @@
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Enter any alphabet: ");
 			char ch = sc.next().charAt(0);
-			
+			char n;
 			/* for(int i = 65; i <= ch; i++){
 				if(i%2 != 0){
 					for(char j = 65; j <= ch; j += 2){
@@ -20,7 +20,8 @@
 				}
 			} */
 			
-			int n=0;
+			
+			/* int n=0;
 			int v = 'A';
 			
 			for(; v <= ch; v++){
@@ -32,7 +33,28 @@
 					for(; v <= z; v++){
 						System.out.println(z);
 					}
-					
+				}
+			} */
+			
+			if(ch >= 'A' && ch <= 'Z'){
+				n = 'A';
+				for(; n <= ch; n++){
+					if(n%2 != 0){
+						System.out.println(n);
+					}else{
+						char z = (char)(n+32);
+						System.out.println(z);
+					}
+				}
+			}else{
+				n = 'a';
+				for(; n <= ch; n++){
+					if(n%2 != 0){
+						char z = (char)(n-32);
+						System.out.println(z);
+					}else{
+						System.out.println(n);
+					}
 				}
 			}
 			

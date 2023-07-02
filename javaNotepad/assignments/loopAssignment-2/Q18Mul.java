@@ -7,9 +7,12 @@ public class Q18Mul {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any number: ");
         int n = sc.nextInt();
-        int mul = 1;
+        int a = 1, b = 2, c = 1;
         for(int i = 1; i<=n; i++){ 
-            
+            a = b;
+			System.out.println(c);
+			b = c;
+			c = a*b;
         }
     }
 }
