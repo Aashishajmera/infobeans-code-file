@@ -6,10 +6,12 @@
 
 class pt11{
 	public static void main(String[] args){
+		char c = 65;
 		for(int r = 1; r <= 5; r++){
-				for(char c = 65; c < (char)(c+r); c++){
-					System.out.print(c);
-				}
+			char p = (char)(c+r);
+			for(char z = c; z < p; z++){
+				System.out.print(z);
+			}
 			System.out.println();
 		}
 	}
