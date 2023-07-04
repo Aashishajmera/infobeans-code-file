@@ -1,21 +1,18 @@
-// 23)
-// a 
-// bc 
-// d f
-// g  j
-// klmno 
+// 24)
+// * 
+// ** 
+// *@* 
+// *@@* 
+// *****
 
-class pt23{
+class pt24{
 	public static void main(String[] args){
-		char z = 97;
 		for(int r = 1; r <= 5; r++){
 			for(int c = 1; c <= r; c++){
 				if(c == 1 || r == 5 || c == r){
-					System.out.print(z);
-					z++;
+					System.out.print("*");
 				}else{
-					System.out.print(" ");
-					z++;
+					System.out.print("@");
 				}
 			}
 			System.out.println();
