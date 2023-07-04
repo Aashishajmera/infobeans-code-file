@@ -9,17 +9,17 @@ class pt13{
 		for(int r = 1; r <= 5; r++){
 			for(int c = 1; c <= r; c++){
 				if(r%2 != 0){
-					for(int a = 1; a <= c; a++){
-						int p = 1;
-						System.out.print(p);
+					if(c%2 != 0){
+						System.out.print("1");
+					}else{
+						System.out.print("0");
 					}
-					System.out.println();
 				}else{
-					for(int a = 0; a < c; a++){
-						int p = 0;
-						System.out.print(p);
+					if(c%2 == 0){
+						System.out.print("1");
+					}else{
+						System.out.print("0");
 					}
-					System.out.println();
 				}
 			}
 			System.out.println();
