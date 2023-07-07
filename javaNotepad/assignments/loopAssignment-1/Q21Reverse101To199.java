@@ -1,4 +1,4 @@
-// ----21. WAP to print the reverse of all number from 101 to 199 
+// 21. WAP to print the reverse of all number from 101 to 199 
 
 public class Q21Reverse101To199 {
     public static void main(String[] args) {
