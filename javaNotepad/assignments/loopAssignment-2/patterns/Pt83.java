@@ -13,7 +13,11 @@ class Pt83{
 		for(int r = 1; r <= 7; r++){
 			for(int c = 1; c <= 7; c++){
 				if(((c >= (5-r) && c <= (3+r)) && (r <= 4)) || ((c >= (r-3) && c <= (11-r)) && (r >= 5))){
-					System.out.print("*");
+					if(((c == (5-r) || c == (3+r)) && (r <= 4)) || ((c == (r-3) || c == (11-r)) && (r >= 5))){
+						System.out.print("*");
+					}else{
+						System.out.print("_");
+					}
 				}else{
 					System.out.print(" ");
 				}
