@@ -17,6 +17,5 @@ class Q3SalaryService{
 		}else{
 			System.out.println("your service year is lessthan 6 : " +salary);
 		}
-		
 	}
 }
