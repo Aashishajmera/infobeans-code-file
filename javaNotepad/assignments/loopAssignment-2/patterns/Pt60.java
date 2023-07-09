@@ -8,26 +8,23 @@ X X X X X */
 class Pt60{
 	public static void main(String[] args){
 		for(int r = 1; r <= 5; r++){
-			for(int c = 1; c <= (5-r); c++){
-				System.out.print(" ");
-			}
-			for(int c = 1; c <= r; c++){
-				if(r == 3){
-					if(c == 1 || c == r){
-						System.out.print("X");
-					}else{
-						System.out.print("___");
+			for(int c = 1; c <= 9; c++){
+				if(c >= (6-r) && c <= (4+r)){
+					if(r <= 2 || r == 5){
+						if(r%2 != 0  && c%2 != 0){
+							System.out.print("X");
+						}else{
+							System.out.print(" ");
+						}
+					}else if(r >= 3 && r <= 4){
+						if(r%2 != 0  && c%2 != 0){
+							System.out.print("X");
+						}else{
+							System.out.print("_");
+						}
 					}
-				}
-				else if(r == 4){
-					if(c == 1 || c == r){
-						System.out.print("X");
-					}else{
-						System.out.print("_____");
-					}
-				}
-				else if(r ==1 || r == 2 || r == 5){
-					System.out.print("X ");
+				}else{
+					System.out.print(" ");
 				}
 			}
 			System.out.println();
