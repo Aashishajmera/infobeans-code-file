@@ -7,7 +7,7 @@
 
 class pt22{
 	public static void main(String[] args){
-		for(int r = 1; r <= 5; r++){
+		/* for(int r = 1; r <= 5; r++){
 			char z = 65;
 			for(int c = 1; c <= r; c++){
 				if(r >= 3 && r < 5){
@@ -21,6 +21,16 @@ class pt22{
 				}else{
 					System.out.print(z);
 					z++;
+				}
+			}
+			System.out.println(); */
+			
+		for(char r = 65; r <= 69; r++){
+			for(char c = 65; c <= r; c++){
+				if(c == 65 || c == r || r == 69){
+					System.out.print(c);
+				}else{
+					System.out.print(" ");
 				}
 			}
 			System.out.println();
