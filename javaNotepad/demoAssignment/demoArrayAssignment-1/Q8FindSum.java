@@ -6,6 +6,9 @@ class Q8FindSum{
 		System.out.println("Enter size of array ");
 		int n = sc.nextInt();
 		System.out.println("Enter " +n +" element ");
-		int arr[] = new arr[n];
+		int arr[] = new int[n];
+		for(int i = 0; i < arr.length; i++){
+			arr[i]=sc.nextInt();
+		}
 	}
 }
