@@ -15,6 +15,6 @@ class Q1SumElement{
         for(int j = 0; j < x.length; j++){
             sum += x[j];
         }
-        System.out.println(sum);
+        System.out.println("Total element sum is: "+sum);
     }
 }
