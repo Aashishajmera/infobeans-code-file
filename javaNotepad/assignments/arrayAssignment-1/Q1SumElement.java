@@ -8,7 +8,7 @@ class Q1SumElement{
         System.out.println("Enter size of array: ");
         int n = sc.nextInt();
         int[] x = new int[n];
-        System.out.println("Enter " +n  +" element: ");
+        System.out.println("Enter " +n +" element: ");
         for(int i = 0; i < x.length; i++){
             x[i] = sc.nextInt();
         }
