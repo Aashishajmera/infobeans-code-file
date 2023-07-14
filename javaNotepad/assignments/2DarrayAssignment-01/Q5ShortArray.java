@@ -1,3 +1,11 @@
+/*
+
+6 8 0      0 6 8
+5 7 3   =  3 5 7
+3 7 6      3 6 7 
+
+*/
+
 class Q5ShortArray{
 	public static void main(String[] args){
 		int arr[][] = {{6,8,0},{5,7,3},{3,7,6}};
