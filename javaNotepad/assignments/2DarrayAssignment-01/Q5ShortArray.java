@@ -1,4 +1,4 @@
-class Q1ShortArray{
+class Q5ShortArray{
 	public static void main(String[] args){
 		int arr[][] = {{6,8,0},{5,7,3},{3,7,6}};
 		for(int r = 0; r < arr.length; r++){
@@ -8,11 +8,8 @@ class Q1ShortArray{
 						arr[r][c] = arr[r][c]+arr[r][j];
 						arr[r][j] = arr[r][c]-arr[r][j];
 						arr[r][c] = arr[r][c]-arr[r][j];
-						
 					}
-					
 				}System.out.print(arr[r][c]+" ");
-				
 			}System.out.println();
 		}
 	}
