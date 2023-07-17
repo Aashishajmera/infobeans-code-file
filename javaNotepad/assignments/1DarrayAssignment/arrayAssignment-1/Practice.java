@@ -1,5 +1,42 @@
 import java.util.Scanner;
 class Practice{
+	
+	// Create methods for find maximum element :
+	void maxFind(){
+		int[] arr = {0,-4,2,6,45,99,1};
+		int max = arr[0];
+		for(int r = 0; r < arr.length; r++){
+			if(max < arr[r]){
+				max = arr[r];
+			}
+		}
+		System.out.println("The max value is : " +max);
+	}
+	
+	// Create methods for find minimum element :
+	void minFind(int size,Scanner sc){
+		
+		int[] arr1 = new int[size];
+		System.out.println("Enter " +size +" element: ");
+		for(int r = 0; r < arr1.length; r++){
+			arr1[r] = sc.nextInt();
+		}
+		
+		System.out.println("Print the value: ");
+		for(int r = 0; r < arr1.length; r++){
+			System.out.println(arr1[r]);
+		}
+		
+		// find the value: 
+		int min = arr1[0];
+		for(int r = 0; r < arr1.length; r++){
+			if(min > arr1[r]){
+				min = arr1[r];
+			}
+		}
+		System.out.println("minimum value is: " +min);
+	}
+	
 	public static void main(String[] args){
 		
 		
@@ -50,6 +87,7 @@ class Practice{
 			System.out.println();
 		} */
 		
+		
 		// ----------------------------------------------------------------------------------
 		// Class work on 2D array 
 		/*
@@ -59,7 +97,7 @@ class Practice{
 			3 3 3 1
 		*/
 		
-		int arr[][] = {{1,1,1,1},{2,2,2,2},{3,3,3,3},{3,3,3,1}};
+		/* int arr[][] = {{1,1,1,1},{2,2,2,2},{3,3,3,3},{3,3,3,1}};
 		System.out.println("Given array is: ");
 		
 		//Print value 
@@ -86,6 +124,17 @@ class Practice{
 		System.out.println("Element sum array is: ");
 		for(int r = 0; r < arr2.length; r++){
 			System.out.print(arr2[r]+" ");
-		}
+		} */
+		
+		//----------------------------------------------------------------------------------
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter size of array: ");
+		int size = sc.nextInt();
+		
+		Practice obj = new Practice();
+		// obj.maxFind();
+		obj.minFind(size,sc);
+		
 	}
 }
