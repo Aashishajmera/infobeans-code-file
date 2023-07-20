@@ -21,17 +21,17 @@ public class Q7Prime {
         // }
 
         int count = 0;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i < n; i++) {
             if (n % i == 0) {
                 count++;
+                break;
             }
         }
 
-        if (count == 1 && n > 1) {
+        if (count == 0 && n > 1) {
             System.out.println("Prime number: ");
         } else {
             System.out.println("Not prime number: ");
         }
-		System.out.println(7/2);
-    }
+   }
 }
