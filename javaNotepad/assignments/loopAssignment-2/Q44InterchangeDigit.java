@@ -11,11 +11,11 @@ class Q44InterchangeDigit{
 		// using while loop
 		// int i = n;
 		// while(n != 0){
-			// if(i == n){
-				// lastDigit = n%10;
-			// }
-			// n=n/10;
-			// firstDigit = n;
+		// 	if(i == n){
+		// 		lastDigit = n%10;
+		// 	}
+		// 	n=n/10;
+		// 	firstDigit = n;
 			
 		// } 
 		
