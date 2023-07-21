@@ -1,5 +1,5 @@
 class Calculator{
-	private int a , b;
+	private int a , b ;
 	
 	public void SetData(int a, int b){
 		this.a = a;
@@ -27,7 +27,7 @@ class Calculator{
 	
 	
 	// value lene ke lie
-	
+
 	public int getA(){
 		return a;
 	}
