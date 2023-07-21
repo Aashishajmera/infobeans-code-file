@@ -27,8 +27,6 @@ class mthd{
 	}*/
 	
 	
-	
-	
 	// method access A and B 
 	
 	public void a(){
