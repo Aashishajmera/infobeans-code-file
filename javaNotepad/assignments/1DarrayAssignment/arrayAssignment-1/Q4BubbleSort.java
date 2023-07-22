@@ -1,4 +1,4 @@
-// 4. Sort the array (linear and bubble)
+// 4. Sort the array (Selection and bubble)
 
 import java.util.Scanner;
 class Q4BubbleSort{
