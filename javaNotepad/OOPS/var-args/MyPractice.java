@@ -19,8 +19,9 @@ class Test{
 		System.out.println("int var-argument: "+x);
 	}
 	
+	
 	public void m1(long... x){
-		System.out.println("m1 with var-argument: " +x);
+		System.out.println("long var-argument: " +x);
 	}
 	
 	public void m1(long x){
@@ -35,6 +36,7 @@ class MyPractice{
 	public static void main(String[] args){
 		Test obj = new Test();
 		obj.m1(99);
-		obj.m1(3l,5);
+		obj.m1(3,5);
+		obj.m1(43l, 34L);
 	}
 }
