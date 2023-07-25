@@ -25,7 +25,7 @@ public class Q7Prime {
             if (n % i == 0) {
                 count++;
                 break;
-            }
+            }3
         }
 
         if (count == 0 && n > 1) {

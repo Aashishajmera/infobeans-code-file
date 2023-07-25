@@ -11,13 +11,13 @@ class Q61LeapTwoYear{
 		
 		if(y1 <= y2){
 			for(int i = y1; i <= y2; i++){
-			if((i%4==0 && i%100 != 0) || (i%400 == 0)){
+			if((i%4==0 && i%100 != 0) || (i%400 == 0 )){
 				System.out.println(i +" is a leap year: ");
 				}
 			}
 		}else{
 			for(int i = y2; i <= y1; i++){
-			if((i%4==0 && i%100 != 0) || (i%400 == 0)){
+			if((i%4==0 && i%100 != 0) || (i%400 == 0 )){
 				System.out.println(i +" is a leap year: ");
 				}
 			}
