@@ -1,8 +1,8 @@
 class m22{
-	private static String name ;
+	 String name ;
 	static int n;
-	public static void setName(){
-		name = "Aashish";
+	public  void setName(String k){
+		name = k;
 		n = 4;
 	}
 	public String getName(){
@@ -22,8 +22,14 @@ class InstanceStatic{
 	
 	public static void main(String[] args){
 		m22 obj = new m22();
-		obj.setName();
+		String k = "Aashish";
+		obj.setName(k);
 		System.out.println(obj.getName());
+		m22 obj1 = new m22();
+		k = "ajmera";
+		obj1.setName(k);
+		System.out.println(obj.getName());
+		System.out.println(obj1.getName());
 		// System.out.println(m22.n);
 		// System.out.println(i);
 		

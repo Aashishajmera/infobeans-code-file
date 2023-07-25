@@ -9,6 +9,8 @@ class DeleteElement{
 			arr[i] = sc.nextInt();
 		}
 	}
+	
+	
 	// print element:
 	public void printElement(int arr[]){
 		for(int i = 0; i < arr.length; i++){
@@ -16,9 +18,18 @@ class DeleteElement{
 		}
 		System.out.println();
 	}
-	public void deleteElement(int delete, int arr[]){
+	
+	
+	public void deleteElement(int delete, int arr[],int size){
 		int count = 0;
-		for(int i = 0; i < arr.length-1; i++){
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] == delete){
+				size--;
+				break;
+			}
+		}
+		
+		for(int i = 0; i < arr.length; i++){
 		
 			if(delete == arr[i]){
 				arr[i] = arr[i+1];
@@ -33,7 +44,7 @@ class DeleteElement{
 			}
 		}
 		//print array: 
-		for(int i = 0; i < arr.length-1; i++){
+		for(int i = 0; i < arr.length; i++){
 			System.out.print(arr[i] +" ");
 		}
 	}
@@ -57,7 +68,7 @@ class Q6DeleteElement2{
 		System.out.println("Enter delete element: ");
 		int delete = sc.nextInt();
 		//calling delete method:
-		obj.deleteElement(delete, arr);
+		obj.deleteElement(delete, arr, size);
 		
 		
 	}
