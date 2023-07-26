@@ -1,9 +1,11 @@
-// ==8. Rotate the array by one
+// ==8. InputArr the array by method:
 import java.util.Scanner;
-class Rotate{
+class InputArr{
 	int s;
 	int arr[] = new int[s];
-	public void rotate(){
+	
+	//default constructor: 
+	public InputArr(){
 	
 	}
 	
@@ -30,11 +32,12 @@ class Rotate{
 	}
 	
 }
-class Q8Rotate2{
+class InputArrayMethod{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
-		Rotate obj = new Rotate();
+		InputArr obj = new InputArr();
 		obj.inputArray(sc);
+		System.out.println("Enter array element is: ");
 		obj.printArray();
 	}
 }
