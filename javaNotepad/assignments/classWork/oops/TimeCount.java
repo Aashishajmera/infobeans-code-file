@@ -27,14 +27,16 @@ class TimeC{
 		obj3.m = this.m + z.m;
 		obj3.s = this.s + z.s;
 		
-		if(m >= 60){
-			obj3.h++;
-			obj3.m -= 60;
-		}
-		if(s >= 60){
+		while(obj3.m >= 60 || obj3.s >= 60){
+			if(obj3.s >= 60){
 			obj3.m++;
 			obj3.s -= 60;
+		} else if(obj3.m >= 60){
+			obj3.h++;
+			obj3.m -= 60;
+			}
 		}
+		
 		return obj3;
 	}
 	
