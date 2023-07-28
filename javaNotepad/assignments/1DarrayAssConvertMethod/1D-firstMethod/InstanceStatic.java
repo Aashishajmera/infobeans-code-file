@@ -1,11 +1,11 @@
 class m22{
-	 String name ;
+	private String name ;
 	static int n;
 	public  void setName(String k){
 		name = k;
 		n = 4;
 	}
-	public String getName(){
+	public static String getName(){
 		return name;
 	}
 }

@@ -1,6 +1,6 @@
 class TestMain{
 	
-]	public static void main(){
+]	public static void main(String[] args){
 		
 		System.out.println("first - main method...");
 		
@@ -12,7 +12,7 @@ class DoubleMainMethod{
 		System.out.println("first main method...");
 		// TestMain.main();
 		TestMain obj = new TestMain();
-		obj.main();
+		obj.main(String[] args);
 	}
 	
 	

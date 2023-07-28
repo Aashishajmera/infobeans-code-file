@@ -2,7 +2,7 @@
 2. Sum of even and odd element 
 3. Search in element in array (linear and binary)
 4. Sort the array (bubble & selection sort)
-5. Insert element at a specified position of array 
+5. Insert element at a specified position of array    // one D array se implement kran hai
 6. Delete the element froam an array 
 7. Merge two array
 ==8. Rotate the array by one
