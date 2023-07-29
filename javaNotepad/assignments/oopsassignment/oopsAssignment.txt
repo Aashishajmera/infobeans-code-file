@@ -34,7 +34,7 @@ multiply - to multiply X and Y and store in R
 power - to calculate X Y and store in R
 display- to display Result R
 
-15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
+====15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
 two integers
 three float
 all elements of array
@@ -45,7 +45,7 @@ Default age of person should be 18.
 A person object can be initialized with name and age.
 Method to display name and age of person.
 
-17) Create a class Employee with(empNo ,salary and totalSalary)  with following 	features.
+===17) Create a class Employee with(empNo ,salary and totalSalary)  with following 	features.
 Only parameterized constructor;
 totalSalary always represent total of all the salaries of all employees created.
 empNo should be auto incremented.
@@ -58,4 +58,4 @@ Create method (with array of product’s object as argument) in XYZ class to cal
 
 ***19) Make list of Students having name, roll no., age, score. Write a program to accept 10 students record and arrange the Students based on the score group [0-50], [50-65],[65-80],[80-100].
 
-20)Create class Tile to store the edge length of a square tile , and create another class Floor to store length and width of a rectangular floor. Add method totalTiles(Tile t) in Floor class with Tile as argument to calculate the whole number of tiles needed to cover the floor completely.
+***20)Create class Tile to store the edge length of a square tile , and create another class Floor to store length and width of a rectangular floor. Add method totalTiles(Tile t) in Floor class with Tile as argument to calculate the whole number of tiles needed to cover the floor completely.

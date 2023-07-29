@@ -5,19 +5,27 @@ display- to display area */
 
 import java.util.Scanner;
 class AreaOfCircle{
-	private float radius, areaValue;
+	private float radius, area;
 	
-	//create default constructor:
-	public AreaOfCircle(){
-		
+	// create method:
+	public void calculate(float radius){
+		area = (3.14f) * radius * radius;
 	}
 	
-	//create constructor:
-	
+	// create display:
+	public void display(){
+		System.out.println("Area of circle is: "+area);
+	}
 }
 
 class Q13AreaOfCircle2{
 	public static void main(String[] args){
-		Scanner sc = new 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter radius: ");
+		float r = sc.nextInt();
+		
+		AreaOfCircle obj = new AreaOfCircle();
+		obj.calculate(r);
+		obj.display();
 	}
 }
