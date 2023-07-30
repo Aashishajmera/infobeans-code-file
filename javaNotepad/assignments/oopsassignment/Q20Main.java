@@ -4,7 +4,7 @@
  
 class Tile{
 	double edge;
-}
+}zx
  
 class Floor{
 	double length, width;
