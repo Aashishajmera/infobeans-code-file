@@ -39,13 +39,13 @@ class DeleteElement {
 			
 			//first logic
 			
-			if (delete == arr[i] && delete != arr[size-1]) {
+			if (delete == arr[i]) {
 				arr2[i] = arr[i + 1];
 				j++;
 			} else if (delete != arr[i] && j == 0) {
 				arr2[i] = arr[i];
 			}
-			else if (i != (size - 1)) {
+			else {
 				arr2[i] = arr[i + 1];
 			}
 			
