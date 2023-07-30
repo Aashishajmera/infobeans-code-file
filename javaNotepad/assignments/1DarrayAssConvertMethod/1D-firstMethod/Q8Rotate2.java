@@ -21,18 +21,19 @@ class Rotate{
 	
 	
 	// rotate array for user required:
-	public void rotateElement(int arr1[], int arr2[], int value){
-		for(int i = 0, j = 0; i < arr1.length; i++){
-			if((value-1) == i){
-				arr2[j] = arr1[i];
-				j++;
-			}else if((value-1) != (i) && j == 0){
-				arr2[arr2.length] = arr1[i];
-			}else if((value-1) != (i) && j != 0){
-				arr2[j] = arr1[i];
-				j++;
+	public void rotateElement(int arr1[], int arr2[], int size){
+		for(int i = 0; i < arr1.length; i++){
+			if((size-1) == i){
+				arr2[size-1] = arr1[0];
+			}else {
+				arr2[i] = arr1[i+1];
 			}
 		}
+		
+		System.out.println("rotate array is: ");
+	for(int i = 0; i < arr2.length; i++){
+		System.out.print(arr2[i]+" ");
+	}
 	}
 	
 }
@@ -49,8 +50,8 @@ class Q8Rotate2{
 		Rotate obj = new Rotate();
 		obj.inputElement(arr1, sc);
 		obj.printElement(arr1);
-		System.out.println("Enter rotate value: ");
-		int value = sc.nextInt();
-		obj.rotateElement(arr1, arr2, value);
+		// System.out.println("Enter rotate element: ");
+		// int element = sc.nextInt();
+		obj.rotateElement(arr1, arr2,size);
 	}
 }

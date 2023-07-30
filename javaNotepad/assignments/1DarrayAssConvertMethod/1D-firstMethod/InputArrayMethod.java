@@ -30,7 +30,6 @@ class InputArr{
 			System.out.print(arr[i] +" ");
 		}
 	}
-	
 }
 class InputArrayMethod{
 	public static void main(String[] args){

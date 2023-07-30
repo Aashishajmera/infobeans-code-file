@@ -18,6 +18,7 @@ class A{
 			arr[i] = sc.nextInt();
 		}
 	}
+	
 }
 
 class ChangeArr{
