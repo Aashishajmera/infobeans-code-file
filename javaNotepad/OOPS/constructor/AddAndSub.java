@@ -52,6 +52,8 @@ class AddAndSub{
 		while(true){
 			System.out.println("Press 1 to addition");
 			System.out.println("Press 2 to subtraction");
+			System.out.println("Press 3 to change the value of first number: ");
+			System.out.println("Press 4 to change the value of second number: ");
 			System.out.println("Press 5 to exit ");
 			System.out.println("Enter your choice: ");
 			int choice = sc.nextInt();
@@ -83,7 +85,6 @@ class AddAndSub{
 			}
 			
 		}
-		
 		
 	}
 }

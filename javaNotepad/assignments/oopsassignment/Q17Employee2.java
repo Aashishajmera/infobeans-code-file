@@ -18,6 +18,11 @@ class Employee{
 		this.totalSalary = totalSalary;
 	}
 	
+	// crate method: 
+	public void inputSalary(){
+		
+	}
+	
 	public void display(){
 		
 	}
