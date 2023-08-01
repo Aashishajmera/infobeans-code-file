@@ -34,7 +34,7 @@ multiply - to multiply X and Y and store in R
 power - to calculate X Y and store in R
 display- to display Result R
 
-====15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
+15) Create a class MathOperation containing method ‘multiply’ to calculate multiplication of following arguments.
 two integers
 three float
 all elements of array

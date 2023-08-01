@@ -4,7 +4,8 @@ totalSalary always represent total of all the salaries of all employees created.
 empNo should be auto incremented.
 display total employees and totalSalary using class method. */
 class Employee{
-	int empNo, salary, totalSalary;
+	int empNo, salary;
+	int static totalSalary, autoEmpNO=0;
 	
 	// defalult constructo: 
 	public Employee(){
