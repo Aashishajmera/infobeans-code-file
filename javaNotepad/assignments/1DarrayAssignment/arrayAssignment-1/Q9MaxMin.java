@@ -19,17 +19,15 @@ class Q9MaxMin{
 			if(max < arr[r]){
 				max = arr[r];
 			}
+			
+			if(min > arr[r]){
+				min = arr[r];
+			}
 		}
 		System.out.print("Max value is: " +max +"\n");
 		
 		
 		
-		//min value
-		for(int r = 0; r < arr.length; r++){
-			if(min > arr[r]){
-				min = arr[r];
-			}
-		}
 		System.out.print("Min value is: "+min);
 	}
 }

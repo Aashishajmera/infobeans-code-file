@@ -16,11 +16,36 @@ class Q10SecondMaxMin{
 			arr[r] = sc.nextInt();
 		}
 		
+		int min = arr[0], SecondMin = 2147483647;
+		int max = arr[0] , SecondMax = 2147483647;
+		
+		// find first max and min: 
+		for(int i = 0; i < arr.length; i++){
+			if(min > arr[i]){
+				min = arr[i];
+			}
+			if(max < arr[i]){
+				max = arr[i];
+			}
+		}
+		
+				System.out.println("Max is: "+max);
+		System.out.println("Min is: "+min);
+
 		//find second max and min 
 		
-		int min = 2147483647 , SecondMin = 2147483647;
-		int max = -2147483647 , SecondMax = -2147483647;
-		
-		
+		for(int i = 0; i < arr.length; i++){
+			if(min < arr[i]){
+				SecondMax = min;
+				min = arr[i];
+			}
+			if(max > arr[i]){
+				SecondMin = max;
+				max = arr[i];
+			}
+		}
+		System.out.println("Second Max is: "+SecondMax);
+		System.out.println("Second min is: "+SecondMin);
+
 	}
 }

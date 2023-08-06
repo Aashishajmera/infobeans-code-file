@@ -18,7 +18,7 @@ class Floor{
 	// method
 	public void totalTiles(Tile t, int length, int width){
 		areaOfTile = (length*width);
-		totalTile = t.lengthEdge/areaOfTile;
+		totalTile = areaOfTile/t.lengthEdge;
 		System.out.println("Total tile is: "+totalTile);
 	}
 }
