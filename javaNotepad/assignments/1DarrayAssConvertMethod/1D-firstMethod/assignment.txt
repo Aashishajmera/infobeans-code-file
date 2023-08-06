@@ -7,5 +7,5 @@
 7. Merge two array
 8. Rotate the array by one
 9. Find max & min element in array 
-===10. Find the 2nd max & 2nd min element
-===11. Remove the duplicate element
+10. Find the 2nd max & 2nd min element
+11. Remove the duplicate element

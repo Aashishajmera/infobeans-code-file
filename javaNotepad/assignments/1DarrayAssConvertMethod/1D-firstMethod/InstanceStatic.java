@@ -2,10 +2,10 @@ class m22{
 	private String name ;
 	static int n;
 	public  void setName(String k){
-		name = k;
-		n = 4;
+		this.name = k;
+		this.n = 4;
 	}
-	public static String getName(){
+	public String static String getName(){
 		return name;
 	}
 }
