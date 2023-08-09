@@ -3,20 +3,25 @@
 import java.util.Scanner;
 
 class MaxMin {
-	public void maxMin(int arr[], int max, int min){
-		int min2 = 2147483647  , max2 = 2147483647 ;
-		for(int i = 0; i < arr.length; i++){
-			if(min < arr[i]){
-				max2 = min;
-				min = arr[i];
-			}
-			if(max > arr[i]){
-				min2 = max;
+	public void maxMin(int arr[], int max, int min, int smax, int smin) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max) {
+				smax = max;
 				max = arr[i];
+			} else if (arr[i] > smax && max != arr[i]) {
+				smax = arr[i];
+			}
+			if (arr[i] < min) {
+				smin = min;
+				min = arr[i];
+			} else if (smin > arr[i] && min != arr[i]) {
+				smin = arr[i];
 			}
 		}
-		System.out.println("2nd max "+max2);
-		System.out.println("2nd min "+min2);
+		System.out.println("Max value is: " + max);
+		System.out.println("Min value is: " + min);
+		System.out.println("Second max value is: " + smax);
+		System.out.println("Second min value is: " + smin);
 	}
 }
 
@@ -33,24 +38,22 @@ class Q10SecondMaxMin {
 			arr[i] = sc.nextInt();
 		}
 
-		int max = arr[0];
-		int min  = arr[0];
+		int max = arr[0];  // -2147483647
+		int min = arr[0];  // 2147483647
+		int smax = -2147483647;
+		int smin = 2147483647;
 
-		for(int i = 0; i < arr.length; i++){
-			if(max < arr[i]){
+		for (int i = 0; i < arr.length; i++) {
+			if (max < arr[i]) {
 				max = arr[i];
 			}
-			if(min > arr[i]){
+			if (min > arr[i]) {
 				min = arr[i];
 			}
 		}
 
-		System.out.println("Max value is: "+max);
-		System.out.println("Min value is: "+min);
-
-
 		// create object:
 		MaxMin obj = new MaxMin();
-		obj.maxMin(arr, max, min);
+		obj.maxMin(arr, max, min, smax, smin);
 	}
 }
