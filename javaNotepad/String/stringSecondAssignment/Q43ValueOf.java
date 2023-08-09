@@ -10,5 +10,7 @@ class Q43ValueOf{
         // s1.valueOf(null, 0, 0)
         String s1 = String.valueOf(n);
         System.out.println(s1+20);
+
+        
     }
 }

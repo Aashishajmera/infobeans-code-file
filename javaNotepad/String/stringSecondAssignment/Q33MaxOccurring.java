@@ -9,32 +9,22 @@ class Q33MaxOccurring {
         String s1 = sc.nextLine();
 
         int count = 1;
-        int ans = 1;
+        int ans = 0;
         char value = ' ';
-        int check = 0;
         // convert array:
         char arr[] = s1.toCharArray();
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i - 1; j >= 0; j--) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
-                    check++;
-                    break;
+                    count++;
                 }
             }
-            if (check == 0) {
-                for (int j = i + 1; j < arr.length; j++) {
-                    if (arr[i] == arr[j]) {
-                        count++;
-                    }
-                }
-                if (ans < count) {
-                    ans = count;
-                    value = arr[i];
-                    System.out.println(ans);
-                }
+            if (ans < count) {
+                ans = count;
+                value = arr[i];
             }
         }
 
-        System.out.println("Maximum time repeat character is: " + value + " repeat " + ans + " time");
+        System.out.println("Maximum time repeat character is: "+value);
     }
 }

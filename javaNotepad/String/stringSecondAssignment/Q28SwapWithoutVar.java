@@ -10,8 +10,8 @@ class Q28SwapWithoutVar{
         System.out.println("Enter second string: ");
         String s2 = sc.nextLine();
 
-        // s1 = s1 + s2;
-        // s2 = s1 - s2;
-        // s1 = s1 - s2;
+        s1 = s1 + s2;
+        s2 = substring(0, s1.length()-s2.length());
+        s1 = substring(s2.length() - s1.length());
     }
 }

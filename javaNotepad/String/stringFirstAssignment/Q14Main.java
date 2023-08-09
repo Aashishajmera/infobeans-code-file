@@ -1,6 +1,5 @@
 // 14) WAP check if a String contains only digits?
 
-
 class Q14Main{
 	public static void main(String[] args) {
         String s1 = "345k678";

@@ -3,10 +3,10 @@
 import java.util.Scanner;
 
 class CheckStart {
-    public boolean checkStart(char arr[], char arr2[]) {
+    public boolean checkStart(String arr[], String search) {
         boolean flag = false;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[0] == arr2[0]) {
+            if (arr[i].equals(search)) {
                 flag = true;
                 break;
             }
@@ -20,18 +20,16 @@ class Q21CheckContents {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any string :");
         String s1 = sc.nextLine();
-        System.out.println("Enter second string: ");
-        String s2 = sc.nextLine();
-
-        // convert array:
-        char arr[] = s1.toCharArray();
-        char arr2[] = s2.toCharArray();
+        System.out.println("Enter search element: ");
+        String search = sc.nextLine();
+        
+        String arr[] = s1.split(" ");
 
         // create object:
         CheckStart obj = new CheckStart();
 
         // call method:
-        boolean flag = obj.checkStart(arr, arr2);
+        boolean flag = obj.checkStart(arr, search);
         System.out.println(flag);
     }
 }
