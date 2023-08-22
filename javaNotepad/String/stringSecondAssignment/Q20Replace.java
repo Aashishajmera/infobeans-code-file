@@ -3,10 +3,16 @@
 import java.util.Scanner;
 class Replace{
     public void replaceM(String arr[], String change, String replace){
+        boolean flag = false;
         for(int i = 0; i < arr.length; i++){
-            if(arr[i] == change){
+            if(arr[i].equals(change)){
                 arr[i] = replace;
+                flag = true;
+                break;
             }
+        }
+        if(flag == false){
+            System.out.println(change +" value is not found: ");
         }
 
         // print 

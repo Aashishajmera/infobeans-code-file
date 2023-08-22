@@ -8,12 +8,12 @@ class Q33MaxOccurring {
         System.out.println("Enter string value: ");
         String s1 = sc.nextLine();
 
-        int count = 1;
         int ans = 0;
         char value = ' ';
         // convert array:
         char arr[] = s1.toCharArray();
         for (int i = 0; i < arr.length; i++) {
+            int count = 1;
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
                     count++;
@@ -25,6 +25,6 @@ class Q33MaxOccurring {
             }
         }
 
-        System.out.println("Maximum time repeat character is: "+value);
+        System.out.println("Maximum " + ans + " time repeat character " + value);
     }
 }

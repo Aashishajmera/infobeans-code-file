@@ -32,7 +32,7 @@
 
  
 
-// 10. Write a Java program to get the contents of a given string as a byte array
+10. Write a Java program to get the contents of a given string as a byte array
 
  
 
@@ -56,11 +56,11 @@
 
  
 
- 19. Write a Java program to replace a specified character with another character
+19. Write a Java program to replace a specified character with another character
 
  
 
-======20. Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement
+20. Write a Java program to replace each substring of a given string that matches the given regular expression with the given replacement
 
  
 
@@ -80,7 +80,7 @@
 
 
 
-// 25. Write a Java program to return the sum of the digits present in the given string. If there is no digits the sum return is 0
+25. Write a Java program to return the sum of the digits present in the given string. If there is no digits the sum return is 0
 
  
 
@@ -92,7 +92,7 @@
 
  
 
-======28. Write a Java program to Swap Two Strings without Third String Variable
+28. Write a Java program to Swap Two Strings without Third String Variable
 
  
 
@@ -108,11 +108,11 @@
 
  
 
-++++++++32. Write a Java program to print after removing duplicates from a given string
+32. Write a Java program to print after removing duplicates from a given string
 
  
 
-++++++++++33. Write a Java program to find the maximum occurring character in a string
+33. Write a Java program to find the maximum occurring character in a string
 
  
 
