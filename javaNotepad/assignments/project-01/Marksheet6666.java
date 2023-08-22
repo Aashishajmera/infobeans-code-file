@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Marksheet5 {
+class Marksheet6666 {
     static String setRed = "\u001B[31m";
     static String resetRed = "\u001B[0m";
     static String setBlue = "\u001B[34m";
@@ -1391,27 +1391,11 @@ class Marksheet5 {
                                                             }
 
                                                         }
-                                                        if (count1_atkt == 0 && count2_atkt == 0
-                                                                && count3_atkt == 0 && count4_atkt == 0
-                                                                && count5_atkt == 0 && count6_atkt == 0) {
-
-                                                            System.out.println("Do you want to Degree: (y/n)");
-                                                            char dAns = sc.next().charAt(0);
-
-                                                            if (dAns == 'y') {
-                                                                System.out.println("Enter date for Degree: ");
-                                                                sc.nextLine();
-                                                                String date = sc.nextLine();
-                                                                System.out.println("Please division1 for Degree: ");
-                                                                String degree = sc.nextLine();
-                                                                System.out.println(
-                                                                        "\t\t=======================================================================================");
-                                                                System.out.println(
-                                                                        "\t\t\t\t\t DEVI AHILYA VISHWA VIDYALAYA, INDORE (M.P.)");
-                                                                System.out.println(
-                                                                        "\t\t========================================================================================");
-
-                                                            }
+                                                        if (count1_atkt == 0 || count2_atkt == 0
+                                                                || count3_atkt == 0 || count4_atkt == 0
+                                                                || count5_atkt == 0 || count6_atkt == 0) {
+                                                                    
+                                                                    
                                                         }
 
                                                     }
