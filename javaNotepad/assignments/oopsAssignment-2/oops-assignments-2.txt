@@ -29,7 +29,9 @@ count how many students are having A grade,if for A grade percentage >75.
 11) Create an Abstract class Processor with int member variable data and method showData to display data value.
 Create abstract method process() to define processing of member data.
 Create a class Factorial using abstract class 	Processor to calculate  and print 	factorial of a number by overriding the process method.
-Create a class Circle using abstract class Processor to calculate and print area of a circle by overriding the process method Ask user to enter choice (factorial 	or circle area). Also ask data to work upon; Use Processor class reference to achieve this mechanism.
+Create a class Circle using abstract class Processor to calculate and print area of a circle by 
+overriding the process method Ask user to enter choice (factorial 	or circle area).
+ Also ask data to work upon; Use Processor class reference to achieve this mechanism.
 
 12) Create Interface Taxable with members salesTax=7% and incomeTax=10.5%. 	Create abstract method calcTax().
 Create class Employee(empId,name,salary) and implement Taxable to calculate incomeTax on yearly salary.
@@ -42,7 +44,7 @@ Display all employee info using toString() method.
 
 15) Explain functional interface, predicate, lambda expression, method reference and constructor reference with example.
 
-16)  Create a program that helps banks to maintain records. It should havefollowing facilities.
+/// 16)  Create a program that helps banks to maintain records. It should havefollowing facilities.
 Anybody can create current or saving account with following initial information:account number, name, balance, and branch.
 display account detail for a particular accounts.
 display total money deposited in bank.
