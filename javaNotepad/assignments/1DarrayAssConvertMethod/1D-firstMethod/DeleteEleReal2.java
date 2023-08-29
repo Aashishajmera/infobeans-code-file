@@ -23,7 +23,6 @@ class Remove {
     }
 
     // print array element:
-    
     public void output() {
         System.out.println("default array element is: ");
         for (int i = 0; i < size; i++) {
