@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Full_stack_development"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Full_stack_development",
+		"java.debug.settings.onBuildFailureProceed": true
+		
+	}
+}

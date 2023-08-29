@@ -9,14 +9,14 @@ class Outer{
 class InnerClassPra{
 	public static void main(String[] args) {
         // create a object of outer class: 
-        // Outer objOut = new Outer();
+        Outer objOut = new Outer();
 
         // create a object of inner class: 
-        // Outer.Inner objInn = objOut.new Inner();
+        Outer.Inner objInn = objOut.new Inner();
 
         // call the inner class method with the help of inner class object: 
-        // objInn.m1();
+        objInn.m1();
         // Outer.Inner.m1();
-
+        
     }
 }

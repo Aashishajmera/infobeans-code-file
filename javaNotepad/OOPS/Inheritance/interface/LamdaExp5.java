@@ -5,9 +5,12 @@ interface Local3 {
     System.out.println("this is m2 interface: ");
   }
 
+  private void m3() {
+    System.out.println("this is private m3 method: ");
+  }
 }
 
-class LamdaExp3 implements Local3 {
+class LamdaExp5 implements Local3 {
 
   public void m1() {
     System.out.println("this is m1");
@@ -27,5 +30,6 @@ class LamdaExp3 implements Local3 {
     };
     obj.m1();
     obj.m2();
+    // java.lang.Local3.m3();
   }
 }
