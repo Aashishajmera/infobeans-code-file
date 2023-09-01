@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class ExpH3{
+class ExpHn3{
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);

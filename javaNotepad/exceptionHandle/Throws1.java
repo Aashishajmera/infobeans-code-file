@@ -19,7 +19,7 @@ class NewCll{
     }
 }
 
-public class Throws1 {
+public class RuntimeExp {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);

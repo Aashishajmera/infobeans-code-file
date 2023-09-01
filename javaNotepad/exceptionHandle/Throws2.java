@@ -1,4 +1,3 @@
-import java.net.SecureCacheResponse;
 import java.util.Scanner;
 
 class NegativeValueException extends Exception {
@@ -29,5 +28,7 @@ public class Throws2 {
     } catch (NegativeValueException e) {
       System.out.println("Negative value exception: ");
     }
+
+    // obj.input(sc);
   }
 }
