@@ -25,15 +25,16 @@ If a source file has more than one class, each class is compiled into a separate
 
  
 
-+++++++ 6. Write a Java program to create a class called "Employee" with a name, job title, and salary attributes, and methods to calculate and update salary.
+6. Write a Java program to create a class called "Employee" with a name, job title, and salary attributes, and methods to calculate and update salary.
 
  
 
-// 7. Write a Java program to create a class called "Bank" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called "Account" to maintain account details of a particular customer.
+// 7. Write a Java program to create a class called "Bank" with a collection of accounts and methods to add and remove accounts,
+//and to deposit and withdraw money. Also define a class called "Account" to maintain account details of a particular customer.
 
  
 
-+++++++ 8. Write a Java program to create class called "TrafficLight" with attributes for color and duration, and methods to change the color and check for red or green.
++8. Write a Java program to create class called "TrafficLight" with attributes for color and duration, and methods to change the color and check for red or green.
 
  
 
@@ -65,7 +66,7 @@ If a source file has more than one class, each class is compiled into a separate
 
  
 
-+++++++ 16. Write a Java program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".
+16. Write a Java program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".
 
  
 
@@ -73,8 +74,8 @@ If a source file has more than one class, each class is compiled into a separate
 
  
 
-18. Write a Java program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.
+// 18. Write a Java program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.
 
  
 
-19. Write a Java program to create a class with methods to search for flights and hotels, and to book and cancel reservations.
+// 19. Write a Java program to create a class with methods to search for flights and hotels, and to book and cancel reservations.

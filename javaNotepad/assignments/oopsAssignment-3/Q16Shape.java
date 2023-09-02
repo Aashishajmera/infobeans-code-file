@@ -4,93 +4,102 @@
 import java.util.Scanner;
 
 abstract class Shape {
-    private float length;
-    private float width;
 
-  Shape(float length, float width) {
-    this.length = length;
-    this.width = width;
-  }
-
-  Shape(){
-
-  }
-
-  // setter method: 
-  public void setLength(float length){
-    this.length = length;
-  }
-
-  public void setWidth(float width){
-    this.width = width;
-  }
-
-  // getter method: 
-  public float getLength(){
-    return this.length;
-  }
-
-  public float getWidth(){
-    return this.width;
-  }
-
-  abstract void calculatArea();
+  abstract void calculatArea(Scanner sc);
 
   abstract void perimeter();
 }
 
 //-------------------------------------------------------------------------RACTANGLE-----------------------------------------------------------
-class Ractangle extends Shape{
+class Ractangle extends Shape {
 
-    // perameterized constructor: 
-    Ractangle(float length, float width){
-        super(length, width);
-    }
+  float length;
+  float width;
 
-    public void calculatArea(){
-        System.out.println("Area of ractangle : "+(super.getLength() * super.getWidth()));
-    }
-    public void perimeter(){
-        System.out.println("perimeter of ractangle: "+(2*(super.getLength()+super.getWidth())));
-    }
+  public void calculatArea(Scanner sc) {
+    System.out.println("--------------RACTANGLE---------------");
+    System.out.println("Enter length: ");
+    length = sc.nextFloat();
+    System.out.println("Enter width: ");
+    width = sc.nextFloat();
+
+    System.out.println("Area of ractangle: " + (length * width));
+  }
+
+  public void perimeter() {
+    System.out.println("perimeter of ractangle: " + (2 * (length + width)));
+  }
 }
+
 //-------------------------------------------------------------------------CIRCLE-----------------------------------------------------------
 
+class Circle extends Shape {
 
-class Circle extends Shape{
+  float radius;
 
-    // perameterized constructor: 
-    Circle(float length, float width){
-        super(length, width);
-    }
+  public void calculatArea(Scanner sc) {
+    System.out.println("--------------CIRCLE---------------");
 
-    public void calculatArea(){
-        System.out.println("Area of Circle : "+(super.getLength() * super.getWidth()));
-    }
-    public void perimeter(){
-        System.out.println("perimeter of Circle: "+(2*(super.getLength()*super.getWidth())));
-    }
+    System.out.println("Enter raduis: ");
+    radius = sc.nextFloat();
+
+    System.out.println("Area of circle: " + (22 / 7 * (radius * radius)));
+  }
+
+  public void perimeter() {
+    System.out.println("perimeter of Circle: " + (2 * (22 / 7 * radius)));
+  }
 }
 
+//-------------------------------------------------------------------------Triangle-----------------------------------------------------------
 
+class Triangle extends Shape {
+
+  Scanner sc = new Scanner(System.in);
+  float perpendicular;
+  float base;
+  float hypotenuse ;
+  float height;
+
+  public void calculatArea(Scanner sc) {
+    
+    height = ((2)*(perpendicular *base));
+    System.out.println("Area of Triangle: " + (((1/2.0f)*(base *height))));
+
+  }
+
+  public void perimeter() {
+
+    System.out.println("--------------CIRCLE---------------");
+
+
+    System.out.println("Enter perpendicular ");
+    perpendicular = sc.nextFloat();
+    System.out.println("Enter base");
+    base = sc.nextFloat();
+    System.out.println("Enter hypotenuse");
+    hypotenuse  = sc.nextFloat();
+
+    System.out.println("perimeter of Triangle: " + (perpendicular + base + hypotenuse ));
+  }
+}
 
 public class Q16Shape {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    System.out.println("Enter length:");
-    float length = sc.nextFloat();
-    System.out.println("Enter width: ");
-    float width = sc.nextFloat();
 
-    // create object of ractangle class: 
-    Ractangle objR = new Ractangle(length, width);
-    objR.calculatArea();
+    // create object of Circle class:
+    Circle objC = new Circle();
+    objC.calculatArea(sc);
+    objC.perimeter();
+
+    Ractangle objR = new Ractangle();
+    objR.calculatArea(sc);
     objR.perimeter();
 
-    // create object of Circle class: 
-    Circle objC = new Circle(length, width);
-    objC.calculatArea();
-    objC.perimeter();
+    Triangle objT = new Triangle();
+    objT.perimeter();
+    objT.calculatArea(sc);
   }
 }
