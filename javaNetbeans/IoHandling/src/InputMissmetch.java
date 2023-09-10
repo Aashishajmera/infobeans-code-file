@@ -1,0 +1,3 @@
+class InputMissmetch extends Exception {
+    
+}
