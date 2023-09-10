@@ -339,7 +339,67 @@ class Marksheet5 {
     return atktExam(semSub, semMarks, semAtkt, countAtkt, sc);
   }
 
-  // --
+  // ------------------------------------------------------------Degree---------------------------------------------------------
+  public static void degree(String date, String s_Name) {
+    System.out.println(
+      "\t\t\t *************************** Degree ***************************"
+    );
+
+    System.out.println(
+      "\n\n\t\t===================================================================================\n"
+    );
+    System.out.println(
+      "\t\t\t\t DEVI AHILYA VISHWA VIDYALAYA, INDORE (M.P.)\n"
+    );
+    System.out.println("\t\t\t\t   Bachelor of compute Application\n\n");
+    System.out.println(
+      "\t\t\t Certified Certified that " +
+      s_Name +
+      " obtained the Degree of \n \t\t\t BACHELOR OF COMPUTER APPLICATION in this University at the \n \t\t\t Examination held in " +
+      date +
+      " and was placed in the 1 Division.\n"
+    );
+
+    System.out.println(
+      "\t\t====================================================================================\n\n\n\n"
+    );
+  }
+
+  // ------------------------------------------------------------Migration---------------------------------------------------------
+
+  public static void migration(
+    String date,
+    String s_Name,
+    String enrollment_no
+  ) {
+    System.out.println(
+      "\t\t\t *************************** MIGRATION ***************************"
+    );
+    System.out.println(
+      "\n\n\t\t====================================================================================\n"
+    );
+    System.out.println(
+      "\t\t\t\t DEVI AHILYA VISHWA VIDYALAYA, INDORE (M.P.)\n"
+    );
+    System.out.println("\t\t\t\t  MIGRATION CERTIFICATE - " + date + "\n");
+
+    System.out.println(
+      "\t\t\t\t Mr/Miss " +
+      s_Name +
+      " Entrolment No. " +
+      enrollment_no +
+      " \n \t\t\t is informed that this University has no Objection to his/ her\n \t\t\t migrating to another University.He/ She has 10198777 as a regular\n \t\t\t student  at Bachelor of Computer Application  Examination."
+    );
+
+    System.out.println(
+      "\n\n\n\t\t\t UNIVERSITY HOUSE\t\t\t\t ================= \n\t\t\t INDORE-455332\t\t\t\t\t      D.A.V.V \n\t\t\t Date-" +
+      date +
+      "\t\t\t\t ================="
+    );
+    System.out.println(
+      "\t\t====================================================================================\n"
+    );
+  }
 
   // ------------------------------------------------------------main-method---------------------------------------------------------
   public static void main(String[] args) {
@@ -1789,21 +1849,31 @@ class Marksheet5 {
                                   );
                                   n++;
                                 } else {
-                                  System.out.println("Migration...");
+                                  System.out.println("Degree: ");
+                                  System.out.println("Enter date for Degree: ");
+                                  sc.nextLine();
+                                  String date = sc.nextLine();
+
+                                  Marksheet5.degree(date, s_Name);
+                                  Marksheet5.migration(
+                                    date,
+                                    s_Name,
+                                    enrollmentNum
+                                  );
                                 }
                                 n++;
                               }
                             }
                             if (n == 1) {
-                              System.out.println("Maigration: ");
+                              System.out.println("Degree: ");
+                              System.out.println("Enter date for Degree: ");
+                              sc.nextLine();
+                              String date = sc.nextLine();
+
+                              Marksheet5.degree(date, s_Name);
+                              Marksheet5.migration(date, s_Name, enrollmentNum);
                             }
                           }
-
-                          // RESULT
-                          // MARKSHEET
-
-                          // TC
-                          // MIGRESTION
 
                           break;
                         } while (totalAktk6 >= 3);

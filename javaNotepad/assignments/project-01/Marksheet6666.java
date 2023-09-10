@@ -756,6 +756,22 @@ class Marksheet5 {
                 );
                 atsem3++;
 
+                // 1st semester atktexam:
+                if (count1_atkt <= 2 && count1_atkt > 0) {
+                  semester = 1;
+                  count1_atkt =
+                    wayAtkt(
+                      sem1Sub,
+                      sem1Marks,
+                      sem1Atkt,
+                      totalAktk1,
+                      semester,
+                      count1_atkt,
+                      result,
+                      atsem1,
+                      sc
+                    );
+                }
                 // 2nd semester atkt exam
                 if (count2_atkt <= 2 && count2_atkt > 0) {
                   semester = 2;
@@ -773,6 +789,14 @@ class Marksheet5 {
                     );
                 }
 
+                continue;
+              } else {
+                System.out.println(
+                  setGreen +
+                  "\t\t\t\t\t Congractulation you promoted to 4th semester: \n\t" +
+                  endBlue
+                );
+
                 // 1st semester atktexam:
                 if (count1_atkt <= 2 && count1_atkt > 0) {
                   semester = 1;
@@ -789,15 +813,22 @@ class Marksheet5 {
                       sc
                     );
                 }
-
-                continue;
-              } else {
-                System.out.println(
-                  setGreen +
-                  "\t\t\t\t\t Congractulation you promoted to 4th semester: \n\t" +
-                  endBlue
-                );
-
+                // 2nd semester atkt exam
+                if (count2_atkt <= 2 && count2_atkt > 0) {
+                  semester = 2;
+                  count2_atkt =
+                    wayAtkt(
+                      sem2Sub,
+                      sem2Marks,
+                      sem2Atkt,
+                      totalAktk2,
+                      semester,
+                      count2_atkt,
+                      result,
+                      atsem2,
+                      sc
+                    );
+                }
                 // 3rd semester atkt exam
                 if (count3_atkt > 0 && count3_atkt <= 2) {
                   semester = 3;
@@ -811,40 +842,6 @@ class Marksheet5 {
                       count3_atkt,
                       result,
                       atsem3,
-                      sc
-                    );
-                }
-
-                // 2nd semester atkt exam
-                if (count2_atkt <= 2 && count2_atkt > 0) {
-                  semester = 2;
-                  count2_atkt =
-                    wayAtkt(
-                      sem2Sub,
-                      sem2Marks,
-                      sem2Atkt,
-                      totalAktk2,
-                      semester,
-                      count2_atkt,
-                      result,
-                      atsem2,
-                      sc
-                    );
-                }
-
-                // 1st semester atktexam:
-                if (count1_atkt <= 2 && count1_atkt > 0) {
-                  semester = 1;
-                  count1_atkt =
-                    wayAtkt(
-                      sem1Sub,
-                      sem1Marks,
-                      sem1Atkt,
-                      totalAktk1,
-                      semester,
-                      count1_atkt,
-                      result,
-                      atsem1,
                       sc
                     );
                 }
@@ -968,18 +965,18 @@ class Marksheet5 {
 
                     atsem4++;
 
-                    if (count3_atkt <= 2 && count3_atkt > 0) {
-                      semester = 3;
-                      count3_atkt =
+                    if (count1_atkt <= 2 && count1_atkt > 0) {
+                      semester = 1;
+                      count1_atkt =
                         wayAtkt(
-                          sem3Sub,
-                          sem3Marks,
-                          sem3Atkt,
-                          totalAktk3,
+                          sem1Sub,
+                          sem1Marks,
+                          sem1Atkt,
+                          totalAktk1,
                           semester,
-                          count3_atkt,
+                          count1_atkt,
                           result,
-                          atsem3,
+                          atsem1,
                           sc
                         );
                     }
@@ -998,6 +995,29 @@ class Marksheet5 {
                           sc
                         );
                     }
+                    if (count3_atkt <= 2 && count3_atkt > 0) {
+                      semester = 3;
+                      count3_atkt =
+                        wayAtkt(
+                          sem3Sub,
+                          sem3Marks,
+                          sem3Atkt,
+                          totalAktk3,
+                          semester,
+                          count3_atkt,
+                          result,
+                          atsem3,
+                          sc
+                        );
+                    }
+                    continue;
+                  } else {
+                    System.out.println(
+                      setGreen +
+                      "\t\t\t\t\t Congractulation you promoted to 5th semester: \n\t" +
+                      endBlue
+                    );
+
                     if (count1_atkt <= 2 && count1_atkt > 0) {
                       semester = 1;
                       count1_atkt =
@@ -1013,14 +1033,36 @@ class Marksheet5 {
                           sc
                         );
                     }
-                    continue;
-                  } else {
-                    System.out.println(
-                      setGreen +
-                      "\t\t\t\t\t Congractulation you promoted to 5th semester: \n\t" +
-                      endBlue
-                    );
-
+                    if (count2_atkt <= 2 && count2_atkt > 0) {
+                      semester = 2;
+                      count2_atkt =
+                        wayAtkt(
+                          sem2Sub,
+                          sem2Marks,
+                          sem2Atkt,
+                          totalAktk2,
+                          semester,
+                          count2_atkt,
+                          result,
+                          atsem2,
+                          sc
+                        );
+                    }
+                    if (count3_atkt <= 2 && count3_atkt > 0) {
+                      semester = 3;
+                      count3_atkt =
+                        wayAtkt(
+                          sem3Sub,
+                          sem3Marks,
+                          sem3Atkt,
+                          totalAktk3,
+                          semester,
+                          count3_atkt,
+                          result,
+                          atsem3,
+                          sc
+                        );
+                    }
                     if (count4_atkt <= 2 && count4_atkt > 0) {
                       semester = 4;
                       count4_atkt =
@@ -1033,51 +1075,6 @@ class Marksheet5 {
                           count4_atkt,
                           result,
                           atsem4,
-                          sc
-                        );
-                    }
-                    if (count3_atkt <= 2 && count3_atkt > 0) {
-                      semester = 3;
-                      count3_atkt =
-                        wayAtkt(
-                          sem3Sub,
-                          sem3Marks,
-                          sem3Atkt,
-                          totalAktk3,
-                          semester,
-                          count3_atkt,
-                          result,
-                          atsem3,
-                          sc
-                        );
-                    }
-                    if (count2_atkt <= 2 && count2_atkt > 0) {
-                      semester = 2;
-                      count2_atkt =
-                        wayAtkt(
-                          sem2Sub,
-                          sem2Marks,
-                          sem2Atkt,
-                          totalAktk2,
-                          semester,
-                          count2_atkt,
-                          result,
-                          atsem2,
-                          sc
-                        );
-                    }
-                    if (count1_atkt <= 2 && count1_atkt > 0) {
-                      semester = 1;
-                      count1_atkt =
-                        wayAtkt(
-                          sem1Sub,
-                          sem1Marks,
-                          sem1Atkt,
-                          totalAktk1,
-                          semester,
-                          count1_atkt,
-                          result,
-                          atsem1,
                           sc
                         );
                     }
@@ -1227,33 +1224,18 @@ class Marksheet5 {
                         );
                         atsem5++;
 
-                        if (count4_atkt <= 2 && count4_atkt > 0) {
-                          semester = 4;
-                          count4_atkt =
+                        if (count1_atkt <= 2 && count1_atkt > 0) {
+                          semester = 1;
+                          count1_atkt =
                             wayAtkt(
-                              sem4Sub,
-                              sem4Marks,
-                              sem4Atkt,
-                              totalAktk4,
+                              sem1Sub,
+                              sem1Marks,
+                              sem1Atkt,
+                              totalAktk1,
                               semester,
-                              count4_atkt,
+                              count1_atkt,
                               result,
-                              atsem4,
-                              sc
-                            );
-                        }
-                        if (count3_atkt <= 2 && count3_atkt > 0) {
-                          semester = 3;
-                          count3_atkt =
-                            wayAtkt(
-                              sem3Sub,
-                              sem3Marks,
-                              sem3Atkt,
-                              totalAktk3,
-                              semester,
-                              count3_atkt,
-                              result,
-                              atsem3,
+                              atsem1,
                               sc
                             );
                         }
@@ -1272,6 +1254,44 @@ class Marksheet5 {
                               sc
                             );
                         }
+                        if (count3_atkt <= 2 && count3_atkt > 0) {
+                          semester = 3;
+                          count3_atkt =
+                            wayAtkt(
+                              sem3Sub,
+                              sem3Marks,
+                              sem3Atkt,
+                              totalAktk3,
+                              semester,
+                              count3_atkt,
+                              result,
+                              atsem3,
+                              sc
+                            );
+                        }
+                        if (count4_atkt <= 2 && count4_atkt > 0) {
+                          semester = 4;
+                          count4_atkt =
+                            wayAtkt(
+                              sem4Sub,
+                              sem4Marks,
+                              sem4Atkt,
+                              totalAktk4,
+                              semester,
+                              count4_atkt,
+                              result,
+                              atsem4,
+                              sc
+                            );
+                        }
+                        continue;
+                      } else {
+                        System.out.println(
+                          setGreen +
+                          "\t\t\t\t\t Congractulation you promoted to 6th semester: \n\t" +
+                          endBlue
+                        );
+
                         if (count1_atkt <= 2 && count1_atkt > 0) {
                           semester = 1;
                           count1_atkt =
@@ -1287,14 +1307,51 @@ class Marksheet5 {
                               sc
                             );
                         }
-                        continue;
-                      } else {
-                        System.out.println(
-                          setGreen +
-                          "\t\t\t\t\t Congractulation you promoted to 6th semester: \n\t" +
-                          endBlue
-                        );
-
+                        if (count2_atkt <= 2 && count2_atkt > 0) {
+                          semester = 2;
+                          count2_atkt =
+                            wayAtkt(
+                              sem2Sub,
+                              sem2Marks,
+                              sem2Atkt,
+                              totalAktk2,
+                              semester,
+                              count2_atkt,
+                              result,
+                              atsem2,
+                              sc
+                            );
+                        }
+                        if (count3_atkt <= 2 && count3_atkt > 0) {
+                          semester = 3;
+                          count3_atkt =
+                            wayAtkt(
+                              sem3Sub,
+                              sem3Marks,
+                              sem3Atkt,
+                              totalAktk3,
+                              semester,
+                              count3_atkt,
+                              result,
+                              atsem3,
+                              sc
+                            );
+                        }
+                        if (count4_atkt <= 2 && count4_atkt > 0) {
+                          semester = 4;
+                          count4_atkt =
+                            wayAtkt(
+                              sem4Sub,
+                              sem4Marks,
+                              sem4Atkt,
+                              totalAktk4,
+                              semester,
+                              count4_atkt,
+                              result,
+                              atsem4,
+                              sc
+                            );
+                        }
                         if (count5_atkt <= 2 && count5_atkt > 0) {
                           semester = 5;
                           count5_atkt =
@@ -1307,67 +1364,6 @@ class Marksheet5 {
                               count5_atkt,
                               result,
                               atsem5,
-                              sc
-                            );
-                        }
-
-                        if (count4_atkt <= 2 && count4_atkt > 0) {
-                          semester = 4;
-                          count4_atkt =
-                            wayAtkt(
-                              sem4Sub,
-                              sem4Marks,
-                              sem4Atkt,
-                              totalAktk4,
-                              semester,
-                              count4_atkt,
-                              result,
-                              atsem4,
-                              sc
-                            );
-                        }
-                        if (count3_atkt <= 2 && count3_atkt > 0) {
-                          semester = 3;
-                          count3_atkt =
-                            wayAtkt(
-                              sem3Sub,
-                              sem3Marks,
-                              sem3Atkt,
-                              totalAktk3,
-                              semester,
-                              count3_atkt,
-                              result,
-                              atsem3,
-                              sc
-                            );
-                        }
-                        if (count2_atkt <= 2 && count2_atkt > 0) {
-                          semester = 2;
-                          count2_atkt =
-                            wayAtkt(
-                              sem2Sub,
-                              sem2Marks,
-                              sem2Atkt,
-                              totalAktk2,
-                              semester,
-                              count2_atkt,
-                              result,
-                              atsem2,
-                              sc
-                            );
-                        }
-                        if (count1_atkt <= 2 && count1_atkt > 0) {
-                          semester = 1;
-                          count1_atkt =
-                            wayAtkt(
-                              sem1Sub,
-                              sem1Marks,
-                              sem1Atkt,
-                              totalAktk1,
-                              semester,
-                              count1_atkt,
-                              result,
-                              atsem1,
                               sc
                             );
                         }
@@ -1541,49 +1537,18 @@ class Marksheet5 {
                             );
                             atsem6++;
 
-                            if (count5_atkt <= 2 && count5_atkt > 0) {
-                              semester = 5;
-                              count5_atkt =
+                            if (count1_atkt <= 2 && count1_atkt > 0) {
+                              semester = 1;
+                              count1_atkt =
                                 wayAtkt(
-                                  sem5Sub,
-                                  sem5Marks,
-                                  sem5Atkt,
-                                  totalAktk5,
+                                  sem1Sub,
+                                  sem1Marks,
+                                  sem1Atkt,
+                                  totalAktk1,
                                   semester,
-                                  count5_atkt,
+                                  count1_atkt,
                                   result,
-                                  atsem5,
-                                  sc
-                                );
-                            }
-
-                            if (count4_atkt <= 2 && count4_atkt > 0) {
-                              semester = 4;
-                              count4_atkt =
-                                wayAtkt(
-                                  sem4Sub,
-                                  sem4Marks,
-                                  sem4Atkt,
-                                  totalAktk4,
-                                  semester,
-                                  count4_atkt,
-                                  result,
-                                  atsem4,
-                                  sc
-                                );
-                            }
-                            if (count3_atkt <= 2 && count3_atkt > 0) {
-                              semester = 3;
-                              count3_atkt =
-                                wayAtkt(
-                                  sem3Sub,
-                                  sem3Marks,
-                                  sem3Atkt,
-                                  totalAktk3,
-                                  semester,
-                                  count3_atkt,
-                                  result,
-                                  atsem3,
+                                  atsem1,
                                   sc
                                 );
                             }
@@ -1602,18 +1567,48 @@ class Marksheet5 {
                                   sc
                                 );
                             }
-                            if (count1_atkt <= 2 && count1_atkt > 0) {
-                              semester = 1;
-                              count1_atkt =
+                            if (count3_atkt <= 2 && count3_atkt > 0) {
+                              semester = 3;
+                              count3_atkt =
                                 wayAtkt(
-                                  sem1Sub,
-                                  sem1Marks,
-                                  sem1Atkt,
-                                  totalAktk1,
+                                  sem3Sub,
+                                  sem3Marks,
+                                  sem3Atkt,
+                                  totalAktk3,
                                   semester,
-                                  count1_atkt,
+                                  count3_atkt,
                                   result,
-                                  atsem1,
+                                  atsem3,
+                                  sc
+                                );
+                            }
+                            if (count4_atkt <= 2 && count4_atkt > 0) {
+                              semester = 4;
+                              count4_atkt =
+                                wayAtkt(
+                                  sem4Sub,
+                                  sem4Marks,
+                                  sem4Atkt,
+                                  totalAktk4,
+                                  semester,
+                                  count4_atkt,
+                                  result,
+                                  atsem4,
+                                  sc
+                                );
+                            }
+                            if (count5_atkt <= 2 && count5_atkt > 0) {
+                              semester = 5;
+                              count5_atkt =
+                                wayAtkt(
+                                  sem5Sub,
+                                  sem5Marks,
+                                  sem5Atkt,
+                                  totalAktk5,
+                                  semester,
+                                  count5_atkt,
+                                  result,
+                                  atsem5,
                                   sc
                                 );
                             }
@@ -1628,120 +1623,13 @@ class Marksheet5 {
                               count5_atkt >= 1 ||
                               count6_atkt >= 1
                             ) {
-                              System.out.println(
-                                setRed +
-                                " \t\t\t\t\t  LAST CHANCE FOR ATKT EXAM: " +
-                                resetRed
-                              );
-
                               while (n == 1) {
-                                if (count6_atkt <= 2 && count6_atkt > 0) {
-                                  semester = 6;
-                                  count6_atkt =
-                                    wayAtkt(
-                                      sem5Sub,
-                                      sem5Marks,
-                                      sem5Atkt,
-                                      totalAktk5,
-                                      semester,
-                                      count5_atkt,
-                                      result,
-                                      atsem5,
-                                      sc
-                                    );
-                                  totalAktk6 =
-                                    (byte) (
-                                      count1_atkt +
-                                      count2_atkt +
-                                      count3_atkt +
-                                      count4_atkt +
-                                      count5_atkt +
-                                      count6_atkt
-                                    );
-                                }
+                                System.out.println(
+                                  setRed +
+                                  " \t\t\t\t\t  LAST CHANCE FOR ATKT EXAM: " +
+                                  resetRed
+                                );
 
-                                if (count5_atkt <= 2 && count5_atkt > 0) {
-                                  semester = 5;
-                                  count5_atkt =
-                                    wayAtkt(
-                                      sem5Sub,
-                                      sem5Marks,
-                                      sem5Atkt,
-                                      totalAktk5,
-                                      semester,
-                                      count5_atkt,
-                                      result,
-                                      atsem5,
-                                      sc
-                                    );
-                                  totalAktk5 =
-                                    (byte) (
-                                      count1_atkt +
-                                      count2_atkt +
-                                      count3_atkt +
-                                      count4_atkt +
-                                      count5_atkt
-                                    );
-                                }
-
-                                if (count4_atkt <= 2 && count4_atkt > 0) {
-                                  semester = 4;
-                                  count4_atkt =
-                                    wayAtkt(
-                                      sem4Sub,
-                                      sem4Marks,
-                                      sem4Atkt,
-                                      totalAktk4,
-                                      semester,
-                                      count4_atkt,
-                                      result,
-                                      atsem4,
-                                      sc
-                                    );
-                                  totalAktk4 =
-                                    (byte) (
-                                      count1_atkt +
-                                      count2_atkt +
-                                      count3_atkt +
-                                      count4_atkt
-                                    );
-                                }
-                                if (count3_atkt <= 2 && count3_atkt > 0) {
-                                  semester = 3;
-                                  count3_atkt =
-                                    wayAtkt(
-                                      sem3Sub,
-                                      sem3Marks,
-                                      sem3Atkt,
-                                      totalAktk3,
-                                      semester,
-                                      count3_atkt,
-                                      result,
-                                      atsem3,
-                                      sc
-                                    );
-                                  totalAktk3 =
-                                    (byte) (
-                                      count1_atkt + count2_atkt + count3_atkt
-                                    );
-                                }
-                                if (count2_atkt <= 2 && count2_atkt > 0) {
-                                  semester = 2;
-                                  count2_atkt =
-                                    wayAtkt(
-                                      sem2Sub,
-                                      sem2Marks,
-                                      sem2Atkt,
-                                      totalAktk2,
-                                      semester,
-                                      count2_atkt,
-                                      result,
-                                      atsem2,
-                                      sc
-                                    );
-                                  totalAktk2 =
-                                    (byte) (count1_atkt + count2_atkt);
-                                }
                                 if (count1_atkt <= 2 && count1_atkt > 0) {
                                   semester = 1;
                                   count1_atkt =
@@ -1777,6 +1665,113 @@ class Marksheet5 {
                                     );
                                   }
                                 }
+
+                                if (count2_atkt <= 2 && count2_atkt > 0) {
+                                  semester = 2;
+                                  count2_atkt =
+                                    wayAtkt(
+                                      sem2Sub,
+                                      sem2Marks,
+                                      sem2Atkt,
+                                      totalAktk2,
+                                      semester,
+                                      count2_atkt,
+                                      result,
+                                      atsem2,
+                                      sc
+                                    );
+                                  totalAktk2 =
+                                    (byte) (count1_atkt + count2_atkt);
+                                }
+                                if (count3_atkt <= 2 && count3_atkt > 0) {
+                                  semester = 3;
+                                  count3_atkt =
+                                    wayAtkt(
+                                      sem3Sub,
+                                      sem3Marks,
+                                      sem3Atkt,
+                                      totalAktk3,
+                                      semester,
+                                      count3_atkt,
+                                      result,
+                                      atsem3,
+                                      sc
+                                    );
+                                  totalAktk3 =
+                                    (byte) (
+                                      count1_atkt + count2_atkt + count3_atkt
+                                    );
+                                }
+                                if (count4_atkt <= 2 && count4_atkt > 0) {
+                                  semester = 4;
+                                  count4_atkt =
+                                    wayAtkt(
+                                      sem4Sub,
+                                      sem4Marks,
+                                      sem4Atkt,
+                                      totalAktk4,
+                                      semester,
+                                      count4_atkt,
+                                      result,
+                                      atsem4,
+                                      sc
+                                    );
+                                  totalAktk4 =
+                                    (byte) (
+                                      count1_atkt +
+                                      count2_atkt +
+                                      count3_atkt +
+                                      count4_atkt
+                                    );
+                                }
+
+                                if (count5_atkt <= 2 && count5_atkt > 0) {
+                                  semester = 5;
+                                  count5_atkt =
+                                    wayAtkt(
+                                      sem5Sub,
+                                      sem5Marks,
+                                      sem5Atkt,
+                                      totalAktk5,
+                                      semester,
+                                      count5_atkt,
+                                      result,
+                                      atsem5,
+                                      sc
+                                    );
+                                  totalAktk5 =
+                                    (byte) (
+                                      count1_atkt +
+                                      count2_atkt +
+                                      count3_atkt +
+                                      count4_atkt +
+                                      count5_atkt
+                                    );
+                                }
+                                if (count6_atkt <= 2 && count6_atkt > 0) {
+                                  semester = 6;
+                                  count6_atkt =
+                                    wayAtkt(
+                                      sem6Sub,
+                                      sem6Marks,
+                                      sem6Atkt,
+                                      totalAktk6,
+                                      semester,
+                                      count6_atkt,
+                                      result,
+                                      atsem6,
+                                      sc
+                                    );
+                                  totalAktk6 =
+                                    (byte) (
+                                      count1_atkt +
+                                      count2_atkt +
+                                      count3_atkt +
+                                      count4_atkt +
+                                      count5_atkt +
+                                      count6_atkt
+                                    );
+                                }
                                 totalAktk6 =
                                   (byte) (
                                     count1_atkt +
@@ -1793,6 +1788,8 @@ class Marksheet5 {
                                     resetRed
                                   );
                                   n++;
+                                } else {
+                                  System.out.println("Migration...");
                                 }
                                 n++;
                               }
