@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Runn" type="JetRunConfigurationType" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false">
+    <module name="Infobeans_Foundation" />
+    <shortenClasspath name="NONE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
