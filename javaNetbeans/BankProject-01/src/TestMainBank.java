@@ -13,6 +13,59 @@ class Pojo {
     String setBlue = "\u001B[34m";
     String setGreen = "\u001B[32m";
     String resetColor = "\u001B[0m";
+    
+    // user document info
+    private String userName;
+    private String fatherName;
+    private String aadharnum;
+    private String moNumber;
+    private String dateofbirth;
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+    
+
+    
+    // user document setter and getter
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getAadharnum() {
+        return aadharnum;
+    }
+
+    public void setAadharnum(String aadharnum) {
+        this.aadharnum = aadharnum;
+    }
+
+    public String getMoNumber() {
+        return moNumber;
+    }
+
+    public void setMoNumber(String moNumber) {
+        this.moNumber = moNumber;
+    }
+    
+    
+    // color setter method: 
 
     public String getSetRed() {
         return setRed;
@@ -52,11 +105,11 @@ class Pojo {
 class Methods {
 // Admin login: 
 
-    public void adminLogin(Scanner sc, Pojo objp) {
-
+    //-----------------------------------------ADMIN-LOGIN------------------------------------------------
+    public boolean adminLogin(Scanner sc, Pojo objp) {
         // create a file of adminLogin class: 
         File fadmin = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\admin.txt");
-        boolean flag = true;
+        boolean flag = false;
 
         try {
             if (!fadmin.exists()) {
@@ -71,17 +124,30 @@ class Methods {
 
             BufferedReader br = new BufferedReader(fr);
             if (br.readLine().contains(name)) {
-                if(br.readLine().contains(password)){
-                    System.out.println(objp.setGreen+"Login successful...."+objp.resetColor);
+                if (br.readLine().contains(password)) {
+                    System.out.println(objp.setGreen + "Login successful...." + objp.resetColor);
+                    flag = true;
+                } else {
+                    System.out.println(objp.getSetRed() + "Wrong password...." + objp.resetColor);
                 }
+            } else {
+                System.out.println(objp.setRed + "Wrong name...." + objp.resetColor);
             }
+            return flag;
 
         } catch (Exception e) {
             e.printStackTrace();
-//            return flag;
+            return flag;
         }
 
     }
+
+    //-----------------------------------------USER-LOGIN--------------------------------------------------
+    public void createUserAccount(Pojo objp){
+        
+    }
+    
+    
 }
 
 // ------------------------------------------OPERATION-CLASS-------------------------------------------------
@@ -107,14 +173,32 @@ class Operation {
         switch (choice) {
             case 1:
                 System.out.println("\t\t\t\t\t\t\t ***** Admin login page *****");
-//                boolean flag = objM.adminLogin(sc, objp);
-                objM.adminLogin(sc, objp);
-//                if (flag) {
-//                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
-//                    System.out.println("\t\t\t PRESS 1: Create a new costumer account \t\t\t PRESS 2: View any account information \t\t\t");
-//                    System.out.println("\t\t\t PRESS 3: Remove or Block account \t\t\t PRESS 4: View all account list \t\t\t");
-//                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
-//                }
+                boolean flag = objM.adminLogin(sc, objp);
+                if (flag) {
+                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
+                    System.out.println("\t\t\t PRESS 1: Create a new costumer account \t\t\t PRESS 2: View any account information \t\t\t");
+                    System.out.println("\t\t\t PRESS 3: Remove or Block account \t\t\t PRESS 4: View all account list \t\t\t");
+                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
+                    
+                    System.out.println("Enter your choice: ");
+                    int choice1 = sc.nextInt();
+                    
+                    switch(choice){
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            break;
+                        case 3: 
+                            break;
+                        case 4:
+                            break;
+                        default: 
+                            
+                    }
+                
+                
+                }
                 break;
 
             case 2:
