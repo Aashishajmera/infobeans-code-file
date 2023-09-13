@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package BankProject;
 
-import java.io.Serializable;
 
-public class Pojo implements Serializable {
+public class Pojo{
 
     // Color
     static String setRed = "\u001B[31m";
