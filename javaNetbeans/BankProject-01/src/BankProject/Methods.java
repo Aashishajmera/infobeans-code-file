@@ -26,7 +26,7 @@ public class Methods {
     //-----------------------------------------ADMIN-LOGIN------------------------------------------------
     public boolean adminLogin(Scanner sc) {
         // create a file of adminLogin class: 
-        File fadmin = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\admin.txt");
+        File fadmin = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\admin.txt");
         boolean flag = false;
 
         try {
@@ -96,7 +96,7 @@ public class Methods {
             System.out.println(Pojo.setGreen + "\t\t\t\t\t\t\t Congractulation your account successfully created...\n" + Pojo.resetColor);
             try {
                 // create a file : 
-                File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+                File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
 
                 if (!f.exists()) {
                     f.createNewFile();
@@ -138,7 +138,7 @@ public class Methods {
 
     // -------------------------------------------CUSTUMER-ACCOUNT-DETAILS-READ--------------------------------------------
     public void accountDetails(Scanner sc, Pojo objp) {
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
         String pinNum2 = null;
         try {
             FileReader fr = new FileReader(f);
@@ -181,7 +181,7 @@ public class Methods {
 
     //-------------------------------------------VIEW-ALL-ACCOUNT-INFORMATION-------------------------------------------------
     public void allAccountInformation() {
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
 
         try {
             FileReader fr = new FileReader(f);
@@ -224,7 +224,7 @@ public class Methods {
     //----------------------------------------------LOGIN-USERACCOUNT---------------------------------------------------  
     public String loginUserAccound(Scanner sc, Pojo objp) {
 
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
         Boolean flag = false;
         String pinNum2 = null;
 
@@ -256,7 +256,7 @@ public class Methods {
     //-----------------------------------------------USER-ACCOUNT-DETAILS-CASE2-------------------------------------
 
     public void userAccountDetailsC(Pojo objp, String pin) {
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
 
         try {
             FileReader fr = new FileReader(f);
@@ -290,7 +290,7 @@ public class Methods {
 
     //---------------------------------------------UPDATE-ACCOUNT-DETAILS----------------------------------------------
     public void updateAccountDetails(Pojo objp, String pin, Scanner sc) {
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\userAcc.txt");
+        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
 
         try {
             FileReader fr = new FileReader(f);
