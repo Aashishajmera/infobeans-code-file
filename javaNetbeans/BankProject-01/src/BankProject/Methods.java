@@ -354,7 +354,6 @@ public class Methods {
                                 }
 
                             } else {
-                                System.out.println(Pojo.setRed + "\t\t\t\t\t\t\t\t Wrong input please (re-enter)" + Pojo.resetColor);
                                 System.out.println(Pojo.setGreen + "\t\t\t\t\t\t\t\t\t Back to menu" + Pojo.resetColor);
                                 flag = false;
                             }
