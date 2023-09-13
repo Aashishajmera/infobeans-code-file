@@ -35,8 +35,8 @@ public class Methods {
             String password = sc.nextLine();
 
             BufferedReader br = new BufferedReader(fr);
-            if (br.readLine().contains(name)) {
-                if (br.readLine().contains(password)) {
+            if (br.readLine().equals(name)) {
+                if (br.readLine().equals(password)) {
                     System.out.println(Pojo.setGreen + "\t\t\t\t\t\t\t\t LOGIN SUCCESSFULL " + Pojo.resetColor);
                     flag = true;
                 } else {
