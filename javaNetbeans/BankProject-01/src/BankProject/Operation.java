@@ -28,7 +28,7 @@ public class Operation {
                 int choice = sc.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t ***** ADMIN LOGIN PAGE *****\n\t " + Pojo.resetColor);
+                        System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t ***** ADMIN LOGIN PAGE *****\n\t " + Pojo.resetColor);
                         boolean flag = objM.adminLogin(sc);
 
                         do {
@@ -45,7 +45,7 @@ public class Operation {
 
                                     switch (choice1) {
                                         case 1:
-                                            objM.createCustomerAccount(sc, objM);
+                                            objM.createCustomerAccount(sc, objM, objp);
                                             break;
                                         case 2:
                                             objM.accountDetails(sc, objp);
@@ -80,8 +80,8 @@ public class Operation {
                         break;
 
                     case 2:
-                        System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t ***** COSTUMER LOGIN PAGE ****" + Pojo.resetColor);
-                        String pin = objM.loginUserAccound(sc, objp);
+                        System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t ***** COSTUMER LOGIN PAGE ****" + Pojo.resetColor);
+                        String pin = objM.loginUserAccound(sc);
                         boolean flag5 = true;
                         do {
                             if (pin != null) {
@@ -97,7 +97,7 @@ public class Operation {
 
                                     switch (choice1) {
                                         case 1:
-                                            objM.userAccountDetailsC(objp,pin);
+                                            objM.userAccountDetailsC(pin);
                                             break;
                                         case 2:
                                             objM.updateAccountDetails(objp,pin, sc);

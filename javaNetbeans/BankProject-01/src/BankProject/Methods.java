@@ -65,28 +65,25 @@ public class Methods {
     }
 
     // ------------------------------------------CREATE-CUSTUMER-ACCOUNT---------------------------------------------
-    public void createCustomerAccount(Scanner sc, Methods objM) {
+    public void createCustomerAccount(Scanner sc, Methods objM,Pojo objp) {
 
         System.out.print("\t Enter your name: \n\t ");
         sc.nextLine();
-        String userName = sc.nextLine();
+        objp.setUserName(sc.nextLine());
         System.out.print("\t Enter your father name: \n\t ");
-        String fatherName = sc.nextLine();
+        objp.setFatherName(sc.nextLine());
         System.out.print("\t Enter aadhar number: \n\t ");
-        String aadharNum = sc.nextLine();
+        objp.setAadharNum(sc.nextLine());
         System.out.print("\t Enter mobile number: \n\t ");
-        String moNumber = sc.nextLine();
+        objp.setMoNumber(sc.nextLine());
         System.out.print("\t Date of birth: \n\t ");
-        String dateofbirth = sc.nextLine();
+        objp.setDateofbirth(sc.nextLine());
         System.out.print("\t pin number: \n\t ");
-        String pinNum = sc.nextLine();
-        float amount;
-        Pojo objp = null;
+        objp.setPinNum(sc.nextLine());
 
         System.out.print("\t Enter amount: \n\t ");
-        amount = sc.nextFloat();
-
-        if (amount >= 1000) {
+        objp.setAmount(sc.nextFloat());
+        if (objp.getAmount() >= 1000) {
             System.out.println(Pojo.setGreen + "\t\t\t\t\t\t\t Congractulation your account successfully created...\n" + Pojo.resetColor);
             try {
                 // create a file : 
@@ -101,20 +98,23 @@ public class Methods {
                 BufferedWriter bw = new BufferedWriter(fw);
                 // account number create : 
                 String accountNum = objM.accountNumberCreate();
-                bw.write(accountNum + "\t");
-                bw.write(userName + "\t");
-                bw.write(fatherName + "\t");
-                bw.write(aadharNum + "\t");
-                bw.write(moNumber + "\t");
-                bw.write(dateofbirth + "\t");
-                bw.write(pinNum + "\t");
-                bw.write((int) amount + "\t");
+                bw.write(objp.getAccountNum() + "\t");
+                bw.write(objp.getUserName() + "\t");
+                bw.write(objp.getFatherName() + "\t");
+                bw.write(objp.getAadharNum() + "\t");
+                bw.write(objp.getMoNumber() + "\t");
+                bw.write(objp.getDateofbirth() + "\t");
+                bw.write(objp.getPinNum() + "\t");
+                bw.write((int) objp.getAmount() + "\t");
                 bw.write("\n");
 
                 bw.flush();
                 bw.close();
 
+<<<<<<< HEAD
                 
+=======
+>>>>>>> removeAcc
             } catch (InputMismatchException e) {
                 System.out.println(Pojo.setRed + "Wrong input: (please re-enter your choice)" + Pojo.resetColor);
                 sc.nextLine();
@@ -146,7 +146,7 @@ public class Methods {
             while ((line = br.readLine()) != null) {
                 String readData[] = line.split("\t");
                 if (pinNum2.equals(readData[6])) {
-                    System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
+                    System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
                     System.out.println("\t\t\t\t\t\t\t ============================================");
                     System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
                     System.out.println("\t\t\t\t\t\t\t\tHolder's name: \t" + readData[1]);
@@ -185,7 +185,7 @@ public class Methods {
             int n = 1;
             while ((line = br.readLine()) != null) {
                 String readData[] = line.split("\t");
-                System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t\t" + n + " ACCOUNT-INFORMATION" + Pojo.resetColor);
+                System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t\t" + n + " ACCOUNT-INFORMATION" + Pojo.resetColor);
                 System.out.println("\t\t\t\t\t\t\t ============================================");
                 System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
                 System.out.println("\t\t\t\t\t\t\t\tHolder's name: \t" + readData[1]);
@@ -214,7 +214,7 @@ public class Methods {
     }
 
     //----------------------------------------------LOGIN-USERACCOUNT---------------------------------------------------  
-    public String loginUserAccound(Scanner sc, Pojo objp) {
+    public String loginUserAccound(Scanner sc) {
 
         File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
         Boolean flag = false;
@@ -244,10 +244,9 @@ public class Methods {
             return pinNum2 = null;
         }
     }
-//============================
     //-----------------------------------------------USER-ACCOUNT-DETAILS-CASE2-------------------------------------
 
-    public void userAccountDetailsC(Pojo objp, String pin) {
+    public void userAccountDetailsC( String pin) {
         File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
 
         try {
@@ -259,7 +258,7 @@ public class Methods {
             while ((line = br.readLine()) != null) {
                 String readData[] = line.split("\t");
                 if (pin.equals(readData[6])) {
-                    System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
+                    System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
                     System.out.println("\t\t\t\t\t\t\t ============================================");
                     System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
                     System.out.println("\t\t\t\t\t\t\t\tHolder's name: \t" + readData[1]);
@@ -293,7 +292,7 @@ public class Methods {
             while ((line = br.readLine()) != null) {
                 String readData[] = line.split("\t");
                 if (pin.equals(readData[6])) {
-                    System.out.println(Pojo.setBlue + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
+                    System.out.println(Pojo.setYellow + "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" + Pojo.resetColor);
                     System.out.println("\t\t\t\t\t\t\t ============================================");
                     System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
                     System.out.println("\t\t\t\t\t\t\t\tHolder's name: \t" + readData[1]);
