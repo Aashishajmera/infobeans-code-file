@@ -114,9 +114,7 @@ public class Methods {
                 bw.flush();
                 bw.close();
 
-                // create a object of customer class: 
-                objp = new Pojo(userName, fatherName, aadharNum, moNumber, dateofbirth, pinNum, amount, accountNum);
-
+                
             } catch (InputMismatchException e) {
                 System.out.println(Pojo.setRed + "Wrong input: (please re-enter your choice)" + Pojo.resetColor);
                 sc.nextLine();
