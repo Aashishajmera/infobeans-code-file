@@ -110,11 +110,6 @@ public class Methods {
 
                 bw.flush();
                 bw.close();
-
-<<<<<<< HEAD
-                
-=======
->>>>>>> removeAcc
             } catch (InputMismatchException e) {
                 System.out.println(Pojo.setRed + "Wrong input: (please re-enter your choice)" + Pojo.resetColor);
                 sc.nextLine();
