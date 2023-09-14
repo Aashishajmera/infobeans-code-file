@@ -6,7 +6,7 @@ public class Pojo{
 
     // Color
     static String setRed = "\u001B[31m";
-    static String setBlue = "\u001B[34m";
+    static String setYellow = "\u001B[33m";
     static String setGreen = "\u001B[32m";
     static String resetColor = "\u001B[0m";
 
@@ -43,11 +43,11 @@ public class Pojo{
     }
 
     public static String getSetBlue() {
-        return setBlue;
+        return setYellow;
     }
 
-    public static void setSetBlue(String setBlue) {
-        Pojo.setBlue = setBlue;
+    public static void setSetBlue(String setYellow) {
+        Pojo.setYellow = setYellow;
     }
 
     public static String getSetGreen() {
