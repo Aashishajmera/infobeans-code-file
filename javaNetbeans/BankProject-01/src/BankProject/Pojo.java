@@ -20,19 +20,19 @@ public class Pojo{
     private float amount;
     private String accountNum;
 
-    public Pojo(String userName, String fatherName, String aadharNum, String moNumber, String dateofbirth, String pinNum, float amount, String accountNum) {
-        this.userName = userName;
-        this.fatherName = fatherName;
-        this.aadharNum = aadharNum;
-        this.moNumber = moNumber;
-        this.dateofbirth = dateofbirth;
-        this.pinNum = pinNum;
-        this.amount = amount;
-        this.accountNum = accountNum;
-    }
+    // public Pojo(String userName, String fatherName, String aadharNum, String moNumber, String dateofbirth, String pinNum, float amount, String accountNum) {
+    //     this.userName = userName;
+    //     this.fatherName = fatherName;
+    //     this.aadharNum = aadharNum;
+    //     this.moNumber = moNumber;
+    //     this.dateofbirth = dateofbirth;
+    //     this.pinNum = pinNum;
+    //     this.amount = amount;
+    //     this.accountNum = accountNum;
+    // }
 
-    public Pojo() {
-    }
+    // public Pojo() {
+    // }
 
     public static String getSetRed() {
         return setRed;
