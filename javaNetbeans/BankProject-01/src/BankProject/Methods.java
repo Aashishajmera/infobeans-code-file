@@ -209,17 +209,17 @@ public class Methods {
 
 //----------------------------------------------REMOVE-AND-BLOCK-ACCOUNT-----------------------------------------------------
     public void removeAndBlock(Scanner sc) {
-        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
-        File fnew = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc1.txt");
+//        File f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
+//        File fnew = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc1.txt");
 
         String pinNum2 = null;
         try {
             //read data in file : 
-            FileReader fr = new FileReader(f);
+            FileReader fr = new FileReader("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
             BufferedReader br = new BufferedReader(fr);
 
             // write new data in new file: 
-            FileWriter fw = new FileWriter(fnew);
+            FileWriter fw = new FileWriter("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc1.txt");
             BufferedWriter bw = new BufferedWriter(fw);
 
             System.out.print("\t Enter pin number: \n\t ");
@@ -272,29 +272,27 @@ public class Methods {
                     bw.write("\n");
                 }
             }
-            fw.close();
             bw.close();
+            
             fr.close();
             br.close();
+            fw.close();
+            bw.close();
             
-            if (f.exists()) {
-                System.out.println("file is exists");
-//               fr.close();
-//               br.close();
-//               fw.close();
-//                bw.close();
-                f = null;
-                f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
-                System.out.println("delet1e file is : " + f.delete());
+            File f = null;
+            f = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
+            if (f.delete()) {
+                System.out.println("successfull delete");
+            } else {
+                System.out.println("not delete");
             }
-
-            File fold = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
-            System.out.println("Come:");
-
-            if (fnew.renameTo(fold)) {
-                System.out.println("Rename successfull");
+            File fold1 = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc.txt");
+            File fnew = new File("D:\\Infobeans_Foundation\\javaNetbeans\\BankProject-01\\src\\BankProject\\userAcc1.txt");
+            if (fnew.renameTo(fold1)) {
+                System.out.println("rename successfull");
+            } else {
+                System.out.println("not rename");
             }
-
             if (flag) {
                 System.out.println(Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: ");
             }
