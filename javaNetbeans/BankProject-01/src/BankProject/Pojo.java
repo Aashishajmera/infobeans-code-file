@@ -115,11 +115,11 @@ public class Pojo{
     }
 
     public String getAccountNum() {
-        return pinNum;
+        return accountNum;
     }
 
-    public void setAccountNum(String pinNum) {
-        this.pinNum = pinNum;
+    public void setAccountNum(String accountNum) {
+        this.accountNum = accountNum;
     }
 
     public float getAmount() {

@@ -97,7 +97,8 @@ public class Methods {
 
                 BufferedWriter bw = new BufferedWriter(fw);
                 // account number create : 
-                String accountNum = objM.accountNumberCreate();
+                String accountNumber = objM.accountNumberCreate();
+                objp.setAccountNum(accountNumber);
                 bw.write(objp.getAccountNum() + "\t");
                 bw.write(objp.getUserName() + "\t");
                 bw.write(objp.getFatherName() + "\t");
@@ -108,7 +109,7 @@ public class Methods {
                 bw.write((int) objp.getAmount() + "\t");
                 bw.write("\n");
 
-                fw.close();
+//                fw.close();
                 bw.close();
             } catch (InputMismatchException e) {
                 System.out.println(Pojo.setRed + "Wrong input: (please re-enter your choice)" + Pojo.resetColor);
