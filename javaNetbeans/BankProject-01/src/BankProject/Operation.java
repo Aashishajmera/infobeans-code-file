@@ -51,7 +51,7 @@ public class Operation {
                                             objM.accountDetails(sc, objp);
                                             break;
                                         case 3:
-
+                                            objM.removeAndBlock(sc);
                                             break;
                                         case 4:
                                             objM.allAccountInformation();
