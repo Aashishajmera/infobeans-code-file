@@ -32,7 +32,7 @@ public class Customer {
   // ------------------------------------------CREATE-CUSTUMER-ACCOUNT---------------------------------------------
   public void createCustomerAccount(Scanner sc, Customer objC, Pojo objP) {
     try {
-      System.out.println("Account type(saving/current)");
+      System.out.print("\tAccount type(saving/current) \n\t");
       sc.nextLine();
       objP.setAccountType(sc.nextLine());
 
@@ -59,8 +59,7 @@ public class Customer {
 
         boolean flag = false;
 
-
-      FileReader fr = new FileReader("userAcc.txt");
+        FileReader fr = new FileReader("userAcc.txt");
 
         BufferedReader br = new BufferedReader(fr);
 
@@ -116,7 +115,7 @@ public class Customer {
 
               System.out.println(
                 Pojo.setRed +
-                "\t\t\t\t\t\t\t Do not share your OTP ...\n" +
+                "\t\t\t\t\t\t\t\t !! Warning Do not share OTP !!\n" +
                 Pojo.resetColor
               );
 
@@ -126,11 +125,7 @@ public class Customer {
                 Pojo.resetColor
               );
 
-              if (!f.exists()) {
-                f.createNewFile();
-              }
-
-              FileWriter fw = new FileWriter(f, true);
+              FileWriter fw = new FileWriter("userAcc.txt", true);
 
               BufferedWriter bw = new BufferedWriter(fw);
               bw.write(objP.getAccountNum() + "\t");
@@ -234,7 +229,6 @@ public class Customer {
 
   //-------------------------------------------VIEW-ALL-ACCOUNT-INFORMATION-------------------------------------------------
   public void allAccountInformation() {
-
     try {
       FileReader fr = new FileReader("userAcc.txt");
 
@@ -290,11 +284,13 @@ public class Customer {
     String name = null;
     try {
       //read data in file :
-      FileReader fr = new FileReader("userAcc.txt");
+      File f = new File("userAcc.txt");
+      FileReader fr = new FileReader(f);
       BufferedReader br = new BufferedReader(fr);
 
       // write new data in new file:
-      FileWriter fw = new FileWriter("userAcc1.txt");
+      File fnew = new File("userAcc1.txt");
+      FileWriter fw = new FileWriter(fnew);
       BufferedWriter bw = new BufferedWriter(fw);
 
       System.out.print("\t Enter Holder's name: \n\t ");
@@ -382,9 +378,9 @@ public class Customer {
       fr.close();
       br.close();
       fw.close();
-      // bw.close();
+      bw.close();
 
-      File f = null;
+      f = null;
       f = new File("userAcc.txt");
       if (f.delete()) {
         System.out.println("successfull delete");
@@ -392,7 +388,6 @@ public class Customer {
         System.out.println("not delete");
       }
       File fold1 = new File("userAcc.txt");
-      File fnew = new File("userAcc1.txt");
       if (fnew.renameTo(fold1)) {
         System.out.println("rename successfull");
       } else {
@@ -400,7 +395,7 @@ public class Customer {
       }
       if (flag) {
         System.out.println(
-          Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: "+Pojo.resetColor
+          Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: " + Pojo.resetColor
         );
       }
     } catch (Exception e) {
