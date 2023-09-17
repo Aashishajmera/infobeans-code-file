@@ -32,46 +32,75 @@ public class Customer {
   // ------------------------------------------CREATE-CUSTUMER-ACCOUNT---------------------------------------------
   public void createCustomerAccount(Scanner sc, Customer objC, Pojo objP) {
     try {
-      System.out.print("\t Enter your name: \n\t ");
+      System.out.println("Account type(saving/current)");
       sc.nextLine();
-      objP.setUserName(sc.nextLine());
-      System.out.print("\t Enter your father name: \n\t ");
-      objP.setFatherName(sc.nextLine());
-      System.out.print("\t Date of birth: \n\t ");
-      objP.setDateofbirth(sc.nextLine());
-      System.out.print("\t Enter aadhar number: \n\t ");
-      objP.setAadharNum(sc.nextLine());
-      System.out.print("\t Enter panCard number: \n\t ");
-      objP.setPanCardNum(sc.nextLine());
-      System.out.print("\t Enter mobile number: \n\t ");
-      objP.setMoNumber(sc.nextLine());
-      System.out.print("\t Enter email: \n\t ");
-      objP.setEmail(sc.nextLine());
-      String line;
+      objP.setAccountType(sc.nextLine());
 
-      boolean flag = false;
+      if (
+        objP.getAccountType().equals("saving") ||
+        objP.getAccountType().equals("current")
+      ) {
+        System.out.print("\t Enter your name: \n\t ");
+        objP.setUserName(sc.nextLine());
+        System.out.print("\t Enter your father name: \n\t ");
+        objP.setFatherName(sc.nextLine());
+        System.out.print("\t Date of birth: \n\t ");
+        objP.setDateofbirth(sc.nextLine());
+        System.out.print("\t Enter aadhar number: \n\t ");
+        objP.setAadharNum(sc.nextLine());
+        System.out.print("\t Enter panCard number: \n\t ");
+        objP.setPanCardNum(sc.nextLine());
+        System.out.print("\t Enter mobile number: \n\t ");
+        objP.setMoNumber(sc.nextLine());
+        System.out.print("\t Enter email: \n\t ");
+        objP.setEmail(sc.nextLine());
 
-      File f = new File("userAcc.txt");
+        String line;
 
-      FileReader fr = new FileReader(f);
+        boolean flag = false;
 
-      BufferedReader br = new BufferedReader(fr);
 
-      //check aadhar number:
-      while ((line = br.readLine()) != null) {
-        String readData[] = line.split("\t");
-        if (
-          objP.getAadharNum().equals(readData[4]) ||
-          objP.getEmail().equals(readData[6]) ||
-          objP.getMoNumber().equals(readData[3]) ||
-          objP.getPanCardNum().equals(readData[5])
-        ) {
-          System.out.println(
-            Pojo.setRed +
-            "\t\t\t\t\t\t\tSomething went wrong: " +
-            Pojo.resetColor
-          );
-        } else {
+      FileReader fr = new FileReader("userAcc.txt");
+
+        BufferedReader br = new BufferedReader(fr);
+
+        //check aadhar number:
+        while ((line = br.readLine()) != null) {
+          String readData[] = line.split("\t");
+          if (objP.getAadharNum().equals(readData[4])) {
+            System.out.println(
+              Pojo.setRed +
+              "\t\t\t\t\t\t\t\t Aadhar number same:  " +
+              Pojo.resetColor
+            );
+            flag = true;
+            break;
+          } else if (objP.getEmail().equals(readData[6])) {
+            System.out.println(
+              Pojo.setRed + "\t\t\t\t\t\t\t\t same email:  " + Pojo.resetColor
+            );
+            flag = true;
+            break;
+          } else if (objP.getMoNumber().equals(readData[3])) {
+            System.out.println(
+              Pojo.setRed +
+              "\t\t\t\t\t\t\t\t Mobile number same:  " +
+              Pojo.resetColor
+            );
+            flag = true;
+            break;
+          } else if (objP.getPanCardNum().equals(readData[5])) {
+            System.out.println(
+              Pojo.setRed +
+              "\t\t\t\t\t\t\t\t PanCard number same:  " +
+              Pojo.resetColor
+            );
+            flag = true;
+            break;
+          }
+        }
+
+        if (flag == false) {
           {
             System.out.print("\t Enter amount: \n\t ");
             objP.setAmount(sc.nextDouble());
@@ -84,6 +113,12 @@ public class Customer {
               objP.setAccountNum(accountNum2);
 
               this.pin = objP.getPinNum();
+
+              System.out.println(
+                Pojo.setRed +
+                "\t\t\t\t\t\t\t Do not share your OTP ...\n" +
+                Pojo.resetColor
+              );
 
               System.out.println(
                 Pojo.setGreen +
@@ -108,6 +143,7 @@ public class Customer {
               bw.write(objP.getDateofbirth() + "\t");
               bw.write(objP.getAmount() + "\t");
               bw.write(objP.getPinNum() + "\t");
+              bw.write(objP.getAccountType() + "\t");
               bw.write("\n");
               bw.close();
             } else {
@@ -119,6 +155,12 @@ public class Customer {
             }
           }
         }
+      } else {
+        System.out.println(
+          Pojo.setRed +
+          "\t\t\t\t\t\tPlease enter right account type: (current/saving)" +
+          Pojo.resetColor
+        );
       }
     } catch (InputMismatchException e) {
       System.out.println(
@@ -134,10 +176,9 @@ public class Customer {
 
   // -------------------------------------------CUSTUMER-ACCOUNT-DETAILS-READ--------------------------------------------
   public void accountDetails(Scanner sc, Pojo objp) {
-    File f = new File("userAcc.txt");
     String AccountNumber = null;
     try {
-      FileReader fr = new FileReader(f);
+      FileReader fr = new FileReader("userAcc.txt");
 
       BufferedReader br = new BufferedReader(fr);
 
@@ -167,6 +208,9 @@ public class Customer {
           System.out.println("\t\t\t\t\t\t\t\tEmail: \t\t " + readData[6]);
           System.out.println("\t\t\t\t\t\t\t\tDOB:  \t\t " + readData[7]);
           System.out.println("\t\t\t\t\t\t\t\tAmount: \t " + readData[8]);
+          System.out.println(
+            "\t\t\t\t\t\t\t\tAccount type:    " + readData[10]
+          );
 
           System.out.println(
             "\t\t\t\t\t\t\t ============================================"
@@ -186,5 +230,181 @@ public class Customer {
       e.printStackTrace();
     }
     // break;
+  }
+
+  //-------------------------------------------VIEW-ALL-ACCOUNT-INFORMATION-------------------------------------------------
+  public void allAccountInformation() {
+
+    try {
+      FileReader fr = new FileReader("userAcc.txt");
+
+      BufferedReader br = new BufferedReader(fr);
+
+      String line;
+      Boolean flag = true;
+      int n = 1;
+      while ((line = br.readLine()) != null) {
+        String readData[] = line.split("\t");
+        System.out.println(
+          Pojo.setYellow +
+          "\t\t\t\t\t\t\t\t" +
+          n +
+          " ACCOUNT-INFORMATION" +
+          Pojo.resetColor
+        );
+        System.out.println(
+          "\t\t\t\t\t\t\t ============================================"
+        );
+        System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
+        System.out.println("\t\t\t\t\t\t\t\tHolder's name:   " + readData[1]);
+        System.out.println("\t\t\t\t\t\t\t\tFather name: \t " + readData[2]);
+        System.out.println("\t\t\t\t\t\t\t\tMobile number:   " + readData[3]);
+        System.out.println("\t\t\t\t\t\t\t\tAadhar number:   " + readData[4]);
+        System.out.println("\t\t\t\t\t\t\t\tPanCard number:  " + readData[5]);
+        System.out.println("\t\t\t\t\t\t\t\tEmail: \t\t " + readData[6]);
+        System.out.println("\t\t\t\t\t\t\t\tDOB:  \t\t " + readData[7]);
+        System.out.println("\t\t\t\t\t\t\t\tAmount: \t " + readData[8]);
+        System.out.println("\t\t\t\t\t\t\t\tAccount type:    " + readData[10]);
+
+        System.out.println(
+          "\t\t\t\t\t\t\t ============================================"
+        );
+        flag = false;
+        n++;
+      }
+      fr.close();
+      br.close();
+      if (flag) {
+        System.out.println(
+          Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: "
+        );
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  //----------------------------------------------REMOVE-AND-BLOCK-ACCOUNT-----------------------------------------------------
+  public void removeAndBlock(Scanner sc) {
+    String accountNum = null;
+    String name = null;
+    try {
+      //read data in file :
+      FileReader fr = new FileReader("userAcc.txt");
+      BufferedReader br = new BufferedReader(fr);
+
+      // write new data in new file:
+      FileWriter fw = new FileWriter("userAcc1.txt");
+      BufferedWriter bw = new BufferedWriter(fw);
+
+      System.out.print("\t Enter Holder's name: \n\t ");
+      sc.nextLine();
+      name = sc.nextLine();
+      System.out.print("\t Enter Account number: \n\t ");
+      accountNum = sc.nextLine();
+
+      String line;
+      Boolean flag = true;
+      while ((line = br.readLine()) != null) {
+        String readData[] = line.split("\t");
+        if (accountNum.equals(readData[0]) && name.equals(readData[1])) {
+          System.out.println(
+            Pojo.setYellow +
+            "\t\t\t\t\t\t\t\t ACCOUNT-INFORMATION" +
+            Pojo.resetColor
+          );
+          System.out.println(
+            "\t\t\t\t\t\t\t ============================================"
+          );
+          System.out.println("\t\t\t\t\t\t\t\tAccount number:  " + readData[0]);
+          System.out.println("\t\t\t\t\t\t\t\tHolder's name:   " + readData[1]);
+          System.out.println("\t\t\t\t\t\t\t\tFather name: \t " + readData[2]);
+          System.out.println("\t\t\t\t\t\t\t\tMobile number:   " + readData[3]);
+          System.out.println("\t\t\t\t\t\t\t\tAadhar number:   " + readData[4]);
+          System.out.println("\t\t\t\t\t\t\t\tPanCard number:  " + readData[5]);
+          System.out.println("\t\t\t\t\t\t\t\tEmail: \t\t " + readData[6]);
+          System.out.println("\t\t\t\t\t\t\t\tDOB:  \t\t " + readData[7]);
+          System.out.println("\t\t\t\t\t\t\t\tAmount: \t " + readData[8]);
+          System.out.println(
+            "\t\t\t\t\t\t\t\tAccount type:    " + readData[10]
+          );
+
+          System.out.println(
+            "\t\t\t\t\t\t\t ============================================"
+          );
+          flag = false;
+
+          System.out.println(
+            Pojo.setRed +
+            "\t\t\t\t\t\t\tDo you want to delete this account: (y/n)" +
+            Pojo.resetColor
+          );
+          char ch = sc.next().charAt(0);
+          if (ch == 'y') {
+            System.out.println(
+              Pojo.setGreen +
+              "\t\t\t\t\t\t\t\tAccount successfully delete: " +
+              Pojo.resetColor
+            );
+            continue;
+          } else {
+            bw.write(readData[0] + "\t");
+            bw.write(readData[1] + "\t");
+            bw.write(readData[2] + "\t");
+            bw.write(readData[3] + "\t");
+            bw.write(readData[4] + "\t");
+            bw.write(readData[5] + "\t");
+            bw.write(readData[6] + "\t");
+            bw.write(readData[7] + "\t");
+            bw.write(readData[8] + "\t");
+            bw.write(readData[9] + "\t");
+            bw.write(readData[10] + "\t");
+
+            bw.write("\n");
+          }
+        } else {
+          bw.write(readData[0] + "\t");
+          bw.write(readData[1] + "\t");
+          bw.write(readData[2] + "\t");
+          bw.write(readData[3] + "\t");
+          bw.write(readData[4] + "\t");
+          bw.write(readData[5] + "\t");
+          bw.write(readData[6] + "\t");
+          bw.write(readData[7] + "\t");
+          bw.write(readData[8] + "\t");
+          bw.write(readData[9] + "\t");
+          bw.write(readData[10] + "\t");
+          bw.write("\n");
+        }
+      }
+      bw.close();
+
+      fr.close();
+      br.close();
+      fw.close();
+      // bw.close();
+
+      File f = null;
+      f = new File("userAcc.txt");
+      if (f.delete()) {
+        System.out.println("successfull delete");
+      } else {
+        System.out.println("not delete");
+      }
+      File fold1 = new File("userAcc.txt");
+      File fnew = new File("userAcc1.txt");
+      if (fnew.renameTo(fold1)) {
+        System.out.println("rename successfull");
+      } else {
+        System.out.println("not rename");
+      }
+      if (flag) {
+        System.out.println(
+          Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: "+Pojo.resetColor
+        );
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 }

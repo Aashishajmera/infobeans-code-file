@@ -15,7 +15,16 @@ public class Pojo {
   private String accountNum;
   private String email;
   private String panCardNum;
+  private String accountType;
   private double amount;
+
+  public String getAccountType() {
+    return accountType;
+  }
+
+  public void setAccountType(String accountType) {
+    this.accountType = accountType;
+  }
 
   public String getUserName() {
     return userName;
