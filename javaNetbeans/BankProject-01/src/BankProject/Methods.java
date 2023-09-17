@@ -240,7 +240,7 @@ public class Methods {
                     System.out.println("\t\t\t\t\t\t\t\tAadhar number: \t" + readData[3]);
                     System.out.println("\t\t\t\t\t\t\t\tMobile number: \t" + readData[4]);
                     System.out.println("\t\t\t\t\t\t\t\tDOB:  \t\t" + readData[5]);
-//                   System.out.println("\t\t\t\t\t\t\t\t\tAccount number: \t" + readData[6]);
+//                   System.out.println("\t\t\t\t\t\t\t\t\t pin number: \t" + readData[6]);
                     System.out.println("\t\t\t\t\t\t\t\tTotal amount: \t" + readData[7]);
                     System.out.println("\t\t\t\t\t\t\t ============================================");
                     flag = false;

@@ -9,7 +9,7 @@ public class Pojo{
     static String setYellow = "\u001B[33m";
     static String setGreen = "\u001B[32m";
     static String resetColor = "\u001B[0m";
-
+    
     // user document info
     private String userName;
     private String fatherName;
