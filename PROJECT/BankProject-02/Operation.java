@@ -95,7 +95,7 @@ public class Operation {
                     default:
                       System.out.println(
                         Pojo.setRed +
-                        "\t\t\t\t\t\t\t Something went wrong: " +
+                        "\t\t\t\t\t\t\t\t Something went wrong: " +
                         Pojo.resetColor
                       );
                       sc.nextLine();
@@ -106,6 +106,7 @@ public class Operation {
                     "\t\t\t\t\t\t\t Wrong input: (please re-enter your choice)" +
                     Pojo.resetColor
                   );
+                  sc.nextLine();
                 } catch (Exception e) {
                   e.printStackTrace();
                 }
@@ -121,10 +122,12 @@ public class Operation {
             System.exit(0);
             break;
           default:
+          System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\tSomething went wrong: "+Pojo.resetColor);
             break;
         }
       } catch (InputMismatchException e) {
-        System.out.println("Wrong input please re-enter:");
+        System.out.println(Pojo.setRed+"\t\t\t\t\t\t\tWrong input (please re-enter your choice)"+Pojo.resetColor);
+        sc.nextLine();
       } catch (Exception e) {
         e.printStackTrace();
       }
