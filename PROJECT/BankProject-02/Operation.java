@@ -76,8 +76,10 @@ public class Operation {
                       objC.accountDetails(sc, objP);
                       break;
                     case 3:
+                    objC.removeAndBlock(sc);
                       break;
                     case 4:
+                    objC.allAccountInformation();
                       break;
                     case 5:
                       break;
