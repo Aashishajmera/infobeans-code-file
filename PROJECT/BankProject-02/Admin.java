@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -16,15 +17,15 @@ public class Admin implements AdminIntrfc {
     boolean flag = false;
 
     try {
-      if (!fadmin.exists()) {
-        fadmin.createNewFile();
-      }
       FileReader fr = new FileReader(fadmin);
       sc.nextLine();
       System.out.print("\t Enter your name: \n\t ");
       String name = sc.nextLine();
       System.out.print("\t Enter password: \n\t ");
-      String password = sc.nextLine();
+
+      Console console = System.console();
+      char[] chars = console.readPassword();
+      String password = new String(chars);
 
       BufferedReader br = new BufferedReader(fr);
       if (br.readLine().equals(name)) {

@@ -82,6 +82,7 @@ public class Operation {
                     objC.allAccountInformation();
                       break;
                     case 5:
+                    objC.updateAccountDetails(objP, sc);
                       break;
                     case 6:
                       flag1 = false;
