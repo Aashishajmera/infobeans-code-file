@@ -3,8 +3,13 @@ public class Vlidation {
 
     }
     public boolean checkMobileNumber(String mobileNum){
+        boolean flag = false;
         if(mobileNum.length() <= 10){
-            return true;
+            flag = true;
+            }
+            if(flag){
+                
+            }
         }
         // if(mobileNum)
         // return true;
