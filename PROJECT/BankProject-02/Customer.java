@@ -177,7 +177,7 @@ public class Customer {
       FileReader fr = new FileReader("userAcc.txt");
 
       BufferedReader br = new BufferedReader(fr);
-      System.out.println("\t Enter Holder's name: \n\t ");
+      System.out.print("\t Enter Holder's name: \n\t ");
       sc.nextLine();
       name = sc.nextLine();
       System.out.print("\t Enter account number: \n\t ");
@@ -380,7 +380,8 @@ public class Customer {
       fw.close();
       bw.close();
 
-      File f = new File("userAcc.txt");
+      File f = null;
+       f = new File("userAcc.txt");
       f.delete();
       File fold = new File("userAcc.txt");
       File fnew = new File("userAcc1.txt");
@@ -406,10 +407,10 @@ public class Customer {
       FileWriter fw = new FileWriter("userAcc1.txt");
       BufferedWriter bw = new BufferedWriter(fw);
 
-      System.out.println("Enter Holder's name:");
+      System.out.print("\t Enter Holder's name: \n\t ");
       sc.nextLine();
       String name = sc.nextLine();
-      System.out.println("Enter account number: ");
+      System.out.print("\t Enter account number: \n\t ");
       String accountNum = sc.nextLine();
       boolean flag = false;
 
@@ -509,6 +510,19 @@ public class Customer {
               bw.write(readData[10] + "\t");
               bw.write("\n");
             } else {
+              bw.write(readData[0] + "\t");
+              bw.write(readData[1] + "\t");
+              bw.write(readData[2] + "\t");
+              bw.write(readData[3] + "\t");
+              bw.write(readData[4] + "\t");
+              bw.write(readData[5] + "\t");
+              bw.write(readData[6] + "\t");
+              bw.write(readData[7] + "\t");
+              bw.write(readData[8] + "\t");
+              bw.write(readData[9] + "\t");
+              bw.write(readData[10] + "\t");
+              bw.write("\n");
+
               System.out.println(
                 Pojo.setGreen +
                 "\t\t\t\t\t\t\t\t   Back to menu" +
@@ -548,21 +562,10 @@ public class Customer {
       bw.close();
 
       File f = new File("userAcc.txt");
-      if (f.exists()) {
-        System.out.println("Exists>");
-        if (f.delete()) {
-          System.out.println("Delete successfully");
-        } else {
-          System.out.println("Cant delete");
-        }
-      }
+      f.delete();
       File fold = new File("userAcc.txt");
       File fnew = new File("userAcc1.txt");
-      if (fnew.renameTo(fold)) {
-        System.out.println("Rename successfully");
-      } else {
-        System.out.println("Cant rename: ");
-      }
+      fnew.renameTo(fold);
 
       if (flag == false) {
         System.out.println(
