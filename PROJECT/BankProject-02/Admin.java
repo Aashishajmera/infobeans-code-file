@@ -37,7 +37,7 @@ public class Admin implements AdminIntrfc {
         if (br.readLine().equals(password)) {
           System.out.println(
             Pojo.setGreen +
-            "\t\t\t\t\t\t\t\t LOGIN SUCCESSFULL " +
+            "\t\t\t\t\t\t\t\t ADMIN LOGIN SUCCESSFULL " +
             Pojo.resetColor
           );
           flag = true;
