@@ -70,19 +70,19 @@ public class Operation {
 
                   switch (choice2) {
                     case 1:
-                      objC.createCustomerAccount(sc, objC, objP);
+                      objA.createCustomerAccount(sc, objA, objP);
                       break;
                     case 2:
-                      objC.accountDetails(sc, objP);
+                      objA.accountDetails(sc, objP);
                       break;
                     case 3:
-                    objC.removeAndBlock(sc);
+                    objA.removeAndBlock(sc);
                       break;
                     case 4:
-                    objC.allAccountInformation();
+                    objA.allAccountInformation();
                       break;
                     case 5:
-                    objC.updateAccountDetails(objP, sc);
+                    objA.updateAccountDetails(objP, sc);
                       break;
                     case 6:
                       flag1 = false;
