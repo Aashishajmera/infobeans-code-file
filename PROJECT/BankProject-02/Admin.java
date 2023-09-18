@@ -539,15 +539,28 @@ public class Admin implements AdminIntrfc {
               } else {
                 bw.write(readData[6] + "\t");
               }
-              System.out.print("\t Do you want to change your DOB: (y/n) \n\t ");
+              System.out.print(
+                "\t Do you want to change your DOB: (y/n) \n\t "
+              );
               char changeDob = sc.next().charAt(0);
               if (changeDob == 'y') {
                 System.out.print("\t Enter your update DOB: \n\t ");
                 sc.nextLine();
                 objP.setDateofbirth(sc.nextLine());
                 bw.write(objP.getDateofbirth() + "\t");
+
+                System.out.println(
+                  Pojo.setGreen +
+                  "\t\t\t\t\t\t\t\tAccount successfully update..." +
+                  Pojo.resetColor
+                );
               } else {
                 bw.write(readData[7] + "\t");
+                 System.out.println(
+                  Pojo.setGreen +
+                  "\t\t\t\t\t\t\t\tAccount successfully update..." +
+                  Pojo.resetColor
+                );
               }
               bw.write(readData[8] + "\t");
               bw.write(readData[9] + "\t");
