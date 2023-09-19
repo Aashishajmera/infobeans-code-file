@@ -89,7 +89,10 @@ public class Customer {
       }
       fr.close();
       br.close();
-    } catch (Exception e) {
+    } catch(InputMismatchException e){
+      System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t Wrong input (please re-enter)"+Pojo.resetColor);
+    }
+    catch (Exception e) {
       e.printStackTrace();
     }
   }
