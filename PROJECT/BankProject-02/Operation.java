@@ -142,9 +142,9 @@ public class Operation {
                   "\t\t\t PRESS 5: Transfer money \t\t\t\t\t PRESS 6: Transaction history \t\t\t"
                 );
                 System.out.println(
-                  "\t\t\t PRESS 6: Back menu \t\t\t\t\t\t" +
+                  "\t\t\t PRESS 7: Back menu \t\t\t\t\t\t" +
                   Pojo.setRed +
-                  " PRESS 7: Exit Program " +
+                  " PRESS 8: Exit Program " +
                   Pojo.resetColor
                 );
                 System.out.println(
@@ -159,9 +159,13 @@ public class Operation {
                       objC.userAccountDetailsC(pin);
                       break;
                     case 2:
-                    System.out.println(Pojo.setGreen+"\t\t\t\t\t\t\t\t Go to admin >>>> "+Pojo.resetColor);
-                    flag2 = false;
-                    break;
+                      System.out.println(
+                        Pojo.setGreen +
+                        "\t\t\t\t\t\t\t\t Go to admin >>>> " +
+                        Pojo.resetColor
+                      );
+                      flag2 = false;
+                      break;
                     case 3:
                       break;
                     case 4:
@@ -169,9 +173,11 @@ public class Operation {
                     case 5:
                       break;
                     case 6:
-                      flag2 = false;
                       break;
                     case 7:
+                      flag2 = false;
+                      break;
+                    case 8:
                       System.out.println(
                         Pojo.setGreen +
                         "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK " +

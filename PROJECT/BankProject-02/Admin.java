@@ -207,25 +207,25 @@ public class Admin implements AdminIntrfc {
                         }
                       }
                     } else {
-                      System.out.println("\t\t\t\t\t\t\t\t Invalid email: ");
+                      System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid email: "+Pojo.resetColor);
                     }
                   } else {
-                    System.out.println("\t\t\t\t\t\t\t\t Invalid mobile number: ");
+                    System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid mobile number: "+Pojo.resetColor);
                   }
                 } else {
-                  System.out.println("\t\t\t\t\t\t\t\t Invalid panCard number: ");
+                  System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid panCard number: "+Pojo.resetColor);
                 }
               } else {
-                System.out.println("\t\t\t\t\t\t\t\t Invalid aadharCard number: ");
+                System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid aadharCard number: "+Pojo.resetColor);
               }
             } else {
-              System.out.println("\t\t\t\t\t\t\t\t Invalid Date of birth: ");
+              System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid Date of birth: "+Pojo.resetColor);
             }
           } else {
-            System.out.println("\t\t\t\t\t\t\t\t Invalid father name: ");
+            System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid father name: "+Pojo.resetColor);
           }
         } else {
-          System.out.println("\t\t\t\t\t\t\t\t Invalid user name: ");
+          System.out.println(Pojo.setRed+"\t\t\t\t\t\t\t\t Invalid user name: "+Pojo.resetColor);
         }
       } else {
         System.out.println(
