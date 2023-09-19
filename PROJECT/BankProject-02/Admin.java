@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 interface AdminIntrfc {
@@ -57,21 +58,27 @@ public class Admin implements AdminIntrfc {
   }
 
   //-----------------------------------------ACCOUNT-NUMBER-GENERATE-------------------------------------------
-  public String accountNumberCreate() {
-    String s = "180001802";
-
-    String accountNum = s + pin;
-
-    return accountNum;
-  }
+public static String accountNumberCreate(int length) {  
+    String numbers = "0123456789";  
+    Random rndm_method = new Random();  
+    char[] otp = new char[length];  
+    for (int i = 0; i < length; i++) {  
+        otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));  
+    }  
+    return new String(otp);  
+} 
 
   //-----------------------------------------PIN-NUMBER-GENERATE-------------------------------------------
 
-  public int pinCreate() {
-    pin = pin + 1;
-    System.out.println(pin);
-    return pin;
-  }
+  public static String pinCreate(int length) {  
+    String numbers = "0123456789";  
+    Random rndm_method = new Random();  
+    char[] otp = new char[length];  
+    for (int i = 0; i < length; i++) {  
+        otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));  
+    }  
+    return new String(otp);  
+} 
 
   // ------------------------------------------CREATE-CUSTUMER-ACCOUNT---------------------------------------------
   public void createCustomerAccount(Scanner sc, Admin objA, Pojo objP) {
@@ -149,17 +156,15 @@ public class Admin implements AdminIntrfc {
             objP.setAmount(sc.nextDouble());
 
             if (objP.getAmount() >= 1000) {
-              int pin2 = objA.pinCreate();
-              String accountNum2 = objA.accountNumberCreate();
+              String pin2 = objA.pinCreate(6);
+              String accountNum2 = objA.accountNumberCreate(12);
 
               objP.setPinNum(pin2);
               objP.setAccountNum(accountNum2);
 
-              this.pin = objP.getPinNum();
-
               System.out.println(
                 Pojo.setRed +
-                "\t\t\t\t\t\t\t\t !! Warning Do not share OTP !!\n" +
+                "\t\t\t\t\t\t\t\t !! Warning Do not share your OTP !!\n" +
                 Pojo.resetColor
               );
 

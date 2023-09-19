@@ -11,7 +11,7 @@ public class Pojo {
   private String aadharNum;
   private String moNumber;
   private String dateofbirth;
-  private int pinNum;
+  private String pinNum;
   private String accountNum;
   private String email;
   private String panCardNum;
@@ -66,11 +66,11 @@ public class Pojo {
     this.dateofbirth = dateofbirth;
   }
 
-  public int getPinNum() {
+  public String getPinNum() {
     return pinNum;
   }
 
-  public void setPinNum(int pinNum) {
+  public void setPinNum(String pinNum) {
     this.pinNum = pinNum;
   }
 
