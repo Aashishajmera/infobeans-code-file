@@ -13,9 +13,6 @@ interface AdminIntrfc {
 }
 
 public class Admin implements AdminIntrfc {
-
-  static int pin = 1001;
-
   //-----------------------------------------ADMIN-LOGIN------------------------------------------------
   public boolean adminLogin(Scanner sc) {
     // create a file of adminLogin class:
@@ -43,10 +40,10 @@ public class Admin implements AdminIntrfc {
           );
           flag = true;
         } else {
-          System.out.println(Pojo.setRed + "Wrong password" + Pojo.resetColor);
+          System.out.println(Pojo.setRed + "\t\t\t\t\t\t\t\t Wrong password" + Pojo.resetColor);
         }
       } else {
-        System.out.println(Pojo.setRed + "Wrong name...." + Pojo.resetColor);
+        System.out.println(Pojo.setRed + "\t\t\t\t\t\t\t\t Wrong name...." + Pojo.resetColor);
       }
       fr.close();
       br.close();
@@ -58,30 +55,32 @@ public class Admin implements AdminIntrfc {
   }
 
   //-----------------------------------------ACCOUNT-NUMBER-GENERATE-------------------------------------------
-public static String accountNumberCreate(int length) {  
-    String numbers = "0123456789";  
-    Random rndm_method = new Random();  
-    char[] otp = new char[length];  
-    for (int i = 0; i < length; i++) {  
-        otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));  
-    }  
-    return new String(otp);  
-} 
+  public static String accountNumberCreate(int length) {
+    String numbers = "0123456789";
+    Random rndm_method = new Random();
+    char[] otp = new char[length];
+    for (int i = 0; i < length; i++) {
+      otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));
+    }
+    return new String(otp);
+  }
 
   //-----------------------------------------PIN-NUMBER-GENERATE-------------------------------------------
 
-  public static String pinCreate(int length) {  
-    String numbers = "0123456789";  
-    Random rndm_method = new Random();  
-    char[] otp = new char[length];  
-    for (int i = 0; i < length; i++) {  
-        otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));  
-    }  
-    return new String(otp);  
-} 
+  public static String pinCreate(int length) {
+    String numbers = "0123456789";
+    Random rndm_method = new Random();
+    char[] otp = new char[length];
+    for (int i = 0; i < length; i++) {
+      otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));
+    }
+    return new String(otp);
+  }
 
   // ------------------------------------------CREATE-CUSTUMER-ACCOUNT---------------------------------------------
   public void createCustomerAccount(Scanner sc, Admin objA, Pojo objP) {
+    // create a object of validation class:
+    Validation objV = new Validation();
     try {
       System.out.print("\t Account type(saving/current) \n\t ");
       sc.nextLine();
@@ -93,111 +92,140 @@ public static String accountNumberCreate(int length) {
       ) {
         System.out.print("\t Enter your name: \n\t ");
         objP.setUserName(sc.nextLine());
-        System.out.print("\t Enter your father name: \n\t ");
-        objP.setFatherName(sc.nextLine());
-        System.out.print("\t Date of birth: \n\t ");
-        objP.setDateofbirth(sc.nextLine());
-        System.out.print("\t Enter aadhar number: \n\t ");
-        objP.setAadharNum(sc.nextLine());
-        System.out.print("\t Enter panCard number: \n\t ");
-        objP.setPanCardNum(sc.nextLine());
-        System.out.print("\t Enter mobile number: \n\t ");
-        objP.setMoNumber(sc.nextLine());
-        System.out.print("\t Enter email: \n\t ");
-        objP.setEmail(sc.nextLine());
+        if (objV.checkName(objP.getUserName())) {
+          System.out.print("\t Enter your father name: \n\t ");
+          objP.setFatherName(sc.nextLine());
+          if (objV.checkName(objP.getFatherName())) {
+            System.out.print("\t Date of birth: \n\t ");
+            objP.setDateofbirth(sc.nextLine());
+            if (objV.checkDob(objP.getDateofbirth())) {
+              System.out.print("\t Enter aadhar number: \n\t ");
+              objP.setAadharNum(sc.nextLine());
+              if (objV.checkAadharNum(objP.getAadharNum())) {
+                System.out.print("\t Enter panCard number: \n\t ");
+                objP.setPanCardNum(sc.nextLine());
+                if (objV.checkPancardNum(objP.getPanCardNum())) {
+                  System.out.print("\t Enter mobile number: \n\t ");
+                  objP.setMoNumber(sc.nextLine());
+                  if (objV.checkMobileNumber(objP.getMoNumber())) {
+                    System.out.print("\t Enter email: \n\t ");
+                    objP.setEmail(sc.nextLine());
+                    if (objV.checkEmail(objP.getEmail())) {
+                      String line;
 
-        String line;
+                      boolean flag = false;
 
-        boolean flag = false;
+                      FileReader fr = new FileReader("userAcc.txt");
 
-        FileReader fr = new FileReader("userAcc.txt");
+                      BufferedReader br = new BufferedReader(fr);
 
-        BufferedReader br = new BufferedReader(fr);
+                      //check aadhar number:
+                      while ((line = br.readLine()) != null) {
+                        String readData[] = line.split("\t");
+                        if (objP.getAadharNum().equals(readData[4])) {
+                          System.out.println(
+                            Pojo.setRed +
+                            "\t\t\t\t\t\t\t\t Aadhar number same:  " +
+                            Pojo.resetColor
+                          );
+                          flag = true;
+                          break;
+                        } else if (objP.getEmail().equals(readData[6])) {
+                          System.out.println(
+                            Pojo.setRed +
+                            "\t\t\t\t\t\t\t\t same email:  " +
+                            Pojo.resetColor
+                          );
+                          flag = true;
+                          break;
+                        } else if (objP.getMoNumber().equals(readData[3])) {
+                          System.out.println(
+                            Pojo.setRed +
+                            "\t\t\t\t\t\t\t\t Mobile number same:  " +
+                            Pojo.resetColor
+                          );
+                          flag = true;
+                          break;
+                        } else if (objP.getPanCardNum().equals(readData[5])) {
+                          System.out.println(
+                            Pojo.setRed +
+                            "\t\t\t\t\t\t\t\t PanCard number same:  " +
+                            Pojo.resetColor
+                          );
+                          flag = true;
+                          break;
+                        }
+                      }
 
-        //check aadhar number:
-        while ((line = br.readLine()) != null) {
-          String readData[] = line.split("\t");
-          if (objP.getAadharNum().equals(readData[4])) {
-            System.out.println(
-              Pojo.setRed +
-              "\t\t\t\t\t\t\t\t Aadhar number same:  " +
-              Pojo.resetColor
-            );
-            flag = true;
-            break;
-          } else if (objP.getEmail().equals(readData[6])) {
-            System.out.println(
-              Pojo.setRed + "\t\t\t\t\t\t\t\t same email:  " + Pojo.resetColor
-            );
-            flag = true;
-            break;
-          } else if (objP.getMoNumber().equals(readData[3])) {
-            System.out.println(
-              Pojo.setRed +
-              "\t\t\t\t\t\t\t\t Mobile number same:  " +
-              Pojo.resetColor
-            );
-            flag = true;
-            break;
-          } else if (objP.getPanCardNum().equals(readData[5])) {
-            System.out.println(
-              Pojo.setRed +
-              "\t\t\t\t\t\t\t\t PanCard number same:  " +
-              Pojo.resetColor
-            );
-            flag = true;
-            break;
-          }
-        }
+                      if (flag == false) {
+                        {
+                          System.out.print("\t Enter amount: \n\t ");
+                          objP.setAmount(sc.nextDouble());
 
-        if (flag == false) {
-          {
-            System.out.print("\t Enter amount: \n\t ");
-            objP.setAmount(sc.nextDouble());
+                          if (objP.getAmount() >= 1000) {
+                            String pin2 = objA.pinCreate(6);
+                            String accountNum2 = objA.accountNumberCreate(12);
 
-            if (objP.getAmount() >= 1000) {
-              String pin2 = objA.pinCreate(6);
-              String accountNum2 = objA.accountNumberCreate(12);
+                            objP.setPinNum(pin2);
+                            objP.setAccountNum(accountNum2);
 
-              objP.setPinNum(pin2);
-              objP.setAccountNum(accountNum2);
+                            System.out.println(
+                              Pojo.setRed +
+                              "\t\t\t\t\t\t\t\t !! Warning Do not share your OTP !!\n" +
+                              Pojo.resetColor
+                            );
 
-              System.out.println(
-                Pojo.setRed +
-                "\t\t\t\t\t\t\t\t !! Warning Do not share your OTP !!\n" +
-                Pojo.resetColor
-              );
+                            System.out.println(
+                              Pojo.setGreen +
+                              "\t\t\t\t\t\t\t Congractulation your account successfully created...\n" +
+                              Pojo.resetColor
+                            );
 
-              System.out.println(
-                Pojo.setGreen +
-                "\t\t\t\t\t\t\t Congractulation your account successfully created...\n" +
-                Pojo.resetColor
-              );
+                            FileWriter fw = new FileWriter("userAcc.txt", true);
 
-              FileWriter fw = new FileWriter("userAcc.txt", true);
-
-              BufferedWriter bw = new BufferedWriter(fw);
-              bw.write(objP.getAccountNum() + "\t");
-              bw.write(objP.getUserName() + "\t");
-              bw.write(objP.getFatherName() + "\t");
-              bw.write(objP.getMoNumber() + "\t");
-              bw.write(objP.getAadharNum() + "\t");
-              bw.write(objP.getPanCardNum() + "\t");
-              bw.write(objP.getEmail() + "\t");
-              bw.write(objP.getDateofbirth() + "\t");
-              bw.write(objP.getAmount() + "\t");
-              bw.write(objP.getPinNum() + "\t");
-              bw.write(objP.getAccountType() + "\t");
-              bw.write("\n");
-              bw.close();
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(objP.getAccountNum() + "\t");
+                            bw.write(objP.getUserName() + "\t");
+                            bw.write(objP.getFatherName() + "\t");
+                            bw.write(objP.getMoNumber() + "\t");
+                            bw.write(objP.getAadharNum() + "\t");
+                            bw.write(objP.getPanCardNum() + "\t");
+                            bw.write(objP.getEmail() + "\t");
+                            bw.write(objP.getDateofbirth() + "\t");
+                            bw.write(objP.getAmount() + "\t");
+                            bw.write(objP.getPinNum() + "\t");
+                            bw.write(objP.getAccountType() + "\t");
+                            bw.write("\n");
+                            bw.close();
+                          } else {
+                            System.out.println(
+                              Pojo.setRed +
+                              "\t\t\t\t\t\t\tPlease enter minimum amount 1000 rupes..." +
+                              Pojo.resetColor
+                            );
+                          }
+                        }
+                      }
+                    } else {
+                      System.out.println("\t\t\t\t\t\t\t\t Invalid email: ");
+                    }
+                  } else {
+                    System.out.println("\t\t\t\t\t\t\t\t Invalid mobile number: ");
+                  }
+                } else {
+                  System.out.println("\t\t\t\t\t\t\t\t Invalid panCard number: ");
+                }
+              } else {
+                System.out.println("\t\t\t\t\t\t\t\t Invalid aadharCard number: ");
+              }
             } else {
-              System.out.println(
-                Pojo.setRed +
-                "Please enter minimum amount 1000 rupes..." +
-                Pojo.resetColor
-              );
+              System.out.println("\t\t\t\t\t\t\t\t Invalid Date of birth: ");
             }
+          } else {
+            System.out.println("\t\t\t\t\t\t\t\t Invalid father name: ");
           }
+        } else {
+          System.out.println("\t\t\t\t\t\t\t\t Invalid user name: ");
         }
       } else {
         System.out.println(
@@ -561,7 +589,7 @@ public static String accountNumberCreate(int length) {
                 );
               } else {
                 bw.write(readData[7] + "\t");
-                 System.out.println(
+                System.out.println(
                   Pojo.setGreen +
                   "\t\t\t\t\t\t\t\tAccount successfully update..." +
                   Pojo.resetColor

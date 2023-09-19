@@ -139,6 +139,19 @@ public class Validation {
     }
   }
 
+  public boolean checkDob(String dob) {
+    boolean flag = false;
+    for (int i = 0; i < dob.length(); i++) {
+      if ((dob.charAt(i) > 47 && dob.charAt(i) < 58) || (dob.charAt(i) == 47)) {
+        flag = true;
+      } else {
+        flag = false;
+        break;
+      }
+    }
+    return flag;
+  }
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter mail");
@@ -181,9 +194,9 @@ public class Validation {
     System.out.println("Enter panCard number: ");
     String panNum = sc.nextLine();
 
-    if(objV.checkPancardNum(panNum)){
+    if (objV.checkPancardNum(panNum)) {
       System.out.println("Valid panCard number: ");
-    }else{
+    } else {
       System.out.println("Invalid pancard number: ");
     }
   }
