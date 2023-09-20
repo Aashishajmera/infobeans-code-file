@@ -8,11 +8,11 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-interface AdminIntrfc {
-  boolean adminLogin(Scanner sc);
-}
+// interface AdminIntrfc {
+//   boolean adminLogin(Scanner sc);
+// }
 
-public class Admin implements AdminIntrfc {
+public class Admin {
   //-----------------------------------------ADMIN-LOGIN------------------------------------------------
   public boolean adminLogin(Scanner sc) {
     // create a file of adminLogin class:
