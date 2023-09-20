@@ -15,6 +15,9 @@ public class Operation {
     //create a object of Customer class:
     Customer objC = new Customer();
 
+    //create a object of Validation class: 
+    Validation objV = new Validation();
+
     do {
       System.out.println(
         "\t\t\t-------------------------------------------------------------------------------------------------------"
@@ -76,13 +79,13 @@ public class Operation {
                       objA.accountDetails(sc, objP);
                       break;
                     case 3:
-                      objA.removeAndBlock(sc);
+                      objA.removeAndBlock(sc, objV);
                       break;
                     case 4:
                       objA.allAccountInformation();
                       break;
                     case 5:
-                      objA.updateAccountDetails(objP, sc);
+                      objA.updateAccountDetails(objP, sc, objV);
                       break;
                     case 6:
                       flag1 = false;

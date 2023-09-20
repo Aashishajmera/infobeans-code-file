@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class Validation {
@@ -150,6 +151,15 @@ public class Validation {
       }
     }
     return flag;
+  }
+
+
+  public void renameDelete(){
+    File f = new File("userAcc.txt");
+      f.delete();
+      File fold = new File("userAcc.txt");
+      File fnew = new File("userAcc1.txt");
+      fnew.renameTo(fold);
   }
 
 ;  public static void main(String[] args) {

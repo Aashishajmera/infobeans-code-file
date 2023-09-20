@@ -358,7 +358,7 @@ public class Admin {
   }
 
   //----------------------------------------------REMOVE-AND-BLOCK-ACCOUNT-----------------------------------------------------
-  public void removeAndBlock(Scanner sc) {
+  public void removeAndBlock(Scanner sc, Validation objV) {
     String accountNum = null;
     String name = null;
     try {
@@ -457,12 +457,15 @@ public class Admin {
       fw.close();
       bw.close();
 
-      File f = null;
-      f = new File("userAcc.txt");
-      f.delete();
-      File fold = new File("userAcc.txt");
-      File fnew = new File("userAcc1.txt");
-      fnew.renameTo(fold);
+      // File f = null;
+      // f = new File("userAcc.txt");
+      // f.delete();
+      // File fold = new File("userAcc.txt");
+      // File fnew = new File("userAcc1.txt");
+      // fnew.renameTo(fold);
+
+      objV.renameDelete();
+
       if (flag) {
         System.out.println(
           Pojo.setRed + "\t\t\t\t\t\t\t\t Account not found: " + Pojo.resetColor
@@ -474,7 +477,7 @@ public class Admin {
   }
 
   //---------------------------------------------UPDATE-ACCOUNT-DETAILS----------------------------------------------
-  public void updateAccountDetails(Pojo objP, Scanner sc) {
+  public void updateAccountDetails(Pojo objP, Scanner sc, Validation objV) {
     try {
       FileReader fr = new FileReader("userAcc.txt");
 
@@ -651,11 +654,13 @@ public class Admin {
       fw.close();
       bw.close();
 
-      File f = new File("userAcc.txt");
-      f.delete();
-      File fold = new File("userAcc.txt");
-      File fnew = new File("userAcc1.txt");
-      fnew.renameTo(fold);
+      // File f = new File("userAcc.txt");
+      // f.delete();
+      // File fold = new File("userAcc.txt");
+      // File fnew = new File("userAcc1.txt");
+      // fnew.renameTo(fold);
+
+      objV.renameDelete();
 
       if (flag == false) {
         System.out.println(
