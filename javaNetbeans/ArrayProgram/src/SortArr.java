@@ -27,7 +27,7 @@ public class SortArr {
                 if (arr[j] > arr[j + 1]) {
                     arr[j] = arr[j] + arr[j + 1];
                     arr[j + 1] = arr[j] - arr[j + 1];
-                    arr[j] = arr[j] - arr[j + 1];x
+                    arr[j] = arr[j] - arr[j + 1];
                 }
             }
         }

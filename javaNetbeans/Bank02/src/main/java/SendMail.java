@@ -17,8 +17,8 @@ public class SendMail {
     public static void main(String[] args) {
       SendMail email = new SendMail();
      //Sending test email
-      email.createAndSendEmail("ajmeraaashu55@gmail.com", "Test email subject",
-      "Congratulations !!! \nThis is test email sent by java class.");
+      email.createAndSendEmail("ajmeraaashu55@gmail.com", "Create bank account",
+      "Congratulations !!! \nyou are account has been created in info branch: ");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {
