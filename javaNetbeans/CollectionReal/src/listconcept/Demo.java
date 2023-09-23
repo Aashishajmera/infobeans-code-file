@@ -1,5 +1,5 @@
 
-package ArrayListtttt;
+package listconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;

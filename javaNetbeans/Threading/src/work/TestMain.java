@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package work;
 
 import com.sun.source.tree.Scope;
@@ -72,10 +68,10 @@ public class TestMain {
     B obj1 = new B();
 
     // create a thread a first thread and second thread
-   First t1 = new First(obj , obj1 ) ;
-   Second t2 = new Second (obj ,obj1) ; 
-   t1.start() ;
+    First t1 = new First(obj, obj1);
+    Second t2 = new Second(obj, obj1);
+
+    t1.start ();
 //    f1.sta
-    
-   
+
 }
