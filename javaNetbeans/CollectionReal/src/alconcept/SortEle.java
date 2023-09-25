@@ -1,10 +1,9 @@
-
-package listconcept;
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SumEle {
+public class SortEle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array: ");
@@ -13,22 +12,22 @@ public class SumEle {
         ArrayList<Integer> arr = new ArrayList<>(size);
         System.out.println("Enter "+size +" element: ");
         for(int i = 0; i < size; i++){
-            int value = sc.nextInt();
-            arr.add(value);
+            arr.add(sc.nextInt());
         }
+        arr.add(88);
         
         System.out.println("Default array element is: ");
         for(int i = 0; i < arr.size(); i++){
             System.out.print(arr.get(i)+" ");
         }
         
-        int sum = 0;
-        
         for(int i = 0; i < arr.size(); i++){
-            sum+=arr.get(i);
+            for(int j = 0; j < arr.size() - i -1; j++){
+                if(arr.get(j) > arr.get(j+1)){
+//                    arr.replaceO(j); = arr.get(j) + arr.get(j+1);
+                    
+                }
+            }
         }
-        System.out.println();
-        
-        System.out.println("Element sum is: "+sum);
     }
 }

@@ -16,6 +16,5 @@ public class ChangeValue {
         a.m1();
         A.a = 20;
         a.m1();
-
     }
 }

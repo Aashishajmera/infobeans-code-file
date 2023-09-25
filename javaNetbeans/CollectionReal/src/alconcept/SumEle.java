@@ -1,10 +1,10 @@
-package listconcept;
+
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SearchEle {
-
+public class SumEle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter size of array: ");
@@ -22,20 +22,13 @@ public class SearchEle {
             System.out.print(arr.get(i)+" ");
         }
         
-        System.out.println("Enter search element: ");
-        int element = sc.nextInt();
-        boolean flag = false;
+        int sum = 0;
+        
         for(int i = 0; i < arr.size(); i++){
-            if(arr.get(i) == element){
-                flag = true;
-                break;
-            }
+            sum+=arr.get(i);
         }
-        if(flag){
-            System.out.println("Element found: ");
-        }else{
-            System.out.println("Element not found: ");
-        }
+        System.out.println();
+        
+        System.out.println("Element sum is: "+sum);
     }
-
 }

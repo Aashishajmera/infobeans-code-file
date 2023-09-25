@@ -1,9 +1,9 @@
-package listconcept;
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SumEvenOdd {
+public class SearchEle {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -22,19 +22,20 @@ public class SumEvenOdd {
             System.out.print(arr.get(i)+" ");
         }
         
-        
-        System.out.println();
-        int evenSum = 0;
-        int oddSum = 0;
+        System.out.println("Enter search element: ");
+        int element = sc.nextInt();
+        boolean flag = false;
         for(int i = 0; i < arr.size(); i++){
-            if(arr.get(i)%2 == 0){
-                evenSum += arr.get(i);
-            }else{
-                oddSum += arr.get(i);
+            if(arr.get(i) == element){
+                flag = true;
+                break;
             }
         }
-        
-        System.out.println("Even element sum is: "+evenSum);
-        System.out.println("Odd element sum is: "+oddSum);
+        if(flag){
+            System.out.println("Element found: ");
+        }else{
+            System.out.println("Element not found: ");
+        }
     }
+
 }

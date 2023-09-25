@@ -1,9 +1,9 @@
-package listconcept;
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class RotateByOne {
+public class InsertEle {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,34 +23,27 @@ public class RotateByOne {
             System.out.print(arr.get(i) + " ");
         }
 
-        System.out.println("Enter element for rotate: ");
-        int rotate = sc.nextInt();
+        System.out.println("Enter index: ");
+        int index = sc.nextInt();
+        System.out.println("Enter value: ");
+        int value = sc.nextInt();
         boolean flag = false;
         for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) == rotate) {
+            if (i == index) {
                 flag = true;
-                for (int j = i; j < arr.size() - 1; j++) {
-                    arr2.add(arr.get(j + 1));
-                }
-                break;
+                arr2.add(value);
+            } else {
+                arr2.add(arr.get(i));
             }
         }
 
-        if (flag) {
-            for (int i = 0; i < arr.size(); i++) {
-                if (arr.get(i) == rotate) {
-                    for (int j = 0; j <= i; j++) {
-                        arr2.add(arr.get(j));
-                    }
-                }
-            }
-            
-            for(int i = 0; i < arr2.size(); i++){
-                System.out.print(arr2.get(i)+" ");
-            }
+        if (flag == false) {
+            System.out.println("index not found: ");
         } else {
-            System.out.println("Element not found: ");
+            System.out.println("Update array element is: ");
+            for (int i = 0; i < arr2.size(); i++) {
+                System.out.print(arr2.get(i) + " ");
+            }
         }
-
     }
 }

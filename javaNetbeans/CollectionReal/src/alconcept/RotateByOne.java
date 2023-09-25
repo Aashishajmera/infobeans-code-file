@@ -1,9 +1,9 @@
-package listconcept;
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DeleteEle {
+public class RotateByOne {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,25 +23,33 @@ public class DeleteEle {
             System.out.print(arr.get(i) + " ");
         }
 
-        System.out.println("Enter delete element: ");
-        int delete = sc.nextInt();
+        System.out.println("Enter element for rotate: ");
+        int rotate = sc.nextInt();
         boolean flag = false;
         for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) != delete) {
-                arr2.add(arr.get(i));
-            } else {
+            if (arr.get(i) == rotate) {
                 flag = true;
+                for (int j = i; j < arr.size() - 1; j++) {
+                    arr2.add(arr.get(j + 1));
+                }
+                break;
             }
         }
 
         if (flag) {
-            System.out.println("Update array element is: ");
-            for (int i = 0; i < arr2.size(); i++) {
-                System.out.print(arr2.get(i) + " ");
+            for (int i = 0; i < arr.size(); i++) {
+                if (arr.get(i) == rotate) {
+                    for (int j = 0; j <= i; j++) {
+                        arr2.add(arr.get(j));
+                    }
+                }
+            }
+            
+            for(int i = 0; i < arr2.size(); i++){
+                System.out.print(arr2.get(i)+" ");
             }
         } else {
             System.out.println("Element not found: ");
-
         }
 
     }

@@ -1,9 +1,9 @@
-package listconcept;
+package alconcept;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InsertEle {
+public class DeleteEle {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -23,27 +23,26 @@ public class InsertEle {
             System.out.print(arr.get(i) + " ");
         }
 
-        System.out.println("Enter index: ");
-        int index = sc.nextInt();
-        System.out.println("Enter value: ");
-        int value = sc.nextInt();
+        System.out.println("Enter delete element: ");
+        int delete = sc.nextInt();
         boolean flag = false;
         for (int i = 0; i < arr.size(); i++) {
-            if (i == index) {
-                flag = true;
-                arr2.add(value);
-            } else {
+            if (arr.get(i) != delete) {
                 arr2.add(arr.get(i));
+            } else {
+                flag = true;
             }
         }
 
-        if (flag == false) {
-            System.out.println("index not found: ");
-        } else {
+        if (flag) {
             System.out.println("Update array element is: ");
             for (int i = 0; i < arr2.size(); i++) {
                 System.out.print(arr2.get(i) + " ");
             }
+        } else {
+            System.out.println("Element not found: ");
+
         }
+
     }
 }
