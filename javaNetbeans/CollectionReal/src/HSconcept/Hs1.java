@@ -10,7 +10,7 @@ public class Hs1 {
         hs.add(20);
         hs.add(30);
         hs.add(30);
-        hs.add(2,99);
+//        hs.add(2,99);
         hs.add(40);
         System.out.println("Hash set is not allow duplicate element: ");
         System.out.println(hs);

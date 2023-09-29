@@ -30,5 +30,7 @@ public class LHS1 {
         lhs3.add(new StringBuffer("A"));
         System.out.println("Incase of StringBuffer (there are allow to duplicate element: )");
         System.out.println(lhs3);
+        
+        
     }
 }
