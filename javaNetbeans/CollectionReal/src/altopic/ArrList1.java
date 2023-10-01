@@ -1,10 +1,9 @@
 package altopic;
 
-import java.util.Collection;
 import java.util.ArrayList;
 
 public class ArrList1 {
- 
+
     public static void main(String[] args) {
         ArrayList al = new ArrayList();
         ArrayList al2 = new ArrayList();
@@ -46,6 +45,5 @@ public class ArrList1 {
         System.out.println(al.equals(al2));
         System.out.println(al.hashCode());
 //        al.forEach(action);
-        zz
     }
 }

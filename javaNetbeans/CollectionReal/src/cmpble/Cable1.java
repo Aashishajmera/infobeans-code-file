@@ -1,5 +1,6 @@
 package cmpble;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.TreeSet;
@@ -48,17 +49,17 @@ class Customer implements Comparable<Customer>{
 
 }
 
-class SortbyName implements Comparator<Customer> {
-
-    public int compare(Customer o1, Customer o2) {
-        return o1.getName().compareTo(o2.getName());
-    }
-}
+//class SortbyName implements Comparator<Customer> {
+//
+//    public int compare(Customer o1, Customer o2) {
+//        return o1.getName().compareTo(o2.getName());
+//    }
+//}
 
 public class Cable1 {
 
     public static void main(String[] args) {
-        TreeSet<Customer> ts = new TreeSet<>();
+        ArrayList<Customer> ts = new ArrayList<>();
 
         ts.add(new Customer("Aashish", 101));
         ts.add(new Customer("Mohan", 103));
@@ -67,5 +68,10 @@ public class Cable1 {
         
 //        Collections.sort();
         System.out.println(ts);
+        Collections.sort(ts);
+        System.out.println(ts);
+        for(Customer c: ts){
+            System.out.println("Name "+c.getName() +" Id "+c.getId());
+        }
     }
 }

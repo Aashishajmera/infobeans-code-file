@@ -20,9 +20,11 @@ class Box<T> {
 
 public class Demo {
     public static void main(String[] args) {
-        Box b = new Box();
+        Box<String> b = new Box<String>();
         
-        b.set(100);
-        b.get();
+        b.set("23");
+//        b.set(33);
+        System.out.println(b.get());
+        
     }
 }

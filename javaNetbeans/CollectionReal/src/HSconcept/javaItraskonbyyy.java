@@ -11,14 +11,21 @@ public class javaItraskonbyyy {
         hs.add(101);
         hs.add(102);
         hs.add(103);
-        System.out.println(hs.remove(0));
-        
-        System.out.println(hs);
+        //System.out.println(hs.remove(100));
 
-//        Iterator i = hs.iterator();
-//        while (i.hasNext()) {
-//            hs.remove(0);
-//            System.out.println(i.next());
+//        System.out.println(hs);
+
+
+        Iterator i = hs.iterator();
+        while (i.hasNext()) {
+            System.out.println(i.next());
+            }
+        }
+//         Iterator i1 = hs.iterator();
+//
+//        while (i1.hasNext()) {
+//            System.out.println(i1.next());
+//        }
 
 //            if (hs.equals(100)) {
 //                System.out.println("true");
@@ -28,7 +35,6 @@ public class javaItraskonbyyy {
 //                System.out.println(i.next());
 //            }
 //        }
-
 //        ListIterator li = hs.listIterator();
 //        while (li.hasNext()) {
 //            System.out.println(li.next());
