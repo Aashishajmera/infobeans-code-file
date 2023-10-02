@@ -13,7 +13,7 @@ public class OccuranceArrrrr {
         }
         
         for(int i = 0; i < arr.length; i++){
-            if(i%2 )
+            
         }
         
     }
