@@ -1,8 +1,12 @@
 import java.beans.Transient;
 
 public class TransientKey {
-	transient static int a = 9;
+	transient int a = 9;
+	int b = 20;
+
 	public static void main(String[] args) {
-		System.out.println(a);
+		TransientKey transient1 = new TransientKey();
+		System.out.println(transient1.a);
+		System.out.println(transient1.b);
 	}
 }

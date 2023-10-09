@@ -42,10 +42,15 @@ public class ShallowAndDeep {
 		System.out.println(shallow.getA());
 		System.out.println(shallow2.getA());
 
+		
 		// create object of deep copy:
 		Deep deep = new Deep();
+		deep.setB(10);
 		Deep deep2 = new Deep();
-		deep2 = deep;
+//		deep2 = deep;
+		deep2.setB(20);
+		System.out.println(deep.getB());
+		System.out.println(deep2.getB());
 
 	}
 }
