@@ -4,7 +4,7 @@ class Q14Main{
 	public static void main(String[] args) {
         String s1 = "345k678";
 
-        // convert character type array
+        // convert character type array	
         boolean flag = false;
         for(int i = 0; i< s1.length(); i++){
             if((int)s1.charAt(i) < 48 || (int)s1.charAt(i) > 57){
