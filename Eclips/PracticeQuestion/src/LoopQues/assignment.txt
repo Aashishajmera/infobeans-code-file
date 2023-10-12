@@ -1,0 +1,833 @@
+1) WAP to print a statement 1000 number of times.
+
+2) WAP to print N natural number.
+
+3) WAP to find out the sum of N natural number.
+
+4) WAP to print table of a number.
+
+5) WAP to find out the factorial of a number.
+
+6) WAP to find out the factors of a number.
+
+7) WAP to check whether entered number is prime or not.
+
+8) WAP to print Fibonacci series.
+
+9) WAP to print N even numbers.
+
+10) WAP to print Even numbers upto N.
+
+11) WAP to print N odd numbers.
+
+12) WAP to print Odd numbers upto N.
+
+13) WAP to print N natural numbers in reverse order
+
+14) WAP to print alphabets in uppercase
+
+15) WAP to print alphabets in lowercase
+
+/// 16) …... -6 -3 0 3 6 9 ……. n terms
+
+17) 1 2 4 7 11 16 …… n terms
+
+18) 1 2 2 4 8 32 …… n terms
+
+19) 1 + 1/2 + 1/3 + 1/4 + 1/5 ….. n terms(find out sum)
+
+20) 0 7 14 21 28 35 …..
+
+21) 1, 4, 9, 16, 25 …..
+
+22) 1 8 27 64 125 …..
+
+23) 1 9 25 49 81 …..
+
+/// 24) 0 4 16 36 64 ….. 1 2 3 4 5 6 7 8
+
+25) 1 27 125 343 …………
+
+26) 0 8 64 216 …………
+
+27) *# * # * # * # * …….
+
+28) 1 2 3 4 Hello 6 7 8 9 Hello 11 12 ….
+
+29) 1 11 111 1111 11111 ……
+
+30) 1+11+111+1111+11111+….
+
+31) 9 99 999 9999 99999 …….
+
+32) A b C d E f G h …… n terms
+
+33) WAP to print Alphabets in reversing order.
+
+34) WAP to check whether entered number is perfect or not
+
+35) WAP to count number of digits
+
+36) WAP to reverse a number
+
+37) WAP to check whether entered number is palindrome or not
+
+38) WAP to check whether entered number is Armstrong or not
+
+39) WAP to check whether entered number is strong or not
+
+40) WAP to count no. Of even and odd digits in a number
+
+/// 41) WAP to find out LCM of a number
+
+/// 42) WAP to find out HCF of a number
+
+/// 43) WAP to convert binary number into decimal number
+
+--44) WAP to interchange first and last digit of a number
+
+45) WAP to find out the sum of all the digits of a number
+
+46) WAP to find out the sum of first and last digit of a user entered number
+
+47) WAP to print tables of all the numbers between two entered numbers
+
+48) WAP to find out the factors of all the numbers between two entered numbers
+
+49) WAP to find out all the perfect numbers between two entered numbers
+
+50) WAP to find out all the palindrome numbers between two entered numbers
+
+51) WAP to reverse all the numbers between two entered numbers
+
+52) WAP to find out all the Armstrong numbers between two entered numbers
+
+53) WAP to print all the strong numbers between two entered numbers
+
+54) WAP to print all the even numbers between two entered numbers
+
+55) WAP to print all the odd numbers between two entered numbers
+
+56) WAP to print factorial of all the numbers between two entered numbers
+
+57) WAP to print all the prime numbers between two entered numbers
+
+/// 58) WAP to convert decimal number into binary number without using array
+
+59) WAP to find out the sum of all integer between 100 and 200 which are divisible by 9
+
+-60) WAP to print Square, Cube and Square Root of all numbers from 1 to N
+
+61) WAP to find out all the leap years between two entered years
+
+62) Draw patterns
+
+1)
+***** 
+
+2)
+* 
+*
+* 
+* 
+* 
+
+3)
+*
+ *
+  * 
+   * 
+    * 
+
+4)
+***** 
+***** 
+***** 
+***** 
+***** 
+  
+  
+5)
+12345 
+12345 
+12345 
+12345 
+12345 
+
+6)
+11111 
+22222 
+33333 
+44444 
+55555 
+
+7)
+1 
+00 
+111 
+0000 
+11111
+
+8)
+*
+
+**
+
+***
+
+****
+
+*****
+ 
+9)
+1 
+12 
+123 
+1234 
+12345 
+
+10)
+1 
+22 
+333 
+4444 
+55555 
+
+11)
+A 
+AB 
+ABC 
+ABCD 
+ABCDE 
+
+12)
+a 
+ab 
+abc 
+abcd 
+abcde 
+
+13)
+1 
+01 
+101 
+0101 
+10101 
+
+14)
+1 
+23 
+456 
+78910
+
+15)
+A
+
+BB
+
+CCC
+
+DDDD
+
+EEEEE
+
+16)
+a 
+bc 
+def 
+ghij 
+klmno 
+
+17)
+* 
+## 
+*** 
+#### 
+***** 
+
+18)
+1 
+10 
+101 
+1010 
+10101 
+
+19)
+*
+** 
+* * 
+*  *
+*   *
+****** 
+
+20)
+1 
+12 
+1 3
+1  4 
+12345 
+
+21)
+1 
+22 
+3 3
+4  4
+55555
+
+22)
+A
+AB
+A C
+A  D
+ABCDE
+
+23)
+a 
+bc 
+d f
+g  j
+klmno 
+
+24)
+* 
+** 
+*@* 
+*@@* 
+*****
+
+25)
+5 
+54 
+543 
+5432 
+54321 
+
+26)
+* 
+*# 
+*#* 
+*#*# 
+*#*#* 
+
+27)
+1 
+10 
+1 1 
+1  0 
+10101
+
+28)
+1 
+123 
+12345 
+1234567 
+123456789
+
+29)
+1
+
+222
+
+33333
+
+4444444
+
+555555555 
+
+30)
+***** 
+**** 
+*** 
+** 
+* 
+
+31)
+12345 
+1234 
+123 
+12 
+1 
+
+32)
+55555 
+4444 
+333 
+22 
+1 
+
+33)
+ABCDE 
+ABCD 
+ABC 
+AB 
+A 
+
+34)
+EEEEE 
+DDDD 
+CCC 
+BB 
+A 
+
+35)
+***** 
+*  *
+* *
+** 
+*
+
+36)
+ABCDE
+
+A D
+
+A C
+
+AB
+
+A
+
+37)
+***** 
+#### 
+*** 
+## 
+* 
+
+38)
+55555 
+4  4
+3 3
+22 
+1
+
+39)
+123456 
+54321 
+1234 
+321 
+12 
+1 
+
+---------40)
+* 
+** 
+**** 
+******* 
+*********** 
+
+41)
+A 
+BCD 
+EFGHI 
+JKLMNOP 
+
+42)
+54321 
+5432 
+543 
+54 
+5
+
+---second---43)
+    1
+
+   12
+
+  123
+
+ 1234
+
+12345 
+
+44)
+	1 
+   22 
+  333 
+ 4444 
+55555 
+
+45)
+	5 
+   44
+  333
+ 2222
+11111 
+
+46)
+	A
+   AB 
+  ABC
+ ABCD 
+ABCDE 
+
+47)
+    1
+   11 
+  1*1 
+ 1**1 
+11111 
+
+48)
+	A
+   AB 
+  A_C 
+ A__D 
+ABCDE
+
+49)
+    1 	
+   10 
+  101 
+ 1010 
+10101
+
+50)
+12345 
+ 1234
+  123
+   12 
+    1 
+
+51)	
+55555
+ 4444
+  333 
+   22 
+    1 
+
+52)	
+12345 
+ 1__4 
+  1_3 
+   12 
+    1 
+	
+53)
+55555 
+ 4__4 
+  3_3 
+   22 
+    1
+
+54)
+ABCDE 
+ A__D 
+  A_C 
+   AB 
+    A 
+
+55)	
+ABCDE 
+ ABCD 
+  ABC 
+   AB 
+    A 
+
+56)	
+11111 
+ 2222 
+  333 
+   44 
+    5
+
+57)
+    *
+
+   * *
+
+  * * *
+
+ * * * *
+
+* * * * * 
+
+58)
+    1 
+   1 2 
+  1 2 3 
+ 1 2 3 4 
+1 2 3 4 5 
+
+59)
+A
+A B 
+A B C 
+A B C D 
+A B C D E 
+
+60)
+    X 
+   X X 
+  X___X 
+ X_____X 
+X X X X X 
+
+61)
+    * 
+   *** 
+  ***** 
+ ******* 
+********* 
+
+62)
+    1 
+   123 
+  12345 
+ 1234567 
+123456789 
+
+63)
+    A 
+   ABC 
+  ABCDE 
+ ABCDEEF 
+ABCDEFGHI
+
+
+64)
+    *
+
+   *_*
+
+  *___*
+
+ *_____*
+
+********* 
+
+65)
+    1 
+   1 1 
+  1 2 1 
+ 1 3 3 1 
+1 4 6 4 1
+
+66) 
+    1 
+   1*1 
+  1***1 
+ 1*****1 
+111111111 
+
+67)
+    A 
+   B B 
+  C   C 
+ D     D 
+EEEEEEEEE
+
+68)
+    # 
+   *#* 
+  **#** 
+ ***#*** 
+****#**** 
+
+69)
+*********
+ ******* 
+  ***** 
+   *** 
+    * 
+	
+70)
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+
+71)
+123456789
+
+ 1234567
+
+  12345
+
+   123
+
+    1
+
+72)
+A B C D E
+ A B C D 
+  A B C 
+   A B 
+    A 
+ 
+73)
+5 5 5 5 5 
+ 4 4 4 4 
+  3 3 3 
+   2 2 
+    1 
+
+74)
+123456789
+ 1     7 
+  1   5 
+   1 3 
+    1 
+ 
+75) 
+123456789
+ 1+++++7 
+  1+++5 
+   1+3 
+    1 
+ 
+76)
+x 
+xx 
+xxx 
+xxxx 
+xxx
+xx 
+x 
+
+77)
+1 
+12 
+123 
+1234 
+123 
+12 
+1
+
+78)
+1
+
+12
+
+123
+
+1234
+
+123
+
+12
+
+1 
+
+
+79)
+   1
+  12
+ 123
+1234
+ 123
+  12
+   1 
+
+80)
+1 
+12 
+1 3 
+1  4 
+1 3 
+12 
+1 
+
+81)
+    * 
+   *_*
+  *_*_* 
+ *_*_*_* 
+  *_*_* 
+   *_* 
+    * 
+	
+82)
+   * 
+  *** 
+ ***** 
+******* 
+ ***** 
+  *** 
+   * 
+   
+83)
+   * 
+  *_* 
+ *___* 
+*_____* 
+ *___* 
+  *_* 
+   * 
+
+----84)
+    1 
+   212 
+  32123 
+ 4321234 
+543212345
+
+
+++++85)
+___________
+|          |
+|          |
+|          |
+|          |
+|          |
+|          |
+|__________|
+
+86)
+*        *
+**      ** 
+***    *** 
+****  **** 
+********** 
+
+87)
+********** 
+****  **** 
+***    ***
+**      ** 
+*        *
+
+
+Q88)
+***** ***** 
+****   **** 
+***     ***
+**       ** 
+*         *
+*         *
+**       ** 
+***     *** 
+****   **** 
+***** *****
+
+Q89)
+    1 
+    2 
+    3 
+    4 
+123454321 
+    4
+	3 
+	2 
+	1  
+	
+90)
+     1
+    101 
+   10101 
+  1010101 
+ 101010101 
+10101010101 
+
+
+91)
+*     *
+ *   *
+  * *
+   * 
+  * * 
+ *   * 
+*	  *
+
+WAP to print all the alphabets in pattern according to the selected case using switch case.
