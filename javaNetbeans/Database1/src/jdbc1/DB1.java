@@ -1,4 +1,4 @@
-package database1;
+package jdbc1;
 
 import com.mysql.cj.jdbc.result.ResultSetMetaData;
 import java.sql.Connection;
