@@ -46,7 +46,7 @@ public class TestMain {
                         while (true) {
                             System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
                             System.out.println("\t\t\t PRESS 1: Create a new customer account \t\t\t\t PRESS 2: View any account information \t\t\t");
-                            System.out.println("\t\t\t PRESS 3: Block any account \t\t\t\t PRESS 4: View all account list \t\t\t");
+                            System.out.println("\t\t\t PRESS 3: Block any account \t\t\t\t\t PRESS 4: View all account list \t\t\t");
                             System.out.println("\t\t\t PRESS 5: Back menu" + TestMain.setRed + "\t\t\t\t\t\t PRESS: 6 Exit program" + TestMain.resetColor);
                             System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
 
@@ -57,9 +57,14 @@ public class TestMain {
                                     System.out.println("Enter Account type (PRESS 1. saving/ PRESS 2. current)");
                                     int type = sc.nextInt();
                                     sc.nextLine();
-                                    String accType = sc.nextLine();
+                                    String accType = "null";
+                                    if (type == 1) {
+                                        accType = "saving";
+                                    } else if (type == 2) {
+                                        accType = "current";
+                                    }
 
-                                    if (accType.equals("saving") || accType.equals("Saving") || accType.equals("current") || accType.equals("Current")) {
+                                    if (type == 1 || type == 2) {
                                         System.out.print("\t Enter your name: \n\t ");
                                         String firstName = sc.nextLine();
                                         boolean checkfName = firstName.matches("[a-zA-Z , ]+");
@@ -80,7 +85,7 @@ public class TestMain {
                                                         String email = sc.nextLine();
                                                         boolean checkEmail = Validation.checkEmail(email);
                                                         if (checkEmail) {
-                                                            System.out.print("\t Enter your date of birth: \n\t ");
+                                                            System.out.print("\t Enter your date of birth: (yyyy-mm-dd)\n\t ");
                                                             String dob = sc.nextLine();
                                                             boolean checkDob = dob.matches("\\d{4}-\\d{2}-\\d{2}");
                                                             if (checkDob) {
@@ -92,40 +97,61 @@ public class TestMain {
                                                                     String pancardNumber = sc.nextLine();
                                                                     boolean checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
                                                                     if (checkPanNum) {
-                                                                        System.out.print("\t Gender: (male/female/other) \n\t ");
-                                                                        String gender = sc.nextLine();
-                                                                        if (gender.equals("male") || gender.equals("Male") || gender.equals("female") || gender.equals("Female") || gender.equals("Other") || gender.equals("other")) {
+                                                                        System.out.print("\t Gender: (PRESS 1. male/ PRESS 2. female/ PRESS 3. other) \n\t ");
+                                                                        int checkgender = sc.nextInt();
+                                                                        sc.nextLine();
+                                                                        String gender = "null";
+                                                                        if (checkgender == 1) {
+                                                                            gender = "male";
+                                                                        } else if (checkgender == 2) {
+                                                                            gender = "female";
+                                                                        } else if (checkgender == 3) {
+                                                                            gender = "other";
+                                                                        }
+                                                                        if (checkgender == 1 || checkgender == 2 || checkgender == 3) {
                                                                             System.out.print("\t Nominee name: \n\t ");
                                                                             String nomineeName = sc.nextLine();
                                                                             boolean checkNomineeName = nomineeName.matches("[a-zA-Z , ]+");
                                                                             if (checkNomineeName) {
                                                                                 System.out.print("\t Address: \n\t ");
                                                                                 String address = sc.nextLine();
-                                                                                System.out.print("\t Branch: (indore/dewas/ujjain) \n\t ");
-                                                                                String branchName = sc.nextLine();
-                                                                                if (branchName.equals("indore") || branchName.equals("Indore") || branchName.equals("dewas") || branchName.equals("Dewas") || branchName.equals("ujjain") || branchName.equals("Ujjain")) {
+                                                                                System.out.print("\t Branch: (PRESS 1. indore/ PRESS 2. dewas/ PRESS 3. ujjain) \n\t ");
+                                                                                int checkbranch = sc.nextInt();
+                                                                                sc.nextLine();
+                                                                                String branchName = "null";
+                                                                                if (checkbranch == 1) {
+                                                                                    branchName = "indore";
+                                                                                } else if (checkbranch == 2) {
+                                                                                    branchName = "dewas";
+                                                                                } else if (checkbranch == 3) {
+                                                                                    branchName = "ujjain";
+                                                                                }
+                                                                                if (checkbranch == 1 || checkbranch == 2 || checkbranch == 3) {
                                                                                     System.out.print("Enter amount: ");
                                                                                     Double amount = sc.nextDouble();
                                                                                     if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
                                                                                         Boolean toActive = true;
                                                                                         // create a object of account model 
-                                                                                        Account account = new Account(firstName, lastName, fatherName, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount);
-                                                                                        if(AccountDao.createUserAcc(account) != -1){
-                                                                                            SendMail.main(args);
-                                                                                        }else{
+                                                                                        Account account = new Account(firstName, lastName, fatherName, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount, toActive);
+                                                                                        if (AccountDao.createUserAcc(account) != -1) {
+                                                                                            System.out.println(TestMain.setGreen+"Account successfully created....."+TestMain.resetColor);
+                                                                                            AccountDao.setEmailMsg(account);
+                                                                                            SendMail sendMail = new SendMail();
+                                                                                            sendMail.main(args);
+                                                                                        } else {
                                                                                             System.out.println("Oops! Something went wrong to prosses account create: ");
                                                                                         }
                                                                                     } else {
                                                                                         System.out.println("please enter minimum amount (saving = 500 / current = 1000)");
                                                                                     }
                                                                                 } else {
-                                                                                    System.out.println("\t branch not available: \n\t ");
+                                                                                    System.out.println("\t Invalid branch \n\t ");
                                                                                 }
                                                                             } else {
                                                                                 System.out.println("Invalid nominee name: ");
                                                                             }
                                                                         } else {
-                                                                            System.out.println("gender not match: ");
+                                                                            System.out.println("Invalid gender: ");
                                                                         }
                                                                     } else {
                                                                         System.out.println("Invalid pancard number: ");
@@ -158,7 +184,7 @@ public class TestMain {
                                             System.out.println("Invalid Name: ");
                                         }
                                     } else {
-                                        System.out.println("\t Account type not valid: \n\t ");
+                                        System.out.println("\t Invalid account type: \n\t ");
                                     }
 
                                     break;
