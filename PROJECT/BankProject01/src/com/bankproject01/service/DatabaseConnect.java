@@ -9,7 +9,7 @@ public class DatabaseConnect {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rsb?useSSL=false", "root", "root");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rsb", "root", "root");
         } catch (Exception e) {
             e.printStackTrace();
         }
