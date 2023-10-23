@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class AccountDao {
 
@@ -22,15 +23,15 @@ public class AccountDao {
         try {
             con = DatabaseConnect.getConnection();
 
-            // create account date;
+            // create account date:
             Date currentDate = new Date();
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             String date = dateFormat.format(currentDate);
             java.util.Date date1 = dateFormat.parse(date);
             java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
 
-            //                                                         1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
-            String sql = "insert into account( firstName, lastName,fatherName,  contactNo,  emailId,dateOfBirth,  aadharNumber, panNumber, accountType,  branch,  gender,  nominee,  address,  amount, toactive, createdate)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            //                                                         1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+            String sql = "insert into account( firstName, lastName,fatherName,  contactNo,  emailId,dateOfBirth,  aadharNumber, panNumber, accountType,  branch,  gender,  nominee,  address,  amount, toactive, createdate, pin)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
 
@@ -52,6 +53,7 @@ public class AccountDao {
             ps.setDouble(14, c.getAmount());
             ps.setBoolean(15, c.getToActive());
             ps.setDate(16, sqlStartDate);
+            ps.setString(17, c.getPin());
 
             checkCreateAcc = ps.executeUpdate();
 
@@ -71,6 +73,17 @@ public class AccountDao {
     // block account 
     public static void blockAccount(String accountNum) {
 
+    }
+    //==================================================PIN============================================
+
+    public static String pinCreate(int length) {
+        String numbers = "012345";
+        Random rndm_method = new Random();
+        char[] otp = new char[length];
+        for (int i = 0; i < length; i++) {
+            otp[i] = numbers.charAt(rndm_method.nextInt(numbers.length()));
+        }
+        return new String(otp);
     }
 
     //==================================================MAIL============================================
@@ -116,6 +129,38 @@ public class AccountDao {
         return accountNum;
     }
 
+    // get pin 
+    public static String getPin(){
+         Connection con = null;
+        String pin = null;
+
+        try {
+            con = DatabaseConnect.getConnection();
+
+            String getAccNum = "select * from account";
+            PreparedStatement ps = con.prepareStatement(getAccNum);
+
+//            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                if (rs.getString(6).equals(email)) {
+                    pin = rs.getString(18);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return pin;
+    
+    }
     //=============================================VIEW ANY ACCOUNT========================================
     public static int getAnyAccountinfo(String accountNum) {
         Connection con = null;
@@ -223,20 +268,59 @@ public class AccountDao {
         return checkaccNum;
     }
 
-    //=============================================BLOCK ACCOUNT========================================
+//    //=============================================BLOCK ACCOUNT========================================
+//    public static int accountBlock(String accountNum) {
+//        Connection con = null;
+//        int updateActive = -1;
+//        try {
+//            con = DatabaseConnect.getConnection();
+//            String blockQuery = "update account set toactive = false where accountNumber = ?";
+//
+//            PreparedStatement ps = con.prepareStatement(blockQuery);
+//
+//            ps.setInt(1, Integer.parseInt(accountNum));
+//
+//            updateActive = ps.executeUpdate();
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                con.close();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return updateActive;
+//    }
+    
+////=============================================BLOCK ACCOUNT========================================
     public static int accountBlock(String accountNum) {
         Connection con = null;
         int updateActive = -1;
         try {
             con = DatabaseConnect.getConnection();
-            String blockQuery = "update account set toactive = false where accountNumber = ?";
 
-            PreparedStatement ps = con.prepareStatement(blockQuery);
+            String getAccNum = "select * from account";
+            PreparedStatement ps = con.prepareStatement(getAccNum);
 
-            ps.setInt(1, Integer.parseInt(accountNum));
+            ResultSet rs = ps.executeQuery();
+            boolean flag = false;
+            while (rs.next()) {
+                if (rs.getBoolean(16) == false && rs.getInt(1) == Integer.parseInt(accountNum)) {
+                    System.out.println("Account is alread blocked...");
+                    flag = true;
+                }
+            }
 
-            updateActive = ps.executeUpdate();
+            if (flag == false) {
+                
+                String blockQuery = "update account set toactive = false where accountNumber = ?";
 
+                ps.setInt(1, Integer.parseInt(accountNum));
+
+                updateActive = ps.executeUpdate();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

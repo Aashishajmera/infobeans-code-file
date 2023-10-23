@@ -172,63 +172,63 @@ public class TestMain {
                                                                                             Double amount = sc.nextDouble();
                                                                                             if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
                                                                                                 Boolean toActive = true;
-                                                                                                Date currentDate = new Date();
-                                                                                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm a");
-                                                                                                String date = dateFormat.format(currentDate);
+
+                                                                                                // generate pin:
+                                                                                                String pin = AccountDao.pinCreate(6);
                                                                                                 // create a object of account model 
-                                                                                                Account account = new Account(firstName, lastName, fatherName, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount, toActive);
+                                                                                                Account account = new Account(firstName, lastName, fatherName, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount, toActive, pin);
                                                                                                 if (AccountDao.createUserAcc(account) != -1) {
-                                                                                                    System.out.println(TestMain.setGreen + "Account successfully created....." + TestMain.resetColor);
+                                                                                                    System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
                                                                                                     AccountDao.setEmailMsg(account);
                                                                                                     SendMail sendMail = new SendMail();
                                                                                                     sendMail.main(args);
                                                                                                 } else {
-                                                                                                    System.out.println("Oops! Something went wrong to prosses account create: ");
+                                                                                                    System.out.println(TestMain.setRed + "Oops! Something went wrong to prosses account create: " + TestMain.resetColor);
                                                                                                 }
                                                                                             } else {
-                                                                                                System.out.println("please enter minimum amount (saving = 500 / current = 1000)");
+                                                                                                System.out.println(TestMain.setRed + "please enter minimum amount (saving = 500 / current = 1000)" + TestMain.resetColor);
                                                                                             }
                                                                                         } else {
-                                                                                            System.out.println("\t Invalid branch \n\t ");
+                                                                                            System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
                                                                                         }
                                                                                     } else {
-                                                                                        System.out.println("Invalid nominee name: ");
+                                                                                        System.out.println(TestMain.setRed + "Invalid nominee name: " + TestMain.resetColor);
                                                                                     }
                                                                                 } else {
-                                                                                    System.out.println("Invalid gender: ");
+                                                                                    System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
                                                                                 }
                                                                             } else {
-                                                                                System.out.println("Invalid pancard number: ");
+                                                                                System.out.println(TestMain.setRed + "Invalid pancard number: " + TestMain.resetColor);
                                                                             }
 
                                                                         } else {
-                                                                            System.out.println("Invalid aadhar number: ");
+                                                                            System.out.println(TestMain.setRed + "Invalid aadhar number: " + TestMain.resetColor);
                                                                         }
 
                                                                     } else {
-                                                                        System.out.println("Invalid date of birth: ");
+                                                                        System.out.println(TestMain.setRed + "Invalid date type " + TestMain.resetColor);
                                                                     }
 
                                                                 } else {
-                                                                    System.out.println("Invalid email");
+                                                                    System.out.println(TestMain.setRed + "Invalid email" + TestMain.resetColor);
                                                                 }
 
                                                             } else {
-                                                                System.out.println("Invalid mobile number: ");
+                                                                System.out.println(TestMain.setRed + "Invalid mobile number: " + TestMain.resetColor);
                                                             }
 
                                                         } else {
-                                                            System.out.println("Invalid father name: ");
+                                                            System.out.println(TestMain.setRed + "Invalid father name: " + TestMain.resetColor);
                                                         }
 
                                                     } else {
-                                                        System.out.println("Invalid last Name: ");
+                                                        System.out.println(TestMain.setRed + "Invalid last Name: " + TestMain.resetColor);
                                                     }
                                                 } else {
-                                                    System.out.println("Invalid Name: ");
+                                                    System.out.println(TestMain.setRed + "Invalid Name: " + TestMain.resetColor);
                                                 }
                                             } else {
-                                                System.out.println("\t Invalid account type: \n\t ");
+                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                             }
 
                                             break;
@@ -242,7 +242,7 @@ public class TestMain {
                                                     System.out.println("Account not found: ");
                                                 }
                                             } else {
-                                                System.out.println("Invalid account number: ");
+                                                System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
                                             }
                                             break;
 
@@ -253,12 +253,12 @@ public class TestMain {
                                             boolean checkAccNum = accountNumber.matches("\\d{10}");
                                             if (checkAccNum) {
                                                 if (AccountDao.accountBlock(accountNumber) != 0) {
-                                                    System.out.println("Account successfully block");
+                                                    System.out.println(TestMain.setGreen + "Account successfully block" + TestMain.resetColor);
                                                 } else {
-                                                    System.out.println("Account not found:");
+                                                    System.out.println(TestMain.setRed + "Account not found:" + TestMain.resetColor);
                                                 }
                                             } else {
-                                                System.out.println("Invalid account number: ");
+                                                System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
                                             }
                                             break;
                                         case 4:
@@ -268,17 +268,17 @@ public class TestMain {
                                             boolean checkAccNum1 = accountNumber1.matches("\\d{10}");
                                             if (checkAccNum1) {
                                                 if (AccountDao.accountUnBlock(accountNumber1) != 0) {
-                                                    System.out.println("Account successfully Unblock");
+                                                    System.out.println(TestMain.setGreen + "Account successfully Unblock" + TestMain.resetColor);
                                                 } else {
-                                                    System.out.println("Account not found:");
+                                                    System.out.println(TestMain.setRed + "Account not found:" + TestMain.resetColor);
                                                 }
                                             } else {
-                                                System.out.println("Invalid account number: ");
+                                                System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
                                             }
                                             break;
                                         case 5:
                                             if (AccountDao.getAllAccountinfo() == 1) {
-                                                System.out.println("No account: ");
+                                                System.out.println(TestMain.setRed + "No account found: " + TestMain.resetColor);
                                             }
                                             break;
                                         case 6:
@@ -293,7 +293,7 @@ public class TestMain {
 
                                 } catch (InputMismatchException e) {
                                     sc.nextLine();
-                                    System.out.println("Enter only integer value: ");
+                                    System.out.println(TestMain.setRed + "Please enter only integer value: " + TestMain.resetColor);
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -312,13 +312,14 @@ public class TestMain {
                         System.exit(0);
                         break;
                     default:
+                        System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
 
                 }
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                System.out.println("Please enter only integer value: ");
+                System.out.println(TestMain.setRed + "Please enter only integer value: " + TestMain.resetColor);
             } catch (Exception e) {
-                System.out.println("Oops!! Something went wrong....");
+                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
             }
         }
     }

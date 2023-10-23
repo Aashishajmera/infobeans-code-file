@@ -18,13 +18,14 @@ public class Account {
     private String address;
     private Double amount;
     private Boolean toActive;
+    private String pin;
 
     // default constructor
     public Account() {
     }
 
     // full constructor
-    public Account(Integer accountNum, String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive) {
+    public Account(Integer accountNum, String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin) {
         this.accountNum = accountNum;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,9 +42,8 @@ public class Account {
         this.address = address;
         this.amount = amount;
         this.toActive = toActive;
+        this.pin = pin;
     }
-    
-    
 
     //without accountNumber & toActive
     public Account(String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount) {
@@ -63,10 +63,8 @@ public class Account {
         this.amount = amount;
     }
 
-    
     // without account number: 
-
-    public Account(String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive) {
+    public Account(String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
@@ -82,6 +80,7 @@ public class Account {
         this.address = address;
         this.amount = amount;
         this.toActive = toActive;
+        this.pin = pin;
     }
 
     public Integer getAccountNum() {
@@ -211,9 +210,13 @@ public class Account {
     public void setToActive(Boolean toActive) {
         this.toActive = toActive;
     }
-    
-    
-    
-    
-    
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
 }

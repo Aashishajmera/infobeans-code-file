@@ -2,6 +2,7 @@ package com.bankproject01.service;
 
 import com.bankproject01.dao.AccountDao;
 import com.bankproject01.model.Account;
+import com.bankproject01.testmain.TestMain;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.Properties;
@@ -22,7 +23,7 @@ public class SendMail {
         SendMail email = new SendMail();
         //Sending test email
         email.createAndSendEmail("ajmeraaashu55@gmail.com", "Create bank account ",
-                "Congratulations !! \n Dear customer, you are account has been successfully created in RS BANK Account Number "+AccountDao.getAccnum() +" Warning !! Do not share your account number");
+                " Dear customer, Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {
@@ -62,7 +63,7 @@ public class SendMail {
             message.setSubject("RS BANK"); //Set email message subject
             Transport.send(message); //Send email message
 
-            System.out.println("sent email successfully!");
+            System.out.println(TestMain.setGreen + "Account successfully created....." + TestMain.resetColor);
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
