@@ -21,8 +21,8 @@ public class SendMail {
     public static void main(String[] args) {
         SendMail email = new SendMail();
         //Sending test email
-        email.createAndSendEmail("ajmeraaashu55@gmail.com", "Create bank account ho chuka hai",
-                "Congratulations !!! \nyou are account has been created in info branch: ");
+        email.createAndSendEmail("ajmeraaashu55@gmail.com", "Create bank account ",
+                "Congratulations !! \n Dear customer, you are account has been successfully created in RS BANK Account Number "+AccountDao.getAccnum() +" Warning !! Do not share your account number");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {

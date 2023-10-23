@@ -33,7 +33,4 @@ public class Admin {
         this.Password = Password;
     }
 
-      
-    
-
 }

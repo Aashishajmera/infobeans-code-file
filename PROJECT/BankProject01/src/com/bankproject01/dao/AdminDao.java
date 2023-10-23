@@ -17,7 +17,6 @@ public class AdminDao {
         try {
             // add connection 
             con = DatabaseConnect.getConnection();
-            System.out.println("Database connected.....");
 
             // write to admin login query
             String adminloginQuery = "select * from admin where id = ? and password = ?";
@@ -29,7 +28,9 @@ public class AdminDao {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                checkAdminLog = true;
+                if (rs.getInt(1) == id && rs.getString(6).equals(password)) {
+                    checkAdminLog = true;
+                }
             }
 
         } catch (Exception e) {
