@@ -6,8 +6,6 @@ import com.bankproject01.model.Account;
 import com.bankproject01.model.Admin;
 import com.bankproject01.service.SendMail;
 import com.bankproject01.service.Validation;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,9 +41,7 @@ public class TestMain {
                         System.out.println("Admin password: ");
                         sc.nextLine();
                         String password = sc.nextLine();
-                        while (password.isEmpty()) {
-                            password = sc.nextLine();
-                        }
+                        password = Validation.noEmpty(password, sc);
                         // create object of Admin model
                         Admin admin = new Admin(id, password);
 
@@ -56,8 +52,8 @@ public class TestMain {
                                 System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
                                 System.out.println("\t\t\t PRESS 1: Create a new customer account \t\t\t PRESS 2: View particular account information \t\t\t");
                                 System.out.println("\t\t\t PRESS 3: Block account \t\t\t\t\t PRESS 4: Unblock account \t\t\t");
-                                System.out.println("\t\t\t PRESS 5:View all account list\t\t\t\t\t PRESS 6: Back Option\t\t\t ");
-                                System.out.println(TestMain.setRed + "\t\t\t\t\t\t\t\t PRESS: 7 Exit program" + TestMain.resetColor);
+                                System.out.println("\t\t\t PRESS 5: View all account list\t\t\t\t PRESS 6: View block account list\t\t\t ");
+                                System.out.println("\t\t\t PRESS 7: Back Option" + TestMain.setRed + "\t\t\t\t\t\t PRESS: 8 Exit program" + TestMain.resetColor);
                                 System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
                                 int adminChoice = 0;
                                 try {
@@ -78,143 +74,137 @@ public class TestMain {
                                             if (type == 1 || type == 2) {
                                                 System.out.print("\t Enter your name: \n\t ");
                                                 String firstName = sc.nextLine();
-                                                while (firstName.isEmpty()) {
-                                                    firstName = sc.nextLine();
-                                                }
+                                                firstName = Validation.noEmpty(firstName, sc);
                                                 boolean checkfName = firstName.matches("[a-zA-Z , ]+");
                                                 if (checkfName) {
                                                     System.out.print("\t Enter last name: \n\t ");
                                                     String lastName = sc.nextLine();
-                                                    while (lastName.isEmpty()) {
-                                                        lastName = sc.nextLine();
-                                                    }
+                                                    lastName = Validation.noEmpty(lastName, sc);
                                                     boolean checklName = lastName.matches("[a-zA-Z , ]+");
                                                     if (checklName) {
                                                         System.out.print("\t Enter your father name: \n\t ");
                                                         String fatherName = sc.nextLine();
-                                                        while (fatherName.isEmpty()) {
-                                                            fatherName = sc.nextLine();
-                                                        }
+                                                        fatherName = Validation.noEmpty(fatherName, sc);
                                                         boolean checkfatherN = fatherName.matches("[a-zA-Z , ]+");
                                                         if (checkfatherN) {
-                                                            System.out.print("\t Contact number: \n\t ");
-                                                            String contactNum = sc.nextLine();
-                                                            while (contactNum.isEmpty()) {
-                                                                contactNum = sc.nextLine();
+                                                            System.out.print("\t Marital status: (PRESS 1: yes / PRESS 2: no)\n\t ");
+                                                            int n = sc.nextInt();
+                                                            String status = "null";
+                                                            if (n == 1) {
+                                                                status = "yes";
+                                                            } else if (n == 2) {
+                                                                status = "no";
                                                             }
-                                                            boolean checkContNum = contactNum.matches("\\d{10}");
-                                                            if (checkContNum) {
-                                                                System.out.print("\t Enter your email: \n\t ");
-                                                                String email = sc.nextLine();
-                                                                while (email.isEmpty()) {
-                                                                    email = sc.nextLine();
-                                                                }
-                                                                boolean checkEmail = Validation.checkEmail(email);
-                                                                if (checkEmail) {
-                                                                    System.out.print("\t Enter your date of birth: (yyyy-mm-dd)\n\t ");
-                                                                    String dob = sc.nextLine();
-                                                                    while (dob.isEmpty()) {
-                                                                        dob = sc.nextLine();
-                                                                    }
-                                                                    boolean checkDob = dob.matches("\\d{4}-\\d{2}-\\d{2}");
-                                                                    if (checkDob) {
-                                                                        System.out.print("\t Aadhar number: \n\t ");
-                                                                        String aadharNumber = sc.nextLine();
-                                                                        while (aadharNumber.isEmpty()) {
-                                                                            aadharNumber = sc.nextLine();
-                                                                        }
-                                                                        boolean checkAadharnum = aadharNumber.matches("\\d{12}");
-                                                                        if (checkAadharnum) {
-                                                                            System.out.print("\t Pancard number: \n\t ");
-                                                                            String pancardNumber = sc.nextLine();
-                                                                            while (pancardNumber.isEmpty()) {
-                                                                                pancardNumber = sc.nextLine();
-                                                                            }
-                                                                            boolean checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
-                                                                            if (checkPanNum) {
-                                                                                System.out.print("\t Gender: (PRESS 1. male/ PRESS 2. female/ PRESS 3. other) \n\t ");
-                                                                                int checkgender = sc.nextInt();
-                                                                                sc.nextLine();
-                                                                                String gender = "null";
-                                                                                if (checkgender == 1) {
-                                                                                    gender = "male";
-                                                                                } else if (checkgender == 2) {
-                                                                                    gender = "female";
-                                                                                } else if (checkgender == 3) {
-                                                                                    gender = "other";
-                                                                                }
-                                                                                if (checkgender == 1 || checkgender == 2 || checkgender == 3) {
-                                                                                    System.out.print("\t Nominee name: \n\t ");
-                                                                                    String nomineeName = sc.nextLine();
-                                                                                    while (nomineeName.isEmpty()) {
-                                                                                        nomineeName = sc.nextLine();
-                                                                                    }
-                                                                                    boolean checkNomineeName = nomineeName.matches("[a-zA-Z , ]+");
-                                                                                    if (checkNomineeName) {
-                                                                                        System.out.print("\t Address: \n\t ");
-                                                                                        String address = sc.nextLine();
-                                                                                        while (address.isEmpty()) {
-                                                                                            address = sc.nextLine();
-                                                                                        }
-                                                                                        System.out.print("\t Branch: (PRESS 1. indore/ PRESS 2. dewas/ PRESS 3. ujjain) \n\t ");
-                                                                                        int checkbranch = sc.nextInt();
-                                                                                        sc.nextLine();
-                                                                                        String branchName = "null";
-                                                                                        if (checkbranch == 1) {
-                                                                                            branchName = "indore";
-                                                                                        } else if (checkbranch == 2) {
-                                                                                            branchName = "dewas";
-                                                                                        } else if (checkbranch == 3) {
-                                                                                            branchName = "ujjain";
-                                                                                        }
-                                                                                        if (checkbranch == 1 || checkbranch == 2 || checkbranch == 3) {
-                                                                                            System.out.print("Enter amount: ");
-                                                                                            Double amount = sc.nextDouble();
-                                                                                            if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
-                                                                                                Boolean toActive = true;
+                                                            if (status.equals("yes") || status.equals("no")) {
 
-                                                                                                // generate pin:
-                                                                                                String pin = AccountDao.pinCreate(6);
-                                                                                                // create a object of account model 
-                                                                                                Account account = new Account(firstName, lastName, fatherName, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount, toActive, pin);
-                                                                                                if (AccountDao.createUserAcc(account) != -1) {
-                                                                                                    System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
-                                                                                                    AccountDao.setEmailMsg(account);
-                                                                                                    SendMail sendMail = new SendMail();
-                                                                                                    sendMail.main(args);
+                                                                System.out.print("\t Contact number: \n\t ");
+                                                                String contactNum = sc.nextLine();
+                                                                contactNum = Validation.noEmpty(contactNum, sc);
+                                                                boolean checkContNum = contactNum.matches("\\d{10}");
+                                                                if (checkContNum) {
+                                                                    System.out.print("\t Enter your email: \n\t ");
+                                                                    String email = sc.nextLine();
+                                                                    boolean checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+                                                                    if (checkEmail) {
+                                                                        System.out.print("\t Enter your date of birth: (yyyy-mm-dd)\n\t ");
+                                                                        String dob = sc.nextLine();
+                                                                        dob = Validation.noEmpty(dob, sc);
+                                                                        boolean checkDob = dob.matches("\\d{4}-\\d{2}-\\d{2}");
+                                                                        if (checkDob) {
+                                                                            System.out.print("\t Aadhar number: \n\t ");
+                                                                            String aadharNumber = sc.nextLine();
+                                                                            aadharNumber = Validation.noEmpty(aadharNumber, sc);
+                                                                            boolean checkAadharnum = aadharNumber.matches("\\d{12}");
+                                                                            if (checkAadharnum) {
+                                                                                System.out.print("\t Pancard number: \n\t ");
+                                                                                String pancardNumber = sc.nextLine();
+                                                                                pancardNumber = Validation.noEmpty(pancardNumber, sc);
+                                                                                boolean checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
+                                                                                if (checkPanNum) {
+                                                                                    System.out.print("\t Gender: (PRESS 1. male/ PRESS 2. female/ PRESS 3. other) \n\t ");
+                                                                                    int checkgender = sc.nextInt();
+                                                                                    sc.nextLine();
+                                                                                    String gender = "null";
+                                                                                    if (checkgender == 1) {
+                                                                                        gender = "male";
+                                                                                    } else if (checkgender == 2) {
+                                                                                        gender = "female";
+                                                                                    } else if (checkgender == 3) {
+                                                                                        gender = "other";
+                                                                                    }
+                                                                                    if (checkgender == 1 || checkgender == 2 || checkgender == 3) {
+                                                                                        System.out.print("\t Nominee name: \n\t ");
+                                                                                        String nomineeName = sc.nextLine();
+                                                                                        nomineeName = Validation.noEmpty(nomineeName, sc);
+                                                                                        boolean checkNomineeName = nomineeName.matches("[a-zA-Z , ]+");
+                                                                                        if (checkNomineeName) {
+                                                                                            System.out.print("\t Address: \n\t ");
+                                                                                            String address = sc.nextLine();
+                                                                                            address = Validation.noEmpty(address, sc);
+                                                                                            System.out.print("\t Branch: (PRESS 1. indore/ PRESS 2. dewas/ PRESS 3. ujjain) \n\t ");
+                                                                                            int checkbranch = sc.nextInt();
+                                                                                            sc.nextLine();
+                                                                                            String branchName = "null";
+                                                                                            if (checkbranch == 1) {
+                                                                                                branchName = "indore";
+                                                                                            } else if (checkbranch == 2) {
+                                                                                                branchName = "dewas";
+                                                                                            } else if (checkbranch == 3) {
+                                                                                                branchName = "ujjain";
+                                                                                            }
+                                                                                            if (checkbranch == 1 || checkbranch == 2 || checkbranch == 3) {
+                                                                                                System.out.print("Enter amount: ");
+                                                                                                Double amount = sc.nextDouble();
+                                                                                                if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
+                                                                                                    Boolean toActive = true;
+                                                                                                    // generate pin:
+                                                                                                    String pin = AccountDao.pinCreate(6);
+                                                                                                    // get ifsc code:
+                                                                                                    String ifsc = AccountDao.getIFSC(branchName);
+                                                                                                    // create a object of account model 
+                                                                                                    Account account = new Account(firstName, lastName, fatherName, status, contactNum, email, dob, aadharNumber, pancardNumber, accType, branchName, gender, nomineeName, address, amount, toActive, pin, ifsc);
+                                                                                                    if (AccountDao.createUserAcc(account) != -1) {
+                                                                                                        System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
+                                                                                                        AccountDao.setEmailMsg(account);
+                                                                                                        SendMail sendMail = new SendMail();
+                                                                                                        sendMail.main(args);
+                                                                                                    } else {
+                                                                                                        System.out.println(TestMain.setRed + "Oops! Something went wrong to prosses account create: " + TestMain.resetColor);
+                                                                                                    }
                                                                                                 } else {
-                                                                                                    System.out.println(TestMain.setRed + "Oops! Something went wrong to prosses account create: " + TestMain.resetColor);
+                                                                                                    System.out.println(TestMain.setRed + "please enter minimum amount (saving = 500 / current = 1000)" + TestMain.resetColor);
                                                                                                 }
                                                                                             } else {
-                                                                                                System.out.println(TestMain.setRed + "please enter minimum amount (saving = 500 / current = 1000)" + TestMain.resetColor);
+                                                                                                System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
                                                                                             }
                                                                                         } else {
-                                                                                            System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
+                                                                                            System.out.println(TestMain.setRed + "Invalid nominee name: " + TestMain.resetColor);
                                                                                         }
                                                                                     } else {
-                                                                                        System.out.println(TestMain.setRed + "Invalid nominee name: " + TestMain.resetColor);
+                                                                                        System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
                                                                                     }
                                                                                 } else {
-                                                                                    System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
+                                                                                    System.out.println(TestMain.setRed + "Invalid pancard number: " + TestMain.resetColor);
                                                                                 }
+
                                                                             } else {
-                                                                                System.out.println(TestMain.setRed + "Invalid pancard number: " + TestMain.resetColor);
+                                                                                System.out.println(TestMain.setRed + "Invalid aadhar number: " + TestMain.resetColor);
                                                                             }
 
                                                                         } else {
-                                                                            System.out.println(TestMain.setRed + "Invalid aadhar number: " + TestMain.resetColor);
+                                                                            System.out.println(TestMain.setRed + "Invalid date type " + TestMain.resetColor);
                                                                         }
 
                                                                     } else {
-                                                                        System.out.println(TestMain.setRed + "Invalid date type " + TestMain.resetColor);
+                                                                        System.out.println(TestMain.setRed + "Invalid email" + TestMain.resetColor);
                                                                     }
 
                                                                 } else {
-                                                                    System.out.println(TestMain.setRed + "Invalid email" + TestMain.resetColor);
+                                                                    System.out.println(TestMain.setRed + "Invalid mobile number: " + TestMain.resetColor);
                                                                 }
-
                                                             } else {
-                                                                System.out.println(TestMain.setRed + "Invalid mobile number: " + TestMain.resetColor);
+                                                                System.out.println(TestMain.setRed + "Invalid input: " + TestMain.resetColor);
+
                                                             }
 
                                                         } else {
@@ -232,6 +222,7 @@ public class TestMain {
                                             }
 
                                             break;
+
                                         case 2:
                                             System.out.println("Enter account number: ");
                                             sc.nextLine();
@@ -239,7 +230,7 @@ public class TestMain {
                                             boolean checkAccountNum = accountNum.matches("\\d{10}");
                                             if (checkAccountNum) {
                                                 if (AccountDao.getAnyAccountinfo(accountNum) == -1) {
-                                                    System.out.println("Account not found: ");
+                                                    System.out.println(TestMain.setRed + "Account not found: " + TestMain.resetColor);
                                                 }
                                             } else {
                                                 System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
@@ -282,9 +273,14 @@ public class TestMain {
                                             }
                                             break;
                                         case 6:
-                                            flag = false;
+                                            if (AccountDao.getBlockList() == 1) {
+                                                System.out.println(TestMain.setRed + "Empty block list: " + TestMain.resetColor);
+                                            }
                                             break;
                                         case 7:
+                                            flag = false;
+                                            break;
+                                        case 8:
                                             System.out.println(
                                                     TestMain.setGreen
                                                     + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK "
@@ -311,7 +307,7 @@ public class TestMain {
 
                     case 2:
                         System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t ***** COSTUMER LOGIN PAGE ****" + TestMain.resetColor);
-                        
+
                         break;
                     case 3:
                         System.out.println(

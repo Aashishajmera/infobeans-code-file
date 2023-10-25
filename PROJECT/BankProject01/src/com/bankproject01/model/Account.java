@@ -6,6 +6,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private String fatherName;
+    private String status;
     private String contactNo;
     private String email;
     private String dateOfBirth;
@@ -19,17 +20,19 @@ public class Account {
     private Double amount;
     private Boolean toActive;
     private String pin;
+    private String ifsc;
 
     // default constructor
     public Account() {
     }
 
     // full constructor
-    public Account(Integer accountNum, String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin) {
+    public Account(Integer accountNum, String firstName, String lastName, String fatherName, String status, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin, String ifsc) {
         this.accountNum = accountNum;
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
+        this.status = status;
         this.contactNo = contactNo;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
@@ -43,31 +46,15 @@ public class Account {
         this.amount = amount;
         this.toActive = toActive;
         this.pin = pin;
-    }
-
-    //without accountNumber & toActive
-    public Account(String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.fatherName = fatherName;
-        this.contactNo = contactNo;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.aadharNumber = aadharNumber;
-        this.panNumber = panNumber;
-        this.accountType = accountType;
-        this.branch = branch;
-        this.gender = gender;
-        this.nominee = nominee;
-        this.address = address;
-        this.amount = amount;
+        this.ifsc = ifsc;
     }
 
     // without account number: 
-    public Account(String firstName, String lastName, String fatherName, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin) {
+    public Account(String firstName, String lastName, String fatherName, String status, String contactNo, String email, String dateOfBirth, String aadharNumber, String panNumber, String accountType, String branch, String gender, String nominee, String address, Double amount, Boolean toActive, String pin, String ifsc) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
+        this.status = status;
         this.contactNo = contactNo;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
@@ -81,6 +68,7 @@ public class Account {
         this.amount = amount;
         this.toActive = toActive;
         this.pin = pin;
+        this.ifsc = ifsc;
     }
 
     public Integer getAccountNum() {
@@ -111,6 +99,14 @@ public class Account {
         return fatherName;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
     }
@@ -137,6 +133,14 @@ public class Account {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getIfsc() {
+        return ifsc;
+    }
+
+    public void setIfsc(String ifsc) {
+        this.ifsc = ifsc;
     }
 
     public String getAadharNumber() {

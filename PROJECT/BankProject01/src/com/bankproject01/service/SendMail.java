@@ -13,8 +13,8 @@ public class SendMail {
     private String msgSubject = new String();
     private String msgText = new String();
 //    final String USER_NAME = "mohanmaali144@gmail.com";   //User name of the Goole(gmail) account
-    final String PASSSWORD = "cqponcbythxmqpqn";  //Password of the Goole(gmail) account
-    final String FROM_ADDRESS = "ajmeraaashu55@gmail.com";  //From addresss
+    final String PASSSWORD = "elbbfmlofzzcsnts";  //Password of the Goole(gmail) account
+    final String FROM_ADDRESS = "risingstarsbank@gmail.com";  //From addresss
 
     public SendMail() {
     }
@@ -22,7 +22,7 @@ public class SendMail {
     public static void main(String[] args) {
         SendMail email = new SendMail();
         //Sending test email
-        email.createAndSendEmail("ajmeraaashu55@gmail.com", "Create bank account ",
+        email.createAndSendEmail("risingstarsbank@gmail.com", "Create bank account ",
                 " Dear customer, Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
     }
 
@@ -48,14 +48,14 @@ public class SendMail {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("ajmeraaashu55@gmail.com", "cqponcbythxmqpqn");
+                return new PasswordAuthentication("risingstarsbank@gmail.com", "elbbfmlofzzcsnts");
             }
         });
 
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("ajmeraaashu55@gmail.com")); //Set from address of the email
+            message.setFrom(new InternetAddress("risingstarsbank@gmail.com")); //Set from address of the email
             message.setContent(msgText, "text/html"); //set content type of the email
 
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(AccountDao.getEmailMsg())); //Set email recipient
@@ -70,16 +70,15 @@ public class SendMail {
         }
     }
 
-    public void setEmailAddressTo(String emailAddressTo) {
-        this.emailAddressTo = emailAddressTo;
-    }
-
-    public void setSubject(String subject) {
-        this.msgSubject = subject;
-    }
-
-    public void setMessageText(String msgText) {
-        this.msgText = msgText;
-    }
-
+//    public void setEmailAddressTo(String emailAddressTo) {
+//        this.emailAddressTo = emailAddressTo;
+//    }
+//
+//    public void setSubject(String subject) {
+//        this.msgSubject = subject;
+//    }
+//
+//    public void setMessageText(String msgText) {
+//        this.msgText = msgText;
+//    }
 }

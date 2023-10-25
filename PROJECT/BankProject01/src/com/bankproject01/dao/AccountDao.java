@@ -31,7 +31,7 @@ public class AccountDao {
             java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
 
             //                                                         1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
-            String sql = "insert into account( firstName, lastName,fatherName,  contactNo,  emailId,dateOfBirth,  aadharNumber, panNumber, accountType,  branch,  gender,  nominee,  address,  amount, toactive, createdate, pin)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into account( firstName, lastName,fatherName, maritalStatus, contactNo,  emailId,dateOfBirth,  aadharNumber, panNumber, accountType,  branch,  gender,  nominee,  address,  amount, toactive, createdate, pin,ifsc)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
 
@@ -40,20 +40,22 @@ public class AccountDao {
             ps.setString(2, c.getLastName());
 
             ps.setString(3, c.getFatherName());
-            ps.setString(4, c.getContactNo());
-            ps.setString(5, c.getEmail());
-            ps.setString(6, c.getDateOfBirth());
-            ps.setString(7, c.getAadharNumber());
-            ps.setString(8, c.getPanNumber());
-            ps.setString(9, c.getAccountType());
-            ps.setString(10, c.getBranch());
-            ps.setString(11, c.getGender());
-            ps.setString(12, c.getNominee());
-            ps.setString(13, c.getAddress());
-            ps.setDouble(14, c.getAmount());
-            ps.setBoolean(15, c.getToActive());
-            ps.setDate(16, sqlStartDate);
-            ps.setString(17, c.getPin());
+            ps.setString(4, c.getStatus());
+            ps.setString(5, c.getContactNo());
+            ps.setString(6, c.getEmail());
+            ps.setString(7, c.getDateOfBirth());
+            ps.setString(8, c.getAadharNumber());
+            ps.setString(9, c.getPanNumber());
+            ps.setString(10, c.getAccountType());
+            ps.setString(11, c.getBranch());
+            ps.setString(12, c.getGender());
+            ps.setString(13, c.getNominee());
+            ps.setString(14, c.getAddress());
+            ps.setDouble(15, c.getAmount());
+            ps.setBoolean(16, c.getToActive());
+            ps.setDate(17, sqlStartDate);
+            ps.setString(18, c.getPin());
+            ps.setString(19, c.getIfsc());
 
             checkCreateAcc = ps.executeUpdate();
 
@@ -112,7 +114,7 @@ public class AccountDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                if (rs.getString(6).equals(email)) {
+                if (rs.getString(7).equals(email)) {
                     accountNum = rs.getInt(1);
                 }
             }
@@ -144,8 +146,8 @@ public class AccountDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                if (rs.getString(6).equals(email)) {
-                    pin = rs.getString(18);
+                if (rs.getString(7).equals(email)) {
+                    pin = rs.getString(20);
                 }
             }
 
@@ -160,6 +162,17 @@ public class AccountDao {
         }
         return pin;
 
+    }
+
+    // get IFSC code
+    public static String getIFSC(String branch) {
+        if (branch.equals("indore")) {
+            return "RSB18100041";
+        } else if (branch.equals("dewas")) {
+            return "RSB18001000";
+        } else {
+            return "RSB18104100";
+        }
     }
 
     //=============================================VIEW ANY ACCOUNT========================================
@@ -182,24 +195,26 @@ public class AccountDao {
                     System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t\t\tACCOUNT-INFORMATION" + TestMain.resetColor
                     );
                     System.out.println("\t\t\t\t\t\t\t ==================================================");
-                    if (rs.getBoolean(16) != true) {
+                    if (rs.getBoolean(18) != true) {
                         System.out.println("\t\t\t\t\t\t\t\t\t   " + TestMain.setRed + " Account is blocked \t" + TestMain.resetColor);
                     }
                     System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
                     System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
                     System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                    System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(5));
-                    System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(6));
-                    System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(7));
-                    System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(8));
-                    System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(9));
-                    System.out.println("\t\t\t\t\t\t\t\t Account type:  \t\t" + rs.getString(10));
-                    System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(11));
-                    System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(12));
-                    System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(13));
-                    System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(14));
-                    System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(15));
-                    System.out.println("\t\t\t\t\t\t\t\t Account create date:  \t" + rs.getDate(17));
+                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                    System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
+                    System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
+                    System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
+                    System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(9));
+                    System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(10));
+                    System.out.println("\t\t\t\t\t\t\t\t Account type:  \t" + rs.getString(11));
+                    System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(12));
+                    System.out.println("\t\t\t\t\t\t\t\t IFSC:   \t\t" + rs.getString(13));
+                    System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(14));
+                    System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(15));
+                    System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(16));
+                    System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(17));
+                    System.out.println("\t\t\t\t\t\t\t\t Account create date:  " + rs.getDate(19));
                     System.out.println("\t\t\t\t\t\t\t ==================================================");
 
                 }
@@ -234,24 +249,26 @@ public class AccountDao {
                 System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t\t\t " + checkaccNum + " ACCOUNT-INFORMATION" + TestMain.resetColor
                 );
                 System.out.println("\t\t\t\t\t\t\t ==================================================");
-                if (rs.getBoolean(16) != true) {
+                if (rs.getBoolean(18) != true) {
                     System.out.println("\t\t\t\t\t\t\t\t\t  " + TestMain.setRed + " Account is blocked \t" + TestMain.resetColor);
                 }
                 System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
                 System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
                 System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(5));
-                System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(6));
-                System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(7));
-                System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(8));
-                System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(9));
-                System.out.println("\t\t\t\t\t\t\t\t Account type:  \t\t" + rs.getString(10));
-                System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(11));
-                System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(12));
-                System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(13));
-                System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(14));
-                System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(15));
-                System.out.println("\t\t\t\t\t\t\t\t Account create date:  \t" + rs.getDate(17));
+                System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
+                System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
+                System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
+                System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(9));
+                System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(10));
+                System.out.println("\t\t\t\t\t\t\t\t Account type:  \t" + rs.getString(11));
+                System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(12));
+                System.out.println("\t\t\t\t\t\t\t\t IFSC:   \t\t" + rs.getString(13));
+                System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(14));
+                System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(15));
+                System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(16));
+                System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(17));
+                System.out.println("\t\t\t\t\t\t\t\t Account create date:  " + rs.getDate(19));
                 System.out.println("\t\t\t\t\t\t\t ==================================================");
 
                 checkaccNum++;
@@ -269,7 +286,60 @@ public class AccountDao {
         return checkaccNum;
     }
 
-//    //=============================================BLOCK ACCOUNT========================================
+    //=======================================VIEW ONLY UNBLOCK===========================================
+    public static int getBlockList() {
+        Connection con = null;
+        int checkaccNum = 1;
+
+        try {
+            con = DatabaseConnect.getConnection();
+
+            String getAccNum = "select * from account";
+            PreparedStatement ps = con.prepareStatement(getAccNum);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                if (rs.getBoolean(18) != true) {
+                    System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t\t\t " + checkaccNum + " ACCOUNT-INFORMATION" + TestMain.resetColor);
+                    System.out.println("\t\t\t\t\t\t\t ==================================================");
+                    System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
+                    System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
+                    System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
+                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                    System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
+                    System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
+                    System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
+                    System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(9));
+                    System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(10));
+                    System.out.println("\t\t\t\t\t\t\t\t Account type:  \t" + rs.getString(11));
+                    System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(12));
+                    System.out.println("\t\t\t\t\t\t\t\t IFSC:   \t\t" + rs.getString(13));
+                    System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(14));
+                    System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(15));
+                    System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(16));
+                    System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(17));
+                    System.out.println("\t\t\t\t\t\t\t\t Account create date:  " + rs.getDate(19));
+                    System.out.println("\t\t\t\t\t\t\t ==================================================");
+                    checkaccNum++;
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkaccNum;
+    }
+//=============================================BLOCK ACCOUNT========================================
+
     public static int accountBlock(String accountNum) {
         Connection con = null;
         int updateActive = -1;
@@ -334,6 +404,7 @@ public class AccountDao {
 //        return updateActive;
 //    }
     //=============================================UNBLOCK ACCOUNT========================================
+
     public static int accountUnBlock(String accountNum) {
         Connection con = null;
         int updateActive = -1;
@@ -358,7 +429,6 @@ public class AccountDao {
         }
         return updateActive;
     }
-    
+
 //====================================================ACCOUNT=========================================
-    
 }
