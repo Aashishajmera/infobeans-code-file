@@ -130,8 +130,8 @@ public class AccountDao {
     }
 
     // get pin 
-    public static String getPin(){
-         Connection con = null;
+    public static String getPin() {
+        Connection con = null;
         String pin = null;
 
         try {
@@ -159,8 +159,9 @@ public class AccountDao {
             }
         }
         return pin;
-    
+
     }
+
     //=============================================VIEW ANY ACCOUNT========================================
     public static int getAnyAccountinfo(String accountNum) {
         Connection con = null;
@@ -269,58 +270,19 @@ public class AccountDao {
     }
 
 //    //=============================================BLOCK ACCOUNT========================================
-//    public static int accountBlock(String accountNum) {
-//        Connection con = null;
-//        int updateActive = -1;
-//        try {
-//            con = DatabaseConnect.getConnection();
-//            String blockQuery = "update account set toactive = false where accountNumber = ?";
-//
-//            PreparedStatement ps = con.prepareStatement(blockQuery);
-//
-//            ps.setInt(1, Integer.parseInt(accountNum));
-//
-//            updateActive = ps.executeUpdate();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                con.close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return updateActive;
-//    }
-    
-////=============================================BLOCK ACCOUNT========================================
     public static int accountBlock(String accountNum) {
         Connection con = null;
         int updateActive = -1;
         try {
             con = DatabaseConnect.getConnection();
+            String blockQuery = "update account set toactive = false where accountNumber = ?";
 
-            String getAccNum = "select * from account";
-            PreparedStatement ps = con.prepareStatement(getAccNum);
+            PreparedStatement ps = con.prepareStatement(blockQuery);
 
-            ResultSet rs = ps.executeQuery();
-            boolean flag = false;
-            while (rs.next()) {
-                if (rs.getBoolean(16) == false && rs.getInt(1) == Integer.parseInt(accountNum)) {
-                    System.out.println("Account is alread blocked...");
-                    flag = true;
-                }
-            }
+            ps.setInt(1, Integer.parseInt(accountNum));
 
-            if (flag == false) {
-                
-                String blockQuery = "update account set toactive = false where accountNumber = ?";
+            updateActive = ps.executeUpdate();
 
-                ps.setInt(1, Integer.parseInt(accountNum));
-
-                updateActive = ps.executeUpdate();
-            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -332,7 +294,45 @@ public class AccountDao {
         }
         return updateActive;
     }
-
+////=============================================BLOCK ACCOUNT========================================
+//    public static int accountBlock(String accountNum) {
+//        Connection con = null;
+//        int updateActive = 0;
+//        try {
+//            con = DatabaseConnect.getConnection();
+//
+//            String getAccNum = "select * from account";
+//            PreparedStatement ps = con.prepareStatement(getAccNum);
+//
+//            ResultSet rs = ps.executeQuery();
+//            boolean flag = false;
+//            while (rs.next()) {
+//                if (rs.getBoolean(16) == false && rs.getInt(1) == Integer.parseInt(accountNum)) {
+//                    System.out.println("Account is alread blocked...");
+//                    flag = true;
+//                    break;
+//                }
+//            }
+//
+//            if (flag == false) {
+//
+//                String blockQuery = "update account set toactive = false where accountNumber = ?";
+//
+//                ps.setInt(1, Integer.parseInt(accountNum));
+//
+//                updateActive = ps.executeUpdate();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                con.close();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return updateActive;
+//    }
     //=============================================UNBLOCK ACCOUNT========================================
     public static int accountUnBlock(String accountNum) {
         Connection con = null;
@@ -358,4 +358,7 @@ public class AccountDao {
         }
         return updateActive;
     }
+    
+//====================================================ACCOUNT=========================================
+    
 }

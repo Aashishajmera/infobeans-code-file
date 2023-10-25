@@ -285,6 +285,11 @@ public class TestMain {
                                             flag = false;
                                             break;
                                         case 7:
+                                            System.out.println(
+                                                    TestMain.setGreen
+                                                    + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK "
+                                                    + TestMain.resetColor
+                                            );
                                             System.exit(0);
                                             break;
                                         default:
@@ -305,10 +310,15 @@ public class TestMain {
                         break;
 
                     case 2:
-
-                        System.out.println("Work in progress......");
+                        System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t ***** COSTUMER LOGIN PAGE ****" + TestMain.resetColor);
+                        
                         break;
                     case 3:
+                        System.out.println(
+                                TestMain.setGreen
+                                + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK "
+                                + TestMain.resetColor
+                        );
                         System.exit(0);
                         break;
                     default:
