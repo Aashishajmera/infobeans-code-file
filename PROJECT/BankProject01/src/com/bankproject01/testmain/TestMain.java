@@ -65,14 +65,13 @@ public class TestMain {
                                             int type = sc.nextInt();
                                             String accType = "null";
                                             while (count <= 2 && type != 1 && type != 2) {
-                                                type = sc.nextInt();
-                                                if (type == 1) {
+                                                if (type != 1 && type != 2) {
+                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                    type = sc.nextInt();
+                                                } else if (type == 1) {
                                                     accType = "saving";
                                                 } else if (type == 2) {
                                                     accType = "current";
-                                                } else {
-                                                    sc.nextLine();
-                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
                                                 }
                                                 count++;
                                             }
@@ -83,12 +82,12 @@ public class TestMain {
                                                 boolean checkfName = firstName.matches("[a-zA-Z , ]+");
                                                 count = 1;
                                                 while (count <= 2 && checkfName == false) {
-                                                    firstName = sc.nextLine();
-                                                    firstName = Validation.noEmpty(firstName, sc);
-                                                    checkfName = firstName.matches("[a-zA-Z , ]+");
                                                     if (!checkfName) {
                                                         System.out.println(TestMain.setRed + "Invalid Name please re-enter" + TestMain.resetColor);
+                                                        firstName = sc.nextLine();
                                                     }
+                                                    firstName = Validation.noEmpty(firstName, sc);
+                                                    checkfName = firstName.matches("[a-zA-Z , ]+");
                                                     count++;
                                                 }
                                                 if (checkfName) {
@@ -98,12 +97,13 @@ public class TestMain {
                                                     boolean checklName = lastName.matches("[a-zA-Z , ]+");
                                                     count = 1;
                                                     while (count <= 2 && checklName == false) {
-                                                        lastName = sc.nextLine();
-                                                        lastName = Validation.noEmpty(lastName, sc);
-                                                        checklName = firstName.matches("[a-zA-Z , ]+");
-                                                        if (!checkfName) {
+                                                        if (!checklName) {
                                                             System.out.println(TestMain.setRed + "Invalid last name please re-enter" + TestMain.resetColor);
+                                                            lastName = sc.nextLine();
                                                         }
+                                                        lastName = Validation.noEmpty(lastName, sc);
+                                                        checklName = lastName.matches("[a-zA-Z , ]+");
+
                                                         count++;
                                                     }
                                                     if (checklName) {
@@ -111,29 +111,38 @@ public class TestMain {
                                                         String fatherName = sc.nextLine();
                                                         fatherName = Validation.noEmpty(fatherName, sc);
                                                         boolean checkfatherN = fatherName.matches("[a-zA-Z , ]+");
+                                                        count = 1;
                                                         while (count <= 2 && checkfatherN == false) {
-                                                            fatherName = sc.nextLine();
-                                                            fatherName = Validation.noEmpty(fatherName, sc);
-                                                            checkfatherN = fatherName.matches("[a-zA-Z , ]+");
                                                             if (!checkfatherN) {
                                                                 System.out.println(TestMain.setRed + "Invalid father name please re-enter" + TestMain.resetColor);
+                                                                fatherName = sc.nextLine();
                                                             }
+                                                            fatherName = Validation.noEmpty(fatherName, sc);
+                                                            checkfatherN = fatherName.matches("[a-zA-Z , ]+");
+
                                                             count++;
                                                         }
                                                         if (checkfatherN) {
                                                             System.out.print("\t Marital status: (PRESS 1: yes / PRESS 2: no)\n\t ");
                                                             int n = sc.nextInt();
                                                             String status = "null";
-//                                                           
+                                                            if (n == 1) {
+                                                                status = "yes";
+                                                            } else if (n == 2) {
+                                                                status = "no";
+                                                            }
+                                                            count = 1;
                                                             while (count <= 2 && n != 1 && n != 2) {
-                                                                n = sc.nextInt();
+                                                                if (n != 1 && n != 2) {
+                                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                                    n = sc.nextInt();
+                                                                }
                                                                 if (n == 1) {
                                                                     status = "yes";
                                                                 } else if (n == 2) {
                                                                     status = "no";
-                                                                } else {
-                                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
                                                                 }
+
                                                                 count++;
                                                             }
                                                             if (status.equals("yes") || status.equals("no")) {
@@ -143,12 +152,13 @@ public class TestMain {
                                                                 boolean checkContNum = contactNum.matches("\\d{10}");
                                                                 count = 1;
                                                                 while (count <= 2 && !checkContNum) {
-                                                                    contactNum = sc.nextLine();
-                                                                    contactNum = Validation.noEmpty(contactNum, sc);
-                                                                    checkContNum = contactNum.matches("\\d{10}");
                                                                     if (!checkContNum) {
                                                                         System.out.println(TestMain.setRed + "Invalid contact number re-enter " + TestMain.resetColor);
+                                                                        contactNum = sc.nextLine();
                                                                     }
+                                                                    contactNum = Validation.noEmpty(contactNum, sc);
+                                                                    checkContNum = contactNum.matches("\\d{10}");
+
                                                                     count++;
                                                                 }
 
@@ -156,16 +166,18 @@ public class TestMain {
                                                                     System.out.print("\t Enter your email: \n\t ");
                                                                     String email = sc.nextLine();
                                                                     email = Validation.noEmpty(email, sc);
-                                                                    boolean checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+                                                                    boolean checkEmail = email.matches("^[A-Za-z][0-9+_.-]+@[A-Za-z0-9.-]+$");
 
                                                                     count = 1;
                                                                     while (count <= 2 && !checkEmail) {
-                                                                        email = sc.nextLine();
-                                                                        email = Validation.noEmpty(email, sc);
-                                                                        checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
                                                                         if (!checkEmail) {
                                                                             System.out.println(TestMain.setRed + "Invalid email re-enter " + TestMain.resetColor);
+                                                                            email = sc.nextLine();
+
                                                                         }
+                                                                        email = Validation.noEmpty(email, sc);
+                                                                        checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+
                                                                         count++;
                                                                     }
 
@@ -177,12 +189,14 @@ public class TestMain {
 
                                                                         count = 1;
                                                                         while (count <= 2 && !checkDob) {
-                                                                            dob = sc.nextLine();
-                                                                            dob = Validation.noEmpty(dob, sc);
-                                                                            checkDob = dob.matches("\\d{4}-\\d{2}-\\d{2}");
                                                                             if (!checkDob) {
                                                                                 System.out.println(TestMain.setRed + "Invalid date of birth please re-enter " + TestMain.resetColor);
+                                                                                dob = sc.nextLine();
+
                                                                             }
+                                                                            dob = Validation.noEmpty(dob, sc);
+                                                                            checkDob = dob.matches("\\d{4}-\\d{2}-\\d{2}");
+
                                                                             count++;
                                                                         }
 
@@ -193,12 +207,13 @@ public class TestMain {
                                                                             boolean checkAadharnum = aadharNumber.matches("\\d{12}");
                                                                             count = 1;
                                                                             while (count <= 2 && !checkAadharnum) {
-                                                                                aadharNumber = sc.nextLine();
-                                                                                aadharNumber = Validation.noEmpty(aadharNumber, sc);
-                                                                                checkAadharnum = aadharNumber.matches("\\d{12}");
                                                                                 if (!checkAadharnum) {
                                                                                     System.out.println(TestMain.setRed + "Invalid aadhar number please re-enter " + TestMain.resetColor);
+                                                                                    aadharNumber = sc.nextLine();
                                                                                 }
+                                                                                aadharNumber = Validation.noEmpty(aadharNumber, sc);
+                                                                                checkAadharnum = aadharNumber.matches("\\d{12}");
+
                                                                                 count++;
                                                                             }
                                                                             if (checkAadharnum) {
@@ -208,12 +223,14 @@ public class TestMain {
                                                                                 boolean checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
                                                                                 count = 1;
                                                                                 while (count <= 2 && !checkPanNum) {
-                                                                                    pancardNumber = sc.nextLine();
-                                                                                    pancardNumber = Validation.noEmpty(pancardNumber, sc);
-                                                                                    checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
                                                                                     if (!checkPanNum) {
                                                                                         System.out.println(TestMain.setRed + "Invalid pan number please re-enter " + TestMain.resetColor);
+                                                                                        pancardNumber = sc.nextLine();
+
                                                                                     }
+                                                                                    pancardNumber = Validation.noEmpty(pancardNumber, sc);
+                                                                                    checkPanNum = pancardNumber.matches("[A-Z]{5}[0-9]{4}[A-Z]");
+
                                                                                     count++;
                                                                                 }
                                                                                 if (checkPanNum) {
@@ -223,16 +240,16 @@ public class TestMain {
                                                                                     String gender = "null";
                                                                                     count = 1;
                                                                                     while (count <= 2 && checkgender != 1 && checkgender != 2 && checkgender != 3) {
-                                                                                        checkgender = sc.nextInt();
 
-                                                                                        if (checkgender == 1) {
+                                                                                        if (checkgender != 1 && checkgender != 2 && checkgender != 3) {
+                                                                                            System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                                                            checkgender = sc.nextInt();
+                                                                                        } else if (checkgender == 1) {
                                                                                             gender = "male";
                                                                                         } else if (checkgender == 2) {
                                                                                             gender = "female";
                                                                                         } else if (checkgender == 3) {
                                                                                             gender = "other";
-                                                                                        } else {
-                                                                                            System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
                                                                                         }
                                                                                         count++;
                                                                                     }
@@ -244,12 +261,13 @@ public class TestMain {
 
                                                                                         count = 1;
                                                                                         while (count <= 2 && !checkNomineeName) {
-                                                                                            nomineeName = sc.nextLine();
-                                                                                            nomineeName = Validation.noEmpty(nomineeName, sc);
-                                                                                            checkNomineeName = nomineeName.matches("[a-zA-Z , ]+");
                                                                                             if (!checkNomineeName) {
                                                                                                 System.out.println(TestMain.setRed + "Invalid nominee name please re-enter " + TestMain.resetColor);
+                                                                                                nomineeName = sc.nextLine();
                                                                                             }
+                                                                                            nomineeName = Validation.noEmpty(nomineeName, sc);
+                                                                                            checkNomineeName = nomineeName.matches("[a-zA-Z , ]+");
+
                                                                                             count++;
                                                                                         }
 
@@ -263,16 +281,17 @@ public class TestMain {
                                                                                             String branchName = "null";
                                                                                             count = 1;
                                                                                             while (count <= 2 && checkbranch != 1 && checkbranch != 2 && checkbranch != 3) {
-                                                                                                checkbranch = sc.nextInt();
-                                                                                                if (checkbranch == 1) {
+                                                                                                if (checkbranch != 1 && checkbranch != 2 && checkbranch != 3) {
+                                                                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                                                                    checkbranch = sc.nextInt();
+                                                                                                } else if (checkbranch == 1) {
                                                                                                     branchName = "indore";
                                                                                                 } else if (checkbranch == 2) {
                                                                                                     branchName = "dewas";
                                                                                                 } else if (checkbranch == 3) {
                                                                                                     branchName = "ujjain";
-                                                                                                } else {
-                                                                                                    System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
                                                                                                 }
+
                                                                                                 count++;
                                                                                             }
                                                                                             if (checkbranch == 1 || checkbranch == 2 || checkbranch == 3) {
@@ -280,13 +299,14 @@ public class TestMain {
                                                                                                 Double amount = sc.nextDouble();
 
                                                                                                 count = 1;
-                                                                                                while (count <= 2 && ((accType.equals("saving") && amount != 500) || (accType.equals("saving") && amount != 1000))) {
-                                                                                                    amount = sc.nextDouble();
+                                                                                                while (count <= 2 && ((accType.equals("saving") && amount != 500) || (accType.equals("current") && amount != 1000))) {
                                                                                                     if (accType.equals("saving")) {
                                                                                                         System.out.println(TestMain.setRed + "please enter minimum amount for saving = 500" + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setRed + "please enter minimum amount for current = 1000" + TestMain.resetColor);
                                                                                                     }
+                                                                                                    amount = sc.nextDouble();
+
                                                                                                     count++;
                                                                                                 }
                                                                                                 if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
@@ -300,8 +320,7 @@ public class TestMain {
                                                                                                     if (AccountDao.createUserAcc(account) != -1) {
                                                                                                         System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
                                                                                                         AccountDao.setEmailMsg(account);
-                                                                                                        SendMail sendMail = new SendMail();
-                                                                                                        sendMail.main(args);
+                                                                                                        SendMail.main(args);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setRed + "Oops! Something went wrong to prosses account create: " + TestMain.resetColor);
                                                                                                     }
@@ -309,47 +328,45 @@ public class TestMain {
                                                                                                     System.out.println(TestMain.setRed + "please enter minimum amount (saving = 500 / current = 1000)" + TestMain.resetColor);
                                                                                                 }
                                                                                             } else {
-                                                                                                System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
+                                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                             }
                                                                                         } else {
-                                                                                            System.out.println(TestMain.setRed + "Invalid nominee name: " + TestMain.resetColor);
+                                                                                            System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                         }
                                                                                     } else {
-                                                                                        System.out.println(TestMain.setRed + "Something went wrong " + TestMain.resetColor);
+                                                                                        System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                     }
                                                                                 } else {
-                                                                                    System.out.println(TestMain.setRed + "Invalid pancard number: " + TestMain.resetColor);
+                                                                                    System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                 }
 
                                                                             } else {
-                                                                                System.out.println(TestMain.setRed + "Invalid aadhar number: " + TestMain.resetColor);
+                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                             }
 
                                                                         } else {
-                                                                            System.out.println(TestMain.setRed + "Invalid date type " + TestMain.resetColor);
+                                                                            System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                         }
 
                                                                     } else {
-                                                                        System.out.println(TestMain.setRed + "Invalid email" + TestMain.resetColor);
+                                                                        System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                     }
 
                                                                 } else {
-                                                                    System.out.println(TestMain.setRed + "Invalid mobile number: " + TestMain.resetColor);
+                                                                    System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                 }
                                                             } else {
-                                                                System.out.println(TestMain.setRed + "Invalid input: " + TestMain.resetColor);
-
+                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                             }
-
                                                         } else {
-                                                            System.out.println(TestMain.setRed + "Invalid father name: " + TestMain.resetColor);
+                                                            System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                         }
 
                                                     } else {
-                                                        System.out.println(TestMain.setRed + "Invalid last Name: " + TestMain.resetColor);
+                                                        System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                     }
                                                 } else {
-                                                    System.out.println(TestMain.setRed + "Invalid Name: " + TestMain.resetColor);
+                                                    System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                 }
                                             } else {
                                                 System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
@@ -372,34 +389,34 @@ public class TestMain {
                                             break;
 
                                         case 3:
-//                                            System.out.println("Enter account number: ");
-//                                            sc.nextLine();
-//                                            String accountNumber = sc.nextLine();
-//                                            boolean checkAccNum = accountNumber.matches("\\d{10}");
-//                                            if (checkAccNum) {
-//                                                if (AccountDao.accountBlock(accountNumber) != 0) {
-//                                                    System.out.println(TestMain.setGreen + "Account successfully block" + TestMain.resetColor);
-//                                                } else {
-//                                                    System.out.println(TestMain.setRed + "Account not found:" + TestMain.resetColor);
-//                                                }
-//                                            } else {
-//                                                System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
-//                                            }
-
-                                            // alredy block 
                                             System.out.println("Enter account number: ");
                                             sc.nextLine();
                                             String accountNumber = sc.nextLine();
                                             boolean checkAccNum = accountNumber.matches("\\d{10}");
                                             if (checkAccNum) {
-                                                if (AccountDao.accountBlock(accountNumber) != 0 && AccountDao.accountBlock(accountNumber) != 100) {
+                                                if (AccountDao.accountBlock(accountNumber) != 0) {
                                                     System.out.println(TestMain.setGreen + "Account successfully block" + TestMain.resetColor);
-                                                } else if (AccountDao.accountBlock(accountNumber) == 0) {
+                                                } else {
                                                     System.out.println(TestMain.setRed + "Account not found:" + TestMain.resetColor);
                                                 }
                                             } else {
                                                 System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
                                             }
+
+                                            // alredy block 
+//                                            System.out.println("Enter account number: ");
+//                                            sc.nextLine();
+//                                            String accountNumber = sc.nextLine();
+//                                            boolean checkAccNum = accountNumber.matches("\\d{10}");
+//                                            if (checkAccNum) {
+//                                                if (AccountDao.accountBlock(accountNumber) != 0 && AccountDao.accountBlock(accountNumber) != 100) {
+//                                                    System.out.println(TestMain.setGreen + "Account successfully block" + TestMain.resetColor);
+//                                                } else if (AccountDao.accountBlock(accountNumber) == 0) {
+//                                                    System.out.println(TestMain.setRed + "Account not found:" + TestMain.resetColor);
+//                                                }
+//                                            } else {
+//                                                System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
+//                                            }
                                             break;
                                         case 4:
                                             System.out.println("Enter account number: ");
