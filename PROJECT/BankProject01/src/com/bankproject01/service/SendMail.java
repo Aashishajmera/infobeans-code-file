@@ -23,7 +23,7 @@ public class SendMail {
         SendMail email = new SendMail();
         //Sending test email
         email.createAndSendEmail("risingstarsbank@gmail.com", "Create bank account ",
-                " Dear customer, Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
+                " Dear customer, Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " and PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {
@@ -70,15 +70,4 @@ public class SendMail {
         }
     }
 
-//    public void setEmailAddressTo(String emailAddressTo) {
-//        this.emailAddressTo = emailAddressTo;
-//    }
-//
-//    public void setSubject(String subject) {
-//        this.msgSubject = subject;
-//    }
-//
-//    public void setMessageText(String msgText) {
-//        this.msgText = msgText;
-//    }
 }

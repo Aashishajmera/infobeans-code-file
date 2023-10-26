@@ -341,17 +341,62 @@ public class AccountDao {
 //=============================================BLOCK ACCOUNT========================================
 
     public static int accountBlock(String accountNum) {
+//        Connection con = null;
+//        int updateActive = -1;
+//        try {
+//            con = DatabaseConnect.getConnection();
+//            String blockQuery = "update account set toactive = false where accountNumber = ?";
+//
+//            PreparedStatement ps = con.prepareStatement(blockQuery);
+//
+//            ps.setInt(1, Integer.parseInt(accountNum));
+//
+//            updateActive = ps.executeUpdate();
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            try {
+//                con.close();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return updateActive;
+
+        // alredy block
         Connection con = null;
         int updateActive = -1;
         try {
+
             con = DatabaseConnect.getConnection();
-            String blockQuery = "update account set toactive = false where accountNumber = ?";
+            String sqlQuery = "select * from account where accountNumber = ?";
+            PreparedStatement ps = con.prepareStatement(sqlQuery);
+            ps.setString(1, accountNum);
+            ResultSet rs = ps.executeQuery();
+            boolean flag = true;
+            while (rs.next() && flag == false) {
 
-            PreparedStatement ps = con.prepareStatement(blockQuery);
+                if (!rs.getBoolean(18) && (rs.getInt(1) == Integer.parseInt(accountNum))) {
+                    System.out.println(TestMain.setGreen + "Account is alredy blocked..." + TestMain.resetColor);
+                    flag = false;
+                    updateActive = 100;
+//                    break;
+                }
+//                if (flag == false) {
+//                    break;
+//                }
+            }
 
-            ps.setInt(1, Integer.parseInt(accountNum));
+            if (flag) {
+                String blockQuery = "update account set toactive = false where accountNumber = ?";
+//
+                ps = con.prepareStatement(blockQuery);
 
-            updateActive = ps.executeUpdate();
+                ps.setInt(1, Integer.parseInt(accountNum));
+
+                updateActive = ps.executeUpdate();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -430,5 +475,34 @@ public class AccountDao {
         return updateActive;
     }
 
-//====================================================ACCOUNT=========================================
+//====================================================USER-ACCOUNT=========================================
+    public static int loginUser(String accountNum, String name) {
+        Connection con = null;
+        int checkUserLogin = -1;
+
+        try {
+            con = DatabaseConnect.getConnection();
+            String checkAccQuery = "select * from account where accountnumber = ?  and firstname = ?";
+            PreparedStatement ps = con.prepareStatement(checkAccQuery);
+            ps.setString(1, accountNum);
+            ps.setString(2, name);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                if (rs.getInt(1) == Integer.parseInt(accountNum) && rs.getString(2).equals(name)) {
+                    checkUserLogin++;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkUserLogin;
+    }
+
 }
