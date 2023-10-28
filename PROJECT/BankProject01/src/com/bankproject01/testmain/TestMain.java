@@ -2,8 +2,10 @@ package com.bankproject01.testmain;
 
 import com.bankproject01.dao.AccountDao;
 import com.bankproject01.dao.AdminDao;
+//import com.bankproject01.dao.TransactionDao;
 import com.bankproject01.model.Account;
 import com.bankproject01.model.Admin;
+import com.bankproject01.model.Transaction;
 import com.bankproject01.service.SendMail;
 import com.bankproject01.service.Validation;
 import java.util.InputMismatchException;
@@ -64,6 +66,11 @@ public class TestMain {
                                             System.out.println("Enter Account type (PRESS 1. saving/ PRESS 2. current)");
                                             int type = sc.nextInt();
                                             String accType = "null";
+                                            if (type == 1) {
+                                                accType = "saving";
+                                            } else if (type == 2) {
+                                                accType = "current";
+                                            }
                                             while (count <= 2 && type != 1 && type != 2) {
                                                 if (type != 1 && type != 2) {
                                                     System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
@@ -176,7 +183,7 @@ public class TestMain {
 
                                                                         }
                                                                         email = Validation.noEmpty(email, sc);
-                                                                        checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+                                                                        checkEmail = email.matches("^[A-Za-z][0-9+_.-]+@[A-Za-z0-9.-]+$");
 
                                                                         count++;
                                                                     }
@@ -238,18 +245,33 @@ public class TestMain {
                                                                                     int checkgender = sc.nextInt();
                                                                                     sc.nextLine();
                                                                                     String gender = "null";
+
+                                                                                    switch (checkgender) {
+                                                                                        case 1 ->
+                                                                                            gender = "male";
+                                                                                        case 2 ->
+                                                                                            gender = "female";
+                                                                                        case 3 ->
+                                                                                            gender = "other";
+                                                                                        default -> {
+                                                                                        }
+                                                                                    }
                                                                                     count = 1;
                                                                                     while (count <= 2 && checkgender != 1 && checkgender != 2 && checkgender != 3) {
 
                                                                                         if (checkgender != 1 && checkgender != 2 && checkgender != 3) {
                                                                                             System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
                                                                                             checkgender = sc.nextInt();
-                                                                                        } else if (checkgender == 1) {
-                                                                                            gender = "male";
-                                                                                        } else if (checkgender == 2) {
-                                                                                            gender = "female";
-                                                                                        } else if (checkgender == 3) {
-                                                                                            gender = "other";
+                                                                                        }
+                                                                                        switch (checkgender) {
+                                                                                            case 1 ->
+                                                                                                gender = "male";
+                                                                                            case 2 ->
+                                                                                                gender = "female";
+                                                                                            case 3 ->
+                                                                                                gender = "other";
+                                                                                            default -> {
+                                                                                            }
                                                                                         }
                                                                                         count++;
                                                                                     }
@@ -275,10 +297,28 @@ public class TestMain {
                                                                                             System.out.print("\t Address: \n\t ");
                                                                                             String address = sc.nextLine();
                                                                                             address = Validation.noEmpty(address, sc);
+                                                                                            boolean checkaddress = address.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                            count = 1;
+                                                                                            while (count <= 2 && !checkaddress) {
+                                                                                                if (!checkaddress) {
+                                                                                                    System.out.println(TestMain.setRed + "Invalid address please re-enter " + TestMain.resetColor);
+                                                                                                    address = sc.nextLine();
+                                                                                                }
+                                                                                                address = Validation.noEmpty(address, sc);
+                                                                                                checkaddress = address.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                                count++;
+                                                                                            }
                                                                                             System.out.print("\t Branch: (PRESS 1. indore/ PRESS 2. dewas/ PRESS 3. ujjain) \n\t ");
                                                                                             int checkbranch = sc.nextInt();
                                                                                             sc.nextLine();
                                                                                             String branchName = "null";
+                                                                                            if (checkbranch == 1) {
+                                                                                                branchName = "indore";
+                                                                                            } else if (checkbranch == 2) {
+                                                                                                branchName = "dewas";
+                                                                                            } else if (checkbranch == 3) {
+                                                                                                branchName = "ujjain";
+                                                                                            }
                                                                                             count = 1;
                                                                                             while (count <= 2 && checkbranch != 1 && checkbranch != 2 && checkbranch != 3) {
                                                                                                 if (checkbranch != 1 && checkbranch != 2 && checkbranch != 3) {
@@ -297,19 +337,17 @@ public class TestMain {
                                                                                             if (checkbranch == 1 || checkbranch == 2 || checkbranch == 3) {
                                                                                                 System.out.print("Enter amount: ");
                                                                                                 Double amount = sc.nextDouble();
-
                                                                                                 count = 1;
-                                                                                                while (count <= 2 && ((accType.equals("saving") && amount != 500) || (accType.equals("current") && amount != 1000))) {
-                                                                                                    if (accType.equals("saving")) {
+                                                                                                while (count <= 2 && ((amount < 500 && type == 1) || (amount < 1000 && type == 2))) {
+                                                                                                    if (type == 1) {
                                                                                                         System.out.println(TestMain.setRed + "please enter minimum amount for saving = 500" + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setRed + "please enter minimum amount for current = 1000" + TestMain.resetColor);
                                                                                                     }
                                                                                                     amount = sc.nextDouble();
-
                                                                                                     count++;
                                                                                                 }
-                                                                                                if (((accType.equals("saving") || accType.equals("Saving")) && amount >= 500) || ((accType.equals("current") || accType.equals("Current")) && amount >= 1000)) {
+                                                                                                if ((type == 1 && amount >= 500) || (type == 2 && amount >= 1000)) {
                                                                                                     Boolean toActive = true;
                                                                                                     // generate pin:
                                                                                                     String pin = AccountDao.pinCreate(6);
@@ -330,6 +368,7 @@ public class TestMain {
                                                                                             } else {
                                                                                                 System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                             }
+
                                                                                         } else {
                                                                                             System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                                         }
@@ -480,6 +519,298 @@ public class TestMain {
                         boolean checkfName = userName.matches("[a-zA-Z , ]+");
                         if (!checkfName) {
                             System.out.println(TestMain.setRed + "Invalid user name: " + TestMain.resetColor);
+                        } else if (checkfName) {
+                            System.out.println("Enter account number: ");
+                            sc.nextLine();
+                            String accountNumber = sc.nextLine();
+                            boolean checkAccNum = accountNumber.matches("\\d{10}");
+                            if ((!checkAccNum)) {
+                                System.out.println(TestMain.setRed + "Invalid Account Number: " + TestMain.resetColor);
+                            } else if (AccountDao.customerLogin(Integer.parseInt(accountNumber), userName)) {
+                                System.out.println(TestMain.setGreen + "Customer login succesfully" + TestMain.resetColor);
+                                boolean flag = true;
+                                while (flag) {
+                                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
+                                    System.out.println("\t\t\t PRESS 1: View account details \t\t\t\t PRESS 2: Update account details \t\t\t");
+                                    System.out.println("\t\t\t PRESS 3: Transfer money \t\t\t\t\t PRESS 4: Transaction history \t\t\t");
+                                    System.out.println("\t\t\t PRESS 5: Apply for loan \t\t\t\t\t PRESS 6: View loan statement \t\t\t");
+                                    System.out.println("\t\t\t PRESS 7: Back menu \t\t\t\t\t\t" + TestMain.setRed + " PRESS 8: Exit Program " + TestMain.resetColor);
+                                    System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
+
+                                    try {
+                                        int choice2 = sc.nextInt();
+
+                                        switch (choice2) {
+                                            case 1:
+                                                System.out.println("Work in progress....");
+                                                break;
+                                            case 2:
+                                                //UPDATE USER NAME
+                                                System.out.println("Do you want to change your name: (y/n)");
+                                                char checkname = sc.next().charAt(0);
+                                                if (checkname == 'y') {
+                                                    if (AccountDao.updateName(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Name successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                int count = 1;
+                                                while (count <= 2 && checkname != 'y' && checkname != 'n') {
+                                                    if (checkname != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkname = sc.next().charAt(0);
+                                                    }
+                                                    if (checkname == 'y') {
+                                                        if (AccountDao.updateName(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Name successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                //UPDATE FATHER NAME
+                                                System.out.println("Do you want to change your father name: (y/n)");
+                                                char checkfatherN = sc.next().charAt(0);
+                                                if (checkfatherN == 'y') {
+                                                    if (AccountDao.updateFaherName(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Father name successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkfatherN != 'y' && checkfatherN != 'n') {
+                                                    if (checkfatherN != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkfatherN = sc.next().charAt(0);
+                                                    }
+                                                    if (checkfatherN == 'y') {
+                                                        if (AccountDao.updateFaherName(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Father name successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                // UPDATE MOBILE NUMBER
+                                                System.out.println("Do you want to change your mobile number: (y/n)");
+                                                char checkMobile = sc.next().charAt(0);
+                                                if (checkMobile == 'y') {
+                                                    if (AccountDao.updateMobileNum(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Mobile number successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkMobile != 'y' && checkMobile != 'n') {
+                                                    if (checkMobile != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkMobile = sc.next().charAt(0);
+                                                    }
+                                                    if (checkMobile == 'y') {
+                                                        if (AccountDao.updateMobileNum(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Mobile number successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                //UPDATE ADDRESS
+                                                System.out.println("Do you want to change your address: (y/n)");
+                                                char checkAddress = sc.next().charAt(0);
+                                                if (checkAddress == 'y') {
+                                                    if (AccountDao.updateAddress(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Address successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkAddress != 'y' && checkAddress != 'n') {
+                                                    if (checkAddress != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkAddress = sc.next().charAt(0);
+                                                    }
+                                                    if (checkAddress == 'y') {
+                                                        if (AccountDao.updateAddress(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Address successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                //UPDATE NOMINEE NAME
+                                                System.out.println("Do you want to change your nominee name: (y/n)");
+                                                char checkNomin = sc.next().charAt(0);
+                                                if (checkNomin == 'y') {
+                                                    if (AccountDao.updateNomineeName(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Nominee name successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkNomin != 'y' && checkNomin != 'n') {
+                                                    if (checkNomin != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkNomin = sc.next().charAt(0);
+                                                    }
+                                                    if (checkNomin == 'y') {
+                                                        if (AccountDao.updateNomineeName(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Nominee name successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                // UPDATE EMAIL 
+                                                System.out.println("Do you want to change your email address: (y/n)");
+                                                char checkEmail = sc.next().charAt(0);
+                                                if (checkEmail == 'y') {
+                                                    if (AccountDao.updateEmail(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Email successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkEmail != 'y' && checkEmail != 'n') {
+                                                    if (checkEmail != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkEmail = sc.next().charAt(0);
+                                                    }
+                                                    if (checkEmail == 'y') {
+                                                        if (AccountDao.updateEmail(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Email successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                //UPDATE DATE OF BIRTH
+                                                System.out.println("Do you want to change your date of birth: (y/n)");
+                                                char checkDate = sc.next().charAt(0);
+                                                if (checkDate == 'y') {
+                                                    if (AccountDao.updateDate(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "date of birth successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkDate != 'y' && checkDate != 'n') {
+                                                    if (checkDate != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkDate = sc.next().charAt(0);
+                                                    }
+                                                    if (checkDate == 'y') {
+                                                        if (AccountDao.updateDate(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "date of birth successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                // update pin
+                                                System.out.println("Do you want to change your pin number: (y/n)");
+                                                char checkPin = sc.next().charAt(0);
+                                                if (checkPin == 'y') {
+                                                    if (AccountDao.updatePin(accountNumber, sc) != -1) {
+                                                        System.out.println(TestMain.setGreen + "Pin number successfully update: " + TestMain.resetColor);
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                    }
+                                                }
+                                                count = 1;
+                                                while (count <= 2 && checkPin != 'y' && checkPin != 'n') {
+                                                    if (checkPin != 'n') {
+                                                        System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
+                                                        checkPin = sc.next().charAt(0);
+                                                    }
+                                                    if (checkPin == 'y') {
+                                                        if (AccountDao.updateDate(accountNumber, sc) != -1) {
+                                                            System.out.println(TestMain.setGreen + "Pin number successfully update: " + TestMain.resetColor);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
+                                                        }
+                                                    }
+                                                    count++;
+                                                }
+
+                                                break;
+                                            case 3:
+                                                System.out.println("Enter amount: ");
+                                                Double amount = sc.nextDouble();
+                                                System.out.println("Enter your account number: ");
+                                                String sendAcc = sc.nextLine();
+                                                sendAcc = Validation.noEmpty(sendAcc, sc);
+                                                boolean checkAccNumber = sendAcc.matches("\\d{10}");
+                                                if (checkAccNumber) {
+                                                    System.out.println("Enter receiver account number: ");
+                                                    String recAcc = sc.nextLine();
+                                                    recAcc = Validation.noEmpty(recAcc, sc);
+                                                    boolean checkAccNumber2 = sendAcc.matches("\\d{10}");
+                                                    if (checkAccNumber2) {
+                                                        System.out.println("Enter receiver account number: ");
+                                                        String pin = sc.nextLine();
+                                                        pin = Validation.noEmpty(pin, sc);
+                                                        boolean checkpin = pin.matches("\\d{6}");
+                                                        if (checkpin) {
+//                                                            TransactionDao.transactionCode(sendAcc, recAcc, amount);
+                                                        } else {
+                                                            System.out.println(TestMain.setRed + "Invalid pin: " + TestMain.resetColor);
+                                                        }
+                                                    } else {
+                                                        System.out.println(TestMain.setRed + "Invalid Account number: " + TestMain.resetColor);
+                                                    }
+                                                } else {
+                                                    System.out.println(TestMain.setRed + "Invalid Account number: " + TestMain.resetColor);
+                                                }
+
+                                                break;
+                                            case 4:
+                                                break;
+                                            case 5:
+
+                                                break;
+                                            case 6:
+                                                break;
+                                            case 7:
+                                                flag = false;
+                                                break;
+                                            case 8:
+                                                System.out.println(TestMain.setGreen + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK " + TestMain.resetColor);
+                                                System.exit(0);
+                                                break;
+                                            default:
+                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                        }
+                                    } catch (Exception e) {
+                                        System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                        sc.nextLine();
+                                    }
+
+                                }
+
+                            } else {
+                                System.out.println(TestMain.setRed + "Customer login fail" + TestMain.resetColor);
+                            }
                         }
 
                         break;

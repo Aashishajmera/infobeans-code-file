@@ -2,6 +2,7 @@ package com.bankproject01.dao;
 
 import com.bankproject01.model.Account;
 import com.bankproject01.service.DatabaseConnect;
+import com.bankproject01.service.Validation;
 import com.bankproject01.testmain.TestMain;
 import java.sql.ResultSet;
 import java.sql.Connection;
@@ -9,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 public class AccountDao {
 
@@ -201,7 +203,7 @@ public class AccountDao {
                     System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
                     System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
                     System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t" + rs.getString(5));
                     System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
                     System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
                     System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
@@ -255,7 +257,7 @@ public class AccountDao {
                 System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
                 System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
                 System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t" + rs.getString(5));
                 System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
                 System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
                 System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
@@ -307,7 +309,7 @@ public class AccountDao {
                     System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
                     System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
                     System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t\t" + rs.getString(5));
+                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t" + rs.getString(5));
                     System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
                     System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
                     System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
@@ -476,22 +478,75 @@ public class AccountDao {
     }
 
 //====================================================USER-ACCOUNT=========================================
-    public static int loginUser(String accountNum, String name) {
-        Connection con = null;
-        int checkUserLogin = -1;
+    public static boolean customerLogin(int accountNumber, String firstName) {
 
+        Connection con = null;
+
+        boolean checkCustomerLog = false;
         try {
+            // add connection 
             con = DatabaseConnect.getConnection();
-            String checkAccQuery = "select * from account where accountnumber = ?  and firstname = ?";
-            PreparedStatement ps = con.prepareStatement(checkAccQuery);
-            ps.setString(1, accountNum);
-            ps.setString(2, name);
+            // System.out.println("Database connected.....");
+
+            // write to customer login query
+            String adminloginQuery = "select * from account where accountNumber = ? and firstName = ?";
+            PreparedStatement ps = con.prepareStatement(adminloginQuery);
+
+            ps.setInt(1, accountNumber);
+            ps.setString(2, firstName);
 
             ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                if (rs.getInt(1) == Integer.parseInt(accountNum) && rs.getString(2).equals(name)) {
-                    checkUserLogin++;
+
+            if (rs.next()) {
+                if (rs.getInt(1) == accountNumber && rs.getString(2).equalsIgnoreCase(firstName) && rs.getBoolean(17)) {
+                    checkCustomerLog = true;
+                } else {
+                    System.out.println("Account is blocked");
                 }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        return checkCustomerLog;
+    }
+
+    //======================================UPDATE-FIELD=============================================
+    // update name: 
+    public static int updateName(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkName = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter your name:");
+            String firstName = sc.nextLine();
+            firstName = Validation.noEmpty(firstName, sc);
+            boolean checkfName = firstName.matches("[a-zA-Z , ]+");
+            int count = 1;
+            while (count <= 2 && checkfName == false) {
+                if (!checkfName) {
+                    System.out.println(TestMain.setRed + "Invalid Name please re-enter" + TestMain.resetColor);
+                    firstName = sc.nextLine();
+                }
+                firstName = Validation.noEmpty(firstName, sc);
+                checkfName = firstName.matches("[a-zA-Z , ]+");
+                count++;
+            }
+            if (checkfName) {
+                String nameQuery = "update account set firstName = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, firstName);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkName = ps.executeUpdate();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -502,7 +557,305 @@ public class AccountDao {
                 e.printStackTrace();
             }
         }
-        return checkUserLogin;
+        return checkName;
     }
 
+    // update father name
+    public static int updateFaherName(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkName = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter father name:");
+            String fatherName = sc.nextLine();
+            fatherName = Validation.noEmpty(fatherName, sc);
+            boolean checkfName = fatherName.matches("[a-zA-Z , ]+");
+            int count = 1;
+            while (count <= 2 && checkfName == false) {
+                if (!checkfName) {
+                    System.out.println(TestMain.setRed + "Invalid Name please re-enter" + TestMain.resetColor);
+                    fatherName = sc.nextLine();
+                }
+                fatherName = Validation.noEmpty(fatherName, sc);
+                checkfName = fatherName.matches("[a-zA-Z , ]+");
+                count++;
+            }
+            if (checkfName) {
+                String nameQuery = "update account set fatherName = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, fatherName);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkName = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkName;
+    }
+
+    //UPDATE MOBILE NUMBER: 
+    public static int updateMobileNum(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkMobile = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter mobile number:");
+            String mobileNum = sc.next();
+            mobileNum = Validation.noEmpty(mobileNum, sc);
+            boolean checkfName = mobileNum.matches("\\d{10}");
+            int count = 1;
+            while (count <= 2 && checkfName == false) {
+                if (!checkfName) {
+                    System.out.println(TestMain.setRed + "Invalid number please re-enter" + TestMain.resetColor);
+                    mobileNum = sc.next();
+                }
+                mobileNum = Validation.noEmpty(mobileNum, sc);
+                checkfName = mobileNum.matches("\\d{10}");
+                count++;
+            }
+            if (checkfName) {
+                String nameQuery = "update account set contactNo = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, mobileNum);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkMobile = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkMobile;
+    }
+
+    // UPDATE ADDRESS
+    public static int updateAddress(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkAddress = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter Address:");
+            String address = sc.nextLine();
+            address = Validation.noEmpty(address, sc);
+            boolean checkAddr = address.matches("[a-zA-z0-9 \\-\\. , ]+");
+            int count = 1;
+            while (count <= 2 && checkAddr == false) {
+                if (!checkAddr) {
+                    System.out.println(TestMain.setRed + "Invalid address please re-enter" + TestMain.resetColor);
+                    address = sc.nextLine();
+                }
+                address = Validation.noEmpty(address, sc);
+                checkAddr = address.matches("[a-zA-z0-9 \\-\\. , ]+");
+                count++;
+            }
+            if (checkAddr) {
+                String nameQuery = "update account set address = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, address);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkAddress = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkAddress;
+    }
+
+    // UPDATE NOMINEE NAME
+    public static int updateNomineeName(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkNominee = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter Nominee name:");
+            String nomineeName = sc.nextLine();
+            nomineeName = Validation.noEmpty(nomineeName, sc);
+            boolean checkNomi = nomineeName.matches("[a-zA-Z , ]+");
+            int count = 1;
+            while (count <= 2 && checkNomi == false) {
+                if (!checkNomi) {
+                    System.out.println(TestMain.setRed + "Invalid nominee name please re-enter" + TestMain.resetColor);
+                    nomineeName = sc.nextLine();
+                }
+                nomineeName = Validation.noEmpty(nomineeName, sc);
+                checkNomi = nomineeName.matches("[a-zA-Z , ]+");
+                count++;
+            }
+            if (checkNomi) {
+                String nameQuery = "update account set nominee = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, nomineeName);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkNominee = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkNominee;
+    }
+
+    // UPDATE EMAIL
+    public static int updateEmail(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkEmail = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter Email:");
+            String email = sc.nextLine();
+            email = Validation.noEmpty(email, sc);
+            boolean checkEmailadd = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+            int count = 1;
+            while (count <= 2 && checkEmailadd == false) {
+                if (!checkEmailadd) {
+                    System.out.println(TestMain.setRed + "Invalid email please re-enter" + TestMain.resetColor);
+                    email = sc.nextLine();
+                }
+                email = Validation.noEmpty(email, sc);
+                checkEmailadd = email.matches("^[A-Za-z][0-9+_.-]+@[A-Za-z0-9.-]+$");
+                count++;
+            }
+            if (checkEmailadd) {
+                String nameQuery = "update account set emailId = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, email);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkEmail = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkEmail;
+    }
+
+    // UPDATE DATE: 
+    public static int updateDate(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkDate = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter Date (yyyy-mm-dd):");
+            String date = sc.nextLine();
+            date = Validation.noEmpty(date, sc);
+            boolean checkDateadd = date.matches("\\d{4}-\\d{2}-\\d{2}");
+            int count = 1;
+            while (count <= 2 && checkDateadd == false) {
+                if (!checkDateadd) {
+                    System.out.println(TestMain.setRed + "Invalid date please re-enter" + TestMain.resetColor);
+                    date = sc.nextLine();
+                }
+                date = Validation.noEmpty(date, sc);
+                checkDateadd = date.matches("\\d{4}-\\d{2}-\\d{2}");
+                count++;
+            }
+            if (checkDateadd) {
+                String nameQuery = "update account set dateOfBirth = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, date);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkDate = ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkDate;
+    }
+
+    // UPDATE PIN NUMBER
+    public static int updatePin(String AccountNum, Scanner sc) {
+        Connection con = null;
+        int checkDate = -1;
+        try {
+            con = DatabaseConnect.getConnection();
+            System.out.print("Enter pin:");
+            String pin = sc.nextLine();
+            pin = Validation.noEmpty(pin, sc);
+            boolean checkPin = (pin.length() <= 6);
+            int count = 1;
+            while (count <= 2 && checkPin == false) {
+                if (!checkPin) {
+                    System.out.println(TestMain.setRed + "Invalid pin please re-enter" + TestMain.resetColor);
+                    pin = sc.nextLine();
+                }
+                pin = Validation.noEmpty(pin, sc);
+                checkPin = (pin.length() <= 6);
+                count++;
+            }
+            if (checkPin) {
+                String nameQuery = "update account set pin = ? where Accountnumber= ?";
+                PreparedStatement ps = con.prepareStatement(nameQuery);
+
+                ps.setString(1, pin);
+                ps.setInt(2, Integer.parseInt(AccountNum));
+
+                checkDate = ps.executeUpdate();
+                
+                ResultSet rs = ps.executeQuery();
+                String email = "null";
+                String pin2 = "null";
+                while(rs.next()){
+                    if(rs.getInt(1) == Integer.parseInt(AccountNum)){
+                        email = rs.getString(7);
+                        pin2 = rs.getString(20);
+                    }
+                }
+                
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkDate;
+    }
 }

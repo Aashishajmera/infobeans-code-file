@@ -12,7 +12,6 @@ public class SendMail {
     private String emailAddressTo = new String();
     private String msgSubject = new String();
     private String msgText = new String();
-//    final String USER_NAME = "mohanmaali144@gmail.com";   //User name of the Goole(gmail) account
     final String PASSSWORD = "elbbfmlofzzcsnts";  //Password of the Goole(gmail) account
     final String FROM_ADDRESS = "risingstarsbank@gmail.com";  //From addresss
 
@@ -23,7 +22,7 @@ public class SendMail {
         SendMail email = new SendMail();
         //Sending test email
         email.createAndSendEmail("risingstarsbank@gmail.com", "Create bank account ",
-                " Dear customer, Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " and PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
+                " Dear customer, \n Congratulations you are account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " and PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {
