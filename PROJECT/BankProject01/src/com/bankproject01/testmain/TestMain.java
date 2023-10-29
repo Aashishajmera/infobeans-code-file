@@ -545,8 +545,8 @@ public class TestMain {
                                     System.out.println("\t\t\t PRESS 1: View account details \t\t\t\t PRESS 2: Update account details \t\t\t");
                                     System.out.println("\t\t\t PRESS 3: Transfer money \t\t\t\t\t PRESS 4: Transaction history \t\t\t");
                                     System.out.println("\t\t\t PRESS 5: View Balance \t\t\t\t\t PRESS 6: Apply for loan \t\t\t");
-                                    System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Back menu" );
-                                    System.out.println(TestMain.setRed+"\t\t\t\t\t\t\t\t PRESS 9: Exit program: "+TestMain.resetColor );
+                                    System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Back menu");
+                                    System.out.println(TestMain.setRed + "\t\t\t\t\t\t\t\t PRESS 9: Exit program: " + TestMain.resetColor);
                                     System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
 
                                     try {
@@ -811,8 +811,10 @@ public class TestMain {
                                                 AccountDao.viewBalance(accountNumber);
                                                 break;
                                             case 6:
+                                                System.out.println("Work in progress:");
                                                 break;
                                             case 7:
+                                                System.out.println("Work in progress:");
                                                 break;
                                             case 8:
                                                 flag = false;

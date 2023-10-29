@@ -80,13 +80,6 @@ public class TransactionDao {
 
                 checktransaction = ps.executeUpdate();
 
-                Double totalAmnt = 0.0;
-                while (rs.next()) {
-                    if (rs.getInt(1) == Integer.parseInt(sendAcc)) {
-                        totalAmnt = rs.getDouble(17);
-                    }
-                }
-
                 String receAmntQuery = "update account set amount  = amount + ? where accountnumber = ?";
                 ps = con.prepareStatement(receAmntQuery);
 
@@ -94,6 +87,13 @@ public class TransactionDao {
                 ps.setInt(2, Integer.parseInt(recAcc));
 
                 checktransaction = ps.executeUpdate();
+
+                Double totalAmnt = 0.0;
+                while (rs.next()) {
+                    if (rs.getInt(1) == Integer.parseInt(sendAcc)) {
+                        totalAmnt = rs.getDouble(17) - amount;
+                    }
+                }
 
                 //   TRANSACTION HISTORY 
                 // create account date:
@@ -150,8 +150,11 @@ public class TransactionDao {
                 System.out.println("\t\t\t\t\t\t\t\t\t Date \t\t" + rs.getDate(1));
                 System.out.println("\t\t\t\t\t\t\t\t\t Transfer \t" + rs.getInt(2));
                 System.out.println("\t\t\t\t\t\t\t\t\t Receiver \t" + rs.getInt(3));
-                System.out.println("\t\t\t\t\t\t\t\t\t CreditAmount \t" + rs.getDouble(4));
-                System.out.println("\t\t\t\t\t\t\t\t\t DebitAmount \t" + rs.getDouble(5));
+                if (rs.getDouble(4) != 0.0) {
+                    System.out.println("\t\t\t\t\t\t\t\t\t CreditAmount \t" + rs.getDouble(4));
+                } else {
+                    System.out.println("\t\t\t\t\t\t\t\t\t DebitAmount \t" + rs.getDouble(5));
+                }
                 System.out.println("\t\t\t\t\t\t\t\t\t TotalAmount \t" + rs.getDouble(6));
                 System.out.println("\t\t\t\t\t\t\t ===========================================\n");
 
