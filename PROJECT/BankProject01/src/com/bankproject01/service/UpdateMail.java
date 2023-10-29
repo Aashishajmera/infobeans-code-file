@@ -7,7 +7,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.Properties;
 
-public class SendMail {
+public class UpdateMail {
 
     private String emailAddressTo = new String();
     private String msgSubject = new String();
@@ -15,14 +15,22 @@ public class SendMail {
     final String PASSSWORD = "elbbfmlofzzcsnts";  //Password of the Goole(gmail) account
     final String FROM_ADDRESS = "risingstarsbank@gmail.com";  //From addresss
 
-    public SendMail() {
+    static String pin;
+    static String email;
+
+    public void setValue(String pin, String email) {
+        this.pin = pin;
+        this.email = email;
+    }
+
+    public UpdateMail() {
     }
 
     public static void main(String[] args) {
-        SendMail email = new SendMail();
+        UpdateMail email = new UpdateMail();
         //Sending test email
         email.createAndSendEmail("risingstarsbank@gmail.com", "Create bank account ",
-                " Dear customer, \n Congratulations your account has been successfully created in RS BANK Account Number " + AccountDao.getAccnum() + " and PIN " + AccountDao.getPin() + " Warning !! Do not share your pin number");
+                " Dear customer, \n your pin has been successfully update and PIN " + UpdateMail.pin + " Warning !! Do not share your pin number");
     }
 
     public void createAndSendEmail(String emailAddressTo, String msgSubject, String msgText) {
@@ -57,12 +65,12 @@ public class SendMail {
             message.setFrom(new InternetAddress("risingstarsbank@gmail.com")); //Set from address of the email
             message.setContent(msgText, "text/html"); //set content type of the email
 
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(AccountDao.getEmailMsg())); //Set email recipient
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email)); //Set email recipient
 
             message.setSubject("RS BANK"); //Set email message subject
             Transport.send(message); //Send email message
 
-            System.out.println(TestMain.setGreen + "Account successfully created....." + TestMain.resetColor);
+            System.out.println(TestMain.setGreen + "Pin successfully updated...." + TestMain.resetColor);
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);

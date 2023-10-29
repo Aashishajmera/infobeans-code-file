@@ -2,6 +2,7 @@ package com.bankproject01.testmain;
 
 import com.bankproject01.dao.AccountDao;
 import com.bankproject01.dao.AdminDao;
+import com.bankproject01.dao.TransactionDao;
 //import com.bankproject01.dao.TransactionDao;
 import com.bankproject01.model.Account;
 import com.bankproject01.model.Admin;
@@ -173,7 +174,7 @@ public class TestMain {
                                                                     System.out.print("\t Enter your email: \n\t ");
                                                                     String email = sc.nextLine();
                                                                     email = Validation.noEmpty(email, sc);
-                                                                    boolean checkEmail = email.matches("^[A-Za-z][0-9+_.-]+@[A-Za-z0-9.-]+$");
+                                                                    boolean checkEmail = email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
                                                                     count = 1;
                                                                     while (count <= 2 && !checkEmail) {
@@ -523,18 +524,29 @@ public class TestMain {
                             System.out.println("Enter account number: ");
                             sc.nextLine();
                             String accountNumber = sc.nextLine();
+                            accountNumber = Validation.noEmpty(accountNumber, sc);
+                            boolean checkPin = false;
+                            String pin = "null";
                             boolean checkAccNum = accountNumber.matches("\\d{10}");
                             if ((!checkAccNum)) {
                                 System.out.println(TestMain.setRed + "Invalid Account Number: " + TestMain.resetColor);
-                            } else if (AccountDao.customerLogin(Integer.parseInt(accountNumber), userName)) {
+                            } else if (checkAccNum) {
+                                System.out.println("Enter pin number: ");
+                                pin = sc.nextLine();
+                                checkPin = pin.matches("\\d{6}");
+                            }
+                            if (!checkPin && checkAccNum) {
+                                System.out.println(TestMain.setRed + "Invalid pin jh Number: " + TestMain.resetColor);
+                            } else if (AccountDao.customerLogin(Integer.parseInt(accountNumber), userName, pin)) {
                                 System.out.println(TestMain.setGreen + "Customer login succesfully" + TestMain.resetColor);
                                 boolean flag = true;
                                 while (flag) {
                                     System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
                                     System.out.println("\t\t\t PRESS 1: View account details \t\t\t\t PRESS 2: Update account details \t\t\t");
                                     System.out.println("\t\t\t PRESS 3: Transfer money \t\t\t\t\t PRESS 4: Transaction history \t\t\t");
-                                    System.out.println("\t\t\t PRESS 5: Apply for loan \t\t\t\t\t PRESS 6: View loan statement \t\t\t");
-                                    System.out.println("\t\t\t PRESS 7: Back menu \t\t\t\t\t\t" + TestMain.setRed + " PRESS 8: Exit Program " + TestMain.resetColor);
+                                    System.out.println("\t\t\t PRESS 5: View Balance \t\t\t\t\t PRESS 6: Apply for loan \t\t\t");
+                                    System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Back menu" );
+                                    System.out.println(TestMain.setRed+"\t\t\t\t\t\t\t\t PRESS 9: Exit program: "+TestMain.resetColor );
                                     System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
 
                                     try {
@@ -542,7 +554,7 @@ public class TestMain {
 
                                         switch (choice2) {
                                             case 1:
-                                                System.out.println("Work in progress....");
+                                                AccountDao.viewDetails(accountNumber);
                                                 break;
                                             case 2:
                                                 //UPDATE USER NAME
@@ -729,23 +741,25 @@ public class TestMain {
 
                                                 // update pin
                                                 System.out.println("Do you want to change your pin number: (y/n)");
-                                                char checkPin = sc.next().charAt(0);
-                                                if (checkPin == 'y') {
+                                                char checkPIn2 = sc.next().charAt(0);
+                                                if (checkPIn2 == 'y') {
                                                     if (AccountDao.updatePin(accountNumber, sc) != -1) {
-                                                        System.out.println(TestMain.setGreen + "Pin number successfully update: " + TestMain.resetColor);
+                                                        System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
+                                                        AccountDao.updateMailMsg(accountNumber);
                                                     } else {
                                                         System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
                                                     }
                                                 }
                                                 count = 1;
-                                                while (count <= 2 && checkPin != 'y' && checkPin != 'n') {
-                                                    if (checkPin != 'n') {
+                                                while (count <= 2 && checkPIn2 != 'y' && checkPIn2 != 'n') {
+                                                    if (checkPIn2 != 'n') {
                                                         System.out.println(TestMain.setRed + "Invalid input please re-enter " + TestMain.resetColor);
-                                                        checkPin = sc.next().charAt(0);
+                                                        checkPIn2 = sc.next().charAt(0);
                                                     }
-                                                    if (checkPin == 'y') {
+                                                    if (checkPIn2 == 'y') {
                                                         if (AccountDao.updateDate(accountNumber, sc) != -1) {
-                                                            System.out.println(TestMain.setGreen + "Pin number successfully update: " + TestMain.resetColor);
+                                                            System.out.println(TestMain.setYellow + "Loading please wait....." + TestMain.resetColor);
+                                                            AccountDao.updateMailMsg(accountNumber);
                                                         } else {
                                                             System.out.println(TestMain.setRed + "Something went wrong: " + TestMain.resetColor);
                                                         }
@@ -765,36 +779,45 @@ public class TestMain {
                                                     System.out.println("Enter receiver account number: ");
                                                     String recAcc = sc.nextLine();
                                                     recAcc = Validation.noEmpty(recAcc, sc);
-                                                    boolean checkAccNumber2 = sendAcc.matches("\\d{10}");
+                                                    boolean checkAccNumber2 = recAcc.matches("\\d{10}");
                                                     if (checkAccNumber2) {
-                                                        System.out.println("Enter receiver account number: ");
-                                                        String pin = sc.nextLine();
-                                                        pin = Validation.noEmpty(pin, sc);
-                                                        boolean checkpin = pin.matches("\\d{6}");
+                                                        System.out.println("Enter pin number: ");
+                                                        String pin2 = sc.nextLine();
+                                                        pin2 = Validation.noEmpty(pin2, sc);
+                                                        boolean checkpin = pin2.matches("\\d{6}");
                                                         if (checkpin) {
-//                                                            TransactionDao.transactionCode(sendAcc, recAcc, amount);
+                                                            if (TransactionDao.transactionCode(sendAcc, recAcc, amount, pin2) != -1) {
+                                                                System.out.println(TestMain.setGreen + "Amount successfully send: " + TestMain.resetColor);
+                                                            }
                                                         } else {
                                                             System.out.println(TestMain.setRed + "Invalid pin: " + TestMain.resetColor);
                                                         }
                                                     } else {
-                                                        System.out.println(TestMain.setRed + "Invalid Account number: " + TestMain.resetColor);
+                                                        System.out.println(TestMain.setRed + "Invalid receiver Account number: " + TestMain.resetColor);
                                                     }
                                                 } else {
-                                                    System.out.println(TestMain.setRed + "Invalid Account number: " + TestMain.resetColor);
+                                                    System.out.println(TestMain.setRed + "Invalid sender Account number: " + TestMain.resetColor);
                                                 }
 
                                                 break;
                                             case 4:
+                                                if (TransactionDao.transactionHistory(accountNumber) != -1) {
+
+                                                } else {
+                                                    System.out.println(TestMain.setRed + "No record found: " + TestMain.resetColor);
+                                                }
                                                 break;
                                             case 5:
-
+                                                AccountDao.viewBalance(accountNumber);
                                                 break;
                                             case 6:
                                                 break;
                                             case 7:
-                                                flag = false;
                                                 break;
                                             case 8:
+                                                flag = false;
+                                                break;
+                                            case 9:
                                                 System.out.println(TestMain.setGreen + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK " + TestMain.resetColor);
                                                 System.exit(0);
                                                 break;
