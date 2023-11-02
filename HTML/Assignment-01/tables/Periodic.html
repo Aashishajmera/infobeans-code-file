@@ -8,23 +8,48 @@
     <style>
         table {
             text-align: center;
-            border-color: red;
+            border-color: rgb(255, 0, 0);
         }
 
         td {
             border-color: red;
         }
-        td:nth-child(1){
+
+        td:nth-child(1) {
             background: pink;
             color: red;
         }
-        td:nth-child(2){
+
+        td:nth-child(2) {
             background: rgb(73, 215, 244);
         }
-        tr:nth-child(9),:nth-child(10){
+
+        tr:nth-child(9),
+        tr:nth-child(10) {
             background: #fcdbdb;
         }
-        
+
+        tr:nth-child(5),
+        tr:nth-child(6),
+        tr:nth-child(7),
+        tr:nth-child(8) {
+            background-color: rgb(245, 245, 56);
+        }
+
+        tr:nth-child(2),
+        td:nth-child(18) {
+            background-color: rgb(140, 198, 223);
+            color: #000000;
+        }
+
+        tr:nth-child(8)>td:nth-child(n+13) {
+            background-color: rgb(239, 239, 239);
+        }
+
+        tr:nth-child(3),
+        td:nth-child(17) {
+            background-color: #fdce4f;
+        }
     </style>
 </head>
 
@@ -34,7 +59,7 @@
             <th colspan="18" style="font-size: 33px; background: yellow;">The Periodic Table</th>
         </tr>
         <tr>
-            <td>1 <br>H</td>
+            <td style="background-color: #ec9020; color: green;">1 <br>H</td>
             <td colspan="16" style="empty-cells: hide;"></td>
             <td>2 <br>He</td>
         </tr>
@@ -42,23 +67,24 @@
             <td>3 <br>Li</td>
             <td>4 <br>Be</td>
             <td colspan="10" style="empty-cells: hide;"></td>
-            <td>5 <br>B</td>
-            <td>6 <br> C</td>
-            <td>7 <br>N</td>
-            <td>8<br>O</td>
+            <td style="background-color: chocolate;">5 <br>B</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">6 <br> C</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">7 <br>N</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">8<br>O</td>
             <td>9<br>F</td>
-            <td>10<br>Ne</td>
+            <td style="background-color: rgb(140, 198, 223);">10<br>Ne</td>
         </tr>
         <tr>
             <td>11 <br>Na</td>
             <td>12 <br>Mg</td>
             <td colspan="10" style="empty-cells: hide;"></td>
-            <td>13 <br>Al</td>
-            <td>14 <br>Si</td>
-            <td>15 <br>P</td>
-            <td>16 <br>S</td>
-            <td>17 <br>Cl</td>
-            <td>18 <br>Ar</td>
+            <td style="background-color: aquamarine;">13 <br>Al</td>
+            <td style="background-color: chocolate;">14 <br>Si</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">15 <br>P</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">16 <br>S</td>
+            <td style="background-color: #fdce4f;
+            ">17 <br>Cl</td>
+            <td style="background-color: rgb(140, 198, 223);">18 <br>Ar</td>
         </tr>
         <tr>
             <td>19 <br>K</td>
@@ -73,10 +99,10 @@
             <td>28<br>Ni</td>
             <td>29 <br>Cu</td>
             <td>30<br>Zn</td>
-            <td>31<br>Ga</td>
-            <td>32<br>Ge</td>
-            <td>33 <br>As</td>
-            <td>34 <br>Se</td>
+            <td style="background-color: aquamarine;">31<br>Ga</td>
+            <td style="background-color: chocolate;">32<br>Ge</td>
+            <td style="background-color: chocolate;">33 <br>As</td>
+            <td style="background-color: rgb(255, 173, 114); color: green;">34 <br>Se</td>
             <td>35 <br>Br</td>
             <td>36<br> Kr</td>
         </tr>
@@ -93,17 +119,17 @@
             <td>46 <br>Pd</td>
             <td>47<br>Ag</td>
             <td>48<br>Cd</td>
-            <td>49<br>In</td>
-            <td>50<br>Sn</td>
-            <td>51<br>Sb</td>
-            <td>52<br>Te</td>
+            <td style="background-color: aquamarine;">49<br>In</td>
+            <td style="background-color: aquamarine;">50<br>Sn</td>
+            <td style="background-color: chocolate;">51<br>Sb</td>
+            <td style="background-color: chocolate;">52<br>Te</td>
             <td>53<br>I</td>
             <td>54<br>Xe</td>
         </tr>
         <tr>
             <td>55<br>Cs</td>
             <td>56<br>Ba</td>
-            <td>57-71</td>
+            <td style="background-color: #fcdbdb;">57-71</td>
             <td>72<br>Hf</td>
             <td>73<br>Ta</td>
             <td>74 <br>W</td>
@@ -113,17 +139,17 @@
             <td>78 <br>Pt</td>
             <td>79<br>Au</td>
             <td>80<br>Hg</td>
-            <td>81<br>Ti</td>
-            <td>82<br>Pb</td>
-            <td>83<br>Bi</td>
-            <td>84<br>Po</td>
+            <td style="background-color: aquamarine;">81<br>Ti</td>
+            <td style="background-color: aquamarine;">82<br>Pb</td>
+            <td style="background-color: aquamarine;">83<br>Bi</td>
+            <td style="background-color: chocolate;">84<br>Po</td>
             <td>85<br>At</td>
             <td>86<br>Rn</td>
         </tr>
         <tr>
             <td>87<br>Fr</td>
             <td>88<br>Ra</td>
-            <td>89-103</td>
+            <td style="background-color: #fcdbdb;">89-103</td>
             <td>104<br>Rf</td>
             <td>105<br>Db</td>
             <td>106<br>Sg</td>
@@ -142,7 +168,7 @@
         </tr>
         <tr>
             <td colspan="2" rowspan="2" style="empty-cells: hide;"></td>
-            <td>57<br>La</td>
+            <td style="background-color: #fcdbdb;">57<br>La</td>
             <td>58<br>Ce</td>
             <td>59<br>Pr</td>
             <td>60<br>Nd</td>
@@ -159,8 +185,8 @@
             <td>71<br>Lu</td>
         </tr>
         <tr>
-            <td>89 <br>Ac</td>
-            <td>90<br>Th</td>
+            <td style="background-color: #fcdbdb; color: black;">89 <br>Ac</td>
+            <td style="background-color: #fcdbdb;">90<br>Th</td>
             <td>91<br>Pa</td>
             <td>92<br>U</td>
             <td>93<br>Np</td>

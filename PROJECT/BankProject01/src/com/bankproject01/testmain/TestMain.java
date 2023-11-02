@@ -2,13 +2,17 @@ package com.bankproject01.testmain;
 
 import com.bankproject01.dao.AccountDao;
 import com.bankproject01.dao.AdminDao;
+import com.bankproject01.dao.LoanDao;
 import com.bankproject01.dao.TransactionDao;
 //import com.bankproject01.dao.TransactionDao;
 import com.bankproject01.model.Account;
 import com.bankproject01.model.Admin;
+import com.bankproject01.model.Loan;
 import com.bankproject01.model.Transaction;
 import com.bankproject01.service.SendMail;
 import com.bankproject01.service.Validation;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -812,7 +816,362 @@ public class TestMain {
                                                 break;
                                             case 6:
                                                 System.out.println("Work in progress:");
+                                                System.out.println("Enter account number: ");
+                                                sc.nextLine();
+                                                String accountNum = sc.nextLine();
+                                                accountNum = Validation.noEmpty(accountNum, sc);
+                                                boolean checkAccount = accountNum.matches("\\d{10}");
+                                                if (accountNum.equals(accountNumber)) {
+
+                                                    //=====================================================================
+                                                    System.out.println("Which type of loan you want (PRESS 1: Personal Loan / PRESS 2: Business Loan)");
+                                                    int loanType = sc.nextInt();
+                                                    String loan1 = "null";
+                                                    if (loanType == 1) {
+                                                        loan1 = "Personal loan";
+                                                    } else if (loanType == 2) {
+                                                        loan1 = "Business loan";
+                                                    }
+                                                    switch (loanType) {
+                                                        case 1:
+                                                            System.out.println("Loan amount start from Rs.50,000/- to Rs.5,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  ");
+
+                                                            System.out.println("Do you want to take loan (Press 1: yes / Otherwise Press 2:) ");
+
+                                                            int choice3 = sc.nextInt();
+                                                            switch (choice3) {
+                                                                case 1:
+                                                                    //+++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                    System.out.println("Occupation: (PRESS 1: Self employee/ PRESS 2: Business man/ Otherwise Press 3:)");
+                                                                    int occupationType = sc.nextInt();
+                                                                    String occupation = "null";
+                                                                    if (occupationType == 1) {
+                                                                        occupation = "self employee";
+                                                                    } else if (occupationType == 2) {
+                                                                        occupation = "Business man";
+                                                                    }
+                                                                    switch (occupationType) {
+                                                                        case 1:
+                                                                            System.out.println("Company Name: ");
+                                                                            String companyName = sc.nextLine();
+                                                                            companyName = Validation.noEmpty(companyName, sc);
+                                                                            boolean checkCompany = companyName.matches("[a-zA-Z , ]+");
+                                                                            if (checkCompany) {
+                                                                                System.out.println("Designation ");
+                                                                                String designation = sc.nextLine();
+                                                                                designation = Validation.noEmpty(designation, sc);
+                                                                                boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                if (checkDesignation) {
+                                                                                    System.out.println("Salary");
+                                                                                    Double salary = sc.nextDouble();
+                                                                                    System.out.println("Duration time in year ");
+                                                                                    int duration = sc.nextInt();
+                                                                                    if (duration > 0) {
+                                                                                        System.out.println("Enter loan amount");
+                                                                                        Double loanAmount = sc.nextDouble();
+                                                                                        if (loanAmount <= 500000 && loanAmount >= 50000) {
+                                                                                            System.out.println("Enter date: (yyyy-mm-dd)");
+                                                                                            String date = sc.nextLine();
+                                                                                            date = Validation.noEmpty(date, sc);
+                                                                                            boolean checkDate2 = date.matches("\\d{4}-\\d{2}-\\d{2}");
+                                                                                            if (checkDate2) {
+
+                                                                                                // check age 
+                                                                                                if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
+                                                                                                    Double repayment = loanAmount;
+
+                                                                                                    // calculate emi 
+                                                                                                    double interest = (loanAmount * 7) / 100;
+                                                                                                    double month = (duration * 12);
+                                                                                                    Double emi = (loanAmount + interest) / month;
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
+                                                                                                    if (LoanDao.personalLoan(loan) != -1) {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    } else {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                }
+
+                                                                                            } else {
+                                                                                                System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
+                                                                                            }
+                                                                                        } else if (loanAmount < 0) {
+                                                                                            System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
+                                                                                        } else {
+                                                                                            System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
+                                                                                        }
+                                                                                    } else {
+                                                                                        System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+                                                                                    }
+                                                                                } else {
+                                                                                    System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+
+                                                                                }
+                                                                            } else {
+                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                                                            }
+
+                                                                            break;
+                                                                        case 2:
+                                                                            System.out.println("Company Name: ");
+                                                                            String companyName1 = sc.nextLine();
+                                                                            companyName1 = Validation.noEmpty(companyName1, sc);
+                                                                            boolean checkCompany1 = companyName1.matches("[a-zA-Z , ]+");
+                                                                            if (checkCompany1) {
+                                                                                System.out.println("Designation ");
+                                                                                String designation = sc.nextLine();
+                                                                                designation = Validation.noEmpty(designation, sc);
+                                                                                boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                if (checkDesignation) {
+                                                                                    System.out.println("Income");
+                                                                                    Double salary = sc.nextDouble();
+                                                                                    System.out.println("Duration time in year ");
+                                                                                    int duration = sc.nextInt();
+                                                                                    if (duration > 0) {
+                                                                                        System.out.println("Enter loan amount");
+                                                                                        Double loanAmount = sc.nextDouble();
+                                                                                        if (loanAmount <= 500000 && loanAmount >= 50000) {
+                                                                                            System.out.println("Enter date: (yyyy-mm-dd)");
+                                                                                            String date = sc.nextLine();
+                                                                                            date = Validation.noEmpty(date, sc);
+                                                                                            boolean checkDate2 = date.matches("\\d{4}-\\d{2}-\\d{2}");
+                                                                                            if (checkDate2) {
+
+                                                                                                // check age 
+                                                                                                if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
+                                                                                                    Double repayment = loanAmount;
+
+                                                                                                    // calculate emi 
+                                                                                                    double interest = (loanAmount * 7) / 100;
+                                                                                                    double month = (duration * 12);
+                                                                                                    Double emi = (loanAmount + interest) / month;
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, salary, duration, loanAmount, date, repayment, emi);
+                                                                                                    if (LoanDao.personalLoanForBusiness(loan) != -1) {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    } else {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                }
+
+                                                                                            } else {
+                                                                                                System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
+                                                                                            }
+                                                                                        } else if (loanAmount < 0) {
+                                                                                            System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
+                                                                                        } else {
+                                                                                            System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
+                                                                                        }
+                                                                                    } else {
+                                                                                        System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+                                                                                    }
+                                                                                } else {
+                                                                                    System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+
+                                                                                }
+                                                                            } else {
+                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                                                            }
+
+                                                                            break;
+                                                                        case 3:
+                                                                            System.out.println(TestMain.setRed + "Sorry!! you can't take loan " + TestMain.resetColor);
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
+
+                                                                    }
+
+                                                                    //+++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                    break;
+                                                                case 2:
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
+                                                            }
+
+                                                            break;
+                                                        case 2:
+                                                            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+                                                            System.out.println("Loan amount start from Rs.50,000/- to Rs.1,0,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  ");
+
+                                                            System.out.println("Do you want to take loan (Press 1: yes / Otherwise Press 2:) ");
+
+                                                            int choice4 = sc.nextInt();
+                                                            switch (choice4) {
+                                                                case 1:
+                                                                    //+++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                    System.out.println("Occupation: (PRESS 1: Self employee/ PRESS 2: Business man/ Otherwise Press 3:)");
+                                                                    int occupationType = sc.nextInt();
+                                                                    String occupation = "null";
+                                                                    if (occupationType == 1) {
+                                                                        occupation = "self employee";
+                                                                    } else if (occupationType == 2) {
+                                                                        occupation = "Business man";
+                                                                    }
+                                                                    switch (occupationType) {
+                                                                        case 1:
+                                                                            System.out.println("Company Name: ");
+                                                                            String companyName = sc.nextLine();
+                                                                            companyName = Validation.noEmpty(companyName, sc);
+                                                                            boolean checkCompany = companyName.matches("[a-zA-Z , ]+");
+                                                                            if (checkCompany) {
+                                                                                System.out.println("Designation ");
+                                                                                String designation = sc.nextLine();
+                                                                                designation = Validation.noEmpty(designation, sc);
+                                                                                boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                if (checkDesignation) {
+                                                                                    System.out.println("Salary");
+                                                                                    Double salary = sc.nextDouble();
+                                                                                    System.out.println("Duration time in year ");
+                                                                                    int duration = sc.nextInt();
+                                                                                    if (duration > 0) {
+                                                                                        System.out.println("Enter loan amount");
+                                                                                        Double loanAmount = sc.nextDouble();
+                                                                                        if (loanAmount <= 1000000 && loanAmount >= 50000) {
+                                                                                            System.out.println("Enter date: (yyyy-mm-dd)");
+                                                                                            String date = sc.nextLine();
+                                                                                            date = Validation.noEmpty(date, sc);
+                                                                                            boolean checkDate2 = date.matches("\\d{4}-\\d{2}-\\d{2}");
+                                                                                            if (checkDate2) {
+
+                                                                                                // check age 
+                                                                                                if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
+                                                                                                    Double repayment = loanAmount;
+
+                                                                                                    // calculate emi 
+                                                                                                    double interest = (loanAmount * 7) / 100;
+                                                                                                    double month = (duration * 12);
+                                                                                                    Double emi = (loanAmount + interest) / month;
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
+                                                                                                    if (LoanDao.personalLoan(loan) != -1) {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    } else {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                }
+
+                                                                                            } else {
+                                                                                                System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
+                                                                                            }
+                                                                                        } else if (loanAmount < 0) {
+                                                                                            System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
+                                                                                        } else {
+                                                                                            System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
+                                                                                        }
+                                                                                    } else {
+                                                                                        System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+                                                                                    }
+                                                                                } else {
+                                                                                    System.out.println(TestMain.setRed + "Invalid designation: " + TestMain.resetColor);
+                                                                                }
+                                                                            } else {
+                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                                                            }
+
+                                                                            break;
+                                                                        case 2:
+                                                                            System.out.println("Company Name: ");
+                                                                            String companyName1 = sc.nextLine();
+                                                                            companyName1 = Validation.noEmpty(companyName1, sc);
+                                                                            boolean checkCompany1 = companyName1.matches("[a-zA-Z , ]+");
+                                                                            if (checkCompany1) {
+                                                                                System.out.println("Designation ");
+                                                                                String designation = sc.nextLine();
+                                                                                designation = Validation.noEmpty(designation, sc);
+                                                                                boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
+                                                                                if (checkDesignation) {
+                                                                                    System.out.println("Income");
+                                                                                    Double salary = sc.nextDouble();
+                                                                                    System.out.println("Duration time in year ");
+                                                                                    int duration = sc.nextInt();
+                                                                                    if (duration > 0) {
+                                                                                        System.out.println("Enter loan amount");
+                                                                                        Double loanAmount = sc.nextDouble();
+                                                                                        if (loanAmount <= 1000000 && loanAmount >= 50000) {
+                                                                                            System.out.println("Enter date: (yyyy-mm-dd)");
+                                                                                            String date = sc.nextLine();
+                                                                                            date = Validation.noEmpty(date, sc);
+                                                                                            boolean checkDate2 = date.matches("\\d{4}-\\d{2}-\\d{2}");
+                                                                                            if (checkDate2) {
+
+                                                                                                // check age 
+                                                                                                if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
+                                                                                                    Double repayment = loanAmount;
+
+                                                                                                    // calculate emi 
+                                                                                                    double interest = (loanAmount * 7) / 100;
+                                                                                                    double month = (duration * 12);
+                                                                                                    Double emi = (loanAmount + interest) / month;
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, salary, duration, loanAmount, date, repayment, emi);
+                                                                                                    if (LoanDao.personalLoanForBusiness(loan) != -1) {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    } else {
+                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                }
+
+                                                                                            } else {
+                                                                                                System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
+                                                                                            }
+                                                                                        } else if (loanAmount < 0) {
+                                                                                            System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
+                                                                                        } else {
+                                                                                            System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
+                                                                                        }
+                                                                                    } else {
+                                                                                        System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+                                                                                    }
+                                                                                } else {
+                                                                                    System.out.println(TestMain.setRed + "Invalid duration time: " + TestMain.resetColor);
+
+                                                                                }
+                                                                            } else {
+                                                                                System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
+                                                                            }
+
+                                                                            break;
+                                                                        case 3:
+                                                                            System.out.println(TestMain.setRed + "Sorry!! you can't take loan " + TestMain.resetColor);
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
+
+                                                                    }
+
+                                                                    //+++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                    break;
+                                                                case 2:
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
+                                                            }
+
+                                                            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                                                            break;
+                                                        default:
+                                                            System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
+                                                            break;
+                                                    }
+
+                                                    //=====================================================================
+                                                } else if (checkAccount && !accountNum.equals(accountNumber)) {
+                                                    System.out.println(TestMain.setRed + "Account Not found: " + TestMain.resetColor);
+                                                } else {
+                                                    System.out.println(TestMain.setRed + "Invalid account number: " + TestMain.resetColor);
+                                                }
                                                 break;
+//
                                             case 7:
                                                 System.out.println("Work in progress:");
                                                 break;
