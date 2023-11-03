@@ -1169,7 +1169,9 @@ public class TestMain {
                                                 break;
 //
                                             case 7:
-                                                System.out.println(TestMain.setYellow+"Work in progress:"+TestMain.resetColor);
+                                                if (LoanDao.historyLoan(accountNumber) == -1) {
+                                                    System.out.println(TestMain.setRed + "Record not found" + TestMain.resetColor);
+                                                }
                                                 break;
                                             case 8:
                                                 flag = false;

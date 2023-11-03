@@ -223,4 +223,48 @@ public class LoanDao {
         }
         return checkLoan;
     }
+
+    // History of loan 
+    public static int historyLoan(String AccNum) {
+        Connection con = null;
+        int checkHistory = -1;
+
+        try {
+            con = DatabaseConnect.getConnection();
+            String historyQry = "select * from loan where account_No = '" + AccNum + "'";
+
+            PreparedStatement ps = con.prepareStatement(historyQry);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                checkHistory++;
+                System.out.println("\t\t\t\t\t\t==================================================");
+                System.out.println("\t\t\t\t\t\t\t Account Number: \t " + rs.getInt(1));
+                System.out.println("\t\t\t\t\t\t\t Loan type: \t\t " + rs.getString(2));
+                System.out.println("\t\t\t\t\t\t\t Occupation: \t\t " + rs.getString(3));
+                System.out.println("\t\t\t\t\t\t\t Company name: \t\t " + rs.getString(4));
+                System.out.println("\t\t\t\t\t\t\t Designation: \t\t" + rs.getString(5));
+                if (rs.getDouble(6) != 0) {
+                    System.out.println("\t\t\t\t\t\t\t Salary: \t\t " + rs.getDouble(6));
+                } else {
+                    System.out.println("\t\t\t\t\t\t\t Income: \t\t " + rs.getDouble(7));
+                }
+                System.out.println("\t\t\t\t\t\t\t Duration in year: \t " + rs.getInt(8));
+                System.out.println("\t\t\t\t\t\t\t Loan amout: \t\t " + rs.getDouble(9));
+                System.out.println("\t\t\t\t\t\t\t Date : \t\t " + rs.getDate(10));
+                System.out.println("\t\t\t\t\t\t\t Repayment: \t\t " + rs.getDouble(11));
+                System.out.println("\t\t\t\t\t\t\t Monthly EMI: \t\t " + rs.getDouble(12));
+                System.out.println("\t\t\t\t\t\t==================================================");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return checkHistory;
+        }
+    }
 }
