@@ -545,8 +545,8 @@ public class TestMain {
                                     System.out.println("\t\t\t PRESS 1: View account details \t\t\t\t PRESS 2: Update account details \t\t\t");
                                     System.out.println("\t\t\t PRESS 3: Transfer money \t\t\t\t\t PRESS 4: Transaction history \t\t\t");
                                     System.out.println("\t\t\t PRESS 5: View Balance \t\t\t\t\t PRESS 6: Apply for loan \t\t\t");
-                                    System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Back menu");
-                                    System.out.println(TestMain.setRed + "\t\t\t\t\t\t\t\t PRESS 9: Exit program: " + TestMain.resetColor);
+                                    System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Repayment loan amount ");
+                                    System.out.println(TestMain.setRed + "\t\t\t PRESS 9: Back menu \t\t\t\t\t PRESS 10: Exit program: " + TestMain.resetColor);
                                     System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
 
                                     try {
@@ -1154,7 +1154,6 @@ public class TestMain {
                                                             System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
                                                             break;
                                                     }
-
                                                     //=====================================================================
                                                 } else if (checkAccount && !accountNum.equals(accountNumber)) {
                                                     System.out.println(TestMain.setRed + "Account Not found: " + TestMain.resetColor);
@@ -1169,9 +1168,12 @@ public class TestMain {
                                                 }
                                                 break;
                                             case 8:
-                                                flag = false;
+                                                System.out.println(TestMain.setGreen + "Work in progress......" + TestMain.resetColor);
                                                 break;
                                             case 9:
+                                                flag = false;
+                                                break;
+                                            case 10:
                                                 System.out.println(TestMain.setGreen + "\t\t\t\t\t\t\t THANKS FOR VISITING OUR BANK " + TestMain.resetColor);
                                                 System.exit(0);
                                                 break;
