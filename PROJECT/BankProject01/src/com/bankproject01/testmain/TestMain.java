@@ -4,15 +4,11 @@ import com.bankproject01.dao.AccountDao;
 import com.bankproject01.dao.AdminDao;
 import com.bankproject01.dao.LoanDao;
 import com.bankproject01.dao.TransactionDao;
-//import com.bankproject01.dao.TransactionDao;
 import com.bankproject01.model.Account;
 import com.bankproject01.model.Admin;
 import com.bankproject01.model.Loan;
-import com.bankproject01.model.Transaction;
 import com.bankproject01.service.SendMail;
 import com.bankproject01.service.Validation;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -833,7 +829,7 @@ public class TestMain {
                                                     }
                                                     switch (loanType) {
                                                         case 1:
-                                                            System.out.println("Loan amount start from Rs.50,000/- to Rs.5,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  ");
+                                                            System.out.println(TestMain.setYellow + "Loan amount start from Rs.50,000/- to Rs.5,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  " + TestMain.resetColor);
 
                                                             System.out.println("Do you want to take loan (Press 1: yes / Otherwise Press 2:) ");
 
@@ -884,19 +880,19 @@ public class TestMain {
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.personalLoan(loan) != -1) {
+                                                                                                    if (LoanDao.personalLoan(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setGreen + "Loan  not approved  " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
-                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                    System.out.println(TestMain.setRed + "Your not eligible for loan because your 60 year old" + TestMain.resetColor);
                                                                                                 }
 
                                                                                             } else {
                                                                                                 System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
                                                                                             }
-                                                                                        } else if (loanAmount < 0) {
+                                                                                        } else if (loanAmount < 0 || loanAmount < 50000) {
                                                                                             System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
                                                                                         } else {
                                                                                             System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
@@ -947,19 +943,19 @@ public class TestMain {
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, income, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.personalLoanForBusiness(loan) != -1) {
+                                                                                                    if (LoanDao.personalLoanForBusiness(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setGreen + "Loan not approved " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
-                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                    System.out.println(TestMain.setRed + "Your not eligible for loan because your 60 year old" + TestMain.resetColor);
                                                                                                 }
 
                                                                                             } else {
                                                                                                 System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
                                                                                             }
-                                                                                        } else if (loanAmount < 0) {
+                                                                                        } else if (loanAmount < 0 || loanAmount < 50000) {
                                                                                             System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
                                                                                         } else {
                                                                                             System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
@@ -996,7 +992,7 @@ public class TestMain {
                                                         case 2:
                                                             //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-                                                            System.out.println("Loan amount start from Rs.50,000/- to Rs.1,0,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  ");
+                                                            System.out.println(TestMain.setYellow + "Loan amount start from Rs.50,000/- to Rs.1,0,00,000\nInterest rate Starting from 7% \nAge between 20 to 60  " + TestMain.resetColor);
 
                                                             System.out.println("Do you want to take loan (Press 1: yes / Otherwise Press 2:) ");
 
@@ -1047,19 +1043,19 @@ public class TestMain {
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.BusinessLoan(loan) != -1) {
+                                                                                                    if (LoanDao.BusinessLoan(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setGreen + "Loan not approved " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
-                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                    System.out.println(TestMain.setRed + "Your not eligible for loan because your 60 year old" + TestMain.resetColor);
                                                                                                 }
 
                                                                                             } else {
                                                                                                 System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
                                                                                             }
-                                                                                        } else if (loanAmount < 0) {
+                                                                                        } else if (loanAmount < 0 || loanAmount < 50000) {
                                                                                             System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
                                                                                         } else {
                                                                                             System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);
@@ -1103,25 +1099,24 @@ public class TestMain {
                                                                                                 // check age 
                                                                                                 if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
                                                                                                     Double repayment = loanAmount;
-
                                                                                                     // calculate emi 
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, Income, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.businessLoanForBusiness(loan) != -1) {
+                                                                                                    if (LoanDao.businessLoanForBusiness(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
                                                                                                         System.out.println(TestMain.setGreen + "Loan not approved  " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
-                                                                                                    System.out.println("Your not eligible for loan");
+                                                                                                    System.out.println(TestMain.setRed + "Your not eligible for loan because your 60 year old" + TestMain.resetColor);
                                                                                                 }
 
                                                                                             } else {
                                                                                                 System.out.println(TestMain.setRed + "Invalid date formate:" + TestMain.resetColor);
                                                                                             }
-                                                                                        } else if (loanAmount < 0) {
+                                                                                        } else if (loanAmount < 0 || loanAmount < 50000) {
                                                                                             System.out.println(TestMain.setRed + "Invalid loan amount: " + TestMain.resetColor);
                                                                                         } else {
                                                                                             System.out.println(TestMain.setRed + "Loan amount is too large: " + TestMain.resetColor);

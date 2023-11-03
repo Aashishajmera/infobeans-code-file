@@ -249,30 +249,29 @@ public class AccountDao {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t\t\t " + checkaccNum + " ACCOUNT-INFORMATION" + TestMain.resetColor
-                );
-                System.out.println("\t\t\t\t\t\t\t ==================================================");
-                if (rs.getBoolean(18) != true) {
-                    System.out.println("\t\t\t\t\t\t\t\t\t  " + TestMain.setRed + " Account is blocked \t" + TestMain.resetColor);
+
+                if (rs.getBoolean(18) == true) {
+                    System.out.println(TestMain.setYellow + "\t\t\t\t\t\t\t\t\t " + checkaccNum + " ACCOUNT-INFORMATION" + TestMain.resetColor);
+                    System.out.println("\t\t\t\t\t\t\t ==================================================");
+                    System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
+                    System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
+                    System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
+                    System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t" + rs.getString(5));
+                    System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
+                    System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
+                    System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
+                    System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(9));
+                    System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(10));
+                    System.out.println("\t\t\t\t\t\t\t\t Account type:  \t" + rs.getString(11));
+                    System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(12));
+                    System.out.println("\t\t\t\t\t\t\t\t IFSC:   \t\t" + rs.getString(13));
+                    System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(14));
+                    System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(15));
+                    System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(16));
+                    System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(17));
+                    System.out.println("\t\t\t\t\t\t\t\t Account create date:  " + rs.getDate(19));
+                    System.out.println("\t\t\t\t\t\t\t ==================================================");
                 }
-                System.out.println("\t\t\t\t\t\t\t\t Account number:  \t" + rs.getInt(1));
-                System.out.println("\t\t\t\t\t\t\t\t Holder's name:  \t" + rs.getString(2) + " " + rs.getString(3));
-                System.out.println("\t\t\t\t\t\t\t\t Father name:  \t\t" + rs.getString(4));
-                System.out.println("\t\t\t\t\t\t\t\t Marital status:  \t" + rs.getString(5));
-                System.out.println("\t\t\t\t\t\t\t\t Contact number:  \t" + rs.getString(6));
-                System.out.println("\t\t\t\t\t\t\t\t Email :  \t\t" + rs.getString(7));
-                System.out.println("\t\t\t\t\t\t\t\t Date of birth:  \t" + rs.getDate(8));
-                System.out.println("\t\t\t\t\t\t\t\t Aadhar number:  \t" + rs.getString(9));
-                System.out.println("\t\t\t\t\t\t\t\t Pancard number:  \t" + rs.getString(10));
-                System.out.println("\t\t\t\t\t\t\t\t Account type:  \t" + rs.getString(11));
-                System.out.println("\t\t\t\t\t\t\t\t Branch:   \t\t" + rs.getString(12));
-                System.out.println("\t\t\t\t\t\t\t\t IFSC:   \t\t" + rs.getString(13));
-                System.out.println("\t\t\t\t\t\t\t\t Gender:  \t\t" + rs.getString(14));
-                System.out.println("\t\t\t\t\t\t\t\t Nominee:  \t\t" + rs.getString(15));
-                System.out.println("\t\t\t\t\t\t\t\t Address:  \t\t" + rs.getString(16));
-                System.out.println("\t\t\t\t\t\t\t\t Amount:  \t\t" + rs.getDouble(17));
-                System.out.println("\t\t\t\t\t\t\t\t Account create date:  " + rs.getDate(19));
-                System.out.println("\t\t\t\t\t\t\t ==================================================");
 
                 checkaccNum++;
             }

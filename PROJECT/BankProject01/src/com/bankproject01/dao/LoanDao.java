@@ -43,7 +43,7 @@ public class LoanDao {
     }
 
     // personal loan for self employee
-    public static int personalLoan(Loan loan) {
+    public static int personalLoan(Loan loan, String accNum) {
         Connection con = null;
         int checkLoan = -1;
 
@@ -54,28 +54,35 @@ public class LoanDao {
             java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 
             con = DatabaseConnect.getConnection();
-            String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,salary,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(insertQury);
+            String checkLoanAmount = "select * from loan where account_No = '" + accNum + "'";
+            PreparedStatement ps = con.prepareStatement(checkLoanAmount);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(TestMain.setYellow + "Loan is already in progress....." + TestMain.resetColor);
+            } else {
 
-            ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
-            ps.setString(2, loan.getLoanType());
-            ps.setString(3, loan.getOccupation());
-            ps.setString(4, loan.getCompanyName());
-            ps.setString(5, loan.getDesignation());
-            ps.setDouble(6, loan.getSalary());
-            ps.setInt(7, loan.getDuration());
-            ps.setDouble(8, loan.getAmount());
-            ps.setDate(9, sqlStartDate);
-            ps.setDouble(10, loan.getRepayment());
-            ps.setDouble(11, loan.getEmi());
+                String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,salary,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
+                ps = con.prepareStatement(insertQury);
 
-            checkLoan = ps.executeUpdate();
+                ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
+                ps.setString(2, loan.getLoanType());
+                ps.setString(3, loan.getOccupation());
+                ps.setString(4, loan.getCompanyName());
+                ps.setString(5, loan.getDesignation());
+                ps.setDouble(6, loan.getSalary());
+                ps.setInt(7, loan.getDuration());
+                ps.setDouble(8, loan.getAmount());
+                ps.setDate(9, sqlStartDate);
+                ps.setDouble(10, loan.getRepayment());
+                ps.setDouble(11, loan.getEmi());
 
-            // add loan amount in account table 
-            if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
-                System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                checkLoan = ps.executeUpdate();
+
+                // add loan amount in account table 
+                if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
+                    System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -89,7 +96,7 @@ public class LoanDao {
     }
 
     // personal loan for business men
-    public static int personalLoanForBusiness(Loan loan) {
+    public static int personalLoanForBusiness(Loan loan, String accNum) {
         Connection con = null;
         int checkLoan = -1;
 
@@ -100,26 +107,35 @@ public class LoanDao {
             java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 
             con = DatabaseConnect.getConnection();
-            String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,income,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(insertQury);
 
-            ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
-            ps.setString(2, loan.getLoanType());
-            ps.setString(3, loan.getOccupation());
-            ps.setString(4, loan.getCompanyName());
-            ps.setString(5, loan.getDesignation());
-            ps.setDouble(6, loan.getIncome());
-            ps.setInt(7, loan.getDuration());
-            ps.setDouble(8, loan.getAmount());
-            ps.setDate(9, sqlStartDate);
-            ps.setDouble(10, loan.getRepayment());
-            ps.setDouble(11, loan.getEmi());
+            String checkLoanAmount = "select * from loan where account_No = '" + accNum + "'";
+            PreparedStatement ps = con.prepareStatement(checkLoanAmount);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(TestMain.setYellow + "Loan is already in progress....." + TestMain.resetColor);
+            } else {
 
-            checkLoan = ps.executeUpdate();
+                String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,income,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
+                ps = con.prepareStatement(insertQury);
 
-            // add loan amount in account table 
-            if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
-                System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
+                ps.setString(2, loan.getLoanType());
+                ps.setString(3, loan.getOccupation());
+                ps.setString(4, loan.getCompanyName());
+                ps.setString(5, loan.getDesignation());
+                ps.setDouble(6, loan.getIncome());
+                ps.setInt(7, loan.getDuration());
+                ps.setDouble(8, loan.getAmount());
+                ps.setDate(9, sqlStartDate);
+                ps.setDouble(10, loan.getRepayment());
+                ps.setDouble(11, loan.getEmi());
+
+                checkLoan = ps.executeUpdate();
+
+                // add loan amount in account table 
+                if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
+                    System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -134,7 +150,7 @@ public class LoanDao {
     }
 
     // business loan for self employee
-    public static int BusinessLoan(Loan loan) {
+    public static int BusinessLoan(Loan loan, String accNum) {
         Connection con = null;
         int checkLoan = -1;
 
@@ -145,28 +161,36 @@ public class LoanDao {
             java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 
             con = DatabaseConnect.getConnection();
-            String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,salary,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(insertQury);
 
-            ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
-            ps.setString(2, loan.getLoanType());
-            ps.setString(3, loan.getOccupation());
-            ps.setString(4, loan.getCompanyName());
-            ps.setString(5, loan.getDesignation());
-            ps.setDouble(6, loan.getSalary());
-            ps.setInt(7, loan.getDuration());
-            ps.setDouble(8, loan.getAmount());
-            ps.setDate(9, sqlStartDate);
-            ps.setDouble(10, loan.getRepayment());
-            ps.setDouble(11, loan.getEmi());
+            String checkLoanAmount = "select * from loan where account_No = '" + accNum + "'";
+            PreparedStatement ps = con.prepareStatement(checkLoanAmount);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(TestMain.setYellow + "Loan is already in progress....." + TestMain.resetColor);
+            } else {
 
-            checkLoan = ps.executeUpdate();
+                String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,salary,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
+                ps = con.prepareStatement(insertQury);
 
-            // add loan amount in account table 
-            if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
-                System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
+                ps.setString(2, loan.getLoanType());
+                ps.setString(3, loan.getOccupation());
+                ps.setString(4, loan.getCompanyName());
+                ps.setString(5, loan.getDesignation());
+                ps.setDouble(6, loan.getSalary());
+                ps.setInt(7, loan.getDuration());
+                ps.setDouble(8, loan.getAmount());
+                ps.setDate(9, sqlStartDate);
+                ps.setDouble(10, loan.getRepayment());
+                ps.setDouble(11, loan.getEmi());
+
+                checkLoan = ps.executeUpdate();
+
+                // add loan amount in account table 
+                if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
+                    System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -180,7 +204,7 @@ public class LoanDao {
     }
 
     // business loan for business man
-    public static int businessLoanForBusiness(Loan loan) {
+    public static int businessLoanForBusiness(Loan loan, String accNum) {
         Connection con = null;
         int checkLoan = -1;
 
@@ -191,27 +215,36 @@ public class LoanDao {
             java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
 
             con = DatabaseConnect.getConnection();
-            String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,income,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps = con.prepareStatement(insertQury);
 
-            ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
-            ps.setString(2, loan.getLoanType());
-            ps.setString(3, loan.getOccupation());
-            ps.setString(4, loan.getCompanyName());
-            ps.setString(5, loan.getDesignation());
-            ps.setDouble(6, loan.getIncome());
-            ps.setInt(7, loan.getDuration());
-            ps.setDouble(8, loan.getAmount());
-            ps.setDate(9, sqlStartDate);
-            ps.setDouble(10, loan.getRepayment());
-            ps.setDouble(11, loan.getEmi());
+            String checkLoanAmount = "select * from loan where account_No = '" + accNum + "'";
+            PreparedStatement ps = con.prepareStatement(checkLoanAmount);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(TestMain.setYellow + "Loan is already in progress....." + TestMain.resetColor);
+            } else {
+                String insertQury = "insert into loan(account_No,loanType,Occupation,companyName,Designation,income,duration,amount,date,repayment,emi) values(?,?,?,?,?,?,?,?,?,?,?)";
+                ps = con.prepareStatement(insertQury);
 
-            checkLoan = ps.executeUpdate();
+                ps.setInt(1, Integer.parseInt(loan.getAccountNo()));
+                ps.setString(2, loan.getLoanType());
+                ps.setString(3, loan.getOccupation());
+                ps.setString(4, loan.getCompanyName());
+                ps.setString(5, loan.getDesignation());
+                ps.setDouble(6, loan.getIncome());
+                ps.setInt(7, loan.getDuration());
+                ps.setDouble(8, loan.getAmount());
+                ps.setDate(9, sqlStartDate);
+                ps.setDouble(10, loan.getRepayment());
+                ps.setDouble(11, loan.getEmi());
 
-            // add loan amount in account table 
-            if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
-                System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                checkLoan = ps.executeUpdate();
+
+                // add loan amount in account table 
+                if (AccountDao.addLoanAmount(loan.getAccountNo(), loan.getAmount()) == -1) {
+                    System.out.println(TestMain.setRed + "Something went wrong to update account balance " + TestMain.resetColor);
+                }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
