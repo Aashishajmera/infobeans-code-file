@@ -815,7 +815,6 @@ public class TestMain {
                                                 AccountDao.viewBalance(accountNumber);
                                                 break;
                                             case 6:
-                                                System.out.println("Work in progress:");
                                                 System.out.println("Enter account number: ");
                                                 sc.nextLine();
                                                 String accountNum = sc.nextLine();
@@ -888,7 +887,7 @@ public class TestMain {
                                                                                                     if (LoanDao.personalLoan(loan) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
-                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                        System.out.println(TestMain.setGreen + "Loan  not approved  " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
                                                                                                     System.out.println("Your not eligible for loan");
@@ -926,7 +925,7 @@ public class TestMain {
                                                                                 boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
                                                                                 if (checkDesignation) {
                                                                                     System.out.println("Income");
-                                                                                    Double salary = sc.nextDouble();
+                                                                                    Double income = sc.nextDouble();
                                                                                     System.out.println("Duration time in year ");
                                                                                     int duration = sc.nextInt();
                                                                                     if (duration > 0) {
@@ -947,11 +946,11 @@ public class TestMain {
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
-                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, salary, duration, loanAmount, date, repayment, emi);
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, income, loanAmount, date, repayment, emi);
                                                                                                     if (LoanDao.personalLoanForBusiness(loan) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
-                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                        System.out.println(TestMain.setGreen + "Loan not approved " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
                                                                                                     System.out.println("Your not eligible for loan");
@@ -975,7 +974,6 @@ public class TestMain {
                                                                             } else {
                                                                                 System.out.println(TestMain.setRed + "Oops!! Something went wrong...." + TestMain.resetColor);
                                                                             }
-
                                                                             break;
                                                                         case 3:
                                                                             System.out.println(TestMain.setRed + "Sorry!! you can't take loan " + TestMain.resetColor);
@@ -1049,10 +1047,10 @@ public class TestMain {
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.personalLoan(loan) != -1) {
+                                                                                                    if (LoanDao.BusinessLoan(loan) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
-                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                        System.out.println(TestMain.setGreen + "Loan not approved " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
                                                                                                     System.out.println("Your not eligible for loan");
@@ -1089,7 +1087,7 @@ public class TestMain {
                                                                                 boolean checkDesignation = designation.matches("[a-zA-z0-9 \\-\\. , ]+");
                                                                                 if (checkDesignation) {
                                                                                     System.out.println("Income");
-                                                                                    Double salary = sc.nextDouble();
+                                                                                    Double Income = sc.nextDouble();
                                                                                     System.out.println("Duration time in year ");
                                                                                     int duration = sc.nextInt();
                                                                                     if (duration > 0) {
@@ -1110,11 +1108,11 @@ public class TestMain {
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
-                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, salary, duration, loanAmount, date, repayment, emi);
-                                                                                                    if (LoanDao.personalLoanForBusiness(loan) != -1) {
+                                                                                                    Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, Income, loanAmount, date, repayment, emi);
+                                                                                                    if (LoanDao.businessLoanForBusiness(loan) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
                                                                                                     } else {
-                                                                                                        System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
+                                                                                                        System.out.println(TestMain.setGreen + "Loan not approved  " + TestMain.resetColor);
                                                                                                     }
                                                                                                 } else {
                                                                                                     System.out.println("Your not eligible for loan");
@@ -1156,8 +1154,6 @@ public class TestMain {
                                                                 default:
                                                                     System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);
                                                             }
-
-                                                            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
                                                             break;
                                                         default:
                                                             System.out.println(TestMain.setRed + "Invalid input " + TestMain.resetColor);

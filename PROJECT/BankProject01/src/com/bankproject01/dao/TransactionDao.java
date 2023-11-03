@@ -27,19 +27,15 @@ public class TransactionDao {
             while (rs.next()) {
                 if (rs.getInt(1) == Integer.parseInt(sendAcc)) {
                     checksendAcc = true;
-                    System.out.println("sender acc number true");
                     if (rs.getDouble(17) >= amount) {
                         checkAmount = true;
-                        System.out.println("sender amount valid");
                         if (rs.getDouble(17) >= amount && amount > 0) {
                             checkLess = true;
-                            System.out.println("sender amount valid");
                         }
                     }
 
                     if (rs.getString(20).equals(pin) && rs.getInt(1) == Integer.parseInt(sendAcc)) {
                         checkPin = true;
-                        System.out.println("pin bhi sahi hai ");
                     }
                 }
             }
@@ -48,7 +44,6 @@ public class TransactionDao {
 
             while (rs.next()) {
                 if (rs.getInt(1) == Integer.parseInt(recAcc) && rs.getInt(1) != Integer.parseInt(sendAcc)) {
-                    System.out.println("receiver acc number true;");
                     checkReceAcc = true;
                 }
             }
@@ -95,14 +90,13 @@ public class TransactionDao {
                     }
                 }
 
-                //   TRANSACTION HISTORY 
                 // create account date:
                 Date currentDate = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 String date = dateFormat.format(currentDate);
                 java.util.Date date1 = dateFormat.parse(date);
                 java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
-//
+
 //                // transaction table update 
                 String transactionQuery = "insert into transaction(date, transfer, receiver, debitAmount , totalbalance) values(?,?,?,?,?)";
 

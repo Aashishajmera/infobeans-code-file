@@ -45,6 +45,21 @@ public class Loan {
         this.repayment = repayment;
         this.emi = emi;
     }
+    
+     // personal loan constructor
+    public Loan(String accountNo, String loanType, String occupation, String companyName, String Designation, Integer duration, Double income, Double amount, String date, Double repayment, Double emi) {
+        this.accountNo = accountNo;
+        this.loanType = loanType;
+        this.occupation = occupation;
+        this.companyName = companyName;
+        this.Designation = Designation;
+        this.income = income;
+        this.duration = duration;
+        this.amount = amount;
+        this.date = date;
+        this.repayment = repayment;
+        this.emi = emi;
+    }
 
     public Loan() {
 

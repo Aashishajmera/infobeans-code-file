@@ -974,4 +974,29 @@ public class AccountDao {
 
     }
 
+    // Add loan amount in account table 
+    public static int addLoanAmount(String accNumber, Double amnt) {
+        Connection con = null;
+        int checkLoanAmount = -1;
+
+        try {
+            con = DatabaseConnect.getConnection();
+            String addAmountQry = "update account set amount = amount + '" + amnt + "'  where accountNumber = '" + accNumber + "'";
+
+            PreparedStatement ps = con.prepareStatement(addAmountQry);
+
+            checkLoanAmount = ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return checkLoanAmount;
+    }
+
 }
