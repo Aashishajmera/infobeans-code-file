@@ -1169,7 +1169,7 @@ public class TestMain {
                                                 break;
 //
                                             case 7:
-                                                System.out.println("Work in progress:");
+                                                System.out.println(TestMain.setYellow+"Work in progress:"+TestMain.resetColor);
                                                 break;
                                             case 8:
                                                 flag = false;
