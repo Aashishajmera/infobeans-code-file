@@ -12,16 +12,16 @@ public class DatewithTime {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm a");
         String date = dateFormat.format(currentDate);
 
-//        System.out.println(date);
+        System.out.println(date);
         Connection con = null;
         int x = -1;
 
         try {
             con = DatabaseConnect.getConnection();
-//        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
             java.util.Date currentTime = calendar.getTime();
             long time = currentTime.getTime();
-//            java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
+            java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
             String sql = "insert into timedate (dateeee) values(?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
