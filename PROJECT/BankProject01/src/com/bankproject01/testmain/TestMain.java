@@ -546,7 +546,7 @@ public class TestMain {
                                     System.out.println("\t\t\t PRESS 3: Transfer money \t\t\t\t\t PRESS 4: Transaction history \t\t\t");
                                     System.out.println("\t\t\t PRESS 5: View Balance \t\t\t\t\t PRESS 6: Apply for loan \t\t\t");
                                     System.out.println("\t\t\t PRESS 7: View loan statement \t\t\t\t\t PRESS 8: Repayment loan amount ");
-                                    System.out.println(TestMain.setRed + "\t\t\t PRESS 9: Back menu \t\t\t\t\t PRESS 10: Exit program: " + TestMain.resetColor);
+                                    System.out.println(TestMain.setRed + "\t\t\t PRESS 9: Back menu \t\t\t\t\t\t PRESS 10: Exit program: " + TestMain.resetColor);
                                     System.out.println("\t\t\t-------------------------------------------------------------------------------------------------------");
 
                                     try {
@@ -873,12 +873,12 @@ public class TestMain {
 
                                                                                                 // check age 
                                                                                                 if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
-                                                                                                    Double repayment = loanAmount;
 
                                                                                                     // calculate emi 
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
+                                                                                                    Double repayment = emi * month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
                                                                                                     if (LoanDao.personalLoan(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
@@ -936,12 +936,13 @@ public class TestMain {
 
                                                                                                 // check age 
                                                                                                 if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
-                                                                                                    Double repayment = loanAmount;
 
                                                                                                     // calculate emi 
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
+                                                                                                    Double repayment = emi * month;
+
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, income, loanAmount, date, repayment, emi);
                                                                                                     if (LoanDao.personalLoanForBusiness(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
@@ -1036,12 +1037,13 @@ public class TestMain {
 
                                                                                                 // check age 
                                                                                                 if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
-                                                                                                    Double repayment = loanAmount;
 
                                                                                                     // calculate emi 
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
+                                                                                                    Double repayment = emi * month;
+
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName, designation, salary, duration, loanAmount, date, repayment, emi);
                                                                                                     if (LoanDao.BusinessLoan(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
@@ -1098,11 +1100,11 @@ public class TestMain {
 
                                                                                                 // check age 
                                                                                                 if (LoanDao.checkAge(date, accountNum) != -1 && LoanDao.checkAge(date, accountNum) <= 60) {
-                                                                                                    Double repayment = loanAmount;
                                                                                                     // calculate emi 
                                                                                                     double interest = (loanAmount * 7) / 100;
                                                                                                     double month = (duration * 12);
                                                                                                     Double emi = (loanAmount + interest) / month;
+                                                                                                    Double repayment = emi * month;
                                                                                                     Loan loan = new Loan(accountNum, loan1, occupation, companyName1, designation, duration, Income, loanAmount, date, repayment, emi);
                                                                                                     if (LoanDao.businessLoanForBusiness(loan, accountNumber) != -1) {
                                                                                                         System.out.println(TestMain.setGreen + "Loan approved successfully " + TestMain.resetColor);
