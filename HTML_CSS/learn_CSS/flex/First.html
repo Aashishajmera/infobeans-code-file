@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+
+    <!-- add CSS -->
+    <style>
+        section {
+            height: 500px;
+            border: solid 1px black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        section div {
+            height: 100px;
+            width: 100px;
+        }
+
+        section div:nth-child(1) {
+            background-color: red;
+        }
+
+        section div:nth-child(2) {
+            background-color: blue;
+        }
+
+        section div:nth-child(3) {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </section>
+    </div>
+</body>
+
+</html>
