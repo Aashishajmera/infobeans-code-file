@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiya Gold Club</title>
+
+    <!-- ADD FONT-AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ADD CSS -->
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: poppins, sans-serif;
+
+        }
+
+
+
+        .header-div {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        header {
+            background-color: #3D405B;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20%;
+            padding-inline: 20px;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .left-side-nav {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            font-size: 20px;
+            color: white;
+            filter: brightness(0) invert(1);
+        }
+
+        .right-side-nav ul {
+            display: flex;
+            list-style: none;
+            column-gap: 40px;
+            align-items: center;
+        }
+
+
+
+        .right-side-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* color first ul li */
+        .right-side-nav ul:first-child>li:first-child a:nth-child(1) {
+            color: #F2CC8F;
+            transition-duration: 0.5s;
+        }
+
+        .right-side-nav ul:first-child li a:hover {
+            color: #F2CC8F;
+            transition-duration: 0.5s;
+        }
+
+        /* font awesome color */
+        .right-side-nav ul:first-child li a:nth-child(6) i:hover {
+            color: #F2CC8F;
+            transition-duration: 0.5s;
+
+        }
+
+        /* pop-up UL */
+        .right-side-nav ul li:nth-child(6) ul {
+            height: 100px;
+            padding: 0px;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: aliceblue;
+            top: 80%;
+            right: 13%;
+            border-radius: 10px;
+            row-gap: 20px;
+            z-index: 100;
+        }
+
+        .right-side-nav ul li ul {
+            height: 150px;
+            width: 150px;
+        }
+
+        .right-side-nav ul li ul li a {
+            color: black;
+            font-weight: 500;
+        }
+
+        .right-side-nav ul:first-child li:nth-child(6) a:hover+ul {
+            display: block;
+            display: flex;
+            /* color: black; */
+            align-items: center;
+            justify-content: center;
+            /* z-index: 100; */
+        }
+
+
+        /* smalll */
+        .small-squre {
+            display: none !important;
+            height: 20px;
+            width: 20px;
+            background-color: aliceblue;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 60px;
+            right: 22%;
+        }
+
+        .right-side-nav ul:first-child li:nth-child(6):hover .small-squre {
+            display: block !important;
+        }
+
+        .header-btn {
+            font-size: medium;
+            height: 40px;
+            width: 150px;
+            border-radius: 60px;
+            border: none;
+            background-color: transparent;
+            color: #F2CC8F;
+            border: 2px solid #F2CC8F;
+        }
+
+        .header-btn:hover {
+            transition-duration: 0.5s;
+            background-color: #F2CC8F;
+            color: white;
+        }
+
+
+        /* ADD FIRST SECTION CSS */
+
+        .first-section {
+            margin-top: -20%;
+            height: 100vh;
+            background-image: url(./images/anna-rosar-ZxFyVBHMK-c-unsplash.jpg);
+            background-size: cover;
+            background-color: #3D405B;
+            background-blend-mode: exclusion;
+            opacity: 3.1;
+            display: flex;
+            align-items: center;
+            row-gap: 10px;
+            justify-content: space-around;
+
+        }
+
+        /* first left section */
+        .first-div-1s-left-div {
+            display: flex;
+            height: 40%;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            row-gap: 40px;
+        }
+
+        .first-div-1s-left-div h1 {
+            font-size: 35px;
+            padding: 0px;
+            color: rgb(255, 255, 255);
+        }
+
+        .first-div-1s-left-div-first-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+
+        }
+
+        .first-div-1s-left-div-first-div ul li:first-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .first-div-1s-left-div-first-div button {
+            padding-block: 16px;
+            padding-inline: 25px;
+            background-color: #F2CC8F;
+            border-radius: 45px;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+
+        .first-div-1s-left-div-first-div button:hover {
+            background-color: #E07A5F !important;
+            cursor: pointer;
+        }
+
+        .first-div-1s-left-div-first-div div ul li:first-child {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .first-div-1s-left-div-first-div ul li a:hover {
+            color: #F2CC8F;
+        }
+
+        .first-div-1s-left-div-first-div ul li {
+            list-style: none;
+            height: 40px;
+            width: 200px;
+        }
+
+        .first-div-1s-left-div-first-div ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+
+        /* ============================SECOND-SECTION====================== */
+
+        .second-section {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+
+        .second-section h1 {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .second-first-main-div {
+            height: 65vh;
+            display: flex;
+            padding-inline: 40px;
+            align-items: center;
+            column-gap: 10%;
+
+        }
+
+        .second-first-left-div p {
+            font-size: 18px;
+            color: #858689;
+        }
+
+        .second-first-right-first-div,
+        .second-first-right-second-div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 22px;
+        }
+
+        .second-first-right-div img {
+            border-radius: 20px;
+            height: 170px;
+        }
+
+        .Insise-men-image:hover ul,
+        .Inside-women-image:hover ul {
+            transform: scale(1.1);
+            transform-origin: 40% 5%;
+            transition: transform .3s ease;
+            display: block !important;
+            display: flex !important;
+            column-gap: 10px
+        }
+
+        .Inside-women-image ul li,
+        .Insise-men-image ul li {
+            list-style: none;
+        }
+
+        .Inside-women-image:hover ul li,
+        .Insise-men-image:hover ul li {
+            list-style: none;
+        }
+
+        .Insise-men-image {
+            overflow: hidden;
+        }
+
+        .second-first-right-div img:hover {
+            transform: scale(1.1);
+            transform-origin: 40% 5%;
+            transition: transform .3s ease;
+            display: block !important;
+        }
+
+
+        /* .only-men-image:hover, .only-women-image:hover {
+            transform: scale(1.1);
+            transform-origin: 40% 5%;
+            transition: transform .5s ease;
+        } */
+
+        /* add ul whatsapp and twitter */
+        .Insise-men-image ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+            height: 60px;
+            width: 160px;
+            padding-right: 30px !important;
+            position: absolute;
+            top: 905px;
+            left: 59%;
+            border-radius: 30px;
+            display: none !important;
+        }
+
+        .Inside-women-image ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+            height: 60px;
+            width: 160px;
+            padding-right: 30px !important;
+            position: absolute;
+            top: 905px;
+            left: 82%;
+            border-radius: 30px;
+            display: none !important;
+        }
+
+        .Inside-women-image ul div,
+        .Insise-men-image ul div {
+            height: 40px;
+            width: 60px;
+            background-color: #323C51;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Inside-women-image ul,
+        .Insise-men-image ul {
+            display: flex;
+            padding-right: 22px;
+            column-gap: 10px
+        }
+
+
+        .ul div:hover {
+            background-color: #81B29A;
+        }
+
+        .describtion-men,
+        .describtion-women {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .only-men-image {
+            height: 170px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .only-women-image {
+            height: 170px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+
+        .second-first-right-div {
+            display: flex;
+            column-gap: 20px;
+        }
+
+
+        /*=============== Third section======================= */
+
+
+        .third-section {
+            background-image: url(./images/frederik-rosar-NDSZcCfnsbY-unsplash.jpg);
+            background-size: cover;
+            z-index: 2;
+            margin-top: -142px;
+            height: 105vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .third-main-section {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .third-left-first-div {
+            height: 50vh;
+            width: 40vw;
+            background-color: #DFDBCA;
+            border-radius: 30px;
+            margin-left: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            padding: 50px;
+            row-gap: 30px;
+        }
+
+        .third-left-first-div h1 {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .third-left-first-div p {
+            font-size: 18px;
+            color: #858689;
+        }
+
+        .email-box {
+            background-color: white;
+            align-items: center;
+            display: flex;
+            color: black;
+            width: 400px;
+            border-radius: 50px;
+            padding-inline: 10px;
+            padding-block: 5px;
+        }
+
+        .email-box input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+
+        }
+
+
+        .email-box button {
+            border-radius: 30px;
+            width: 150px;
+            background-color: #F2CC8F;
+            height: 45px;
+            font-size: 16px;
+            padding-inline: 10px;
+            border: 0px solid;
+            font-weight: 700;
+            color: white;
+            outline: none;
+            border: transparent;
+            box-shadow: none;
+        }
+
+        .email-box button:hover {
+            background-color: #E07A5F;
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+        /* ==========================four-section=========================== */
+        .fourth-section {
+            height: 120vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 33px;
+
+        }
+
+        .fourth-section h1 {
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .main-fourth-section {
+            height: 90vh;
+            width: 90%;
+            display: flex;
+            /* justify-content: center; */
+            column-gap: 10%;
+        }
+
+        .main-fourth-section .left-four-div-top {
+            height: 90%;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            font-weight: 700;
+        }
+
+        .left-four-div-top {
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+        }
+
+        .main-fourth-section table {
+            border-collapse: collapse;
+            height: 96%;
+            width: 100%;
+            border: none;
+        }
+
+
+        .main-fourth-section table tr td {
+            border: none;
+        }
+
+        .main-fourth-section table tbody tr:nth-child(1) td:not(:first-child),
+        tr:nth-child(2) td:not(:first-child) {
+            color: #81B29A;
+        }
+
+        .main-fourth-section table tbody tr:nth-child(3) td:nth-child(2),
+        tr:nth-child(4) td:nth-child(2) {
+            color: #E07A5F;
+        }
+
+
+        .main-fourth-section table tbody tr:nth-child(3) td:nth-child(3),
+        tr:nth-child(4) td:nth-child(3),
+        td:nth-child(4) {
+            color: #81B29A;
+        }
+
+        .main-fourth-section table tbody tr:nth-child(5) td:nth-child(2),
+        td:nth-child(3),
+        tr:nth-child(6) td:nth-child(2) {
+            color: #E07A5F;
+        }
+
+        .main-fourth-section table tbody tr:nth-child(even) {
+            background-color: #F4F1DE;
+        }
+
+
+        .main-fourth-section table thead th {
+            color: white;
+            background-color: #3D405B;
+            border: none;
+            font-weight: 700;
+        }
+
+        .left-four-div {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+
+        }
+
+        .left-four-div span,
+        .right-four-div>span:first-child {
+            font-size: 23px;
+        }
+
+
+        .right-four-div {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 35px;
+        }
+
+
+        .right-four-div .right-four-div-down span {
+            font-size: 23px;
+            color: white;
+        }
+
+        .right-four-div-down {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            background-color: #3D405B;
+            padding: 30px;
+            border-radius: 30px;
+        }
+
+        /* style label */
+
+        .field-holder {
+            position: relative;
+        }
+
+        .field-holder label {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            cursor: text;
+        }
+
+        .field-holder input {
+            font-size: 1rem;
+            width: 100%;
+            height: 65px;
+            padding-left: 8px;
+            color: #323C51;
+            border-radius: 30px;
+        }
+
+        .field-holder input:hover {
+            border: black 2px solid;
+            resize: vertical;
+        }
+
+        .field-holder input:focus {
+            outline: none;
+        }
+
+        .field-holder textarea {
+            padding-left: 9px;
+            padding-top: 17px;
+            color: #323C51;
+            border-radius: 30px;
+
+        }
+
+        .field-holder textarea:hover {
+            border: black 2px solid;
+            resize: vertical;
+        }
+
+
+        .field-holder textarea:focus {
+            outline: none;
+        }
+
+        .field-holder label {
+            width: auto;
+        }
+
+
+        .field-holder input:focus+label {
+            color: #323C51;
+            font-size: 13px;
+            pointer-events: none;
+            top: 5px;
+            pointer-events: none;
+            transition: 0.2s ease-in-out;
+        }
+
+        .field-holder textarea:focus+label {
+            color: #323C51;
+            font-size: 13px;
+            pointer-events: none;
+            top: 5px;
+            pointer-events: none;
+            transition: 0.2s ease-in-out;
+        }
+
+        .right-four-div-down button {
+            padding: 20px;
+            border-radius: 30px;
+            background-color: #F2CC8F;
+            color: white;
+            border: none;
+        }
+
+        .right-four-div-down button:hover {
+            background-color: #E07A5F;
+            color: white;
+            transition-duration: 0.5s;
+        }
+
+
+        /* =========================5TH-SECTION========================== */
+    </style>
+
+</head>
+
+<body>
+    <div class="main-container">
+
+        <!-- header & navigation bar -->
+        <div class="header-div">
+            <header>
+                <nav class="left-side-nav">
+                    <img src="./images/logo.png" alt="logo-image" height="50px">
+                    <span> <strong>Tiya</strong> <br><small>Golf club</small></span>
+                </nav>
+
+                <!-- right nav-bar -->
+                <nav class="right-side-nav">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Membership</a></li>
+                        <li><a href="">Events</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li>
+                            <a href="">Pages &#9662;</a>
+                            <ul>
+                                <li><a href="">Action listner</a></li>
+                                <li><a href="">Event Details</a></li>
+                            </ul>
+                            <div class="small-squre">
+
+                            </div>
+                        </li>
+                        <button class="header-btn">member login</button>
+                    </ul>
+
+                </nav>
+            </header>
+        </div>
+
+        <!-- ================================FIRST SECTION================================ -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#3D405B" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+            </path>
+        </svg>
+        <section class="first-section">
+            <div class="first-div-1s-left-div">
+                <h1>Welcome to the club <br><big>Tiya is <span style="color: #F2CC8F;">Modern</span></big></h1>
+                <div class="first-div-1s-left-div-first-div">
+                    <button>Our Story</button>
+                    <ul>
+                        <li><a href="">Become a member</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="first-div-1s-right-div">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/MGNgbNGOzh8?si=3CUG2SL8Bcscr6-3"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen style="border-radius: 15px;"></iframe>
+            </div>
+        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top: -17%;">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+        <!-- ================================SECOND SECTION================================ -->
+        <section class="second-section">
+            <h1>About Tiya</h1>
+            <div class="second-first-main-div">
+                <div class="second-first-left-div">
+                    <span style="color: black; font-size: 29px; font-weight: 400;;">Tiya Club
+                        History</span> <br><br>
+                    <p><strong>Since 1984</strong>, Tiya is ranked #8 in the top 10 golf courses in the world. Tiya is
+                        Bootstrap 5 HTML
+                        CSS template for golf clubs. Anyone can modify and use this layout for commercial purposes.</p>
+                    <br>
+                    <p>Tiya Golf Club is 100% free CSS template provided by TemplateMo website. Please tell your friends
+                        about our website. Thank you for visiting.</p>
+                </div>
+                <div class="second-first-right-div">
+                    <div class="second-first-right-first-div">
+                        <div class="second-first-right-inside-first-div">
+                            <div class="Insise-men-image">
+                                <div class="only-men-image">
+                                    <img src="./images/members/portrait-young-handsome-businessman-wearing-suit-standing-with-crossed-arms-with-isolated-studio-white-background.jpg"
+                                        alt="">
+                                </div>
+                                <ul class="ul">
+                                    <div>
+                                        <li><a href=""><i class="fa-brands fa-twitter" style="color: white;"></i></a>
+                                        </li>
+                                    </div>
+                                    <div>
+                                        <li><a href=""><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="describtion-men">
+                            <span><b><big>Michael</big></b></span>
+                            <span>Fonder</span>
+                        </div>
+                    </div>
+                    <div class="second-first-right-second-div">
+                        <div class="second-first-right-second-div">
+                            <div class="Inside-women-image">
+                                <div class="women-image">
+                                    <div class="only-women-image">
+                                        <img src="./images/members/successful-asian-lady-boss-red-blazer-holding-clipboard-with-documens-pen-working-looking-happy-white-background.jpg"
+                                            alt="">
+                                    </div>
+                                    <ul class="ul">
+                                        <div>
+                                            <li><a href=""><i class="fa-brands fa-twitter"
+                                                        style="color: white; "></i></a></li>
+                                        </div>
+                                        <div>
+                                            <li><a href=""><i class="fa-brands fa-whatsapp"
+                                                        style="color: white;"></i></a></li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="describtion-women">
+                                <span><b><big>Sandy</big></b></span>
+                                <span>Co-Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================THIRD-SECTION================================================= -->
+        <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="width: 100%; ">
+            <path fill="rgba(255, 255, 255, 1)" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z"
+                stroke-width="0"></path>
+        </svg>
+
+
+        <section class="third-section">
+            <div class="third-main-section">
+                <div class="third-left-first-div">
+                    <h1>Get our newsletter</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et
+                        dolore.</p>
+                    <div class="email-box">
+                        <img src="./images/envelope-regular (1).svg" alt=""
+                            style="height: 30px; background-color: transparent;">
+                        <input type="email" name="email" id="" placeholder="Email address">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin-top: -150px; transform: rotate(180deg); z-index: -500;">
+            <path fill="rgba(255, 255, 255, 1)" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z"
+                stroke-width="0"></path>
+            <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z"
+                stroke-width="0"></path>
+        </svg>
+
+
+        <!-- =====================================SECTION-FOUR=================================== -->
+        <section class="fourth-section">
+            <h1>Membership at Tiya</h1>
+            <div class="main-fourth-section">
+                <div class="left-four-div">
+                    <span>Membership Fees</span>
+                    <div class="left-four-div-top">
+                        <table border>
+                            <thead>
+                                <tr>
+                                    <th>Yearly Access</th>
+                                    <th>T1 $420</th>
+                                    <th>T2 $640</th>
+                                    <th>T3 $860</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Golf Insurance</td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Club Facilities</td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Country Club</td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Weekend Seasonal</td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Premium Courses</td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Pro's Networking</td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-sharp fa-solid fa-circle-xmark"></i></td>
+                                    <td><i class="fa-solid fa-circle-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="right-four-div">
+                    <span>Please join us!</span>
+                    <div class="right-four-div-down">
+                        <span>Become a member</span>
+                        <div class="field-holder">
+                            <input type="text" name="username" id="">
+                            <label for="username" class="namelabel">Full Name</label>
+                        </div>
+                        <div class="field-holder">
+                            <input type="email" name="useremail" id="">
+                            <label for="useraemail" class="emaillabel">Email address</label>
+                        </div>
+                        <div class="field-holder">
+                            <textarea name="comment" id="" cols="38" rows="4"></textarea>
+                            <label for="comment" class="cmt">Comment</label>
+                        </div>
+                        <button>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================================5TH-SECTION=========================================== -->
+
+
+
+
+    </div>
+</body>
+
+</html>
