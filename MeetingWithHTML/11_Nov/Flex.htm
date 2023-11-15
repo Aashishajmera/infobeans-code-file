@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Internal CSS -->
+    <style>
+        .main-container div {
+            height: 90vh;
+            border: solid red;
+        }
+
+        .main-container div:first-child, div:last-child{
+            height: 50px;
+            width: 50px;
+            border: solid 3px black;
+
+        }
+
+        /* .main-container{
+            display: flex;
+            flex-direction: column;
+        } */
+
+        .main-container div {
+            display: flex;
+            /* flex-direction: column;
+            justify-content: center;
+            column-gap: 22px; 
+            row-gap: 22px; */
+
+            align-items: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- main container -->
+    <div class="main-container">
+
+        <div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+        <div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

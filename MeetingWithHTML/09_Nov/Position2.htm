@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSITION | LECTURE-2</title>
+
+    <style>
+        .main-container {
+            height: 190vh;
+            border: 1px solid red;
+        }
+
+        .main-container div {
+            height: 30px;
+            width: 33px;
+        }
+
+        .main-container div:last-child {
+            background-color: blue;
+        }
+
+        .main-container div:first-child {
+            background-color: rgb(0, 255, 94);
+        }
+
+        .main-container div:nth-child(2){
+            background-color: pink;
+        }
+
+        .main-container div:last-child{
+            position: sticky;
+            top: 70%;
+            left: 80%;
+        }
+        
+        .cont-2{
+            height: 80vh;
+            border:  solid 3px yellow;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div class="cont-2">
+
+    </div>
+</body>
+
+</html>
