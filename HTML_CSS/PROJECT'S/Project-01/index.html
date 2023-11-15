@@ -694,6 +694,549 @@
 
 
         /* =========================5TH-SECTION========================== */
+
+        .five-section {
+            height: 150vh;
+            background-color: #F4F1DE;
+            margin-top: 20px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+        }
+
+        .five-section h1 {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+
+        .first-five-section,
+        .second-five-section {
+            height: 50vh;
+            padding: 30px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-around;
+            column-gap: 30px;
+
+        }
+
+        .first-f1-div {
+            height: 150px;
+            width: 300px;
+            background-color: #81B29A;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            row-gap: 20px;
+        }
+
+        .second-f1-div {
+            height: 150px;
+            width: 350px;
+            background-color: #81B29A;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            row-gap: 20px;
+        }
+
+        .first-f1-div h5,
+        .second-f1-div h5 {
+            font-size: 40px;
+        }
+
+        .first-f1-div strong,
+        .second-f1-div strong {
+            color: white;
+            font-size: 18px;
+        }
+
+
+        .first-five-section img,
+        .second-five-section img {
+            height: 250px;
+        }
+
+        .first-f2-div {
+            height: 250px;
+            width: 600px;
+            border-radius: 30px;
+            overflow: hidden;
+
+        }
+
+        .second-f2-div {
+            height: 250px;
+            width: 730px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+
+        .first-f2-div:hover,
+        .second-f2-div:hover {
+            transition: transform .2s;
+        }
+
+        .first-f2-div img:hover,
+        .second-f2-div img:hover {
+            transform: scale(1.1);
+            transition-duration: 0.3s;
+        }
+
+        .first-five-section .first-f2-div:hover+.connectUL,
+        .second-five-section .second-f2-div:hover+.connectUL {
+            display: block !important;
+            display: flex;
+        }
+
+        .connectUL {
+            display: none !important;
+            position: absolute;
+            top: 99%px;
+            left: 420px;
+            height: 60px;
+            width: 60px;
+            background-color: #F2CC8F;
+            border-radius: 50px;
+        }
+
+
+        /* section 5 hover color  */
+        .connectUL:hover {
+            background-color: #E07A5F;
+            cursor: pointer;
+        }
+
+
+        .connectUL ul li {
+            list-style: none;
+        }
+
+
+        .connectUL ul li a i {
+            position: relative;
+            top: 19px;
+            left: -19px;
+        }
+
+        .second-five-section {
+            background-color: #fff !important;
+        }
+
+
+        /* third -right */
+        .first-f3-div,
+        .third-f2-div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        .first-f3-div a,
+        .third-f2-div a {
+            text-decoration: none;
+            font-size: 30px;
+            color: #3D405B;
+        }
+
+        .first-f3-div a:hover,
+        .third-f2-div a:hover {
+            color: #F2CC8F;
+        }
+
+
+        .first-f3-div p,
+        .third-f2-div p {
+            color: #858689;
+            font-size: 18px;
+        }
+
+        .first-f3-div p+hr,
+        .third-f2-div p+hr {
+            color: #F4F1DE;
+        }
+
+        .inside-f3-div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .left-f3-div {
+            display: flex;
+            column-gap: 30px;
+            row-gap: 20px;
+        }
+
+
+        .right-f3-div button {
+            height: 50px;
+            width: 110px;
+            border-radius: 30px;
+            background-color: #F2CC8F;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        .right-f3-div button:hover {
+            background-color: #E07A5F;
+            transition-duration: 0.3s;
+            cursor: pointer;
+        }
+
+
+        /* =======================six-section============================ */
+        .six-section {
+            height: 90vh;
+            /* border: solid 2px red; */
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+        }
+
+        .six-left-section {
+            width: 45vw;
+            height: 80vh;
+            /* border: solid 2px blue; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .six-right-section {
+            width: 55vw;
+            height: 80vh;
+            /* border: solid 2px rgb(255, 0, 0); */
+        }
+
+        .left-six-main {
+            /* border: solid 2px green; */
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        .left-six-main h1 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        /* input-field */
+
+
+        .first-input {
+            display: flex;
+            /* border: solid 2px red; */
+            height: 70px;
+            column-gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .first-input input {
+            height: 60px;
+            width: 224px;
+            border-radius: 30px;
+        }
+
+        .second-input textarea {
+            border-radius: 20px;
+            resize: vertical;
+            border: 2px solid #adaeaf;
+        }
+
+
+        .left-six-main input {
+            padding-left: 10px;
+            border: 2px solid #adaeaf;
+        }
+
+
+        .second-input textarea:hover,
+        .left-six-main input:hover {
+            border: black 2px solid;
+        }
+
+        .second-input textarea:focus,
+        .left-six-main input:focus {
+            outline: none;
+
+        }
+
+
+        /* contact tiya RELAAAATIVEEEEEE */
+
+        .input-field label {
+            position: relative;
+            top: -43px;
+            left: 10px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            /* border: solid 2px rgb(23, 22, 22); */
+            height: auto;
+            width: fit-content;
+            color: #3D405B;
+
+        }
+
+        .second-input {
+            overflow: hidden;
+            /* border: solid 2px blue; */
+            height: 180px;
+        }
+
+
+        .second-input label {
+            position: relative;
+            top: -137px;
+            font-size: 19px;
+            /* border: solid 2px rgb(23, 22, 22); */
+            height: auto;
+            width: fit-content;
+            color: #3D405B;
+        }
+
+        .second-input textarea {
+            padding-left: 10px;
+            padding-top: 20px;
+        }
+
+
+        /* label on click top side */
+
+        .left-six-main input:focus+label {
+            font-size: 12px;
+            top: -55px;
+            pointer-events: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        .second-input textarea:focus+label {
+            font-size: 12px;
+            top: -150px;
+            /* pointer-events: none */
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .left-six-main div button {
+            width: 100%;
+            height: 50px;
+            border-radius: 30px;
+            border: none;
+            background-color: #F2CC8F;
+            color: white;
+            font-size: 18px;
+        }
+
+        .left-six-main div button:hover {
+            cursor: pointer;
+            background-color: #E07A5F;
+            transition-duration: 0.3s;
+        }
+
+
+        /* start right section */
+        .six-right-section {
+            height: 480px;
+            width: 645px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .six-right-section img {
+            height: 50%;
+            width: 300% !important;
+            border: solid 2px blue;
+        }
+
+
+        .right-six-main {
+            /* border: solid 3px black; */
+            height: 150px;
+            width: 1000px;
+            position: relative;
+            right: 310px;
+            background-color: #3D405B;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            row-gap: 10px;
+            color: white;
+        }
+
+        .right-six-main p:nth-child(2) {
+            font-size: 18px;
+            margin-bottom: -20px;
+        }
+
+        .right-six-main ul {
+            height: 40px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: -30px;
+            justify-content: center;
+            text-align: center !important;
+            padding-inline: 40px !important;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            background-color: #E07A5F;
+        }
+
+        .right-six-main ul:hover {
+            background-color: #F2CC8F;
+            transition-duration: 0.3s;
+        }
+
+        .right-six-main ul li {
+            list-style: none;
+
+        }
+
+        .right-six-main ul li a {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* =======================footer========================== */
+        footer {
+            height: 60vh;
+            border: red 2px solid;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            column-gap: 50px;
+        }
+
+
+        .left-footer-div {
+            height: 54vh;
+            width: 40vw;
+            border: solid 3px rgb(0, 0, 0);
+            display: flex;
+            gap: 7px;
+
+        }
+
+        .right-footer-div {
+            height: 54vh;
+            width: 60vw;
+            border: solid 3px blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 33px;
+        }
+
+        .right-first {
+            border: solid 2px grey;
+            display: flex;
+            flex-direction: column;
+            row-gap: 23px;
+            height: 54vh;
+
+        }
+
+        .right-first h5 {
+            font-size: 24px;
+            color: #3D405B;
+        }
+
+        .right-first p {
+            color: #3D405B;
+            font-size: 18px;
+            display: flex;
+            column-gap: 30px;
+        }
+
+        .right-first P:last-child {
+            margin-top: 20px !important;
+        }
+
+        .right-first span {
+            font-weight: 600;
+        }
+
+        .right-second {
+            border: solid 2px green;
+            display: flex;
+            flex-direction: column;
+            row-gap: 23px;
+            text-align: start;
+            justify-content: center;
+        }
+
+        .right-second ul {
+            display: flex;
+            column-gap: 20px;
+
+        }
+
+        .right-second ul li {
+            list-style: none;
+            height: 44px;
+            width: 44px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3D405B;
+        }
+
+        .right-second ul li:hover {
+            background-color: #81B29A;
+            cursor: pointer;
+        }
+
+
+        .right-second ul li a {
+            color: white;
+        }
+
+        .right-second p:last-child {
+            color: #323C51;
+            font-size: 17px;
+        }
+
+        .right-second p:last-child a {
+            text-decoration: none;
+            font-size: 22px;
+            color: #323C51;
+        }
+
+        .right-second p:last-child a:hover {
+            color: #F2CC8F;
+        }
+
+
+        /* last svg */
+        .svg-last {
+            color: #81B29A;
+            margin-top: -154px;
+        }
     </style>
 
 </head>
@@ -865,7 +1408,7 @@
         </section>
 
         <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            style="margin-top: -150px; transform: rotate(180deg); z-index: -500;">
+            style="margin-top: -150px; transform: rotate(180deg); position: relative;">
             <path fill="rgba(255, 255, 255, 1)" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"
                 stroke-width="0"></path>
             <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
@@ -960,8 +1503,168 @@
 
         <!-- =======================================5TH-SECTION=========================================== -->
 
+        <section class="five-section">
+            <h1>
+                Upcoming Events
+            </h1>
+            <div class="first-five-section">
+                <div class="first-f1-div">
+                    <h5>24</h5>
+                    <strong>Feb 2048</strong>
+                </div>
+                <div class="first-f2-div">
+                    <img src="./images/professional-golf-player.jpg" alt="">
+                </div>
+                <div class="connectUL">
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-solid fa-link" style="color: #ffffff;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="first-f3-div">
+                    <a href="">Private activities</a>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet expedita ad quia laborum
+                        veniam, error, aliquid tenetur in fugit </p>
+                    <hr>
+                    <div class="inside-f3-div">
+                        <div class="left-f3-div">
+                            <div class="location-div">
+                                <p><strong>Location:</strong></p>
+                                <p><strong>Ticket:</strong></p>
+                            </div>
+                            <div class="ticket-amnt">
+                                <p>National Center, NYC</p>
+                                <p>$250</p>
+                            </div>
+                        </div>
+                        <div class="right-f3-div">
+                            <button>Buy Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-five-section">
+                <div class="second-f1-div">
+                    <h5>28</h5>
+                    <strong>Feb 2048</strong>
+                </div>
+                <div class="second-f2-div">
+                    <img src="./images/girl-taking-selfie-with-friends-golf-field.jpg" alt="">
+                </div>
+                <div class="connectUL">
+                    <ul>
+                        <li>
+                            <a href=""><i class="fa-solid fa-link" style="color: #ffffff;"></i></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="third-f2-div">
+                    <a href="">Group tournament activities</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aliquid earum placeat veniam,
+                        itaque vitae quia aut dolores commodi nesciunt odit iste!</p>
+                    <hr>
+                    <div class="inside-f3-div">
+                        <div class="left-f3-div">
+                            <div class="location-div">
+                                <p><strong>Location:</strong></p>
+                                <p><strong>Ticket:</strong></p>
+                            </div>
+                            <div class="ticket-amnt">
+                                <p>National Center, NYC</p>
+                                <p>$350</p>
+                            </div>
+                        </div>
+                        <div class="right-f3-div">
+                            <button>Buy Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- ======================================SECTION-SIX======================================== -->
+        <section class="six-section">
+            <div class="six-left-section">
+                <div class="left-six-main">
+                    <h1>Contact Tiya</h1>
+                    <div class="input-field">
+                        <div class="first-input">
+                            <div>
+                                <input type="text" name="username" id="">
+                                <label for="username">Full Name</label>
+                            </div>
+                            <div>
+                                <input type="email" name="useremail" id="">
+                                <label for="useremail">Email address</label>
+                            </div>
+                        </div>
+                        <div class="second-input">
+                            <textarea name="message" id="" cols="46" rows="6"></textarea>
+                            <label for="message">message</label>
+                        </div>
+                    </div>
+                    <div>
+                        <button>Submit Form</button>
+                    </div>
+                </div>
+            </div>
+            <div class="six-right-section">
+                <img src="./images/WorldMap.svg" alt="">
+                <div class="right-six-main">
+                    <p><strong>London, United Kingdom</strong> </p>
+                    <p>(020) 010-020-0340
+                        info@company.com</p>
+                    <ul>
+                        <li>
+                            <a href="">Directions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
+        <!-- =============================================FOOTER-SECTION=========================================== -->
+        <footer>
+            <div class="left-footer-div">
+                <img src="./images/logo.png" alt="" height="43px">
+                <span> <strong>Tiya</strong> <br><small>Golf club</small></span>
+
+            </div>
+            <div class="right-footer-div">
+                <div class="right-first">
+                    <h5>Join Us</h5>
+                    <p>
+                        <span>Mon-Fri</span>
+                        6:00 AM - 6:00 PM
+                    </p>
+                    <hr>
+                    <p>
+                        <span>Sat-Sun</span>
+                        6:30 AM - 8:30 PM
+                    </p>
+                    <p>Copyright © 2048 Tiya Golf Club</p>
+                </div>
+                <div class="right-second">
+                    <ul>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                    <p style="padding-left: 37px;">
+                        Desing: <br>
+                        <a href="">TemplateMo</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg-last"
+            style="background-color: red; transform: scaleX(1);">
+            <path fill="#ffffff" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
 
     </div>
 </body>
