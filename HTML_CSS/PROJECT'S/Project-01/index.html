@@ -83,11 +83,11 @@
 
         }
 
-        .right-side-nav ul li:nth-child(6){
+        .right-side-nav ul li:nth-child(6) {
             position: relative;
         }
 
-        .right-side-nav ul li:nth-child(6) ul{
+        .right-side-nav ul li:nth-child(6) ul {
             position: absolute;
             background-color: blue;
             height: 110px;
@@ -99,7 +99,7 @@
         }
 
 
-        .right-side-nav ul li:nth-child(6):hover ul{
+        .right-side-nav ul li:nth-child(6):hover ul {
             display: block !important;
             /* transition: 0.8s; */
             display: flex;
@@ -110,7 +110,7 @@
             justify-content: center !important;
         }
 
-        .right-side-nav ul li:nth-child(6) ul div:first-child{
+        .right-side-nav ul li:nth-child(6) ul div:first-child {
             display: flex;
             flex-direction: column;
             /* transition: 0.8s; */
@@ -124,7 +124,7 @@
 
         }
 
-        .right-side-nav ul li:nth-child(6) ul div:last-child{
+        .right-side-nav ul li:nth-child(6) ul div:last-child {
             height: 15px;
             width: 15px;
             background-color: rgb(255, 255, 255);
@@ -134,14 +134,15 @@
             transform: rotate(45deg);
         }
 
-        .right-side-nav ul li:nth-child(6) ul div:first-child li a{
+        .right-side-nav ul li:nth-child(6) ul div:first-child li a {
             color: black;
         }
 
-        .right-side-nav ul li:nth-child(6) ul div:first-child li a:hover{
+        .right-side-nav ul li:nth-child(6) ul div:first-child li a:hover {
             color: #F2CC8F;
-            transition-duration: 0.5s;        }
-      
+            transition-duration: 0.5s;
+        }
+
         .header-btn {
             font-size: medium;
             height: 40px;
@@ -254,7 +255,6 @@
             justify-content: center;
             align-items: center;
 
-
         }
 
 
@@ -277,136 +277,91 @@
             color: #858689;
         }
 
-        .second-first-right-first-div,
-        .second-first-right-second-div {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 22px;
-        }
-
-        .second-first-right-div img {
-            border-radius: 20px;
-            height: 170px;
-        }
-
-        .Insise-men-image:hover ul,
-        .Inside-women-image:hover ul {
-            transform: scale(1.1);
-            transform-origin: 40% 5%;
-            transition: transform .3s ease;
-            display: block !important;
-            display: flex !important;
-            column-gap: 10px
-        }
-
-        .Inside-women-image ul li,
-        .Insise-men-image ul li {
-            list-style: none;
-        }
-
-        .Inside-women-image:hover ul li,
-        .Insise-men-image:hover ul li {
-            list-style: none;
-        }
-
-        .Insise-men-image {
-            overflow: hidden;
-        }
-
-        .second-first-right-div img:hover {
-            transform: scale(1.1);
-            transform-origin: 40% 5%;
-            transition: transform .3s ease;
-        }
-
-
-        /* .only-men-image:hover, .only-women-image:hover {
-            transform: scale(1.1);
-            transform-origin: 40% 5%;
-            transition: transform .5s ease;
-        } */
-
-        /* add ul whatsapp and twitter */
-        .Insise-men-image ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFFFFF;
-            height: 60px;
-            width: 160px;
-            padding-right: 30px !important;
-            position: absolute;
-            top: 905px;
-            left: 59%;
-            border-radius: 30px;
-            display: none !important;
-
-        }
-
-        .Inside-women-image ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFFFFF;
-            height: 60px;
-            width: 160px;
-            padding-right: 30px !important;
-            position: absolute;
-            top: 905px;
-            left: 82%;
-            border-radius: 30px;
-            display: none !important;
-        }
-
-        .Inside-women-image ul div,
-        .Insise-men-image ul div {
-            height: 40px;
-            width: 60px;
-            background-color: #323C51;
-            border-radius: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .Inside-women-image ul,
-        .Insise-men-image ul {
-            display: flex;
-            padding-right: 22px;
-            column-gap: 10px
-        }
-
-
-        .ul div:hover {
-            background-color: #81B29A;
-        }
-
-        .describtion-men,
-        .describtion-women {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 20px;
-        }
-
-        .only-men-image {
-            height: 170px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .only-women-image {
-            height: 170px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-
         .second-first-right-div {
             display: flex;
             column-gap: 20px;
+            border: solid 2px black;
         }
 
+        .second-first-right-first-div {
+            border: solid 2px blue;
+        }
+
+        .second-first-right-inside-first-div {
+            border: solid 2px red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .only-women-image,
+        .only-men-image {
+            border: solid 3px green;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 180px;
+        }
+
+        .only-men-image img , .only-women-image img{
+            height: 180px;
+            width: 250px;
+        }
+
+
+       
+        .inside-ul{
+            display: flex;
+            border: solid 2px rgb(0, 0, 0);
+            align-items: center;
+            justify-content: space-around;
+            position: absolute;
+            top: 40%;
+            padding: 0;
+            height: 60px;
+            width: 110px;
+            border-radius: 30px;
+            background-color: white;
+            /* display: none; */
+        }
+
+        /* visible div */
+        .only-men-image img:hover, .only-women-image img:hover{
+            transform:scale(1.1);
+        }
+
+       .only-women-image img:hover ~ .inside-ul {
+            /* display: block !important; */
+        }
+
+
+        /* only-men-image:hover{
+            display: block !important;
+            transform:scale(1.1);
+
+        } */
+
+
+        .inside-ul li{
+            list-style: none;
+            border: solid 2px yellow;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            background-color: #323C51;
+        }
+
+        .inside-ul li:hover{
+            background-color: #81B29A;
+        }
+
+        .describtion-men, .describtion-women{
+            display: flex;
+            justify-content: space-between;
+        }
 
         /*=============== Third section======================= */
 
@@ -1280,7 +1235,7 @@
                                     <li><a href="">Event Details</a></li>
                                 </div>
                                 <div class="small-squre">
-    
+
                                 </div>
                             </ul>
                         </li>
@@ -1336,52 +1291,47 @@
                 <div class="second-first-right-div">
                     <div class="second-first-right-first-div">
                         <div class="second-first-right-inside-first-div">
-                            <div class="Insise-men-image">
-                                <div class="only-men-image">
-                                    <img src="./images/members/portrait-young-handsome-businessman-wearing-suit-standing-with-crossed-arms-with-isolated-studio-white-background.jpg"
-                                        alt="">
-                                </div>
-                                <ul class="ul">
-                                    <div>
-                                        <li><a href=""><i class="fa-brands fa-twitter" style="color: white;"></i></a>
-                                        </li>
-                                    </div>
-                                    <div>
-                                        <li><a href=""><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
-                                        </li>
-                                    </div>
-                                </ul>
+                            <div class="only-men-image">
+                                <img src="./images/members/portrait-young-handsome-businessman-wearing-suit-standing-with-crossed-arms-with-isolated-studio-white-background.jpg"
+                                    alt="">
                             </div>
+
+                            <ul class="inside-ul">
+                                <div>
+                                    <li><a href=""><i class="fa-brands fa-twitter" style="color: white;"></i></a>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li><a href=""><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                    </li>
+                                </div>
+                            </ul>
                         </div>
                         <div class="describtion-men">
                             <span><b><big>Michael</big></b></span>
-                            <span>Fonder</span>
+                            <span>Founder</span>
                         </div>
                     </div>
-                    <div class="second-first-right-second-div">
-                        <div class="second-first-right-second-div">
-                            <div class="Inside-women-image">
-                                <div class="women-image">
-                                    <div class="only-women-image">
-                                        <img src="./images/members/successful-asian-lady-boss-red-blazer-holding-clipboard-with-documens-pen-working-looking-happy-white-background.jpg"
-                                            alt="">
-                                    </div>
-                                    <ul class="ul">
-                                        <div>
-                                            <li><a href=""><i class="fa-brands fa-twitter"
-                                                        style="color: white; "></i></a></li>
-                                        </div>
-                                        <div>
-                                            <li><a href=""><i class="fa-brands fa-whatsapp"
-                                                        style="color: white;"></i></a></li>
-                                        </div>
-                                    </ul>
+                    <div class="second-first-right-first-div">
+                        <div class="second-first-right-inside-first-div">
+                            <div class="only-women-image">
+                                <img src="./images/members/successful-asian-lady-boss-red-blazer-holding-clipboard-with-documens-pen-working-looking-happy-white-background.jpg"
+                                    alt="">
+                            </div>
+                            <ul class="inside-ul">
+                                <div>
+                                    <li><a href=""><i class="fa-brands fa-twitter" style="color: white; "></i></a>
+                                    </li>
                                 </div>
-                            </div>
-                            <div class="describtion-women">
-                                <span><b><big>Sandy</big></b></span>
-                                <span>Co-Founder</span>
-                            </div>
+                                <div>
+                                    <li><a href=""><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="describtion-women">
+                            <span><b><big>Sandy</big></b></span>
+                            <span>Co-Founder</span>
                         </div>
                     </div>
                 </div>
