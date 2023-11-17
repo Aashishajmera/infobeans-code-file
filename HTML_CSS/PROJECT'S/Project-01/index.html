@@ -64,10 +64,10 @@
         }
 
         /* color first ul li */
-        .right-side-nav ul:first-child>li:first-child a:nth-child(1) {
+        /* .right-side-nav ul:first-child>li:first-child a:nth-child(1) {
             color: #F2CC8F;
             transition-duration: 0.5s;
-        }
+        } */
 
         .right-side-nav ul:first-child li a:hover {
             color: #F2CC8F;
@@ -75,60 +75,69 @@
         }
 
         /* font awesome color */
-        .right-side-nav ul:first-child li a:nth-child(6) i:hover {
+        .right-side-nav ul:first-child li:nth-child(6):hover {
             color: #F2CC8F;
             transition-duration: 0.5s;
 
         }
 
-        /* pop-up UL */
-        .right-side-nav ul li:nth-child(6) ul {
-            height: 100px;
-            padding: 0px;
-            display: none;
-            flex-direction: column;
+        .right-side-nav ul li:nth-child(6){
+            position: relative;
+        }
+
+        .right-side-nav ul li:nth-child(6) ul{
             position: absolute;
-            background-color: aliceblue;
-            top: 80%;
-            right: 13%;
-            border-radius: 10px;
-            row-gap: 20px;
-            z-index: 100;
-        }
-
-        .right-side-nav ul li ul {
-            height: 150px;
+            background-color: blue;
+            height: 130px;
             width: 150px;
+            top: 20px;
+            left: -15px;
+            padding: 0;
+            display: none;
         }
 
-        .right-side-nav ul li ul li a {
-            color: black;
-            font-weight: 500;
-        }
 
-        .right-side-nav ul:first-child li:nth-child(6) a:hover+ul {
+        .right-side-nav ul li:nth-child(6):hover ul{
+            display: block !important;
             display: flex;
+            padding-top: 20px;
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .right-side-nav ul li:nth-child(6) ul div:first-child{
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            width: 85%;
+            height: 90px;
             align-items: center;
             justify-content: center;
+            row-gap: 5px;
+            border-radius: 10px;
+
         }
 
-
-        /* smalll */
-        .small-squre {
-            display: none !important;
-            height: 20px;
-            width: 20px;
-            background-color: aliceblue;
-            transform: rotate(45deg);
+        .right-side-nav ul li:nth-child(6) ul div:last-child{
+            height: 15px;
+            width: 15px;
+            background-color: rgb(255, 255, 255);
             position: absolute;
-            top: 60px;
-            right: 22%;
+            top: 15px;
+            left: 15px;
+            transform: rotate(45deg);
         }
 
-        .right-side-nav ul:first-child li:nth-child(6):hover .small-squre {
-            display: block !important;
+        .right-side-nav ul li:nth-child(6) ul div:first-child li a{
+            color: black;
         }
 
+        .right-side-nav ul li:nth-child(6) ul div:first-child li a:hover{
+            color: #F2CC8F;
+            transition-duration: 0.5s;        }
+      
         .header-btn {
             font-size: medium;
             height: 40px;
@@ -1262,12 +1271,14 @@
                         <li>
                             <a href="">Pages &#9662;</a>
                             <ul>
-                                <li><a href="">Action listner</a></li>
-                                <li><a href="">Event Details</a></li>
+                                <div>
+                                    <li><a href="">Action listner</a></li>
+                                    <li><a href="">Event Details</a></li>
+                                </div>
+                                <div class="small-squre">
+    
+                                </div>
                             </ul>
-                            <div class="small-squre">
-
-                            </div>
                         </li>
                         <button class="header-btn">member login</button>
                     </ul>
