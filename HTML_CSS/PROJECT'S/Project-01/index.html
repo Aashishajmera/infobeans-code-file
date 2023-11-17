@@ -692,7 +692,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-
         }
 
         .five-section h1 {
@@ -909,7 +908,7 @@
         .six-right-section {
             width: 55vw;
             height: 80vh;
-            /* border: solid 2px rgb(255, 0, 0); */
+            /* border: solid 2px rgb(22, 21, 21); */
         }
 
         .left-six-main {
@@ -945,25 +944,41 @@
         .second-input textarea {
             border-radius: 20px;
             resize: vertical;
-            border: 2px solid #adaeaf;
+            /* border: 2px solid #adaeaf; */
         }
 
 
         .left-six-main input {
             padding-left: 10px;
-            border: 2px solid #adaeaf;
+            /* border: 2px solid #adaeaf; */
         }
 
 
         .second-input textarea:hover,
         .left-six-main input:hover {
-            border: black 2px solid;
+            /* border: black 2px solid; */
         }
 
         .second-input textarea:focus,
         .left-six-main input:focus {
             outline: none;
 
+        }
+
+        .left-six-main input:hover{
+            border: solid 2px black;
+        }
+
+        .left-six-main textarea:hover{
+            border: solid 2px black;
+        }
+
+        .left-six-main textarea{
+            border: solid 2px grey;
+        }
+
+        .left-six-main input{
+            border: 2px solid grey;
         }
 
 
@@ -1041,6 +1056,7 @@
 
 
         /* start right section */
+       
         .six-right-section {
             height: 480px;
             width: 645px;
@@ -1048,70 +1064,60 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            /* border: solid 2px rgb(34, 32, 32); */
+            padding: 0;
         }
 
-        .six-right-section img {
-            height: 50%;
-            width: 300% !important;
-            /* border: solid 2px blue; */
-            /* background-image: url(./images/WorldMap.svg);
-            background-size: 600px; */
+        .six-main{
+            /* border: solid 4px rgb(255, 0, 204); */
+            height: 350px;
+            width: 520px;
+            position: relative;            
         }
 
 
-        .right-six-main {
-            /* border: solid 3px black; */
-            height: 150px;
-            width: 1000px;
-            position: relative;
-            right: 310px;
-            background-color: #3D405B;
-            border-radius: 30px;
+        .right-six-main{
+            background-color: #323C51;
+            border-radius: 25px;
+            position: absolute;
+            top: 70px;
+            left: 135px;
+            height: 140px;
+            width: 250px;
+            color: white;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-            text-align: center;
-            row-gap: 10px;
-            color: white;
         }
 
-        .right-six-main p:nth-child(2) {
-            font-size: 18px;
-            margin-bottom: -20px;
+        .right-six-main p{
+            margin: 10px;
+        }
+
+        .right-six-main p:nth-child(2){
+            margin-left: 55px;
         }
 
         .right-six-main ul {
-            height: 40px;
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            margin-top: 20px;
-            margin-bottom: -30px;
-            justify-content: center;
-            text-align: center !important;
-            padding-inline: 40px !important;
-            border-bottom-right-radius: 30px;
-            border-bottom-left-radius: 30px;
-            background-color: #E07A5F;
-        }
-
-        .right-six-main ul:hover {
-            background-color: #F2CC8F;
-            transition-duration: 0.3s;
-        }
-
-        .right-six-main ul li {
             list-style: none;
-
+            background-color: #E07A5F;
+            padding-inline: 90px;
+            padding-block: 13px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
 
-        .right-six-main ul li a {
+        .right-six-main ul:hover{
+            background-color: #F2CC8F;
+            cursor: pointer;
+            transition: 0.8s;
+        }
+        
+        .right-six-main ul li a{
+            text-decoration: none;            
             color: white;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
         }
-
         /* =======================footer========================== */
         footer {
             height: 60vh;
@@ -1598,16 +1604,18 @@
                 </div>
             </div>
             <div class="six-right-section">
-                <img src="./images/WorldMap.svg" alt="">
-                <div class="right-six-main">
-                    <p><strong>London, United Kingdom</strong> </p>
-                    <p>(020) 010-020-0340
-                        info@company.com</p>
-                    <ul>
-                        <li>
-                            <a href="">Directions</a>
-                        </li>
-                    </ul>
+                <div class="six-main">
+                    <img src="./images/WorldMap.svg" alt="" height="80%" width="100%">
+                    <div class="right-six-main">
+
+                        <p><strong>London, United Kingdom</strong> </p>
+                        <p>(020) 010-020-0340 info@company.com</p>
+                        <ul>
+                            <li>
+                                <a href="">Directions</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1647,8 +1655,8 @@
         </footer>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg-last"
-            style="filter: invert(42%) sepia(93%) saturate(52%) hue-rotate(87deg) brightness(119%) contrast(119%); margin-top: -252px;">
-            <path fill="#ffffff" fill-opacity="1"
+            style="margin-top: -252px;">
+            <path fill="#323C51" fill-opacity="1"
                 d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
             </path>
         </svg>
