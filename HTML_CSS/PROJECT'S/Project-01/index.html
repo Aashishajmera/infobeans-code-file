@@ -303,14 +303,15 @@
             height: 180px;
         }
 
-        .only-men-image img , .only-women-image img{
+        .only-men-image img,
+        .only-women-image img {
             height: 180px;
             width: 250px;
         }
 
 
-       
-        .inside-ul{
+
+        .inside-ul {
             display: flex;
             border: solid 2px rgb(0, 0, 0);
             align-items: center;
@@ -326,22 +327,30 @@
         }
 
         /* visible div */
-        .only-men-image img:hover, .only-women-image img:hover{
-            transform:scale(1.1);
+        .only-men-image img:hover,
+        .only-women-image img:hover {
+            transform: scale(1.1);
         }
 
-       .only-women-image:hover + .inside-ul, .only-men-image:hover +.inside-ul {
+        .only-women-image:hover+.inside-ul,
+        .only-men-image:hover+.inside-ul {
             display: block !important;
             display: flex !important;
 
         }
 
-        ////////
-        .inside-ul div:first-child:hover{
-            background-color: #00ff84 !important;
-        }
+        /* .inside-ul div li:hover {
+            display: block !important;
+            display: flex !important;
+            background-color: #81B29A !important;
+        } */
 
-        .inside-ul li{
+
+        /* .inside-ul div:hover{
+            background-color: #00ff84 !important;
+        } */
+
+        .inside-ul li {
             list-style: none;
             border: solid 2px yellow;
             height: 40px;
@@ -353,11 +362,12 @@
             background-color: #323C51;
         }
 
-        .inside-ul li:hover{
+        .inside-ul li:hover {
             background-color: #81B29A !important;
         }
 
-        .describtion-men, .describtion-women{
+        .describtion-men,
+        .describtion-women {
             display: flex;
             justify-content: space-between;
         }
