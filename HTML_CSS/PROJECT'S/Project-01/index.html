@@ -300,6 +300,7 @@
             border: solid 3px green;
             border-radius: 30px;
             overflow: hidden;
+            transition: 0.8s;
             height: 180px;
         }
 
@@ -317,7 +318,7 @@
             align-items: center;
             justify-content: space-around;
             position: absolute;
-            top: 40%;
+            top: 35%;
             padding: 0;
             height: 60px;
             width: 110px;
@@ -330,14 +331,27 @@
         .only-men-image img:hover,
         .only-women-image img:hover {
             transform: scale(1.1);
+            cursor: pointer !important;
+            /* transition-duration: 0.5s; */
         }
 
+        /* .only-women-image:hover .inside-ul div:hover{
+            background-color: #81B29A !important;
+        } */
+
+         .inside-ul  div:hover{
+            background-color: blue !important;
+        }
+
+        
         .only-women-image:hover+.inside-ul,
         .only-men-image:hover+.inside-ul {
             display: block !important;
             display: flex !important;
+            background-color: rgb(255, 255, 255);
 
         }
+
 
         /* .inside-ul div li:hover {
             display: block !important;
@@ -349,6 +363,7 @@
         /* .inside-ul div:hover{
             background-color: #00ff84 !important;
         } */
+
 
         .inside-ul li {
             list-style: none;
