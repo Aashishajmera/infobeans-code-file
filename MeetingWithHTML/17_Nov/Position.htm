@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <!-- Internal CSS -->
+    <style>
+        .main-container {
+            height: 90vh;
+            border: solid 13px black;
+            display: flex;
+        }
+
+        .main-container div:first-child {
+            background-color: red;
+            height: 50px;
+            width: 50px;
+        }
+
+        .main-container div:nth-child(2) {
+            background-color: green;
+            height: 250px;
+            width: 250px;
+            position: relative;
+        }
+
+
+
+        .main-container div:nth-child(2) div:first-child {
+            height: 50px;
+            width: 50px;
+            background-color: yellow;
+        }
+
+        .main-container div:nth-child(2) div:last-child {
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            position: absolute;
+            left: 1px;
+            top: 2px;
+        }
+
+        .main-container div:last-child {
+            background-color: blue;
+            height: 50px;
+            width: 50px;
+            /* position: absolute;
+            top: 0; */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div>1</div>
+        <div>
+
+            <div>2 - 1</div>
+            <div> 2 - 2</div>
+
+        </div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>
