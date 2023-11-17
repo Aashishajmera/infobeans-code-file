@@ -322,7 +322,7 @@
             width: 110px;
             border-radius: 30px;
             background-color: white;
-            /* display: none; */
+            display: none;
         }
 
         /* visible div */
@@ -330,17 +330,16 @@
             transform:scale(1.1);
         }
 
-       .only-women-image img:hover ~ .inside-ul {
-            /* display: block !important; */
+       .only-women-image:hover + .inside-ul, .only-men-image:hover +.inside-ul {
+            display: block !important;
+            display: flex !important;
+
         }
 
-
-        /* only-men-image:hover{
-            display: block !important;
-            transform:scale(1.1);
-
-        } */
-
+        ////////
+        .inside-ul div:first-child:hover{
+            background-color: #00ff84 !important;
+        }
 
         .inside-ul li{
             list-style: none;
@@ -355,7 +354,7 @@
         }
 
         .inside-ul li:hover{
-            background-color: #81B29A;
+            background-color: #81B29A !important;
         }
 
         .describtion-men, .describtion-women{
