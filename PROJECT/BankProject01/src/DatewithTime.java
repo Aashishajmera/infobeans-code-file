@@ -18,7 +18,7 @@ public class DatewithTime {
 
         try {
             con = DatabaseConnect.getConnection();
-        Calendar calendar = Calendar.getInstance();
+            Calendar calendar = Calendar.getInstance();
             java.util.Date currentTime = calendar.getTime();
             long time = currentTime.getTime();
             java.sql.Date sqlStartDate = new java.sql.Date(date1.getTime());
