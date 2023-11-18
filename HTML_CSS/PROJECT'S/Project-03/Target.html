@@ -19,7 +19,7 @@
             display: flex;
         }
 
-        .first div:first-child button:first-child:hover+button:last-child {
+        .first div:first-child button:first-child:hover + button:last-child {
             background-color: red;
         }
     </style>
@@ -30,7 +30,7 @@
     <div class="main-container">
         <section class="first">
             <div>
-                <button>
+                <button onmouseover="changeBackground()">
                     subscribe
                 </button>
                 <button>
@@ -38,13 +38,17 @@
                 </button>
             </div>
             <div>
-                <button>
+                <button id="submit">
                     Submit
                 </button>
             </div>
         </section>
     </div>
-
+    <script>
+        function changeBackground(){
+            document.getElementById("submit").style.backgroundColor = "red";
+        }
+    </script>
 </body>
 
 </html>

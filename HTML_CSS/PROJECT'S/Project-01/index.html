@@ -1503,8 +1503,8 @@
                     <div class="right-four-div-down">
                         <span>Become a member</span>
                         <div class="field-holder">
-                            <input type="text" name="username" id="">
-                            <label for="username" class="namelabel">Full Name</label>
+                            <input onblur="clearLabel()" type="text" name="username" id="usernameInput">
+                            <label id="username" for="username" class="namelabel">Full Name</label>
                         </div>
                         <div class="field-holder">
                             <input type="email" name="useremail" id="">
@@ -1687,6 +1687,14 @@
         </svg>
 
     </div>
+    <script>
+        function clearLabel(){
+           let usernameValue =  document.getElementById("usernameInput").value;
+           if(usernameValue.length!=0){
+              document.getElementById("username").innerHTML="";
+           }
+        }
+    </script>
 </body>
 
 </html>
