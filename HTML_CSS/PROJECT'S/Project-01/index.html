@@ -339,31 +339,6 @@
             background-color: #81B29A !important;
         } */
 
-         .inside-ul  div:hover{
-            background-color: blue !important;
-        }
-
-        
-        .only-women-image:hover+.inside-ul,
-        .only-men-image:hover+.inside-ul {
-            display: block !important;
-            display: flex !important;
-            background-color: rgb(255, 255, 255);
-
-        }
-
-
-        /* .inside-ul div li:hover {
-            display: block !important;
-            display: flex !important;
-            background-color: #81B29A !important;
-        } */
-
-
-        /* .inside-ul div:hover{
-            background-color: #00ff84 !important;
-        } */
-
 
         .inside-ul li {
             list-style: none;
@@ -377,9 +352,29 @@
             background-color: #323C51;
         }
 
-        .inside-ul li:hover {
-            background-color: #81B29A !important;
+        .inside-ul div:nth-child(1) li:hover {
+            background-color: blue !important;
         }
+
+
+        .only-women-image:hover+.inside-ul,
+        .only-men-image:hover+.inside-ul {
+            display: block !important;
+            display: flex !important;
+            background-color: rgb(255, 255, 255);
+        }
+
+
+        /* .inside-ul div li:hover {
+            display: block !important;
+            display: flex !important;
+            background-color: #81B29A !important;
+        } */
+
+
+        /* .inside-ul div:hover{
+            background-color: #00ff84 !important;
+        } */
 
         .describtion-men,
         .describtion-women {
@@ -965,19 +960,19 @@
 
         }
 
-        .left-six-main input:hover{
+        .left-six-main input:hover {
             border: solid 2px black;
         }
 
-        .left-six-main textarea:hover{
+        .left-six-main textarea:hover {
             border: solid 2px black;
         }
 
-        .left-six-main textarea{
+        .left-six-main textarea {
             border: solid 2px grey;
         }
 
-        .left-six-main input{
+        .left-six-main input {
             border: 2px solid grey;
         }
 
@@ -1056,7 +1051,7 @@
 
 
         /* start right section */
-       
+
         .six-right-section {
             height: 480px;
             width: 645px;
@@ -1068,15 +1063,15 @@
             padding: 0;
         }
 
-        .six-main{
+        .six-main {
             /* border: solid 4px rgb(255, 0, 204); */
             height: 350px;
             width: 520px;
-            position: relative;            
+            position: relative;
         }
 
 
-        .right-six-main{
+        .right-six-main {
             background-color: #323C51;
             border-radius: 25px;
             position: absolute;
@@ -1091,11 +1086,11 @@
             justify-content: center;
         }
 
-        .right-six-main p{
+        .right-six-main p {
             margin: 10px;
         }
 
-        .right-six-main p:nth-child(2){
+        .right-six-main p:nth-child(2) {
             margin-left: 55px;
         }
 
@@ -1108,16 +1103,17 @@
             border-bottom-right-radius: 25px;
         }
 
-        .right-six-main ul:hover{
+        .right-six-main ul:hover {
             background-color: #F2CC8F;
             cursor: pointer;
             transition: 0.8s;
         }
-        
-        .right-six-main ul li a{
-            text-decoration: none;            
+
+        .right-six-main ul li a {
+            text-decoration: none;
             color: white;
         }
+
         /* =======================footer========================== */
         footer {
             height: 60vh;
@@ -1328,7 +1324,10 @@
 
                             <ul class="inside-ul">
                                 <div>
-                                    <li><a href=""><i class="fa-brands fa-twitter" style="color: white;"></i></a>
+                                    <li>
+                                        <a href="">
+                                            <i class="fa-brands fa-twitter" style="color: white;"></i>
+                                        </a>
                                     </li>
                                 </div>
                                 <div>
@@ -1654,8 +1653,7 @@
             </div>
         </footer>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg-last"
-            style="margin-top: -252px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg-last" style="margin-top: -252px;">
             <path fill="#323C51" fill-opacity="1"
                 d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
             </path>
