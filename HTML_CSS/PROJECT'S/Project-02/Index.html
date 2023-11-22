@@ -11,33 +11,69 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: sans-serif;
         }
 
         /* =========================HEADER============================ */
         header {
             height: 12vh;
             border: solid 2px black;
+            background-color: #7B6ADA;
         }
 
+        .main-header{
+            /* height: 12vh;
+           border: solid 2px blue; */
+        }
 
+        .nav-container {
+            height: 11vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-inline: 20px;
+        }
 
+        .left-nav {
+            display: flex;
+        }
+
+        .right-nav{
+            display: flex;
+            column-gap: 50px;
+            list-style: none;
+        }
+
+        .right-nav li a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
     </style>
 </head>
 <!-- ========================================HEADER============================================ -->
 <header>
-    <!-- navigation container -->
-    <div class="nav-container">
-        <nav class="left-nav">
-            <a href="#">SCHOLAR</a>
-            <div class="line"></div>
-            <form action="">
-                <input type="text" name="" placeholder="Type Something">
-            </form>
-        </nav>
+    <div class="main-header">
+        <!-- navigation container -->
+        <div class="nav-container">
+            <nav class="left-nav">
+                <a href="#">SCHOLAR</a>
+                <div class="line"></div>
+                <form action="">
+                    <input type="text" name="" placeholder="Type Something">
+                </form>
+            </nav>
 
-        <nav class="right-nav">
 
-        </nav>
+            <ul class="right-nav">
+                <li><a href="">Home</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Courses</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Events</a></li>
+                <li><a href="">Register Now!</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 

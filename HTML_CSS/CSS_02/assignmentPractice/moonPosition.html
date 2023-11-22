@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            height: 97vh;
+            position: relative;
+            border: solid 3px black;
+            background-color: black;
+        }
+
+        .first-box {
+            position: absolute;
+            height: 40vh;
+            width: 20vw;
+            margin-left: 130px;
+            margin-top: 44px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 2px 0px 49px 7px rgb(181, 178, 178);
+        }
+
+        .inner-box {
+            height: 40vh;
+            width: 20vw;
+            margin-top: -46px;
+            margin-left: -145px;
+            border-radius: 50%;
+            animation-name: inner-box;
+            animation-duration: 10s;
+            position: absolute;
+            background-color: black;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+
+        @keyframes inner-box {
+            0%{
+                left: 0px;
+                top: 0px;
+            }
+
+            50%{
+                left: 145px;
+                top: 46px;
+            }
+
+            60%{
+                left: 145px;
+                top: 46px;
+            }
+
+            100%{
+                left: 430px;
+                top: 95px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="first-box">
+            <div class="inner-box">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
