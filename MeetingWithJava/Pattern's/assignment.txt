@@ -58,7 +58,7 @@ triangle:
   # # # #
     # # #
       # # 
-  	#
+  	    #
 
 
 
@@ -118,13 +118,13 @@ triangle:
   * * * *
 * * * * *
 
-	#
+      	#
       # #
     # # #
   # # # #
 # # # # #
 
-	@
+	      @
       @ @
     @ @ @
   @ @ @ @
@@ -173,7 +173,7 @@ structure:
 1
 Q.12 Write a program to generate a following numbers
 structure:
-	1
+	      1
       1 2
     1 2 3
   1 2 3 4
