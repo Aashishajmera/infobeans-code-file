@@ -1,0 +1,70 @@
+.main-container {
+    height: 80vh;
+    border: solid 3px black;
+}
+
+header {
+    height: 15vh;
+    border: solid 2px red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    border: solid 3px blue;
+    height: 15vh;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul:first-child {
+    border: solid 2px pink;
+    width: 80vw;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+
+/* pop - up UL */
+
+nav ul li:nth-child(5) {
+    position: relative;
+}
+
+
+nav ul li ul {
+    position: absolute;
+    background-color: red;
+    height: 120px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 0;
+    row-gap: 8px;
+    list-style: none;
+    padding-left: 10px;
+    display: none;
+}
+
+nav ul li:nth-child(5):hover ul {
+    display: block;
+    display: flex;
+}

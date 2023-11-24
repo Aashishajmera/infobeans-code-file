@@ -222,7 +222,7 @@ structure:
         1
 Q.19 Write a program to print the following
 triangle:
-	  *
+	        *
         * * *
       * * * * *
     * * * * * * *
