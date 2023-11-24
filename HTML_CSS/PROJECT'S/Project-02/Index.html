@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scholar - Online School</title>
 
+    <!-- add font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
     <!-- internal CSS -->
     <style>
         body {
@@ -16,14 +19,22 @@
 
         /* =========================HEADER============================ */
         header {
-            height: 12vh;
+            height: 15vh;
             border: solid 2px black;
             background-color: #7B6ADA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: fixed;
+            left: 0;
+            right: 0;
+            border-bottom-right-radius: 45px;
         }
 
-        .main-header{
-            /* height: 12vh;
-           border: solid 2px blue; */
+        .main-header {
+            /* display:  flex;
+            flex-direction: column;
+            justify-content: center; */
         }
 
         .nav-container {
@@ -32,53 +43,153 @@
             align-items: center;
             justify-content: space-between;
             margin-inline: 20px;
+            /* border: solid 1px yellow; */
         }
 
         .left-nav {
             display: flex;
+            column-gap: 20px;
+            align-items: center;
+            height: 50px;
+            /* border: 2px solid rgb(255, 0, 0); */
         }
 
-        .right-nav{
-            display: flex;
-            column-gap: 50px;
-            list-style: none;
-        }
-
-        .right-nav li a{
+        .left-nav a {
+            font-size: 30px;
             text-decoration: none;
             color: white;
-            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .left-nav input {
+            height: 40px;
+            width: 220px;
+            border-radius: 25px;
+            background-color: #8979DE;
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding-left: 20px;
+        }
+
+        .left-nav form {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-nav form i {
+            position: absolute;
+            right: 15px !important;
+        }
+
+        .right-nav {
+            display: flex;
+            column-gap: 10px;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            /* border: solid 2px black; */
+            height: 50px;
+        }
+
+        .right-nav li a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        .right-nav li {
+            height: 50px !important;
+            width: 100px;
+            /* border: solid 2px blue; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-nav li a:hover {
+            height: 45px !important;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f1e7e7;
+            border-radius: 25px;
+        }
+
+        .right-nav li a:focus {
+            height: 40px !important;
+            width: 100px;
+            background-color: #8979DE !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+        }
+
+        /* ============================FIRST-SECTION========================= */
+        .first-section {
+            height: 170vh;
+            border: solid 2px black;
+            background-color: #7B6ADA;
+            border-bottom-right-radius: 25%;
+        }
+
+        .bgc-image {
+            position: relative;
+            border: solid 3px red;
+            height: 150px;
+        }
+
+        .bgc-image img {
+            height: 150px;
+            position: absolute;
+            top: 1px;
+            left: 600px;
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<!-- ========================================HEADER============================================ -->
-<header>
-    <div class="main-header">
-        <!-- navigation container -->
-        <div class="nav-container">
-            <nav class="left-nav">
-                <a href="#">SCHOLAR</a>
-                <div class="line"></div>
-                <form action="">
-                    <input type="text" name="" placeholder="Type Something">
-                </form>
-            </nav>
-
-
-            <ul class="right-nav">
-                <li><a href="">Home</a></li>
-                <li><a href="">Service</a></li>
-                <li><a href="">Courses</a></li>
-                <li><a href="">Team</a></li>
-                <li><a href="">Events</a></li>
-                <li><a href="">Register Now!</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
 
 <body>
 
+    <!-- ========================================HEADER============================================ -->
+    <header>
+        <div class="main-header">
+            <!-- navigation container -->
+            <div class="nav-container">
+                <nav class="left-nav">
+                    <a href="#">SCHOLAR</a>
+                    <div style="height: 40px; width: 1px; background-color: #fff;"></div>
+                    <form action="">
+                        <input type="text" name="" placeholder="Type Something">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                    </form>
+                </nav>
+
+
+                <ul class="right-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Register Now!</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===========================================FIRST-SECTION========================================= -->
+
+    <section class="first-section">
+        <div class="bgc-image">
+            <img src="./images/contact-dec-01.png" alt="">
+        </div>
+
+
+    </section>
 </body>
 
 </html>
