@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container {
+            height: 90vh;
+            border: solid 3px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 50px;
+        }
+
+        .main {
+            position: relative;
+            border: solid 4px black;
+            height: 350px;
+            width: 300px;
+        }
+
+        .sun {
+            height: 150px;
+            width: 150px;
+            border: solid 2px black;
+            background: linear-gradient(yellow, red);
+            /* border-radius: 50%; */
+            animation-name: sun;
+            position: relative;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .earth {
+            height: 100px;
+            width: 100px;
+            border: solid 2px black;
+            background-color: skyblue;
+            /* border-radius: 50%; */
+            animation-name: earth;
+            position: relative;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .moon {
+            height: 50px;
+            width: 50px;
+            border: solid 3px black;
+            background-color: #fff;
+            /* border-radius: 50%; */
+            animation-name: moon;
+            position: relative;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+
+        /* moon animation */
+
+        @keyframes moon {
+            0% {
+                transform: rotate(0deg);
+                /* translateY(100px) rotate(0deg);  */
+            }
+
+            100% {
+                transform: rotate(360deg);
+                /* translateY(100px) rotate(-360deg); */
+            }
+        }
+
+        /* earth animation */
+        @keyframes earth {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* sun animation */
+        @keyframes sun {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="main">
+            <div class="sun">
+
+            </div>
+            <div class="earth">
+
+            </div>
+            <div class="moon">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
