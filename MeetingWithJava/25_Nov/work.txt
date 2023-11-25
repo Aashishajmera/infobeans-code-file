@@ -1,0 +1,4 @@
+1) learn about grid
+2) learn about noun
+3) learn about java
+4) learn about JS
