@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSUDO CLASS</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container {
+            height: 90vh;
+            width: 90vw;
+            border: solid 2px black;
+        }
+
+        /* psudo class :  */
+        /* psudo element :: */
+
+        .main-container a:first-child:hover {
+            color: black;
+        }
+
+        .main-container a:nth-child(2):active {
+            color: red;
+        }
+
+        .main-container a:nth-child(3):visited{
+            background-color: yellow;
+        }
+
+
+        .main-container input:nth-child(5):focus {
+            background-color: red;
+            color: blue;
+        }
+
+        .ipt input:first-child:focus{
+            background-color: red;
+            color: white;
+        }
+
+        .ipt input:last-child:active{
+            background-color: red;
+            /* transition-delay: 3s; */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <a href="">Instagram</a> <br> <br>
+        <a href="">Facebook</a> <br> <br>
+        <a href="">Whatsapp</a> <br><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, nemo.</p>
+
+        <div class="ipt">
+            <input type="text" name="" placeholder="name" id=""> <br><br>
+            <input type="email" name="" placeholder="email" id="">
+        </div>
+    </div>
+
+</body>
+
+</html>

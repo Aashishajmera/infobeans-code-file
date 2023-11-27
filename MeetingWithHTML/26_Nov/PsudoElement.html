@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSUDO ELEMENT</title>
+
+    <!-- INTERNAL CSS -->
+    <STYle>
+        .main-container{
+            height: 90vh;
+            width: 90vw;
+            border: solid 2px black;
+        }
+
+
+        .main-container p:first-child::before{
+            content: "Aashish ";
+            color: red;
+            background-color: yellow;
+        }
+
+        .main-container p:first-child::after{
+            content: " ajmera";
+            color: red;
+            background-color: yellow;
+        }
+
+       .main-container p:last-child::selection{
+        background-color: rgb(255, 34, 0);
+        color: white;
+       }
+
+       .main-container p:last-child::first-line{
+        color: blue;
+       }
+
+    </STYle>
+</head>
+
+<body>
+    <div class="main-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias odit dolor veniam asperiores enim nulla ullam ratione suscipit at quo? Voluptatum praesentium facere voluptatem commodi, ullam in fugiat blanditiis labore?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi amet saepe nam quisquam expedita pariatur molestias quo mollitia, dolorum, laudantium deserunt, similique aspernatur facere. Sapiente impedit alias obcaecati voluptate optio voluptatem sint maxime sed sit consectetur? Expedita vero quam dolorem quo? Quod ipsam, eum molestiae minus consequuntur nam, distinctio quidem aspernatur dolore sint ab odio inventore, vero totam modi amet ut repellendus commodi incidunt cumque. Sapiente eligendi, maxime qui pariatur ex cum? Dignissimos ratione possimus nostrum hic excepturi incidunt enim sed, maxime tempora voluptatem rerum a ab vero impedit. Iure!</p>
+    </div>
+</body>
+
+</html>
