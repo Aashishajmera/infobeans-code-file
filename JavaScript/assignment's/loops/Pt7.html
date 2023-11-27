@@ -1,0 +1,23 @@
+<!-- 
+ 1 2 3 4 5 4 3 2 1
+   1 2 3 4 3 2 1
+     1 2 3 2 1
+       1 2 1
+         1
+ -->
+
+ <script>
+    var p = 9 ;
+    for(var r = 5; r >= 1; r--){
+        var k = 0;
+        for(var s = 1; s <= 5 - r; s++){
+            document.write("&nbsp&nbsp")
+        }
+        for(var c = 1; c <= p; c++){
+            k = (c <= r) ? ++k : --k;
+            document.write(k+"&nbsp");
+        }
+        p-=2;
+        document.write("<br>")
+    }
+ </script>

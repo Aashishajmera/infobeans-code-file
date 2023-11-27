@@ -1,0 +1,23 @@
+<!-- 
+    *
+    *
+  * * *
+  * * *
+* * * * *
+* * * * *
+ -->
+
+<script>
+    var k = 0, j = 3;
+    for (var r = 1; r <= 6; r++) {
+        k = (r % 2 != 0) ? k += 2 : k = k;
+        j = (r % 2 != 0) ? --j : j = j;
+        for (var s = 1; s <= j; s++) {
+            document.writeln("&nbsp");
+        }
+        for (var c = 1; c < k; c++) {
+            document.write("*");
+        }
+        document.write("</br>")
+    }
+</script>
