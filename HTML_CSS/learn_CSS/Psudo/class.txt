@@ -1,0 +1,6 @@
+:hover  ==> button and link
+:active ==> anchor tag
+:focus ==> use input field
+:visited  ==> link 
+:nth-child
+:first-child

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSUDO ELEMENT</title>
+
+    <!-- Internal CSS -->
+    <style>
+        .main-container{
+            height: 90vh;
+            border: solid 2px black;
+        }
+
+        .main-container p:first-child::after{
+            content: "Aashish";
+            color: red;
+        }
+
+        .main-container p:nth-child(2):before{
+            content: " Ajmera ";
+            color: blue;
+        }
+
+        .main-container a::selection{
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, corporis.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda nostrum voluptas incidunt necessitatibus quam quia debitis perspiciatis laudantium animi beatae.</p>
+        <a href="">github</a>
+        <br><br>
+        <input type="text" name="" id="">
+    </div>
+</body>
+
+</html>

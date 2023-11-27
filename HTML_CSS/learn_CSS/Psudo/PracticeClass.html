@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSUDO CLASS</title>
+
+
+<!-- font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inconsolata:wght@600&family=Manrope:wght@300;500;800&family=Poppins&family=Roboto+Mono:wght@700&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .inpt{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+        }
+
+        .inpt input:last-child:hover{
+            background-color: red;
+        }
+
+        .inpt input:first-child:active{
+            background-color: red;
+        }
+
+        .inpt input:nth-child(2):focus{
+            background-color: blue;
+        }
+
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="btn" style="border: solid 1px red;">
+            <button>Submit</button>
+            <button>Subscribe</button>
+        </div>
+        <div class="inpt" style="border: solid 1px blue;">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+        </div>
+        <div style="border: solid 1px red;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, eveniet voluptatem eos natus sunt nam reiciendis animi iusto sed voluptatibus?</p>
+        </div>
+    </div>
+</body>
+
+</html>
