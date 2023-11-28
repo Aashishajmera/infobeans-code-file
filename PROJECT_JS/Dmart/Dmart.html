@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-MART</title>
+
+    <!-- ADD ICON -->
+    <link rel="shortcut icon" href="./Untitled.jpg" type="image/x-icon">
+
+
+    <!-- ADD CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            height: 110vh;
+            width: 97vw;
+            /* border: solid 3px red; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+        }
+
+        .main-container h1:nth-child(1) {
+            /* border: solid 2px green; */
+        }
+
+        .main-container .main {
+            height: 80vh;
+            width: 80vw;
+            /* border: solid 2px blue; */
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+        .main-container p:last-child{
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .header{
+            /* border: solid 1px red; */
+            display: flex;
+            justify-content: space-between;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        table{
+            /* border-collapse: collapse; */
+            border: none;
+        }
+        table tr th{
+            height: 40px;            
+        }
+        table tr td{
+            padding-block: 2px;
+        }
+        table tr{
+            /* text-align: center; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        document.write("<pre>")
+        var userName = prompt("Enter your name: ");
+        var userGender = prompt("Enter Gender");
+
+
+        // QUANTITY OF ITEM
+        var qItem1 = parseInt(prompt("Enter the quantity of item 1"));
+        var qItem2 = parseInt(prompt("Enter the quantity of item 2"));
+        var qItem3 = parseInt(prompt("Enter the quantity of item 3"));
+        var qItem4 = parseInt(prompt("Enter the quantity of item 4"));
+        var qItem5 = parseInt(prompt("Enter the quantity of item 5"));
+        var qItem6 = parseInt(prompt("Enter the quantity of item 6"));
+        var qItem7 = parseInt(prompt("Enter the quantity of item 7"));
+        var qItem8 = parseInt(prompt("Enter the quantity of item 8"));
+        var qItem9 = parseInt(prompt("Enter the quantity of item 9"));
+        var qItem10 = parseInt(prompt("Enter the quantity of item 10"));
+
+
+        // ITEM AMOUNT
+        var item1st_amnt = 10;
+        var item2nd_amnt = 20;
+        var item3rd_amnt = 30;
+        var item4th_amnt = 40;
+        var item5th_amnt = 50;
+        var item6th_amnt = 60;
+        var item7th_amnt = 70;
+        var item8th_amnt = 80;
+        var item9th_amnt = 90;
+        var item10th_amnt = 100;
+
+
+        // AMOUNT OF MULTIPUL ITEM QUANTITY
+        var quantity_Item_amnt1 = (item1st_amnt * qItem1);
+        var quantity_Item_amnt2 = (item2nd_amnt * qItem2);
+        var quantity_Item_amnt3 = (item3rd_amnt * qItem3);
+        var quantity_Item_amnt4 = (item4th_amnt * qItem4);
+        var quantity_Item_amnt5 = (item5th_amnt * qItem5);
+        var quantity_Item_amnt6 = (item6th_amnt * qItem6);
+        var quantity_Item_amnt7 = (item7th_amnt * qItem7);
+        var quantity_Item_amnt8 = (item8th_amnt * qItem8);
+        var quantity_Item_amnt9 = (item9th_amnt * qItem9);
+        var quantity_Item_amnt10 = (item10th_amnt * qItem10);
+
+        var quan_Item_amnt11 = quantity_Item_amnt1;
+        if (qItem1 > 4) {
+            quan_Item_amnt11 -= (quantity_Item_amnt1 * 5) / 100;
+        }
+     var  quan_Item_amn55 =  quantity_Item_amnt5 - (quantity_Item_amnt5 * 10) / 100;
+     var  quan_Item_amn110 =   quantity_Item_amnt10 - (quantity_Item_amnt10 * 15) / 100;
+
+             // after discount amount 
+             var dis_amnt = quan_Item_amnt11+quantity_Item_amnt2+quantity_Item_amnt3+quantity_Item_amnt4+quan_Item_amn55+quantity_Item_amnt6+quantity_Item_amnt7+quantity_Item_amnt8+quantity_Item_amnt9+quan_Item_amn110;
+
+
+
+        // CALCULATE TOTAL BILL
+        var total_Bill_amnt = (quantity_Item_amnt1 + quantity_Item_amnt2 + quantity_Item_amnt3 + quantity_Item_amnt4 + quantity_Item_amnt5 + quantity_Item_amnt6 + quantity_Item_amnt7 + quantity_Item_amnt8 + quantity_Item_amnt9 + quantity_Item_amnt10);
+
+
+        // discount of total_Bill_Amount
+        if (total_Bill_amnt > 10000) {
+            total_Bill_amnt -= (total_Bill_amnt * 15) / 100;
+        } else if (total_Bill_amnt <= 10000 && total_Bill_amnt > 50000) {
+            total_Bill_amnt -= (total_Bill_amnt * 10) / 100;
+        }
+
+
+        // CALCULATE GST
+        // total_Bill_amnt += (total_Bill_amnt * 10) / 100;
+        var gst_amnt = (total_Bill_amnt * 10) / 100;
+
+        // CARRY BAG 
+        var bag = prompt("Do you want to take a bag (yes/no)");
+        var bag_amnt = 0;
+        if (bag === "yes") {
+            bag_amnt = 10;
+        }
+        // total_Bill_amnt += bag_amnt;
+
+        var gift ;
+        if(userGender === "female"){
+            gift = "Cadeberry";
+        }else if(userGender === "male"){
+            gift = "Ladger Wallet";
+        }
+
+
+        // ==============================CREATE BILL===============================
+
+
+        document.write("<div class='main-container'>");
+        document.write("<h1>  D - MART</h1>");
+        document.write("<div class='main'>");
+
+        document.write("<div class='header'>")
+            document.write("<span> Name: "+userName)
+            document.write("</span>")
+            document.write("<span> Date: "+"27/11/2023")
+            document.write("</span>")
+        document.write("</div>");
+
+        document.write("<table border style='cellpadding: 22px;'>")
+            document.write("<thead>")
+                document.write("<tr>")
+                    document.write("<th> Item Name")
+                    document.write("</th>")
+                    document.write("<th> Quantity")
+                    document.write("</th>")
+                    document.write("<th> Price")
+                    document.write("</th>")
+                    document.write("<th> Total")
+                    document.write("</th>")
+                    document.write("<th> After-Discount")
+                    document.write("</th>")
+                document.write("</tr>")
+            document.write("<thead>")
+
+                document.write("<tbody>")
+                document.write("<tr>")
+                    document.write("<td> Item-01")
+                    document.write("</td>")
+                    document.write("<td> "+qItem1)
+                    document.write("</td>")
+                    document.write("<td> "+item1st_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt1)
+                    document.write("</td>")
+                    document.write("<td> "+quan_Item_amnt11);
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-02")
+                    document.write("</td>")
+                    document.write("<td> "+qItem2)
+                    document.write("</td>")
+                    document.write("<td> "+item2nd_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt2)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt2)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-03")
+                    document.write("</td>")
+                    document.write("<td> "+qItem3)
+                    document.write("</td>")
+                    document.write("<td> "+item3rd_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt3)
+                    document.write("</td>")
+                    document.write("<td>" +quantity_Item_amnt3)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-04")
+                    document.write("</td>")
+                    document.write("<td> "+qItem4)
+                    document.write("</td>")
+                    document.write("<td> "+item4th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt4)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt4)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-05")
+                    document.write("</td>")
+                    document.write("<td> "+qItem5)
+                    document.write("</td>")
+                    document.write("<td> "+item5th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt5)
+                    document.write("</td>")
+                    document.write("<td> "+quan_Item_amn55)
+                    document.write("</td>")
+                document.write("</tr>")
+
+                document.write("<tr>")
+                    document.write("<td> Item-06")
+                    document.write("</td>")
+                    document.write("<td> "+qItem6)
+                    document.write("</td>")
+                    document.write("<td> "+item6th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt6)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt6)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-07")
+                    document.write("</td>")
+                    document.write("<td> "+qItem7)
+                    document.write("</td>")
+                    document.write("<td> "+item7th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt7)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt7)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-08")
+                    document.write("</td>")
+                    document.write("<td> "+qItem8)
+                    document.write("</td>")
+                    document.write("<td> "+item8th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt8)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt8)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-09")
+                    document.write("</td>")
+                    document.write("<td> "+qItem9)
+                    document.write("</td>")
+                    document.write("<td> "+item9th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt9)
+                    document.write("</td>")
+                    document.write("<td>"+quantity_Item_amnt9)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td> Item-10")
+                    document.write("</td>")
+                    document.write("<td> "+qItem10)
+                    document.write("</td>")
+                    document.write("<td> "+item10th_amnt)
+                    document.write("</td>")
+                    document.write("<td> "+quantity_Item_amnt10);
+                    document.write("</td>")
+                    document.write("<td>"+quan_Item_amn110)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td colspan='2'>")
+                    document.write("</td>")
+                    document.write("<td> <b>450</b>")
+                    document.write("</td>")
+                    document.write("<td> <b>A.P "+(total_Bill_amnt)+"</b>")
+                    document.write("</td>")
+                    document.write("<td> <b> D.P "+dis_amnt+"</b>")
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td colspan='3'> Gift:"+gift)
+                    document.write("</td>")
+                    document.write("<td colspan='2'>")
+                    document.write("</td>")
+                   
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td colspan='3'> Carry Bag: "+bag)
+                    document.write("</td>")
+                    document.write("<td>"+bag_amnt)
+                    document.write("</td>")
+                    document.write("<td>"+bag_amnt)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td colspan='3'> GST 10% ")
+                    document.write("</td>")
+                    document.write("<td>"+gst_amnt)
+                    document.write("</td>")
+                    document.write("<td>"+gst_amnt)
+                    document.write("</td>")
+                document.write("</tr>")
+                document.write("<tr>")
+                    document.write("<td colspan='3'> ")
+                    document.write("</td>")
+                    document.write("<td> <b> Total: "+(bag_amnt+total_Bill_amnt+gst_amnt)+"</b>")
+                    document.write("</td>")
+                    document.write("<td> <b> Total: "+(bag_amnt+dis_amnt+gst_amnt)+"</b>")
+                    document.write("</td>")
+                document.write("</tr>")
+            document.write("<tbody>")
+
+        document.write("</table>")
+
+
+        document.write("</div>");
+
+        document.write("<p>Thank you <br>To visit <br>D-Mart ")
+            document.write("</p>")
+
+            document.write("</div>");
+
+        document.writeln("</pre>");
+
+    </script>
+
+<table>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+</table>
+
+</body>
+
+</html>
