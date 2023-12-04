@@ -21,14 +21,15 @@
         header {
             height: 15vh;
             border: solid 2px black;
-            background-color: #7B6ADA;
+            background-color: #8979DE;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: fixed;
             left: 0;
             right: 0;
             border-bottom-right-radius: 45px;
+            position: sticky;
+            top: 0px;
         }
 
         .main-header {
@@ -43,7 +44,6 @@
             align-items: center;
             justify-content: space-between;
             margin-inline: 20px;
-            /* border: solid 1px yellow; */
         }
 
         .left-nav {
@@ -59,6 +59,7 @@
             text-decoration: none;
             color: white;
             font-weight: 600;
+            z-index: 10 !important;
         }
 
         .left-nav input {
@@ -129,59 +130,60 @@
         }
 
         /* ============================FIRST-SECTION========================= */
-        .section-01 {
-            height: 170vh;
+        .main-container {
+            height: 150vh;
             border: solid 2px black;
-            background-color: #7B6ADA;
             border-bottom-right-radius: 25%;
-
+            background-image: url(./images/banner-bg.jpg);
+            background-repeat: no-repeat;
+            background-position-x: right;
         }
 
-        .main-first-section{
-            height: 130vh;
-            border: solid 3px black;
-            background-color: red;
-           
+        /*=====================================SECOND-SECTION========================  */
+        .section-01{
+            height: 200vh;
+            border: solid 2px red;
         }
+
     </style>
 </head>
 
 <body>
 
     <!-- ============================================HEADER============================================ -->
-    <header>
-        <div class="main-header">
-            <!-- navigation container -->
-            <div class="nav-container">
-                <nav class="left-nav">
-                    <a href="#">SCHOLAR</a>
-                    <div style="height: 40px; width: 1px; background-color: #fff;"></div>
-                    <form action="">
-                        <input type="text" name="" placeholder="Type Something">
-                        <i class="fa-solid fa-magnifying-glass fa-fade" style="color: #ffffff; "></i>
-                    </form>
-                </nav>
+    <section class="main-container">
+        <header>
+            <div class="main-header">
+                <!-- navigation container -->
+                <div class="nav-container">
+                    <nav class="left-nav">
+                        <a href="#">SCHOLAR</a>
+                        <div style="height: 40px; width: 1px; background-color: #fff;"></div>
+                        <form action="">
+                            <input type="text" name="" placeholder="Type Something">
+                            <i class="fa-solid fa-magnifying-glass fa-fade" style="color: #ffffff; "></i>
+                        </form>
+                    </nav>
 
 
-                <ul class="right-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Register Now!</a></li>
-                </ul>
+                    <ul class="right-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Register Now!</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <section class="section-01">
+            
+        </section>
+    </section>
 
     <!-- ============================================FIRST-SECTION==================================== -->
 
-    <section class="section-01">
-        <div class="main-first-section">
-
-        </div>
-    </section>
 </body>
 
 </html>

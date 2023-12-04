@@ -1,0 +1,291 @@
+/* ======================================================================================= */
+/* ======================================= MEDIA - QUERY ================================= */
+/* ======================================================================================= */
+
+@media (360px <=width < 540px) {
+
+    /* MAIN-CONTAINER */
+    .main-container {
+        font-size: 7px;
+        box-sizing: border-box;
+    }
+
+    /* HEADER-LOGO */
+    .header-logo {
+        height: 80%;
+        width: 5%;
+
+    }
+
+    .header-logo img {
+        height: 60%;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 10%;
+        justify-content: center;
+    }
+
+    /* HEADER - BUTTON */
+    .header-btn {
+        height: 80%;
+        width: 20%;
+
+    }
+
+    .header-btn button {
+        padding: .2em .7em;
+        font-size: 2em;
+        border-radius: 5px;
+        background-color: #EC5B53;
+        color: white;
+        border: none;
+    }
+
+
+    /* =========SECTION - 01 =============== */
+    /* section -01 */
+    .section-01 {
+        height: 160vh;
+        border: solid 3px rgb(0, 0, 0);
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+    }
+
+    .section-01-main {
+        height: 95%;
+        width: 98%;
+        border: solid 2px rgb(249, 0, 0);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* left - section - 01 */
+    .left-main-section-01 {
+        height: 100%;
+        width: 98%;
+        border: solid 1px blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* right - section - 01 */
+    .right-image-section-01 {
+        height: 100%;
+        width: 98%;
+        border: solid 1px red;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-image-section-01 img {
+        height: 100%;
+        width: 90%;
+        border: solid 1px blue;
+    }
+
+    /* left aside */
+    .left-main-section-01 .left-aside {
+        border: solid 2px red;
+        height: 40%;
+        display: flex;
+    }
+
+    /* right aside */
+    .left-main-section-01 .right-aside {
+        font-size: 2em;
+        border: solid 2px blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5%;
+        width: 90%;
+    }
+
+    .left-main-section-01 .left-aside ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    /* section - 02  */
+    .section-02 {
+        margin-top: 20px;
+        height: 150vh;
+        border: 3px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+
+
+    .section-02-second-div {
+        height: 130vh;
+        border: solid 2px blue;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-02-second-div .section-02-left-section {
+        width: 100%;
+        height: 70%;
+        border: solid 2px blue !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-02-second-div .section-02-right-section {
+        width: 100%;
+        height: 35%;
+        border: solid 2px rgb(255, 0, 238);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    .section-02-left-section .section-02-second-left {
+        border: solid 3px rgb(12, 12, 13);
+        font-size: 2em;
+        height: 70%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        row-gap: 1em;
+    }
+
+
+}
+
+
+@media (540px <=width <=720px) {
+
+    /* MAIN-CONTAINER */
+    .main-container {
+        font-size: 8px;
+        box-sizing: border-box;
+    }
+
+    .header-logo img {
+        height: 80%;
+    }
+
+    /* section -01 */
+    .section-01 {
+        height: 160vh;
+        border: solid 3px rgb(0, 0, 0);
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+    }
+
+    .section-01-main {
+        height: 95%;
+        width: 98%;
+        border: solid 2px rgb(249, 0, 0);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* left - section - 01 */
+    .left-main-section-01 {
+        height: 100%;
+        width: 98%;
+        border: solid 1px blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* right - section - 01 */
+    .right-image-section-01 {
+        height: 100%;
+        width: 98%;
+        border: solid 1px red;
+        display: flex;
+        justify-content: center;
+    }
+
+    .right-image-section-01 img {
+        height: 100%;
+        width: 90%;
+        border: solid 1px blue;
+    }
+
+    /* left aside */
+    .left-main-section-01 .left-aside {
+        border: solid 2px red;
+        height: 40%;
+        display: flex;
+    }
+
+    /* right aside */
+    .left-main-section-01 .right-aside {
+        font-size: 2em;
+        border: solid 2px blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5%;
+        width: 90%;
+    }
+
+
+    .left-main-section-01 .left-aside ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    /* section - 02  */
+    .section-02 {
+        margin-top: 20px;
+        height: 150vh;
+        border: 3px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+    }
+
+
+    .section-02-second-div {
+        height: 130vh;
+        border: solid 2px blue;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-02-second-div .section-02-left-section {
+        width: 100%;
+        height: 60%;
+        border: solid 2px blue !important;
+        display: flex;
+    }
+
+    .section-02-second-div .section-02-right-section {
+        width: 100%;
+        height: 40%;
+        border: solid 2px rgb(255, 0, 238);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+}

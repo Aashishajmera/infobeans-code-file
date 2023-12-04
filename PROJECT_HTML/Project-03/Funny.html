@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN | FUNNY PAGE</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container{
+            height: 89vh;
+            width: 97vw;
+            /* border: solid 2px black; */
+            display: grid;
+            place-items: center;
+            /* background: linear-gradient(red,yellow); */
+        }
+
+        .main-box{
+            height: 65vh;
+            width: 25vw;
+            border-radius: 25px;
+            box-shadow: 1px 1px 34px 1px rgb(83, 80, 80);
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+
+
+        .login-image{
+            /* border: solid 2px blue; */
+            display: grid;
+            place-items: center;
+            height: 30vh;
+            border-radius: 25px;
+        }
+
+        .login-image img{
+            width: 23vw;
+            border-radius: 25px;
+        }
+
+        .input-field{
+            /* border: solid 2px red; */
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .btn button{
+            /* border: solid 3px blue; */
+            padding: 12px 45px;
+            border-radius: 25px;
+            background-color: rgb(147, 237, 168);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .input-field input{
+            width: 40vh;
+            padding: 15px 25px;
+            border-radius: 25px;
+            border: none;
+            background-color: rgb(236, 214, 157);
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .btn button:focus{
+            position: absolute;
+            left: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-box">
+            <div class="login-image">
+                <img src="./assists/istockphoto-1426988809-170667a.webp" alt="">
+            </div>
+            <div class="input-field">
+                <input type="text" name="userName" id="" placeholder="Full Name">
+                <input type="email" name="userEmail" id="" placeholder="abc@gmail.com">
+                <div class="btn">
+                    <button>Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
