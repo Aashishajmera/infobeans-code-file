@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID | LECTURE-02</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container{
+            height: 90vh;
+            width: 90vw;
+            border: solid 2px black;
+            display: grid;
+            /* grid-template-rows: auto auto auto auto; */
+            /* grid-template-rows: 200px 100px 50px 10px; */
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .main-container div{
+            border: solid 2px red;
+        }
+
+        .main-container div:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .main-container div:nth-child(3){
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 7;
+            grid-column-end: 8;
+        }
+
+        .main-container div:nth-child(4){
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 5;
+            grid-column-end: 6;
+        }
+
+        .main-container div:nth-child(7){
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>

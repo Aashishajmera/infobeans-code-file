@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    height: 50vh;
+    width: 90vw;
+    border: solid 3px black;
+}
+
+header {
+    font-size: 6px;
+    height: 50%;
+    border: solid 2px red;
+}
+
+header p {
+    /* color: rgb(25, 25, 25); */
+    font-size: 2em;
+    /* 2 rem == 20px  root element */
+    /* 1em == 10px  parent element */
+}
+
+
+@media (360px <= width < 540px) {
+    header {
+        font-size: 12px;
+    }
+}
+
+@media (540px <= width < 720px) {
+    header {
+        font-size: 8px;
+    }
+}
+
+@media (720px <= width <=900px) {
+    header {
+        font-size: 6px;
+    }
+}
