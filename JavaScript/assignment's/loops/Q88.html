@@ -1,0 +1,38 @@
+<!-- 
+    Q88)
+***** ***** 
+****   **** 
+***     ***
+**       ** 
+*         *
+*         *
+**       ** 
+***     *** 
+****   **** 
+***** *****
+ -->
+
+<pre>
+<script>
+    var k = 0;
+    for (var r = 1; r <= 10; r++) {
+        for (var c = 1; c <= 11; c++) {
+            // k = (r <= 5) ? ++k : (r == 6) ? k = k : --k;
+            if(r <= 5){
+                if(c > (6-r) && c <= (5+r)){
+                    document.write(" ")
+                }else{
+                    document.write("*")
+                }
+            }else{
+                if(c >= (r-4) && c <= (16-r)){
+                    document.write(" ")
+                }else{
+                    document.write("*")
+                }
+            }
+        }
+        document.write("<br>")
+    }
+</script>
+</pre>

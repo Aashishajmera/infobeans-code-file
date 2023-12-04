@@ -1,0 +1,27 @@
+<!-- 
+A
+B A
+C B A
+D C B A
+E D C B A
+D C B A
+C B A
+B A
+A
+ -->
+
+<pre>
+<script>
+    var k = 0, a = 64, p;
+    for (var r = 1; r <= 9; r++) {
+        a = (r <= 5) ? ++a : --a;
+        k = (r <= 5) ? ++k : --k; 
+        p = a;
+        for (var c = 1; c <= k; c++) {
+            document.write(String.fromCharCode(p))
+            p--;
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

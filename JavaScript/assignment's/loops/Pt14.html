@@ -1,0 +1,29 @@
+<!-- 
+      1
+    2 1 2
+  3 2 1 2 3
+4 3 2 1 2 3 4
+  3 2 1 2 3
+    2 1 2
+      1
+ -->
+
+<pre>
+<script>
+    var k = parseInt(7/2) , a = 0, sp = 0;
+    for(var r = 1; r <= 7; r++){
+        k = (r <= 4) ? --k : ++k;
+        for(var s = 0; s <= k; s++){
+            document.write("  ");
+        }
+        a = (r <= 4) ? a+=2 : a-=2;
+        // sp = 
+        for(var c = 1; c < a; c++){
+            sp = (c <= r && r <= 4) ? ++sp :(r > 4 && ) ? --sp : --sp;
+            document.write(sp+" ");
+        }
+        document.write("<br>");
+        // sp = (r <= 4) ? sp = r : 
+    }
+</script>
+</pre>

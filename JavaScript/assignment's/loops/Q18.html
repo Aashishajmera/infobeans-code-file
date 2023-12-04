@@ -1,0 +1,16 @@
+<!-- 
+    18) 1 2 2 4 8 32 …… n terms
+ -->
+
+<pre>
+<script>
+    var n = prompt("Enter a positive number: ");
+    var a = 1, b = 2, c = 1; 
+    for(var i = 1; i <= n; i++){
+        document.write(c);
+        a = b; 
+        b = c; 
+        c = a * b;
+    }
+</script>
+</pre>

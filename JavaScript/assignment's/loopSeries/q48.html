@@ -1,0 +1,13 @@
+<script>
+var r,r1,r2,rev=0,sum=0,n1,n2;
+var num=parseInt(prompt("Enter a number...."));
+r1=num%10;
+while(num>0){
+    r=num%10;
+    rev=(rev*10)+r;
+    num=parseInt(num/10);
+}
+r2=rev%10;
+sum=r1+r2;
+document.write(sum);
+</script>

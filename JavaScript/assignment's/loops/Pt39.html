@@ -1,0 +1,29 @@
+<!-- 
+1 a
+21 ba
+321 cba
+4321 dcba
+54321 edcba
+ -->
+
+<pre>
+<script>
+    var p = 3;
+    for(var r = 1; r <= 5; r++){
+        var d = 0+r; a = 96+r;
+        for(var c = 1; c <= p; c++){
+           if(c <= r){
+            document.write(d);
+            d--;
+           }else if(c == r+1){
+            document.write(" ");
+           }else{
+            document.write(String.fromCharCode(a));
+            a--;
+           }
+        }
+        document.write("<br>");
+        p+=2;
+    }
+</script>
+</pre>

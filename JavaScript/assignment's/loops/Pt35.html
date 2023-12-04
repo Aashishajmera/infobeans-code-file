@@ -1,0 +1,22 @@
+<!-- 
+ABCD
+BCDA
+CDAB
+DABC
+ -->
+
+<pre>
+<script>
+    var k = 64;
+    for (var r = 1; r <= 4; r++) {
+        var a = k;
+        for (var c = 1; c <= 4; c++) {
+            a = (c >= (6 - r)) ? (c == (6 - r)) ? a = 65: ++a : ++a;
+            document.write(String.fromCodePoint(a));
+        }
+        k++;
+        document.write("<br>");
+    }
+
+</script>
+</pre>

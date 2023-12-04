@@ -1,0 +1,23 @@
+<!-- 
+    A
+    1
+    BB
+    22
+    CCC
+    333
+ -->
+
+<pre>
+<script>
+    var k = 0 , a = 64 , d = 0;
+    for (var r = 1; r <= 6; r++) {
+        k = (r % 2 != 0) ? ++k : k = k;
+        a = (r % 2 != 0) ? ++a : a = a; 
+        d = (r % 2 == 0) ? ++d : d = d;
+        for(var c = 1; c <= k; c++){
+            (r % 2 == 0) ? document.write(d) : document.write(String.fromCharCode(a));
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

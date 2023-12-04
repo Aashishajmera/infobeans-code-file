@@ -1,0 +1,26 @@
+<!-- 
+54)
+ABCDE 
+ A__D 
+  A_C 
+   AB 
+    A 
+ -->
+
+<pre>
+<script>
+    for(var r = 1; r <= 5; r++){
+        for(var s = 1; s < r; s++){
+            document.write(" ");
+        }
+        for(var c = 65; c <= (70-r); c++){
+            if(r >= 2 && r <= 3 && c >= 66 && c <= (69-r)){
+                document.write("_");
+            }else{
+                document.write(String.fromCharCode(c));
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

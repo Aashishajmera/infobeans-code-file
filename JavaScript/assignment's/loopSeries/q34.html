@@ -1,0 +1,10 @@
+<script>
+    var i,rem=0,rev=0;
+    var n=parseInt(prompt("Enter a number : "));
+    while(n>0){
+        rem=n%10;
+        rev=rev*10+rem;
+        n=parseInt(n/10);
+    }
+    document.write(rev);
+</script>

@@ -1,0 +1,22 @@
+<script>
+var r,sum=0;
+var num=parseInt(prompt("Enter a number : "));
+var c=num;
+while(num>0){
+    r=num%10;
+    var i,fact=1;
+    for(i=1; i<=r; i++){
+        fact=fact*i;
+    }
+    sum=sum+fact;
+    num=parseInt(num/10);
+}
+
+if(sum==c){
+    document.write("It is Strong....");
+}
+else{
+    document.write("It is not strong.....");
+}
+
+</script>

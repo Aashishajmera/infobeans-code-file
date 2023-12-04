@@ -1,0 +1,22 @@
+<!-- 
+9
+898
+78987
+6789876
+ -->
+
+<pre>
+<script>
+    var k = 1 , a = 9;
+    for(var r = 1; r <= 4; r++){
+        var v = a;
+        for(var c = 1; c <= k; c++){
+            document.write(v);
+            v = (c < r) ? ++v :--v;
+        }
+        document.write("<br>");
+        a--;
+        k+=2;
+    }
+</script>
+</pre>

@@ -1,0 +1,60 @@
+<!-- 
+      *
+    * * *
+  * * * * *
+* * * * * * * 
+  * * * * * 
+    * * *
+      *
+ -->
+
+<pre>
+<script>
+
+    // USING LOOP'S 
+    // var k = parseInt(7 / 2);
+    // var a = 0;
+    // for (var r = 1; r <= 7; r++) {
+    //     k = (r <= 4) ? --k : ++k;
+    //     for (var s = 0; s <= k; s++) {
+    //         document.write("  ");
+    //     }
+    //     a = (r <= 4) ? a += 2 : a -= 2;
+    //     for (var c = 1; c < a; c++) {
+    //         document.write("* ")
+    //     }
+    //     document.write("<br>");
+    // }
+
+    //       *
+    //     * * *
+    //   * * * * *
+    // * * * * * * * 
+    //   * * * * * 
+    //     * * *
+    //       *
+
+    // USING CONDITIONS
+    for (var r = 1; r <= 7; r++) {
+        for (var c = 1; c <= 7; c++) {
+            if (r <= 4) {
+                if (c >= (5 - r) && c <= (3 + r)) {
+                    document.write("* ");
+                } else {
+                    document.write("  ");
+                }
+            
+            } else {    
+                if (c >= (r - 3) && c <= ((r+2) - 1)) {
+                    document.write("* ")
+                } else {
+                    document.write("  ")
+                }
+            }
+        }
+        document.write("<br>");
+    }
+
+
+</script>
+</pre>

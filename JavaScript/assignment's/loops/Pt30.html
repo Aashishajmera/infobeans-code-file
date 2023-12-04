@@ -1,0 +1,27 @@
+<!-- 
+A
+BA
+ABA
+BABA
+ABABA
+ -->
+
+<pre>
+<script>
+    for (var r = 1; r <= 5; r++) {
+        for (var c = 1; c <= r; c++) {
+            if ((r + c) % 2 == 0) {
+                document.write("A")
+            } else {
+                document.write("B")
+            }
+        }
+        document.write("<br>");
+    }
+
+    // var a = 10; 
+    // var b = 20;
+    // var c = a + b;
+    // document.write(c);
+</script>
+</pre>

@@ -1,0 +1,22 @@
+<!-- 
+7
+14 15
+28 29 30 31
+56 57 58 59 60 61 62 63
+ -->
+
+<pre>
+<script>
+    var k = 1;
+    var a = 7;
+    for (var r = 1; r <= 4; r++) {
+        for (var c = 1; c <= k; c++) {
+            document.write(a + " ")
+            a--;
+        }
+        k *= 2;
+        a = 7 * k;
+        document.write("<br>")
+    }
+</script>
+</pre>

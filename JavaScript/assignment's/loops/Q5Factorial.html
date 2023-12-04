@@ -1,0 +1,23 @@
+<!-- 
+    5) WAP to find out the factorial of a number.
+ -->
+
+<pre>
+<script>
+
+    var number = prompt("Enter any positive number: ") * 1
+    // var i = number-1, factorial = number;
+    // while(i > 1){
+    //     factorial*=i;
+    //     i--;
+    // }
+    // document.write(number +" factorial is: "+factorial)
+
+    var factorial = number;
+    for (var i = number - 1; i > 1; i--) {
+        factorial *= i;
+    }
+    document.write(number + " factorial is: " + factorial)
+
+</script>
+</pre>

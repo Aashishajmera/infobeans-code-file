@@ -1,0 +1,41 @@
+<!-- 
+      A
+    A B A 
+  A B C B A
+A B C D C B A
+ -->
+
+<pre>
+<script>
+
+    // USING LOOP
+    // var k = 1;
+    // for (var r = 1; r <= 4; r++) {
+    //     var a = 64;
+    //     for (var s = 1; s <= (4 - r); s++) {
+    //         document.write("  ");
+    //     }
+    //     for (var c = 1; c <= k; c++) {
+    //         a = (c <= r) ? ++a : --a;
+    //         document.write(String.fromCharCode(a)+" ");
+    //     }
+    //     document.write("<br>");
+    //     k +=2; 
+    // }
+
+    // USING CONDITIONS
+    for(var r = 1; r <= 4; r++){
+        var a  = 64;
+        for(var c = 1; c <= 7; c++){
+            if(c >= (5-r) && c <= (3+r)){
+                a = (c <= 4) ? ++a : --a;
+                document.write(String.fromCharCode(a)+" ")
+            }else{
+                document.write("  ");
+            }
+        }
+        document.write("<br>");
+    }
+
+</script>
+</pre>

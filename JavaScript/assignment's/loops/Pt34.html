@@ -1,0 +1,26 @@
+<!-- 
+ABCBA
+AB BA
+A   A
+AB BA
+ABCBA
+ -->
+
+<pre>
+<script>
+    for (var r = 1; r <= 5; r++) {
+        var a = 64;
+        for (var c = 1; c <= 5; c++) {
+            a = (c <= 3) ? ++a : --a;
+            if (c >= (5 - r) && c <= (1 + r) && r <= 3 && r >= 2) {
+                document.write(" ");
+            } else if (c >= (r - 1) && c <= (7 - r) && r == 4) {
+                document.write(" ");
+            } else {
+                document.write(String.fromCharCode(a));
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

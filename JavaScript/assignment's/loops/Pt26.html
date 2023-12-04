@@ -1,0 +1,35 @@
+<!-- 
+    1 
+    0 1
+    1 0 1
+    0 1 0 1
+    1 0 1 0 1
+ -->
+
+<pre>
+<script>
+
+    // for (var r = 1; r <= 5; r++) {
+    //     for (var c = 1; c <= r; c++) {
+    //         if ((r + c) % 2 == 0) {
+    //             document.write("1 ");
+    //         } else {
+    //             document.write("0 ");
+    //         }
+    //     }
+    //     document.write("<br>");
+    // }
+
+
+    var k = 0;
+    for (var r = 1; r <= 5; r++) {
+        for (var c = 1; c <= r; c++) {
+            k = (r % 2 != 0) ? (c % 2 != 0) ? "1" : "0" : (c % 2 != 0) ? "0" : "1";
+            document.write(k);
+        }
+        document.write("<br>");
+    }
+
+
+</script>
+</pre>

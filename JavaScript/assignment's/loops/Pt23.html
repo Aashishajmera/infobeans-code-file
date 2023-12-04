@@ -1,0 +1,22 @@
+<!-- 
+5
+454
+34543
+2345432
+123454321
+ -->
+
+<pre>
+<script>
+    var k = 5, p = 1; 
+    for(var r = 1; r <= 5; r++){
+        var a = k;
+        for(var c = 1; c <= p; c++){
+            document.write(k);
+            k = (c < r) ? ++k : --k;
+        }
+        document.write("<br>");
+        p+=2;
+    }
+</script>
+</pre>

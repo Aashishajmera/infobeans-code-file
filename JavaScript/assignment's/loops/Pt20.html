@@ -1,0 +1,27 @@
+<!-- 
+12344321
+123__321
+12____21
+1______1
+ -->
+
+<pre>
+<script>
+    var k = 0;
+    for(var r = 1; r <= 4; r++){
+        for(var c = 1; c <= 8; c++){
+            k = (c <= 4) ? ++k :(c == 5) ? k = k : --k;
+            if(r >= 2){
+                if(c >= (6-r) && c <= (3+r)){
+                    document.write("_");
+                }else{                                                                                                                                                                                              
+                    document.write(k);
+                }
+            }else{
+                document.write(k);
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

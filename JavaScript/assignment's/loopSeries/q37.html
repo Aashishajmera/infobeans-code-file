@@ -1,0 +1,17 @@
+<script>
+    var arm=0,r;
+var num=parseInt(prompt("Enter a number : "));
+var c=num;
+while(num>0){
+    r=num%10;
+    arm=(r*r*r)+arm;
+    num=parseInt(num/10);
+}
+if(c==arm){
+    document.write("It is armstrong.....");
+}
+else{
+    document.write("It is not armstrong......");
+}
+
+</script>

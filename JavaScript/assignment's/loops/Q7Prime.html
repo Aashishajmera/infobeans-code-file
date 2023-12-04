@@ -1,0 +1,20 @@
+<!-- 
+    7) WAP to check whether entered number is prime or not.
+ -->
+
+<pre>
+<script>
+    var n = prompt("Enter any positive number: ");
+    var flag = false;
+    for (var r = 2; r <= n / 2; r++) {
+        if (n % r == 0) {
+            flag = true;
+        }
+    }
+    if (n > 1 && flag == false) {
+        document.write("Prime ");
+    } else {
+        document.write("Not prime number: ");
+    }
+</script>
+</pre>

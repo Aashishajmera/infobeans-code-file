@@ -1,0 +1,25 @@
+<!-- 
+    91)
+*     *
+ *   *
+  * *
+   * 
+  * * 
+ *   * 
+*	  *
+ -->
+
+<pre>
+<script>
+    for (var r = 1; r <= 7; r++) {
+        for (var c = 1; c <= 7; c++) {
+            if (c == r || c == (8 - r)) {
+                document.write("*")
+            } else {
+                document.write(" ")
+            }
+        }
+        document.write("<br>")
+    }
+</script>
+</pre>

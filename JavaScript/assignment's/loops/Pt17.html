@@ -1,0 +1,30 @@
+<!-- 
+        A
+      A B
+    A B C
+  A B C D
+A B C D E
+  A B C D
+    A B C
+      A B
+        A
+ -->
+
+<pre>
+<script>
+    var k = 5, v = 0;
+    for (var r = 1; r <= 9; r++) {
+        var a = 65;
+        k = (r <= 5) ? --k : ++k;
+        for(var s = 1; s <= k; s++){
+            document.write("  ");
+        }
+        v = (r <= 5) ? ++v : --v;
+        for(var c = 1; c <= v; c++){
+            document.write(String.fromCharCode(a)+" ");
+            a++;
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

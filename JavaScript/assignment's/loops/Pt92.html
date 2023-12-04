@@ -1,0 +1,21 @@
+<!-- 
+*000*000*
+0*00*00*0
+00*0*0*00
+000***000
+ -->
+
+<pre>
+<script>
+    for (var r = 1; r <= 4; r++) {
+        for (var c = 1; c <= 9; c++) {
+            if (c == r || c == 5 || c == (10 - r)) {
+                document.write("*");
+            } else {
+                document.write("0");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

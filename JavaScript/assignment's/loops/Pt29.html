@@ -1,0 +1,22 @@
+<!-- 
+1
+AB
+123
+ABCD
+12345
+ -->
+
+<pre>
+<script>
+
+    for (var r = 1; r <= 5; r++) {
+        var d = 0, a = 64;
+        for (var c = 1; c <= r; c++) {
+            d = (r % 2 != 0) ? ++d : d = d;
+            a = (r % 2 == 0) ? ++a : a = a;
+            (r % 2 == 0) ? document.write(String.fromCharCode(a)) : document.write(d);
+        }
+        document.write("<br>");
+    }
+</script>
+</pre>

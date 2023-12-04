@@ -1,0 +1,15 @@
+<script>
+    var i,rem=0,rev=0;
+    var n=parseInt(prompt("Enter a number : "));
+    while(n>0){
+        rem=rev%10;
+        rev=rev*10+rem;
+        n=parseInt(n/10);
+    }
+    if(rev==n){
+        document.write("It is palindrom : ");
+    }
+    else{
+        document.write("It is not palindrom : ");
+    }
+</script>

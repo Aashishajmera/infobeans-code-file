@@ -1,0 +1,59 @@
+<!-- 
+    37) WAP to check whether entered number is palindrome or not
+ -->
+
+<pre>
+<script>
+
+    // PALINDROM
+
+    // var n = prompt("Enter any positive number: ")* 1;
+    // var lastdigit = 1 , reverse = 0, temp = n;
+    // while(n != 0){
+    //     lastdigit = parseInt(n % 10);
+    //     reverse = (reverse * 10) + lastdigit;
+    //     n = parseInt(n/10);
+    // }
+
+    // if(temp == reverse){
+    //     document.write("Number is palindrom: ")
+    // }else{
+    //     document.write("Not palindrom")
+    // }
+
+
+    // ARMSTRONG
+
+    var n = prompt("Enter number: ");
+
+    // Check Count
+    var count = 0;
+    var lastdigit, reverse = 0, temp = n, multiply = 0;
+
+    for (var l = 0; l < n.length; l++) {
+        count++;
+    }
+
+    n *= 1;
+
+
+    while (n != 0) {
+        lastdigit = parseInt(n % 10);
+        multiply = lastdigit;
+        for (var i = 1; i < count; i++) {
+            multiply *= lastdigit
+            document.write(multiply)
+            document.write("<br>")
+        }
+        reverse += (multiply);
+        n = parseInt(n/10)
+    }
+
+    if (temp == reverse) {
+        document.write("Number is armstrong: ")
+    } else {
+        document.write("Not armstrong: ")
+    }
+
+</script>
+</pre>

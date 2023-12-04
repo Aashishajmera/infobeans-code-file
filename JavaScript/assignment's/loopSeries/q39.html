@@ -1,0 +1,17 @@
+<script>
+    var evencount=0, oddcount=0,r;
+    var num=parseInt(prompt("Enter a number....."));
+    while(num>0){
+        r=num%10;
+        if(r%2==0){
+            evencount++;
+        }
+        else{
+            oddcount++;
+        }
+        num=parseInt(num/10);
+    }
+    document.write("Even digits = "+evencount);
+    document.write("<br>");
+    document.write("Odd digits = "+oddcount);
+</script>
