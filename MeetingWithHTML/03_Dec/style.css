@@ -16,7 +16,6 @@ header {
 }
 
 header p {
-    /* color: rgb(25, 25, 25); */
     font-size: 2em;
     /* 2 rem == 20px  root element */
     /* 1em == 10px  parent element */
