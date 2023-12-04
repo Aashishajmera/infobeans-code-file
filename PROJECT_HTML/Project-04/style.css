@@ -16,7 +16,7 @@
 /* HEADER */
 header {
     height: 15vh;
-    border: solid 3px black;
+    /* border: solid 3px black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ header {
 .header-container {
     height: 80%;
     width: 95%;
-    border: solid 2px red;
+    /* border: solid 2px red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ header {
 .header-logo {
     height: 80%;
     width: 8%;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,7 +53,7 @@ header {
 nav {
     height: 80%;
     width: 30%;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,7 +85,7 @@ nav ul li a:hover {
 .header-btn {
     height: 80%;
     width: 15%;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +109,7 @@ nav ul li a:hover {
 /* =========================================== SECTION - 01=================================== */
 .section-01 {
     height: 80vh;
-    border: solid 3px rgb(0, 0, 0);
+    /* border: solid 3px rgb(0, 0, 0); */
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@ nav ul li a:hover {
 .section-01-main {
     height: 95%;
     width: 98%;
-    border: solid 2px rgb(249, 0, 0);
+    /* border: solid 2px rgb(249, 0, 0); */
     display: flex;
 }
 
@@ -129,16 +129,17 @@ nav ul li a:hover {
 .left-main-section-01 {
     height: 100%;
     width: 65%;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     display: flex;
     align-items: center;
 }
 
 .left-section-01 {
-    border: solid 2px rgb(0, 0, 0);
+    /* border: solid 2px rgb(0, 0, 0); */
     height: 70%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around !important;
+    align-items: center;
     padding: .2em 4em;
 
 
@@ -146,9 +147,10 @@ nav ul li a:hover {
 
 /* left aside */
 .left-main-section-01 .left-aside {
-    border: solid 2px red;
+    /* border: solid 2px red; */
     height: 40%;
     display: flex;
+    margin-top: 15px;
 }
 
 .left-main-section-01 .left-aside ul {
@@ -166,11 +168,12 @@ nav ul li a:hover {
 
 /* right aside */
 .left-main-section-01 .right-aside {
+    height: 30%;
     font-size: 2em;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     display: flex;
     flex-direction: column;
-    row-gap: 5%;
+    row-gap: 25%;
     width: 90%;
 }
 
@@ -204,7 +207,7 @@ nav ul li a:hover {
 .right-image-section-01 {
     height: 100%;
     width: 35%;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     display: flex;
     justify-content: center;
 }
@@ -212,14 +215,14 @@ nav ul li a:hover {
 .right-image-section-01 img {
     height: 100%;
     width: 90%;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
 }
 
 /* ======================================== SECTION -02 ================================== */
 .section-02 {
     margin-top: 20px;
-    height: 110vh;
-    border: 3px solid black;
+    height: 120vh;
+    /* border: 3px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +232,7 @@ nav ul li a:hover {
 .main-section-02 {
     height: 95%;
     width: 98%;
-    border: solid 2px red;
+    /* border: solid 2px red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -238,7 +241,7 @@ nav ul li a:hover {
 
 .section-02-first-div {
     height: 15vh;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,19 +267,19 @@ nav ul li a:hover {
 
 .section-02-second-div {
     height: 90vh;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     display: flex;
 }
 
 .section-02-second-div .section-02-left-section {
-    width: 60%;
+    width: 70%;
     height: 100%;
-    border: solid 2px red;
+    /* border: solid 2px red; */
     display: flex;
 }
 
 .section-02-left-section .section-02-second-left {
-    border: solid 3px rgb(12, 12, 13);
+    /* border: solid 3px rgb(12, 12, 13); */
     font-size: 2em;
     width: 100%;
     display: flex;
@@ -321,7 +324,7 @@ nav ul li a:hover {
 }
 
 .section-02-left-section .section-02-second-right {
-    border: solid 2px yellow;
+    /* border: solid 2px yellow; */
     font-size: 2em;
     width: 100%;
     display: flex;
@@ -336,7 +339,7 @@ nav ul li a:hover {
 .section-02-second-div .section-02-right-section {
     width: 40%;
     height: 100%;
-    border: solid 2px rgb(255, 0, 238);
+    /* border: solid 2px rgb(255, 0, 238); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -346,14 +349,15 @@ nav ul li a:hover {
 .section-02-right-section .main-right-section-02 {
     height: 70%;
     width: 60%;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     box-shadow: 12px -12px 2px 1px #EC5B53;
     border-radius: 5px;
     overflow: hidden;
 }
 
 .section-02-right-section .main-right-section-02 img {
-    height: 100%;
+    height: 510px;
+    width: 300px;
     border-radius: 5px;
 }
 
@@ -361,8 +365,8 @@ nav ul li a:hover {
 /* ===========================  SECTION - 03 ========================== */
 
 .section-03 {
-    height: 110vh;
-    border: solid 3px black;
+    height: 90vh;
+    /* border: solid 3px black; */
     margin-top: 15px;
     font-size: 10px;
     display: flex;
@@ -373,12 +377,12 @@ nav ul li a:hover {
 .section-03-main {
     height: 98%;
     width: 98%;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
 }
 
 .section-03-first-div {
     height: 15%;
-    border: solid 2px red;
+    /* border: solid 2px red; */
     font-size: 2.2em;
     display: flex;
     flex-direction: column;
@@ -386,11 +390,11 @@ nav ul li a:hover {
     justify-content: space-between;
 }
 
-.section-03-first-div h2{
+.section-03-first-div h2 {
     color: #002D5B;
 }
 
-.section-03-first-div p{
+.section-03-first-div p {
     color: rgb(99, 91, 91);
     font-size: .9em;
 }
@@ -403,7 +407,7 @@ nav ul li a:hover {
 
 .section-03-second-div {
     height: 84%;
-    border: solid 2px rgb(60, 255, 0);
+    /* border: solid 2px rgb(60, 255, 0); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -414,16 +418,18 @@ nav ul li a:hover {
 .section-03-second-div .box {
     height: 75%;
     width: 25%;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    box-shadow: 1px 2px 33px 1px rgb(169, 162, 162);
+    border-radius: 5px;
 }
 
 .section-03-second-div .box div:first-child {
-    height: 15%;
-    width: 20%;
+    height: 60px;
+    width: 60px;
     background-color: #cdb3b2;
     border-radius: 125px;
     font-size: 1.5em;
@@ -439,9 +445,9 @@ nav ul li a:hover {
     color: #002D5B;
 }
 
-.section-03-second-div .box p{
+.section-03-second-div .box p {
     color: #4c4e50;
-    font-size: .9em;
+    font-size: .8em;
 }
 
 .section-03-second-div .box ul {
@@ -460,4 +466,137 @@ nav ul li a:hover {
     color: white;
     background-color: #EC5B53;
     border: solid 2px #EC5B53;
+}
+
+/* ============================================SECTION - 04 =============================================== */
+.section-04{
+    margin-top: 15px;
+    height: 50vh;
+    /* border: solid 3px black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.section-04-main{
+    height: 95%;
+    width: 98%;
+    /* border: solid 2px blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.section-04-first-div{
+    height: 40%;
+    /* border: solid 2px red; */
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.section-04-first-div div{
+    height: 2px;
+    width: 80px;
+    background-color: #EC5B53;
+}
+
+.section-04-first-div h3{
+    font-size: 1.5em;
+    color: #002D5B;
+}
+
+.section-04-first-div p{
+    color: #4c4e50;
+}
+
+.section-04-second-div{
+    height: 40%;
+    /* border: solid 2px rgb(55, 255, 0); */
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.section-04-second-div input{
+    height: 3.2em;
+    width: 34em;
+    font-size: .8em;
+}
+
+.section-04-second-div button{
+    padding: 1em 3em;
+    background-color: #EC5B53;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.section-04-second-div button:hover{
+    background-color: #CF332B;
+    transition-duration: 0.3s;
+}
+
+
+/* ============================================ FOOTER ========================================= */
+footer{
+    height: 40vh;
+    /* border: solid 3px black; */
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #002D5B;
+}
+
+.footer-main{
+    height: 95%;
+    width: 98%;
+    /* border: solid 2px blue; */
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5em;
+}
+
+.footer-first-div{
+    height: 40%;
+    /* border: solid 2px red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.footer-first-div ul{
+    display: flex;
+    column-gap: 20px;
+    list-style: none;
+    
+}
+
+.footer-first-div ul li a i{
+    color: white;
+}
+
+.footer-first-div div:nth-child(2) img{
+    height: 80px;
+
+}
+
+.footer-second-div{
+    height: 40%;
+    /* border:  2px blue; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }

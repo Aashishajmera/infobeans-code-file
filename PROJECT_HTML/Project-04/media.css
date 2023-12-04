@@ -1,6 +1,6 @@
 /* ======================================================================================= */
 /* ======================================= MEDIA - QUERY ================================= */
-/* ======================================================================================= */
+/* ======================================= 360px to 540px ================================= */
 
 @media (360px <=width < 540px) {
 
@@ -49,7 +49,7 @@
     /* section -01 */
     .section-01 {
         height: 160vh;
-        border: solid 3px rgb(0, 0, 0);
+        /* border: solid 3px rgb(0, 0, 0); */
         margin-top: 10px;
         display: flex;
         align-items: center;
@@ -60,7 +60,7 @@
     .section-01-main {
         height: 95%;
         width: 98%;
-        border: solid 2px rgb(249, 0, 0);
+        /* border: solid 2px rgb(249, 0, 0); */
         display: flex;
         flex-direction: column;
     }
@@ -69,7 +69,7 @@
     .left-main-section-01 {
         height: 100%;
         width: 98%;
-        border: solid 1px blue;
+        /* border: solid 1px blue; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -80,7 +80,7 @@
     .right-image-section-01 {
         height: 100%;
         width: 98%;
-        border: solid 1px red;
+        /* border: solid 1px red; */
         display: flex;
         justify-content: center;
     }
@@ -88,12 +88,12 @@
     .right-image-section-01 img {
         height: 100%;
         width: 90%;
-        border: solid 1px blue;
+        /* border: solid 1px blue; */
     }
 
     /* left aside */
     .left-main-section-01 .left-aside {
-        border: solid 2px red;
+        /* border: solid 2px red; */
         height: 40%;
         display: flex;
     }
@@ -101,7 +101,7 @@
     /* right aside */
     .left-main-section-01 .right-aside {
         font-size: 2em;
-        border: solid 2px blue;
+        /* border: solid 2px blue; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -120,7 +120,7 @@
     .section-02 {
         margin-top: 20px;
         height: 150vh;
-        border: 3px solid black;
+        /* border: 3px solid black; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -130,7 +130,7 @@
 
     .section-02-second-div {
         height: 130vh;
-        border: solid 2px blue;
+        /* border: solid 2px blue; */
         display: flex;
         flex-direction: column;
     }
@@ -138,7 +138,7 @@
     .section-02-second-div .section-02-left-section {
         width: 100%;
         height: 70%;
-        border: solid 2px blue !important;
+        /* border: solid 2px blue !important; */
         display: flex;
         flex-direction: column;
     }
@@ -146,7 +146,7 @@
     .section-02-second-div .section-02-right-section {
         width: 100%;
         height: 35%;
-        border: solid 2px rgb(255, 0, 238);
+        /* border: solid 2px rgb(255, 0, 238); */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -154,7 +154,7 @@
     }
 
     .section-02-left-section .section-02-second-left {
-        border: solid 3px rgb(12, 12, 13);
+        /* border: solid 3px rgb(12, 12, 13); */
         font-size: 2em;
         height: 70%;
         width: 100%;
@@ -165,9 +165,101 @@
         row-gap: 1em;
     }
 
+    .section-02-right-section .main-right-section-02 img {
+        height: 280px;
+        width: 320px;
+        border-radius: 5px;
+    }
+
+
+    /* ==================== SECTION - 03 ======================= */
+
+    .section-03 {
+        height: 140vh !important;
+        /* border: solid 3px black; */
+        margin-top: 15px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-03-second-div {
+        height: 80%;
+        /* border: solid 2px rgb(60, 255, 0); */
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        font-size: 2.4em;
+    }
+    
+    .section-03-second-div .box {
+        height: 30%;
+        width: 100%;
+        /* border: solid 2px blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+
+
+    .section-03-second-div .box div:first-child {
+        height: 60px;
+        width: 60px;
+        background-color: #cdb3b2;
+        border-radius: 125px;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #EC5B53;
+        cursor: pointer;
+    }
+
+
+    /* ==================== section - 04========================= */
+    .section-04-second-div input{
+        height: 2.7em;
+        width: 21em;
+        font-size: .8em;
+    }
+    
+    .section-04-second-div button{
+        padding: 1em 3em;
+        background-color: #EC5B53;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .section-04-second-div button:hover{
+        background-color: #CF332B;
+        transition-duration: 0.3s;
+    }
+
+     /* ==================footer===================== */
+     .footer-first-div{
+        height: 40%;
+        /* border: solid 2px red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
+
 
 }
 
+
+/* ======================================================================================= */
+/* ======================================= MEDIA - QUERY ================================= */
+/* ======================================= 540px to 720px ================================= */
 
 @media (540px <=width <=720px) {
 
@@ -184,7 +276,7 @@
     /* section -01 */
     .section-01 {
         height: 160vh;
-        border: solid 3px rgb(0, 0, 0);
+        /* border: solid 3px rgb(0, 0, 0); */
         margin-top: 10px;
         display: flex;
         align-items: center;
@@ -195,7 +287,7 @@
     .section-01-main {
         height: 95%;
         width: 98%;
-        border: solid 2px rgb(249, 0, 0);
+        /* border: solid 2px rgb(249, 0, 0); */
         display: flex;
         flex-direction: column;
     }
@@ -204,7 +296,7 @@
     .left-main-section-01 {
         height: 100%;
         width: 98%;
-        border: solid 1px blue;
+        /* border: solid 1px blue; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -215,7 +307,7 @@
     .right-image-section-01 {
         height: 100%;
         width: 98%;
-        border: solid 1px red;
+        /* border: solid 1px red; */
         display: flex;
         justify-content: center;
     }
@@ -223,12 +315,12 @@
     .right-image-section-01 img {
         height: 100%;
         width: 90%;
-        border: solid 1px blue;
+        /* border: solid 1px blue; */
     }
 
     /* left aside */
     .left-main-section-01 .left-aside {
-        border: solid 2px red;
+        /* border: solid 2px red; */
         height: 40%;
         display: flex;
     }
@@ -236,7 +328,7 @@
     /* right aside */
     .left-main-section-01 .right-aside {
         font-size: 2em;
-        border: solid 2px blue;
+        /* border: solid 2px blue; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -252,11 +344,11 @@
         justify-content: space-around;
     }
 
-    /* section - 02  */
+    /*=============================== section - 02 ================================= */
     .section-02 {
         margin-top: 20px;
         height: 150vh;
-        border: 3px solid black;
+        /* border: 3px solid black; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -266,7 +358,7 @@
 
     .section-02-second-div {
         height: 130vh;
-        border: solid 2px blue;
+        /* border: solid 2px blue; */
         display: flex;
         flex-direction: column;
     }
@@ -274,18 +366,105 @@
     .section-02-second-div .section-02-left-section {
         width: 100%;
         height: 60%;
-        border: solid 2px blue !important;
+        /* border: solid 2px blue !important; */
         display: flex;
     }
 
     .section-02-second-div .section-02-right-section {
         width: 100%;
         height: 40%;
-        border: solid 2px rgb(255, 0, 238);
+        /* border: solid 2px rgb(255, 0, 238); */
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 5px;
     }
 
+    .section-02-right-section .main-right-section-02 img {
+        height: 300px;
+        width: 410px;
+        border-radius: 5px;
+    }
+
+    /* ==================== SECTION - 03 ======================= */
+
+    .section-03 {
+        height: 130vh;
+        /* border: solid 3px black; */
+        margin-top: 15px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-03-second-div {
+        height: 80%;
+        /* border: solid 2px rgb(60, 255, 0); */
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        font-size: 2.4em;
+    }
+    
+    .section-03-second-div .box {
+        height: 25%;
+        width: 100%;
+        /* border: solid 2px blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .section-03-second-div .box div:first-child {
+        height: 60px;
+        width: 60px;
+        background-color: #cdb3b2;
+        border-radius: 125px;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #EC5B53;
+        cursor: pointer;
+    }
+
+    /* =====================section - 04======================= */
+
+
+    .section-04-second-div input{
+        height: 3em;
+        width: 28em;
+        font-size: .8em;
+    }
+    
+    .section-04-second-div button{
+        padding: 1em 3em;
+        background-color: #EC5B53;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .section-04-second-div button:hover{
+        background-color: #CF332B;
+        transition-duration: 0.3s;
+    }
+
+
+    /* ==================footer===================== */
+    .footer-first-div{
+        height: 40%;
+        /* border: solid 2px red; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
+    
 }
