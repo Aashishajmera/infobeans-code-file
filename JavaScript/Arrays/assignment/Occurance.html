@@ -1,0 +1,23 @@
+<!-- Q.5 Find occurance of an integer number in array. -->
+
+<pre>
+<script>
+    var occurance = prompt("Enter any number: ");
+    var arr = [3, 4, 5, 3, 2, 3, 34, 4, 5, 9];
+    var flag = false;
+
+    var count = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (occurance == arr[i]) {
+            count++;
+            flag = true;
+        }
+    }
+
+    if(!flag){
+        document.write("No any occurance: ")
+    }else{
+        document.write("Number occurance is: "+count)
+    }
+</script>
+</pre>

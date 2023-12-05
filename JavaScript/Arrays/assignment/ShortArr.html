@@ -1,0 +1,27 @@
+<!-- Q.4 Write a program to sort the array -->
+
+<pre>
+<script>
+    var arr = [];
+    var size = parseInt(prompt("Enter size of array: "));
+
+    for (var index = 0; index < size; index++) {
+        arr[index] = prompt("Enter " + (index + 1) + " element: ") * 1;
+    }
+
+    for (var index = 0; index < arr.length; index++) {
+        for (var index2 = 0; index2 < arr.length - index - 1; index2++) {
+            if (arr[index2] < arr[index2+1]) {
+                arr[index2] = arr[index2] + arr[index2+1];
+                arr[index2+1] = arr[index2] - arr[index2+1];
+                arr[index2] = arr[index2] - arr[index2+1];
+            }
+        }
+    }
+
+    document.write("Final array element is: ")
+    for (var value of arr) {
+        document.write(value+" ");
+    }
+</script>
+</pre>

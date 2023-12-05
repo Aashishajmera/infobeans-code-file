@@ -1,0 +1,21 @@
+<!-- Q.2 Find minimum and maximum element in array -->
+
+<pre>
+<script>
+    var arr = [3, 4, 5, 2, 6, 99, 1, -4, 0, 22];
+
+    var max = arr[0], min = arr[0];
+
+    for (var index = 0; index < arr.length; index++) {
+        if (arr[index] > max) {
+            max = arr[index];
+        } else if (arr[index] < min) {
+            min = arr[index];
+        }
+    }
+
+    document.write("Maximum value is: " + max+"<br>");
+    document.write("Minimum value is: " + min);
+
+</script>
+</pre>
