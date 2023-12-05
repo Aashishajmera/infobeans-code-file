@@ -3,17 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/dao/AdminDao.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/service/DatabaseConnect.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/testmain/TestMain.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/DatewithTime.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/model/Admin.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/dao/AccountDao.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/CheckDate.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/model/Account.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/service/Validation.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/com/bankproject01/service/SendMail.java</file>
-            <file>file:/D:/Infobeans_Foundation/PROJECT/BankProject01/src/SendMail.java</file>
+            <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/model/Account.java</file>
+            <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/testmain/TestMain.java</file>
+            <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/dao/AdminDao.java</file>
         </group>
     </open-files>
 </project-private>
