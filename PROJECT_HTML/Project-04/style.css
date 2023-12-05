@@ -165,6 +165,9 @@ nav ul li a:hover {
     color: #002D5B;
 }
 
+.left-main-section-01 .left-aside ul li a:hover i{
+    color: #EC5B53;
+}
 
 /* right aside */
 .left-main-section-01 .right-aside {
@@ -276,7 +279,10 @@ nav ul li a:hover {
     height: 100%;
     /* border: solid 2px red; */
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 .section-02-left-section .section-02-second-left {
     /* border: solid 3px rgb(12, 12, 13); */
@@ -436,8 +442,12 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #EC5B53;
+    color: #002D5B;
     cursor: pointer;
+}
+
+.section-03-second-div .box div:first-child:hover{
+    color: #EC5B53;
 }
 
 
@@ -584,6 +594,10 @@ footer{
 
 .footer-first-div ul li a i{
     color: white;
+}
+
+.footer-first-div ul li a:hover i{
+    color: #EC5B53;
 }
 
 .footer-first-div div:nth-child(2) img{
