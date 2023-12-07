@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header-design */
+header{
+    height: 12vh;
+    border: solid 1px red;
+    background-color: black;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .navigation{
+    height: 90%;
+    width: 98%;
+    border: solid 2px blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    font-size: 1.2em;
+
+}
+header .navigation div:first-child{
+    height: 90%;
+    width: 20%;
+    border: solid 2px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: start;
+    color: white;
+    font-size: 1.2em;
+}
+
+header .navigation div:nth-child(2){
+    height: 90%;
+    width: 40%;
+    border: solid 2px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .navigation div:nth-child(2) input:focus{
+    outline: none;
+}
+
+
+header .navigation div:last-child{
+    height: 90%;
+    width: 20%;
+    border: solid 2px rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.5em;
+    color: white;
+}
+
+header .navigation div:last-child h4{
+    cursor: pointer;
+}
+
+
+
+/* Height width give to main-container */
+.main-container {
+    height: auto;
+    border: solid 3px black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    height: auto;
+    font-family: poppins, sans-serif;
+}
+
+.main-container .box-row {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 1px red;
+    row-gap: 50px;
+    margin-block: 20px;
+    margin-inline: 5px;
+    padding-block: 50px;
+    padding-inline: 45px;
+}
+
+.main-container .box-row .box {
+    height: 450px;
+    width: 350px;
+    border: solid 1px blue;
+    box-shadow: 10px 10px 10px 1px rgb(128, 121, 121);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+
+.box button:hover {
+    background-color: rgb(201, 134, 17) !important;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}

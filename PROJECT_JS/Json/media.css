@@ -1,0 +1,101 @@
+/* 340 to 540 */
+
+@media (340px <= width <= 540px){
+    
+    header .navigation{
+        height: 90%;
+        width: 98%;
+        border: solid 2px blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        font-size: 1.2em;
+    }
+    header .navigation div:first-child{
+        height: 90%;
+        width: 20%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: start;
+        color: white;
+        font-size: .5em;
+    }
+    
+    header .navigation div:nth-child(2){
+        height: 90%;
+        width: 40%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+    header .navigation div:last-child{
+        height: 90%;
+        width: 15%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        font-size: .5em;
+        color: white;
+    }
+}
+
+
+/* 540 to 720 */
+@media (540px < width <= 720px){
+    header .navigation{
+        height: 90%;
+        width: 98%;
+        border: solid 2px blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        /* font-size: 1.2em; */
+    
+    }
+    header .navigation div:first-child{
+        height: 90%;
+        width: 15%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: start;
+        color: white;
+        font-size: .6em;
+    }
+    
+    header .navigation div:nth-child(2){
+        height: 90%;
+        width: 50%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
+    header .navigation div:last-child{
+        height: 90%;
+        width: 15%;
+        border: solid 2px rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        font-size: .8em;
+        color: white;
+    }
+}
