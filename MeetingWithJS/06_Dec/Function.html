@@ -1,0 +1,51 @@
+<pre>
+<script>
+
+    // simple function
+    // function f1(a = 10, b = 20) {
+    //     document.write("Function f1 called.....<br>");
+    //     document.write("a: " + a + " b: " + b)
+    // }
+
+    // f1(11,22);
+
+
+    // anonymous function 
+    // let a = function () {
+    //     document.write("called anonymous function......");
+    // }
+    // a();
+
+
+    // arrow function
+    // let a = () => {
+    //     document.write("Called arrow function....");
+    // }
+    // a();
+
+
+    // callback function
+    function addition(a, b, c) {
+        let sum = a + b;
+        c(sum);
+    }
+    addition(10, 20, function (sum) {
+        document.write("Sum is: " + sum)
+    });
+
+
+
+    // callback function
+    function addition(a, b) {
+        let sum = a + b;
+        c(sum);
+        
+    }
+    addition(10, 20);
+
+    function c(sum) {
+        document.write("Sum is: " + sum)
+    }
+
+</script>
+</pre>
