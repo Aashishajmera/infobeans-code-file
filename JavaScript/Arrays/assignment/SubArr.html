@@ -1,0 +1,42 @@
+<!-- Q.7 Sub array with given sum -->
+
+<pre>
+<script>
+    var arr = [];
+    var size = prompt("Enter size of array: ") * 1;
+
+    for (var i = 0; i < size; i++) {
+        arr[i] = prompt("Enter " + (i + 1) + " element: ") * 1;
+    }
+
+    // print array element: 
+    function printElement(arr) {
+        document.write("Default array element is:");
+        for (var i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+    }
+
+    printElement(arr);
+    document.write("<br>");
+    var sum = prompt("Enter sum of element: ") * 1;
+    var flag = false;
+    for (var i = 0; i < arr.length; i++) {
+        var check = 0;
+        for (var j = i; j < arr.length; j++) {
+            check += arr[j];
+            if (check == sum) {
+                document.write("Element index is: ");
+                for (var k = i; k <= j; k++) {
+                    document.write((k + 1) + " ");
+                }
+                flag = true;
+                break;
+            }
+        }
+        if (flag)
+            break;
+    }
+
+</script>
+</pre>

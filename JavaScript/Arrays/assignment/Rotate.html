@@ -1,0 +1,31 @@
+<!-- Q.10.
+Write a program to cyclically rotate array by one. -->
+
+<pre>
+<script>
+    function demo(rotate) {
+        var arr = [1, 2, 34, 5, 6, 77];
+        rotate(arr);
+    }
+
+    demo((arr) => {
+
+        document.write("Default array element is: "+arr +"<br>")
+
+        for(var i = 0; i < arr.length; i++){
+            for(var j = arr.length-1; j > 0; j--){
+                arr[j] = arr[j] + arr[j-1];
+                arr[j-1] = arr[j] - arr[j-1];
+                arr[j] = arr[j] - arr[j-1];
+            }
+            break;
+        }
+
+        document.write("Rotate array element is: "+arr)
+
+    })
+</script>
+</pre>
+
+
+

@@ -1,0 +1,20 @@
+<pre>
+<script>
+    function checkSmallest(a, b, c) {
+        if (a < b) {
+            c(a, 30);
+        } else {
+            c(b, 30);
+        }
+    }
+
+    checkSmallest(40, 20, function checkThird(a, c) {
+        if (a < c) {
+            document.write(a);
+        } else {
+            document.write(c);
+        }
+    });
+
+</script>
+</pre>

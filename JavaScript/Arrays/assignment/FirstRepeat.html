@@ -1,0 +1,27 @@
+<!-- Q.13
+Find the first repeating element in array of integers -->
+
+<pre>
+<script>
+    function demo(checkRepeat){
+        let arr = [2,34,5,6,34,8,1];
+        checkRepeat(arr);
+    }
+
+    demo((arr) => {
+        for(let i = 0; i < arr.length; i++){
+            let flag = false;
+            for(let j = i; j < arr.length-1; j++){
+                if(arr[i] == arr[j+1]){
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag){
+                document.write("First non-repeat element is: "+arr[i]);
+                break;
+            }
+        }
+    });
+</script>
+</pre>

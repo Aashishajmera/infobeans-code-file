@@ -1,0 +1,29 @@
+<!-- Q.19) Find Maximum product contigeous sub array 
+
+Given an array Arr[] that contains N integers (may be positive, negative or zero). Find the product of the maximum product subarray.
+Example 1:
+Input:
+N = 5
+Arr[] = {6, -3, -10, 0, 2}
+Output: 180
+Explanation: Subarray with maximum product
+is [6, -3, -10] which gives product as 180. -->
+
+<pre>
+<script>
+    function maximumProduct(arr) {
+        let product = 1;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                product *= arr[i];
+            }else{
+                break;
+            }
+        }
+        document.write("Product is: " + product);
+    }
+
+    let arr = [2, 3, -4, -3, 0, 5];
+    maximumProduct(arr);
+</script>
+</pre>

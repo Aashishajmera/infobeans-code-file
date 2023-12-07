@@ -1,0 +1,16 @@
+<!-- 27) * # * # * # * # * …… -->
+
+<pre>
+<script>
+    function demo(pattern) {
+        var size = prompt("Enter size: ");
+        pattern(size);
+    }
+
+    demo((size) => {
+        for(var i = 1; i <= size; i++){
+            i%2 ? document.write("# ") : document.write("* ");
+        }
+    });
+</script>
+</pre>

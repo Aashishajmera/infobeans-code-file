@@ -1,0 +1,38 @@
+<!-- Q.11 Count pair with given sum.
+Given an array of N integers, and an integer K, find the number of pairs of elements in the array whose sum is equal to K.
+
+Example 1:
+Input:
+N = 4, K = 6
+arr[] = {1,5,7,1}
+Output: 2
+Explanation: 
+arr[0] + arr[1] = 1 + 5 = 6 
+and arr[1] + arr[3] = 5 + 1 = 6. -->
+
+<pre>
+<script>
+    function demo(checkSum) {
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let sum = prompt("Enter sum of element: ");
+        checkSum(arr, sum);
+    }
+
+    demo((arr, sum) => {
+        let checksum, count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            checksum = 0;
+            for (let j = i; j < arr.length - 1; j++) {
+                checksum += arr[j];
+                if (checksum == sum && arr[j] != sum) {
+                    count++;
+                    break;
+                }
+            }
+        }
+
+
+        document.write("Total pair is: " + count);
+    })
+</script>
+</pre>

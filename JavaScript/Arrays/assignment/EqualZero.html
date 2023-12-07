@@ -1,0 +1,43 @@
+<!-- Q.17 Find it there is any subarray with sum equals to zero
+Given an array of positive and negative numbers. Find if there is a subarray (of size at-least one) with 0 sum.
+Example 1:
+Input:
+5
+4 2 -3 1 6
+
+Output: 
+Yes
+
+Explanation: 
+2, -3, 1 is the subarray 
+with sum 0. -->
+
+<pre>
+<script>
+    function demo(subArr) {
+        let arr = [1, 2, , 4, 5];
+        subArr(arr);
+    }
+
+    demo((arr) => {
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            let sum = 0;
+            for (let j = i; j < arr.length; j++) {
+                sum += arr[j];
+                if (sum == 0 && sum != arr[j]) {
+                    flag = true;
+                    document.write("Yes");
+                    break;
+                }
+            }
+
+            if (flag)
+                break;
+        }
+
+        if (!flag)
+            document.write("No");
+    })
+</script>
+</pre>

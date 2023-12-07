@@ -1,0 +1,12 @@
+<pre>
+<script>
+    function f1(a, b, c) {
+        var result = a + b;
+        c(result);
+    }
+
+    f1(10, 20, function (result) {
+        document.write("Addition is: " + result)
+    });
+</script>
+</pre>

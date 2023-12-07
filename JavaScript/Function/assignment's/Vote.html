@@ -1,0 +1,17 @@
+<pre>
+<script>
+    function demo(checkVote) {
+        var age = prompt("Enter your age: ");
+        checkVote(age);
+    }
+
+    demo(function (age) {
+        if (age <= 18) {
+            document.write("Your are not aligible for vote: ");
+        } else {
+            document.write("You are aligible for vote: ");
+        }
+    });
+
+</script>
+</pre>
