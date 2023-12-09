@@ -1,0 +1,20 @@
+public void m1();
+
+
+public void m1(){
+    
+}
+
+public static void m1(){
+
+}
+
+abstract public void m1(){
+
+}
+
+
+abstract final public void m1();
+
+
+abstract public static void m1();
