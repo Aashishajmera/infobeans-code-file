@@ -1,0 +1,23 @@
+<!-- 24. Write a Java program to swap first and last element of an integer 1-d array.
+ -->
+
+
+<pre>
+<script>
+    var demo = (swapElement) => {
+        var arr = [1, 2, 3, 4, 5];
+        swapElement(arr);
+    }
+
+    demo((arr) => {
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] + arr[arr.length - 1];
+            arr[arr.length - 1] = arr[i] - arr[arr.length-1];
+            arr[i] = arr[i] - arr[arr.length-1];
+            break;
+        }
+
+        document.write("Swap first and last element: "+arr);
+    })
+</script>
+</pre>

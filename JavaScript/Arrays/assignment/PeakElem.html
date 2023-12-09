@@ -1,0 +1,41 @@
+<!-- Q.1 Peak an element
+
+An element is called a peak element if its value is not smaller than the value of its adjacent elements(if they exists).
+Given an array arr[] of size N, find the index of any one of its peak elements.
+Note: The generated output will always be 1 if the index that you return is correct. Otherwise output will be 0.
+
+Example 1:
+Input:
+N = 3
+arr[] = {1,2,3}
+Output: 1
+Explanation: index 2 is 3.
+It is the peak element as it is 
+greater than its neighbour 2. -->
+
+
+<pre>
+<script>
+    var demo = (peakElement) => {
+        var arr = [4, 2, 3, 12, 2, 6, 7, 8];
+        peakElement(arr);
+    }
+
+    demo((arr) => {
+        let i = 1;
+        for (; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1] && arr[i] > arr[i - 1]) {
+                document.write("Peak element is: " + arr[i] + "<br>");
+                break;
+            }
+        }
+
+        if (arr[0] > arr[1]) {
+            document.write("Peak element is: " + arr[0] + "<br>");
+        } if (arr[arr.length - 1] > arr[arr.length - 2]) {
+            document.write("Peak element is: " + arr[arr.length - 1]);
+        }
+
+    })
+</script>
+</pre>
