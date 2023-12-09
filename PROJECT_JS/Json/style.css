@@ -7,7 +7,7 @@
 /* Header-design */
 header{
     height: 12vh;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     background-color: black;
     font-size: 10px;
     display: flex;
@@ -18,7 +18,7 @@ header{
 header .navigation{
     height: 90%;
     width: 98%;
-    border: solid 2px blue;
+    /* border: solid 2px blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@ header .navigation{
 header .navigation div:first-child{
     height: 90%;
     width: 20%;
-    border: solid 2px rgb(255, 255, 255);
+    /* border: solid 2px rgb(255, 255, 255); */
     display: flex;
     flex-direction: column;
     justify-content: center !important;
@@ -41,11 +41,15 @@ header .navigation div:first-child{
 header .navigation div:nth-child(2){
     height: 90%;
     width: 40%;
-    border: solid 2px rgb(255, 255, 255);
+    /* border: solid 2px rgb(255, 255, 255); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header .navigation div:nth-child(2) input{
+    font-size: 1.4em;
 }
 
 
@@ -57,7 +61,7 @@ header .navigation div:nth-child(2) input:focus{
 header .navigation div:last-child{
     height: 90%;
     width: 20%;
-    border: solid 2px rgb(255, 255, 255);
+    /* border: solid 2px rgb(255, 255, 255); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +79,7 @@ header .navigation div:last-child h4{
 /* Height width give to main-container */
 .main-container {
     height: auto;
-    border: solid 3px black;
+    /* border: solid 3px black; */
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -89,7 +93,7 @@ header .navigation div:last-child h4{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     row-gap: 50px;
     margin-block: 20px;
     margin-inline: 5px;
@@ -99,8 +103,8 @@ header .navigation div:last-child h4{
 
 .main-container .box-row .box {
     height: 450px;
-    width: 350px;
-    border: solid 1px blue;
+    width: 345px;
+    /* border: solid 1px blue; */
     box-shadow: 10px 10px 10px 1px rgb(128, 121, 121);
     display: flex;
     flex-direction: column;
