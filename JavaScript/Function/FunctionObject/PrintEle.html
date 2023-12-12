@@ -1,0 +1,12 @@
+<script>
+    function demo(check){
+        var arr = [12,34,5,6];
+        check(arr);
+    }
+
+    demo((arr) => {
+        for(var value of arr){
+            document.write(value+" ");
+        }
+    });
+</script>

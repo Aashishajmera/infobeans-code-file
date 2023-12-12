@@ -1,0 +1,23 @@
+<script>
+    var customer = {
+        id: 101,
+        cname: "Aashish",
+        age: 20,
+        mobile: "74888888887",
+        bal: 5000,
+        withrowal: function (amount, bal) {
+            this.bal -= amount;
+            document.write("withrowal amount is: " + amount + " remain balance is: " + bal);
+        },
+        wish: function () {
+            document.write("This is a wish function: ")
+        }
+    }
+
+
+    // create a object of customer function 
+    // var obj = new customer();
+    // obj.withrowal(1000);
+    customer.withrowal(1000, 40000000);
+    document.write("<br>" + customer.bal)
+</script>

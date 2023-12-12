@@ -1,0 +1,14 @@
+<script>
+    function f1() {
+        document.write("f1 execute......")
+        return function f2() {
+            document.write("f2 execute......")
+        }
+    }
+
+    var f = f1();
+    f();
+
+
+
+</script>
