@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        window.alert(document.constructor.name)
+
+
+        var task1 = () => {
+            setTimeout(() => {
+                console.log("task one executed...<br>")
+            }, 5000);
+        }
+
+        var task2 = () => {
+            setTimeout(() => {
+                console.log("task two executed...<br>")
+            }, 1000);
+        }
+
+        var task3 = () => {
+            console.log("task three executed...<br>")
+        }
+
+        var task4 = () => {
+            console.log("task four executed...<br>")
+        }
+
+
+        task3();
+        task1();
+        task4();
+        task2();
+
+    </script>
+</body>
+
+</html>

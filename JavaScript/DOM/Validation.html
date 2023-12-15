@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDATION-01</title>
+
+    <!-- font awesome liberary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Internal CSS -->
+    <style>
+        .main-container {
+            background-color: rgba(100, 70, 70, 0.2);
+            height: auto;
+            width: auto;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        small {
+            color: red;
+        }
+
+        input {
+            height: 22px;
+            width: 250px;
+        }
+
+        .btn-sb {
+            padding-inline: 25px;
+            padding-block: 5px;
+            font-size: 15px;
+            background-color: rgb(22, 148, 119);
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            color: white;
+        }
+
+        span:hover {
+            cursor: pointer;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================HTML================= -->
+    <div class="main-container">
+        <form action="">
+            <!-- user name -->
+            <label for="userName">Name: </label><br>
+            <input type="text" name="userName" id="userName" onkeyup="nameValidation()"><br>
+            <small id="userNameError"></small><br><br>
+
+            <!-- user email -->
+            <label for="userEmail">Email: </label><br>
+            <input type="email" name="userEmail" id="userEmail" onkeyup="emailValidation()"><br>
+            <small id="userEmailError"></small><br><br>
+
+            <!-- user password -->
+            <label for="userPassword">Password: </label><br>
+            <input type="password" name="userPassword" id="userPassword" onkeyup="passwordValidation()"><span
+                onclick="showPassword()" id="btn"
+                style="margin-left: -30px; background-color: transparent; border: none; color: black;"><i
+                    class="fa-solid fa-eye-slash"></i></span><br>
+            <small id="passwordError">error</small><br><br>
+
+            <!-- <i class="fa-solid fa-eye-slash"></i> -->
+            <!-- <i class="fa-solid fa-eye"></i> -->
+
+            <!-- submit -->
+            <button class="btn-sb" type="submit" onclick="return checkValidation()">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- =================JS================== -->
+    <script>
+
+
+        // ===============USER-NAME====================
+        function nameValidation() {
+            var status = true;
+            var nameValidation = /^[A-Za-z]+$/;
+            // target name element
+            var userName = document.getElementById("userName").value;
+            var userNameError = document.getElementById("userNameError");
+
+            if (userName.length == 0) {
+                userNameError.innerHTML = "Name is required";
+                status = false;
+            } else if (!(nameValidation.test(userName))) {
+                userNameError.innerHTML = "only alphabet allow";
+                status = false;
+            } else {
+                userNameError.innerHTML = "";
+            }
+            return status;
+        }
+
+
+        // ===============USER-EMAIL====================
+        function emailValidation() {
+            var status = true;
+
+            // target email 
+            var userEmail = document.getElementById("userEmail").value;
+            var userEmailError = document.getElementById("userEmailError");
+
+            // check length
+            if (userEmail.length == 0) {
+                userEmailError.innerHTML = "Email is required";
+                status = false;
+            } else {
+                userEmailError.innerHTML = "";
+            }
+
+            // check attherate @
+            let atTheRate = userEmail.indexOf("@");
+            if (atTheRate == -1) {
+                userEmailError.innerHTML = "@ not present";
+                return false;
+            }
+
+            // check duplicate @ 
+            let duplicateAtTheRate = userEmail.lastIndexOf("@");
+            if (duplicateAtTheRate != atTheRate) {
+                userEmailError.innerHTML = "duplicate @ present";
+                return false;
+            }
+
+            //  check .
+            let afterAtTheRate = userEmail.substring(atTheRate);
+            let checkDot = afterAtTheRate.lastIndexOf(".");
+            if (checkDot == -1) {
+                userEmailError.innerHTML = ". not present";
+                return false;
+            }
+
+            // check .in OR .com
+            let checkCom = afterAtTheRate.substring(checkDot);
+            if (!(checkCom == ".in" || checkCom == ".com")) {
+                userEmailError.innerHTML = ".in and .com not present";
+                return false;
+            }
+            return status;
+        }
+
+        // ===============SHOW-PASSWORD====================
+        function showPassword() {
+            var state = true;
+            var btn = document.getElementById("btn");
+
+
+        }
+
+        // =================MAIN-VALIDATION=================
+        function checkValidation() {
+            var userNameStatus = nameValidation();
+            var userEmailstatus = emailValidation();
+
+            if (userNameStatus && userEmailstatus)
+                return true;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

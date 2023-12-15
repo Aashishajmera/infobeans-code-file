@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDATION</title>
+
+    <!-- Internal CSS -->
+    <style>
+        .main-container {
+            height: 100vh;
+            border: solid 2px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            /* background-color: #e7c650; */
+            box-shadow: 10px 10px 10px 1px rgb(104, 95, 95);
+            height: 50%;
+            width: 50%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HTML -->
+    <div class="main-container">
+        <form action="" onsubmit="return checkValidation()">
+            <fieldset>
+                <legend>User Details !!</legend>
+
+                <!-- user name -->
+                <label for="userName">Name: </label>
+                <input type="text" name="username" id="userName" required><br><br>
+
+                <!-- user email -->
+                <label for="userEmail">Email: </label>
+                <input type="email" name="userEmail" id="userEmail"><br><br>
+
+                <!-- user password -->
+                <label for="userPassword">Password: </label>
+                <input type="password" name="userPassword" id="userPassword"><br><br>
+
+                <!-- user DOB -->
+                <label for="userDob">DOB: </label>
+                <input type="date" name="userDob" id="userDob"><br><br>
+
+                <!-- radio button -->
+                <label for="userRadio">Gender: </label>
+                <input type="radio" name="userRadio" id="userRadio">male
+                <input type="radio" name="userRadio" id="userRadio">female
+                <input type="radio" name="userRadio" id="userRadio">other
+                <br><br>
+
+                <!-- user MobileNum -->
+                <label for="userMo">Mobile: </label>
+                <input type="tel" name="userMo" id="userMo"><br><br>
+
+                <!-- submit -->
+                <button type="submit" onclick="createfrom()">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+
+    <!-- -------------------------------SCRIPT--------------------------------- -->
+
+    <script>
+        function createfrom() {
+            var userName = document.getElementById("userName").value;
+            var userEmail = document.getElementById("userEmail").value;
+            var userPassword = document.getElementById("userPassword").value;
+
+            // validation code
+            var name_validation = /^[A-Za-z]+$/;
+            var email_validation = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+            // @gmail.com
+            if (userName == '' || userEmail == '' || userPassword == '') {
+                alert("Enter each details correctly");
+            }
+            else if (!name_validation.test(userName)) {
+                alert('Name is incorrect must contain alphabets only');
+            }
+            else if (!email_validation.test(userEmail)) {
+                alert('Invalid email format please enter valid email id');
+            }
+            else if (userPassword.length > 8) {
+                alert("Password maximum length is 8");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
