@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+header {
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.main-header {
+    height: 99%;
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10px;
+    position: relative;
+    top: 0;
+}
+
+.main-header div:first-child,
+.main-header div:last-child {
+    width: 30%;
+    /* border: solid 3px blue; */
+}
+
+.main-header div:nth-child(2) {
+    width: 40%;
+    /* border: solid 3px red; */
+}
+
+.main-header div:nth-child(2) nav ul li a {
+    color: grey;
+
+}
+
+.main-header div:first-child h1 {
+    font-size: 3.1em;
+    color: #1283BC;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.5em;
+
+}
+
+
+
+.main-header div:nth-child(3) ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 3em;
+    list-style: none;
+}
+
+.main-header div:nth-child(3) ul li a {
+    color: #1283BC;
+    /* background-color: red; */
+    /* text-align: center; */
+}
+
+.main-header div:nth-child(3) ul li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
+    padding-block: 6.5px;
+    padding-inline: 13px;
+    border-radius: 50%;
+
+}
+
+.main-header div:nth-child(3) ul li a i {
+    font-size: 25px;
+}
+
+
+/*================================ SECTION - 01 ===================================*/
+.section-01 {
+    height: 110vh;
+    background-color: #0196E3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Dela Gothic One', sans-serif;
+
+}
+
+.main-section-01 {
+    /* border: solid 3px red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3em;
+    width: 70%;
+    color: white;
+}
+
+.main-section-01 h2 {
+    font-size: 2em;
+}
+
+.main-section-01 div:nth-child(2) {
+    width: 1px;
+    height: 100px;
+    background-color: white;
+}
+
+.main-section-01 p {
+    padding-left: 30px !important;
+} 
+
+/* =======================================SECTION-02==================================== */
+.section-02 {
+    height: 120vh;
+    width: 98.6vw;
+    /* background-color: grey; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: 'Dela Gothic One', sans-serif;
+
+}
+
+.main-section-02 {
+    height: 90%;
+    width: 99%;
+    /* background-color: red; */
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-section-02 h2 {
+    font-size: 5.5em;
+    font-weight: 500;
+    color: #36187D;
+    /* border: solid 2px black; */
+}
+
+.inside-main-02 {
+    height: 80%;
+    width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* border: solid 4px black; */
+}
+
+.inside-main-02 div {
+    height: 80%;
+    width: 30%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-around; */
+    border-radius: 20px;
+    margin-left: 16px;
+}
+
+.m-div {
+    box-shadow: 1px 10px 20px 1px rgb(75, 68, 68);
+}
+
+.first-div {
+    height: 50% !important;
+    width: 90% !important;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.first-div:hover img {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.first-div img {
+    height: 100%;
+    width: 100% !important;
+}
+
+.inside-main-02 h4 {
+    font-size: 3em;
+    color: #5E4798;
+    margin-left: 10px;
+    margin: 10px;
+}
+
+.inside-main-02 p {
+    font-size: 1.7em;
+    color: grey;
+    margin-left: 10px;
+    margin: 10px;
+}
+
+.inside-main-02 strong {
+    font-size: 2em;
+    color: #0196E3;
+    margin-left: 10px;
+    margin: 10px;
+
+}
+
+.inside-main-02 strong:hover {
+    cursor: pointer;
+}
+
+/* ======================================SECTION-03======================================== */
+.section-03{
+    height: 89vh;
+    width: 98.6vw;
+    /* width: 97vw; */
+    /* border: solid 3px black; */
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-family: poppins, sans-serif;
+}
+
+.main-section-03{
+    display: flex;
+    /* border: solid 2px blue; */
+    height: 100%;
+    padding: 25px !important;
+}
+
+.main-section-03 div:nth-child(1), .main-section-03 div:nth-child(2){
+    width: 50%;
+    height: 99% !important;
+    /* border: solid 3px rgb(90, 24, 24); */
+}
+
+.main-section-03 div:nth-child(1) h2{
+    font-size: 3.4em;
+    color: #36187D;
+    font-weight: 500;
+}
+
+.main-section-03 div:nth-child(1) p{
+    color: grey;
+}
+
+.main-section-03 div:nth-child(1){
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    font-size: 2em;
+    
+}
+
+.main-section-03 div:nth-child(1) button{
+    height: 3.1em;
+    width: 8em;
+    font-size: .7em;
+    background-color: #1283BC;
+    border: none;
+    border-radius: 50px;
+    color: white;
+
+
+}
+
+.main-section-03 > div:last-child > div{
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    border: solid 3px red !important;
+}
+
+
+/* ===================================SECTION-04====================================== */
+
+.section-04{
+    margin-top: 90px;
+    height: 90vh;
+    width: 98.6vw;
+    /* background: rgb(118, 90, 90); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: poppins, sans-serif;
+}
+
+.main-section-04{
+    height: 95%;
+    width: 100%;
+    /* background-color: rgb(184, 179, 179); */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-section-04 h2{
+    font-size: 5em;
+    padding-left: 40px;
+    font-weight: 500;
+    color: #36187D;
+    /* border: solid 2px black; */
+}
+
+.main-inside-04{
+    height: 80%;
+    /* border: solid 3px black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-inside-04 div{
+    height: 100%;
+    width: 28%;
+    /* border: solid 3px blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+}
+
+
+.main-f{
+    /* border: solid 3px red !important; */
+    box-shadow: 1px 10px 20px 1px rgb(75, 68, 68);
+    position: relative;
+
+}
+
+.main-f:hover div img{
+    position: relative;
+    top: -10px;
+    /* left: 0; */
+    /* transform: scale(1.1); */
+    transition-duration: 1.5s;
+    cursor: pointer;
+}
+
+.main-inside-04 div div{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-inside-04 div div h3{
+    font-size: 3em;
+    color: #36187D;
+    font-weight: 500;
+}
+
+.main-inside-04 div div p{
+    font-size: 2em;
+}
+
+.main-inside-04 div img{
+    height: 170px;
+    width: 170px;
+    border-radius: 200px;
+}
+
+/* =======================================FOOTER============================================ */
+footer{
+    margin-top: 50px;
+    height: 30vh;
+    width: 100vw;
+    /* background-color: grey; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: grey;
+}
+
+.main-footer{
+    height: 90%;
+    width: 90%;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.main-footer div:first-child{
+    height: 40%;
+    width: 40%;
+    /* border: solid 3px blue; */
+}
+
+.main-footer div:first-child ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+.main-footer div:last-child{
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main-footer div:last-child ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 2em;
+    /* border: solid 3px black; */
+    width: 40%;
+}
+
+.main-footer div:last-child ul li a i{
+    color: #0196E3;
+    font-size: .6em;
+}

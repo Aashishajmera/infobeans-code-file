@@ -1,0 +1,322 @@
+/* ==============================360px to 540px=============================== */
+@media (350px <=width <=540px) {
+    .main-header {
+        height: 99%;
+        width: 99%;
+        /* border: solid 2px red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 5px;
+    }
+
+    .main-header div:nth-child(3) ul li {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
+        padding-block: 6px;
+        padding-inline: 8px;
+        border-radius: 50%;
+    }
+
+    .main-header div:nth-child(3) ul li a i {
+        font-size: 15px;
+    }
+
+
+    /* ====================section-01===================== */
+    .section-01 {
+        height: 70vh;
+        background-color: #0196E3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5px;
+        font-family: poppins, sans-serif;
+    }
+
+    .main-section-01 {
+        /* border: solid 3px red; */
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2.5em;
+        width: 70%;
+        color: white;
+    }
+
+    .main-section-01 p {
+        padding-left: 30px !important;
+    }
+
+    /* =================================SECTION-02=================================== */
+    .main-section-02 {
+        margin-top: 700px;
+        height: 188vh;
+        width: 98vw;
+        /* background-color: red; */
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inside-main-02 {
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: space-around;
+        /* border: solid 4px black; */
+    }
+
+    .inside-main-02 div {
+        height: 30%;
+        width: 70%;
+        /* background-color: blue; */
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+        /* justify-content: space-around; */
+        border-radius: 20px;
+        margin-left: 10px;
+    }
+
+    .m-div {
+        box-shadow: 1px 10px 20px 1px rgb(75, 68, 68);
+        /* height: 65% !important; */
+    }
+
+    /* =======================================SECTION-03========================================= */
+    .section-03 {
+        margin-top: 700px;
+        height: 160vh;
+        /* width: 98.6vw; */
+        width: 97vw;
+        /* border: solid 3px black; */
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        font-family: poppins, sans-serif;
+    }
+
+    .main-section-03 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+        /* border: solid 2px blue; */
+        height: 100%;
+    }
+
+    .main-section-03 div:nth-child(1) {
+        width: 90%;
+        height: 60% !important;
+        /* border: solid 3px rgb(90, 24, 24); */
+    }
+
+    .main-section-03 div:nth-child(2) {
+        width: 90%;
+        height: 31% !important;
+        /* border: solid 3px rgb(90, 24, 24); */
+    }
+
+    /* =============================SECTION-04================================ */
+    .section-04 {
+        height: 180vh;
+        width: 98.6vw;
+        /* background: rgb(118, 90, 90); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+
+    .main-inside-04 div {
+        height: 100%;
+        width: 28%;
+        /* border: solid 3px blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+    }
+
+    .main-inside-04 {
+        height: 90%;
+        /* border: solid 3px black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .main-f {
+        /* border: solid 3px red !important; */
+        box-shadow: 1px 10px 20px 1px rgb(75, 68, 68);
+        position: relative;
+        height: 30% !important;
+        width: 80% !important;
+    }
+}
+
+/* ==============================541px to 720px=============================== */
+/* ==============================541px to 720px=============================== */
+/* ==============================541px to 720px=============================== */
+
+@media (541px <=width <=720px) {
+    .main-header {
+        height: 99%;
+        width: 99%;
+        /* border: solid 2px red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 7px;
+    }
+
+    .main-header div:nth-child(3) ul li {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
+        padding-block: 6.9px;
+        padding-inline: 10px;
+        border-radius: 50%;
+    }
+
+    .main-header div:nth-child(3) ul li a i {
+        font-size: 20px;
+    }
+
+    /* ====================section-01===================== */
+    .section-01 {
+        height: 110vh;
+        background-color: #0196E3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 7px;
+        font-family: poppins, sans-serif;
+    }
+
+    .main-section-01 {
+        /* border: solid 3px red; */
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 2.5em;
+        width: 70%;
+        color: white;
+    }
+
+    .main-section-01 p {
+        padding-left: 30px !important;
+    }
+
+    /* ================================SECTION-02================================ */
+
+    .main-section-02 {
+        margin-top: 900px;
+        height: 220vh;
+        width: 98vw;
+        /* background-color: red; */
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inside-main-02 {
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: space-around;
+        /* border: solid 4px black; */
+    }
+
+    .inside-main-02 div {
+        height: 30%;
+        width: 60%;
+        /* background-color: blue; */
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+        /* justify-content: space-around; */
+        border-radius: 20px;
+        margin-left: 16px;
+    }
+
+    /* =======================================SECTION-03============================================= */
+    .section-03 {
+        margin-top: 950px;
+        height: 140vh;
+        /* width: 98.6vw; */
+        width: 97vw;
+        /* border: solid 3px black; */
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+        font-family: poppins, sans-serif;
+    }
+
+    .main-section-03 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+        /* border: solid 2px blue; */
+        height: 100%;
+    }
+
+    .main-section-03 div:nth-child(1),
+    .main-section-03 div:nth-child(2) {
+        width: 80%;
+        height: 47% !important;
+        /* border: solid 3px rgb(90, 24, 24); */
+    }
+
+    /* =============================SECTION-04================================ */
+    .section-04 {
+        height: 180vh;
+        width: 98.6vw;
+        /* background: rgb(118, 90, 90); */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+    }
+
+    .main-inside-04 div {
+        height: 100%;
+        width: 28%;
+        /* border: solid 3px blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 40px;
+    }
+
+    .main-inside-04 {
+        height: 90%;
+        /* border: solid 3px black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .main-f {
+        /* border: solid 3px red !important; */
+        box-shadow: 1px 10px 20px 1px rgb(75, 68, 68);
+        position: relative;
+        height: 30% !important;
+        width: 60% !important;
+    }
+}
