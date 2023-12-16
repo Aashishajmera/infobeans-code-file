@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    background-image: url(./assits/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    background-color: red;
+    opacity: 0.9;
+}
+
+.offcanvas-header{
+    /* border: solid 3px black; */
+    background-color: rgb(31, 169, 185);
+    color: rgb(227, 221, 221);
+
+}
+
+.main-header .humber{
+    border: solid 3px black;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding: 17px;
+    color: white;
+    background-color: rgb(41, 60, 81);
+}
+
+.main-header .humber i{
+    font-size: 1.5em;
+}
+
+.main-header .humber i:hover{
+    cursor: pointer;
+}
+
+.offcanvas-body{
+    background-color: rgb(31, 169, 185);
+    font-size: 10px;
+}
+
+.offcanvas-body ul{
+    list-style: none;
+    /* border: solid 3px red; */
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around !important;
+    justify-content: center;
+    color: rgb(227, 221, 221);
+    font-size: 1.5em;
+}
+
+.offcanvas-body ul li:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.offcanvas-body ul li{
+    border-bottom: 1px rgb(130, 128, 128) solid;
+    width: 90%;
+    padding-bottom: 3px;
+}
+
+/* =====================================SECTION-01==================================== */
+.section-01{
+    height: 90vh;
+    border: solid 2px black;
+    
+}
