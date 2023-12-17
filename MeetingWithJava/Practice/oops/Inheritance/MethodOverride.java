@@ -1,4 +1,4 @@
-package Practice.oops.Inheritance;
+// package Practice.oops.Inheritance;
 
 class Test {
 
