@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABLE</title>
+
+</head>
+
+<body>
+    <div class="main-container">
+        <table border="2px" width="100%">
+            <thead>
+                <tr style="background-color: aqua;">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr>
+                    <td>1</td>
+                    <td>Aashish</td>
+                    <td>7589897678</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Deepak</td>
+                    <td>7589897678</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mohan</td>
+                    <td>7589897672</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Sohan</td>
+                    <td>7589897234</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Kapil</td>
+                    <td>7589897232</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="chagneColor('red', 'yellow')">Red-Yellow</button>
+        <button onclick="chagneColor('pink', 'blue')">Pink-Blue</button>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function chagneColor(evenClr, oddClr) {
+            var tbody = document.getElementById("table-body");
+
+            for(var index in tbody.rows){
+                if(index%2){
+                    tbody.rows[index].style.backgroundColor = evenClr;
+                }else{
+                    tbody.rows[index].style.backgroundColor = oddClr;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

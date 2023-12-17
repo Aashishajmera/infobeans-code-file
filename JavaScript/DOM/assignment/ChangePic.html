@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change image</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <center>
+            <img id="main" src="../assists/pexels-photo-19020394.webp" alt="" height="400px" width="500px">
+            <br><br><br><br><br>
+
+            <img id="first" onclick="change('first')" src="../assists/pexels-photo-19407605.webp" height="100px"
+                width="200px" alt="">
+
+            <img id="second" onclick="change('second')"
+                src="../assists/free-photo-of-hot-air-balloons-over-cappadocia.jpeg" height="100px" width="200px"
+                alt="">
+
+        </center>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function change(currentImageId) {
+            var currentImage = document.getElementById("main");
+            var clickImage = document.getElementById(currentImageId);
+
+            var temp = currentImage.src;
+            currentImage.src = clickImage.src;
+            clickImage.src = temp;
+        }
+    </script>
+</body>
+
+</html>
