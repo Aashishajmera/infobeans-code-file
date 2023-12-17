@@ -393,7 +393,7 @@ nav ul li a {
 footer{
     margin-top: 50px;
     height: 30vh;
-    width: 100vw;
+    width: 98vw;
     /* background-color: grey; */
     display: flex;
     align-items: center;
@@ -408,7 +408,7 @@ footer{
     /* background: red; */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
 }
