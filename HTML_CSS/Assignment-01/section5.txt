@@ -1,0 +1,96 @@
+ <!-- <section class="section-05">
+            <div class="main-section-05">
+                <h3>Feedback</h3>
+                <div class="contact-form">
+                    <input type="text" name="" id="" placeholder="Name">
+                    <input type="email" name="" id="" placeholder="Email">
+                    <input type="tel" name="" id="" placeholder="Phone">
+                    <textarea name="" id="" cols="1" rows="3" placeholder="Message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </div>
+        </section> -->
+
+
+
+
+
+/* =======================================SECTION-05======================================= */
+.section-05{
+    margin-top: 40px;
+    height: 80vh;
+    border: solid 3px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-family: poppins, sans-serif;
+}
+
+.main-section-05{
+    height: 90%;
+    width: 90%;
+    border: solid 3px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.contact-form{
+    border: solid 3px black;
+    width: 100%;
+    height: 80%;
+}
+
+.main-section-05 h3{
+    font-size: 3.5em;
+    color: #36187D;
+}
+
+.main-section-05 .contact-form input{
+    height: 60px;
+    border-radius: 50px;
+    padding-left: 20px;
+    font-size: 2em;
+    background: whitesmoke;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.main-section-05 .contact-form textarea{
+    width: 95%;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 2em;
+    background: whitesmoke;
+    margin-bottom: 10px;
+    outline: none;
+    resize: vertical;
+}
+
+.main-section-05 input:nth-child(1){
+    width: 97%;
+}
+
+.main-section-05 input:nth-child(2), .main-section-05 input:nth-child(3){
+    width: 47.5%;
+}
+
+.main-section-05 input:focus{
+    outline: none;
+}
+
+.main-section-05 button{
+    height: 60px;
+    width: 200px;
+    border-radius: 50px;
+    background: rgb(40, 135, 194);
+    font-size: 2em;
+    color: white;
+}
+
+.main-section-05 button:hover{
+    cursor: pointer;
+    
+}

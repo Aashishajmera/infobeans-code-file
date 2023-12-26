@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        .main-container {
+            height: 90vh;
+            width: 90vw;
+            border: solid 3px black;
+            position: relative;
+        }  
+
+        .container{
+            margin-top: 30px;
+            border: solid 3px blue;
+            /* position: relative; */
+        }
+
+        .main-container .container div {
+            height: 100px;
+            width: 100px;
+            border: solid 3px red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container div:nth-child(2){
+            position: absolute;
+            top: 3px;
+            left: 94px;
+            /* position: relative;
+            top: 20px;
+            left: 90px; */
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div>Aashish</div>
+            <div>Sohan</div>
+            <div>Mohan</div>
+        </div>
+    </div>
+</body>
+
+</html>

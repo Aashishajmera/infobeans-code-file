@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <!-- <link rel="shortcut icon" href="./applications-of-computer-programming.webp" type=""> -->
+    <link rel="shortcut icon" href="./business-man-using-computer-hand-260nw-2064800414.webp">
+    
+
+    <!-- Internal css -->
+    <style>
+        .main-container{
+            height: 90vh;
+            width: 90vw;
+            border: solid 3px black;
+            display: flex;
+            background-size: 100% 100%;
+            
+            /* flex-wrap: wrap; */
+            /* flex-basis: inherit; */
+            /* background: url(./applications-of-computer-programming.webp); */
+            background-size: cover;
+            /* align-items: center; */
+            align-content: space-around;
+        }
+
+        .main-container div{
+            height: 100px;
+            width: 100px;
+            border: solid 2px red;
+            /* text-align: center; 
+            vertical-align: center; */
+            /* align-self: end; */
+            
+        }
+
+        .main-container div:nth-child(1){
+            /* order: 22; */
+            /* flex-grow: 3; */
+            /* flex-shrink: 99; */
+            flex-basis: 200px;
+        }
+
+        .main-container div:nth-child(2){
+            /* text-indent: 95px; */
+            /* transform: rotateX(30deg); */
+            /* order: 23; */
+            /* flex-grow: 1; */
+            flex-shrink: 3;
+        }
+
+        .main-container div:nth-child(3){
+            /* flex-grow: 78; */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <!-- <span>99</span> -->
+    </div>
+
+    <progress id="file" value="92" max="100"> 32% </progress> 
+    
+</body>
+
+</html>
