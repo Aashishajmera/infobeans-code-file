@@ -47,13 +47,13 @@ header {
     background-color: rgb(41, 60, 81);
 }
 
-.main-header h5{
+.main-header h5 {
     font-weight: 700;
     padding: 0;
     margin: 0;
 }
 
-.main-header h5:hover{
+.main-header h5:hover {
     cursor: pointer;
 }
 
@@ -442,7 +442,7 @@ header {
 
 /* ==========================================SECTION-05=================================================== */
 
-.section-05{
+.section-05 {
     height: 50vh;
     background-color: rgba(0, 0, 0, 0.315);
     /* border: solid 3px red; */
@@ -452,7 +452,7 @@ header {
     font-size: 10px;
 }
 
-.main-section-05{
+.main-section-05 {
     height: 80%;
     width: 80%;
     /* border: solid 2px black; */
@@ -462,7 +462,7 @@ header {
     color: white;
 }
 
-.main-section-05 div{
+.main-section-05 div {
     width: 50%;
     /* border: solid 3px red; */
     height: 100%;
@@ -470,28 +470,28 @@ header {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    
+
 }
 
-.main-section-05 div:nth-child(2){
+.main-section-05 div:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.main-section-05 div h2{
+.main-section-05 div h2 {
     font-size: 3.5em !important;
     font-weight: 700 !important;
     margin-bottom: 10px;
 }
 
-.main-section-05 div p{
+.main-section-05 div p {
     font-size: 1.6em;
     word-spacing: 1px;
     letter-spacing: 2px;
 }
 
-.main-section-05 div button:nth-child(1){
+.main-section-05 div button:nth-child(1) {
     height: 40px;
     width: 200px;
     margin-bottom: 20px;
@@ -502,7 +502,7 @@ header {
     font-size: 1.5em;
 }
 
-.main-section-05 div button:nth-child(2){
+.main-section-05 div button:nth-child(2) {
     height: 40px;
     width: 200px;
     border: 1px solid white;
@@ -512,17 +512,17 @@ header {
     font-size: 1.5em;
 }
 
-.main-section-05 button:nth-child(1):hover{
+.main-section-05 button:nth-child(1):hover {
     background-color: #eb16168c;
 }
 
-.main-section-05 div button:nth-child(2):hover{
+.main-section-05 div button:nth-child(2):hover {
     background-color: rgba(255, 255, 255, 0.205);
 }
 
 /* ====================================SECTION-06========================================= */
 
-.section-06{
+.section-06 {
     height: 50vh;
     background-color: rgba(0, 0, 0, 0.644);
     display: flex;
@@ -531,7 +531,7 @@ header {
     font-size: 10px;
 }
 
-.main-section-06{
+.main-section-06 {
     height: 70%;
     width: 70%;
     /* border: solid 3px red; */
@@ -543,7 +543,7 @@ header {
     color: white;
 }
 
-.main-section-06  div ul {
+.main-section-06 div ul {
     display: flex;
     list-style: none;
     /* border: solid 3px blue; */

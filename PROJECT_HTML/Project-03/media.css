@@ -161,6 +161,15 @@
         height: 30% !important;
         width: 80% !important;
     }
+
+    /* ========================SECTION-05======================== */
+    .main-section-05 .contact-form input {
+        width: 97% !important;
+    }
+
+    .main-section-05 .contact-form{
+        height: 60%;
+    }
 }
 
 /* ==============================541px to 720px=============================== */
@@ -318,5 +327,15 @@
         position: relative;
         height: 30% !important;
         width: 60% !important;
+    }
+
+    /* ========================SECTION-05======================== */
+
+    .main-section-05 .contact-form{
+        height: 60%;
+    }
+
+    .main-section-05 .contact-form input {
+        width: 97% !important;
     }
 }
