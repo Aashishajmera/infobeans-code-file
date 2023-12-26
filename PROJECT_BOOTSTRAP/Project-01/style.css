@@ -1,0 +1,135 @@
+/* Design nav-bar */
+#navigation-bar{
+    width: 98.6vw;
+    background-color: #1A2E35 !important;
+    /* overflow: hidden; */
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+      width: 300px;
+      justify-content: space-around;
+    }
+  }
+
+#nav-item a{
+    color: white;
+}
+
+#logo-div{
+    /* margin-right: 33px; */
+}
+
+#hmbr{
+    color: white !important;
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* section- 01 */
+#section-01{
+    background-color: #1CBBB4;
+}
+
+.btn-01{
+    background-color: #FF4F5A;
+}
+
+.btn-01:hover{
+    background-color: #e44b55;
+}
+
+.btn-02{
+    background-color: white;
+    color: black;
+}
+
+.btn-02:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+/* section-02 */
+.arrow-btn{
+    position: relative;
+}
+
+.arrow-btn > button:nth-child(1){
+    position: absolute;
+    top: -25px;
+    left: 110px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: #1A2E35;
+    border: none;
+}
+
+.arrow-btn > button:nth-child(2){
+    position: absolute;
+    top: -25px;
+    left: 170px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #1A2E35;
+    border: none;
+}
+
+.btn-03, .btn-05, .btn-06{
+    width: 100px;
+    height: 40px;
+    background-color: #e44b55;
+    color: white;
+    border: none;
+}
+
+.btn-04{
+    width: 100px;
+    height: 40px;
+    background-color: #1A2E35;
+    color: white;
+    border: none;
+}
+
+
+/* section - 03 */
+#section-03{
+    background-color: #1CBBB4;
+}
+
+/* section - 05 */
+.box{
+    background-color: black;
+    border-radius: 150px;
+    width: 80px;
+    height: 80px;
+}
+
+.box:hover{
+    cursor: pointer;
+    background-color: #1CBBB4;
+}
+
+.heading{
+    color: #e44b55;
+    font-weight: 700;
+}
+
+/* section-06 */
+#section-06{
+    box-shadow: 0px 0px 10px 10px rgb(92, 84, 84);
+}
+
+/* footer */
+#footer{
+    background-color: #1A2E35;
+}
+
+#email{
+    width: 240px;
+    font-size: 18px;
+    padding-left: 8px;
+    height: 45px;
+}

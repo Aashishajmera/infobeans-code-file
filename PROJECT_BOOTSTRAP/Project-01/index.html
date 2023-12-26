@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BOOTSTRAP - 02</title>
+
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- JS BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <!-- BOOTSTRAP ICON -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- NAV-BAR -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navigation-bar">
+    <div class="container-fluid" id="nav-item">
+      <div id="logo-div">
+        <img src="./assets/logo.png" class="img-fluid" height="30px" width="40px" alt="">
+        <a class="navbar-brand fw-bold" href="#" id="logo_name">Spering</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" id="hmbr"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Category</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Login" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- FIRST SECTION -->
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center pt-5" id="section-01">
+      <div class="col-md-5 col-11 pt-4 pb-4">
+        <h1 class="fw-bold">You Can <br>
+          Hire Freelancer <br>
+          Here</h1>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page </p>
+        <button class="btn btn-primary btn-01">About Us</button>
+        <button class="btn btn-secondary btn-02">Get A Quote</button>
+      </div>
+      <div class="col-md-5 col-11">
+        <img src="./assets/slider-img.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ARROW BTN -->
+  <div class="arrow-btn d-none d-md-block">
+    <button class="btn btn-success d-flex align-items-center justify-content-center">
+      <img src="./assets/prev.png" alt="">
+    </button>
+    <button class="btn btn-success d-flex align-items-center justify-content-center">
+      <img src="./assets/next.png" alt="">
+    </button>
+  </div>
+
+
+  <!-- SECTION-02 -->
+  <div class="container-fluid">
+    <div class="row justify-content-around mt-5 align-items-center pt-3 pb-4">
+      <div class="col-md-4 col-11 pb-5">
+        <img src="./assets/experience-img.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-6 col-11 pb-5">
+        <h1 class="fw-bold pb-2">Best Experinced Freelancer Here </h1>
+        <p class="pb-2">It is a long established fact that a reader will be distracted by the readable content of a page
+          when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+          of letters, as </p>
+        <button class="btn-03 ">Read More</button>
+        <button class="btn-04 ">Hire</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- THIRD SECTION -->
+  <div class="container-fluid" id="section-03">
+    <div class="row justify-content-center">
+      <h1 class="col-12 text-center pt-5 fw-bold text-white pb-5">
+        CATEGORY
+      </h1>
+    </div>
+
+    <div class="row justify-content-center text-center pb-5 text-white">
+      <div class="col-md-4 col-sm-5 pb-2 pt-2 col-11">
+        <img src="./assets/c1.png" alt="">
+        <p>Design & Arts</p>
+      </div>
+      <div class="col-md-4 col-sm-5 pb-2 pt-2 col-11">
+        <img src="./assets/c2.png" alt="">
+        <p>Web-Development</p>
+      </div>
+      <div class="col-md-4 col-sm-5 pb-2 pt-2 col-11">
+        <img src="./assets/c3.png" alt="">
+        <p>SEO Marketing</p>
+      </div>
+      <div class="col-md-4 col-sm-5 pb-2 pt-2 col-11">
+        <img src="./assets/c4.png" alt="">
+        <p>Video Edting</p>
+      </div>
+      <div class="col-md-4 col-sm-5 pb-2 pt-2 col-11">
+        <img src="./assets/c5.png" alt="">
+        <p>Logo Design</p>
+      </div>
+      <div class="col-md-4 col-sm-5 pb-2 pt-4 col-11">
+        <img src="./assets/c6.png" alt="">
+        <p>Game Degign</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOURTH SECTION  -->
+  <div class="conainer-fluid text-center overflow-hidden">
+    <div class="row justify-content-center">
+      <div class="col-11">
+        <img src="./assets/about-img.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-11">
+        <h1 class="fw-bold pb-4"> About Spering Company </h1>
+      </div>
+      <div class="col-11 pb-3">
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form, by injected humour, or randomised words which don't look even slightly believable. If youThere are
+          many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+          by injected humour, or randomised words which don't look even slightly believable. If you </p>
+      </div>
+      <div class="col-11 pb-4">
+        <button class="btn-05">Read More</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- SECTION-05 -->
+  <div class="section-05 container-fluid">
+    <div class="row justify-content-center pt-5 pb-5 align-items-center">
+      <div class="col-md-5">
+        <div class="row justify-content-around pb-2">
+          <div class="col-sm-2 col-11 border box border-success d-flex align-items-center justify-content-center">
+            <div>
+              <img src="./assets/f1.png" width="40px" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-11 col-sm-10 text-center text-md-start">
+            <h5 class="heading">$250 Million</h5>
+            <h2 class="fw-bold"> Paid to Freelancers </h2>
+          </div>
+        </div>
+        <div class="row justify-content-around pb-2">
+          <div class="col-11 col-sm-2 border box border-success d-flex align-items-center justify-content-center">
+            <div>
+              <img src="./assets/f1.png" width="40px" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-11 col-sm-10 text-center text-md-start">
+            <h5 class="heading">2 Million</h5>
+            <h2 class="fw-bold"> Paid Invoices </h2>
+          </div>
+        </div>
+        <div class="row justify-content-around pb-2">
+          <div class="col-11 col-sm-2 border box border-success d-flex align-items-center justify-content-center">
+            <div>
+              <img src="./assets/f1.png" width="40px" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-11 col-sm-10 text-center text-md-start">
+            <h5 class="heading">700,000</h5>
+            <h2 class="fw-bold"> Worldwide Freelancer </h2>
+          </div>
+        </div>
+        <div class="row justify-content-around pb-2">
+          <div class="col-11 col-sm-2 border box border-success d-flex align-items-center justify-content-center">
+            <div>
+              <img src="./assets/f1.png" width="40px" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-11 col-sm-10 text-center text-md-start">
+            <h5 class="heading">98%</h5>
+            <h2 class="fw-bold">Customer
+              Satisfaction Rate </h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <img src="./assets/freelance-img.jpg" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION-06 -->
+  <div class="container-fluid">
+    <div class="row text-center justify-content-center">
+      <div class="col-11">
+        <h1 class="fw-bold">TESTIMONIAL</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center">
+      <div class="col-md-8 col-11  pt-4 pb-4 mt-4 mb-5" id="section-06">
+
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <!-- <img src="..." class="d-block w-100" alt="..."> -->
+              <h4 class="pt-2 pb-2 fw-bold"> John Hissona </h4>
+              <p class="pb-2">passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable. If youThere are many
+                variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s </p>
+              <img src="./assets/quote.png" alt="">
+            </div>
+            <div class="carousel-item">
+              <h4 class="pt-2 pb-2 fw-bold"> John Hissona </h4>
+              <p class="pb-2">passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable. If youThere are many
+                variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s </p>
+              <img src="./assets/quote.png" alt="">
+            </div>
+            <div class="carousel-item">
+              <h4 class="pt-2 pb-2 fw-bold"> John Hissona </h4>
+              <p class="pb-2">passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
+                by injected humour, or randomised words which don't look even slightly believable. If youThere are many
+                variations of passages of Lorem Ipsum available, but the majority have suffered alteration in s </p>
+              <img src="./assets/quote.png" alt="">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="container-fluid" id="footer">
+    <div class="row justify-content-sm-around justify-content-center pt-5">
+      <div class="col-sm-1 text-white">
+        <div class="d-flex align-items-center justify-content-center">
+          <img src="./assets/logo.png" class="img-fluid" alt="">
+          <h4 class="fw-bold">SPERING</h4>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <ul class="list-inline d-flex column-gap-4 align-items-center justify-content-center text-white fs-4">
+          <li><i class="bi bi-facebook"></i></li>
+          <li><i class="bi bi-twitter"></i></li>
+          <li><i class="bi bi-linkedin"></i></li>
+          <li><i class="bi bi-instagram"></i></li>
+          <li><i class="bi bi-youtube"></i></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row text-white pt-5 pb-5 justify-content-md-around justify-content-center">
+      <div class="col-md-2 pb-5">
+        <h4 class="fw-bold pb-2"> Useful Link </h4>
+        <a class="text-decoration-none text-white" href="">Home</a><br>
+        <a class="text-decoration-none text-white" href="">About</a><br>
+        <a class="text-decoration-none text-white" href="">Work</a><br>
+        <a class="text-decoration-none text-white" href="">Category</a><br>
+      </div>
+      <div class="col-md-2 pb-5 pb-md-1">
+        <h4 class="fw-bold pb-2">OFFICES</h4>
+        <P>Readable content of a page when looking at its layoutreadable content of a page when looking at its layout
+        </P>
+      </div>
+      <div class="col-md-2 pb-5 pb-md-1">
+        <h4 class="fw-bold pb-2">INFORMATION</h4>
+        <P>Readable content of a page when looking at its layoutreadable content of a page when looking at its layout
+        </P>
+      </div>
+      <div class="col-md-2 pb-md-1">
+        <h4 class="fw-bold pb-2">NEWSLETTER</h4>
+        <input id="email" type="email" placeholder="email">
+        <button class="btn-06 mt-2">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="row text-white justify-content-md-center fs-6 pt-3 pb-5">
+      <div class="col-md-2 pb-1">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>location</span>
+      </div>
+      <div class="col-md-2 pb-1">
+        <i class="bi bi-envelope-at"></i>
+        <span>demo@gmail.com</span>
+      </div>
+      <div class="col-md-2 pb-1">
+        <i class="bi bi-telephone-fill"></i>
+        <span>call + 01 1234567890</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center pt-3 pb-2">
+        <p>
+          © 2023 All Rights Reserved By Free Html Templates
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
