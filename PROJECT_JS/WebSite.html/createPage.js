@@ -57,12 +57,7 @@ function createHeader() {
     signOut.setAttribute("style", "cursor: pointer");
 
     viewCart.addEventListener("click", () => {
-      viewCartFun();
-      // if(viewCartFun().length == 0){
-      //   window.alert("Cart is empty");
-      // }else{
-      //   viewCartFun();
-      // }
+      viewCartFun(1);
     });
 
     signOut.addEventListener("click", () => {
@@ -1042,7 +1037,7 @@ function saveProductInToCart(products) {
 }
 
 // view cart functionality
-function viewCartFun() {
+function viewCartFun(n) {
   // find cartlist
   var currentUser = sessionStorage.getItem("currentUser");
   var cartList = JSON.parse(localStorage.getItem("cartList"));
@@ -1053,7 +1048,11 @@ function viewCartFun() {
 
   var cartItemList = currentUserCartList.cartItems;
 
-  var cartDiv = document.querySelector("#cartDiv");
+  // WHEN FUNCTION CALL VIEWCART
+  if (n == 1) var cartDiv = document.querySelector("#cartDiv");
+  // WHEN FUNCTION CALL BACK BUTTON
+  else var cartDiv = document.querySelector("#formContainer");
+
   cartDiv.setAttribute("class", "container-fluid pt-5");
   cartDiv.innerHTML = "";
 
@@ -1066,11 +1065,14 @@ function viewCartFun() {
 
   // left-container
   var leftContainer = document.createElement("div");
-  leftContainer.setAttribute("class", "col-md-6  shadow-lg p-3 mb-5 bg-white rounded");
+  leftContainer.setAttribute(
+    "class",
+    "col-md-7 col-11  shadow-lg p-3 mb-5 bg-white rounded"
+  );
 
   // table
   var table = document.createElement("table");
-  table.setAttribute("class", "table");
+  table.setAttribute("class", "table table-responsive");
 
   // table head
   var thead = document.createElement("thead");
@@ -1098,10 +1100,14 @@ function viewCartFun() {
   quantity.innerText = "Quantity";
   headRow.appendChild(quantity);
 
-  // price
+  // total price
   var price = document.createElement("th");
   price.innerText = "Total Price";
   headRow.appendChild(price);
+
+  var deleteProduct = document.createElement("th");
+  deleteProduct.innerText = "Delete";
+  headRow.appendChild(deleteProduct);
   thead.appendChild(headRow);
 
   // thead close
@@ -1144,14 +1150,28 @@ function viewCartFun() {
       index +
       ")' style='width:50px' id='qtyChange" +
       index +
-      "' type='number' min='1' max='10' value='1'/>";
+      "' type='number' min='1' max='10' value='" +
+      resetQuantity(index) +
+      "'/>";
     tableRow.appendChild(productQuantity);
 
     // total price
     let totalPrice = document.createElement("td");
     totalPrice.setAttribute("id", "total" + index);
-    totalPrice.innerText = acPrice * cartItemList[index].qty;
+    totalPrice.innerText = (acPrice * cartItemList[index].qty).toFixed(2);
     tableRow.appendChild(totalPrice);
+
+    // delete product:
+    let deleteProduct = document.createElement("td");
+    deleteProduct.setAttribute("id", "delete" + index);
+    let icon = document.createElement("i");
+    icon.setAttribute("style", "cursor: pointer;");
+    icon.setAttribute("class", "bi bi-trash3 cursor-pointer");
+    icon.addEventListener("click", () => {
+      deleteProductFun(cartItemList[index].id);
+    });
+    deleteProduct.appendChild(icon);
+    tableRow.appendChild(deleteProduct);
 
     // end table row
     tbody.appendChild(tableRow);
@@ -1164,7 +1184,10 @@ function viewCartFun() {
 
   // Total bill OR right container
   var rightContainer = document.createElement("div");
-  rightContainer.setAttribute("class", "col-md-3 h-25  shadow-lg p-3 mb-5 bg-white rounded");
+  rightContainer.setAttribute(
+    "class",
+    "col-md-3 col-11 h-25  shadow-lg p-3 mb-5 bg-white rounded"
+  );
 
   // Bill details
   var billDetailes = document.createElement("h4");
@@ -1174,36 +1197,40 @@ function viewCartFun() {
   var hr = document.createElement("hr");
   rightContainer.appendChild(hr);
   var totalItem = document.createElement("h6");
-  // totalItem.setAttribute("class", "fw-bold");
   totalItem.innerText = "Total item: " + cartItemList.length;
   rightContainer.appendChild(totalItem);
   var totalBillAmount = document.createElement("h6");
   totalBillAmount.setAttribute("id", "totalBillLabel");
   totalBillAmount.setAttribute("class", "pb-3");
-  totalBillAmount.innerText = "Total amount: Rs. "+getBillAmount().toFixed(2);
+  totalBillAmount.innerText = "Total amount: Rs. " + getBillAmount().toFixed(2);
   rightContainer.appendChild(totalBillAmount);
 
   // checkout button
   var checkoutButton = document.createElement("button");
   checkoutButton.innerText = "Checkout";
-  checkoutButton.addEventListener("click",()=>{
-    checkOutForm();
+  checkoutButton.addEventListener("click", (data) => {
+    if (getBillAmount() != 0) {
+      checkOutForm();
+    } else {
+      window.alert("Please add product: ");
+    }
   });
   checkoutButton.setAttribute("class", "mr-4");
   var cancelButton = document.createElement("button");
   cancelButton.innerText = "Back";
-  cancelButton.addEventListener("click",()=>{
+  cancelButton.addEventListener("click", () => {
     var main_container = document.querySelector(".main-container");
     main_container.innerHTML = "";
     createHeader();
     var data = JSON.parse(localStorage.getItem("productList"));
     createCart(data);
-  })
+  });
   cancelButton.setAttribute("class", "btn btn-secondary me-4");
   checkoutButton.setAttribute("class", "btn btn-success");
 
   rightContainer.appendChild(cancelButton);
   rightContainer.appendChild(checkoutButton);
+
   // right container closed
   viewCartContainer.appendChild(rightContainer);
   cartDiv.appendChild(viewCartContainer);
@@ -1241,10 +1268,11 @@ function updateQty(productId, index) {
 
   let discountPrice = (product.price * product.discountPercentage) / 100;
   let acPrice = (product.price - discountPrice).toFixed(2);
-  total.innerText = ""+(acPrice*qty).toFixed(2);
+  total.innerText = "" + (acPrice * qty).toFixed(2);
 
   var totalBillLabel = document.querySelector("#totalBillLabel");
-  totalBillLabel.innerHTML = "<p>Total Bill : " + getBillAmount().toFixed(2) + "</p>";
+  totalBillLabel.innerHTML =
+    "<p>Total Bill : " + getBillAmount().toFixed(2) + "</p>";
 }
 
 // total bill
@@ -1284,35 +1312,168 @@ function searchProduct() {
 }
 
 // CHECK OUT FORM
-function checkOutForm(){
+function checkOutForm() {
+  // main-container
   var main_container = document.querySelector(".main-container");
-  main_container.innerHTML= "";
+  main_container.innerHTML = "";
   createHeader();
   let formContainer = document.createElement("div");
-  formContainer.setAttribute("class","row mt-5 justify-content-center align-items-center border border-rounded");
+  formContainer.setAttribute("id", "formContainer");
+  formContainer.setAttribute(
+    "class",
+    "row mt-5 container-fluid justify-content-center align-items-center"
+  );
 
-  let formDiv = document.createElement("div");
-  formDiv.setAttribute("class", "col-md-6 col-11 shadow-lg p-3 mb-5 bg-white rounded mt-5 text-center");
+  // form - div
+  let formDiv = document.createElement("form");
+  formDiv.setAttribute(
+    "class",
+    "col-md-6 col-11 shadow-lg p-3 mb-5 bg-white rounded mt-2 text-center"
+  );
+
+  // name input field
   var name = document.createElement("input");
   name.setAttribute("type", "text");
+  name.setAttribute("required", "");
+  name.setAttribute("pattern", "[A-Za-z]{1,32}");
   name.setAttribute("placeholder", "full name");
-  name.setAttribute("style", "width: 90%; height: 50px; border-radius: 25px; padding-left: 10px; font-size: 18px;margin-bottom: 10px;")
+  name.setAttribute(
+    "style",
+    "width: 90%; height: 50px; border-radius: 10px; padding-left: 10px; font-size: 18px;margin-bottom: 20px;"
+  );
   formDiv.appendChild(name);
 
+  // email input field
   var email = document.createElement("input");
   email.setAttribute("type", "email");
+  email.setAttribute("required", "");
+  name.setAttribute("pattern", "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
+  email.setAttribute("class", "me-1");
   email.setAttribute("placeholder", "email");
-  email.setAttribute("style", "width: 90%; height: 50px; border-radius: 25px; padding-left: 10px; font-size: 18px;margin-bottom: 10px;")
+  email.setAttribute(
+    "style",
+    "width: 44%; height: 50px; border-radius: 10px; padding-left: 10px; font-size: 18px;margin-bottom: 20px;"
+  );
   formDiv.appendChild(email);
 
-  var password = document.createElement("input");
-  password.setAttribute("type", "password");
-  password.setAttribute("placeholder", "password");
-  password.setAttribute("style", "width: 90%; height: 50px; border-radius: 25px; padding-left: 10px; font-size: 18px;margin-bottom: 10px;")
-  formDiv.appendChild(password);
+  // phone input field
+  var PhoneNum = document.createElement("input");
+  PhoneNum.setAttribute("type", "tel");
+  PhoneNum.setAttribute("required", "");
+  PhoneNum.setAttribute("class", " pt-0");
+  PhoneNum.setAttribute("pattern", "[0-9]{10}");
+  PhoneNum.setAttribute("placeholder", "phone number");
+  PhoneNum.setAttribute(
+    "style",
+    "width: 44%; height: 50px; border-radius: 10px; padding-left: 10px; font-size: 18px; margin-bottom: 20px;"
+  );
+  formDiv.appendChild(PhoneNum);
 
-  
-  
+  // cart number input field
+  var cartNumber = document.createElement("input");
+  cartNumber.setAttribute("type", "text");
+  cartNumber.setAttribute("required", "");
+  cartNumber.setAttribute("pattern", "[0-9]{12}");
+  cartNumber.setAttribute("placeholder", "CART-NUMBER");
+  cartNumber.setAttribute(
+    "style",
+    "width: 90%; height: 50px; border-radius: 10px; padding-left: 10px; font-size: 18px;margin-bottom: 20px; required"
+  );
+  formDiv.appendChild(cartNumber);
+
+  // email input field
+  var cvcNumber = document.createElement("input");
+  cvcNumber.setAttribute("type", "text");
+  cvcNumber.setAttribute("class", "me-1");
+  cvcNumber.setAttribute("required", "");
+  cvcNumber.setAttribute("pattern", "[0-9]{3}");
+  cvcNumber.setAttribute("placeholder", "CVC-NUMBER");
+  cvcNumber.setAttribute(
+    "style",
+    "width: 90%; height: 50px; border-radius: 10px; padding-left: 10px; font-size: 18px;margin-bottom: 20px;"
+  );
+  formDiv.appendChild(cvcNumber);
+
+  // address
+  var address = document.createElement("textarea");
+  address.setAttribute("placeholder", "address");
+  address.setAttribute("required", "");
+  address.setAttribute(
+    "style",
+    "width: 90%; height: 50px; border-radius:10px; padding-left: 10px; font-size: 18px; margin-bottom: 20px; height: 100px;"
+  );
+  formDiv.appendChild(address);
+
+  // button row
+  var btnRow = document.createElement("div");
+  btnRow.setAttribute("class", "row");
+
+  // back button
+  var backButton = document.createElement("button");
+  backButton.innerText = "Back";
+  backButton.addEventListener("click", () => {
+    viewCartFun(2);
+  });
+  backButton.setAttribute("class", "btn btn-secondary ps-3 pe-5 col-md-1 ms-5");
+  btnRow.appendChild(backButton);
+
+  //  make payment button
+  var payment = document.createElement("button");
+  payment.setAttribute("type", "submit");
+  payment.innerText = "Make Payment";
+  payment.setAttribute("class", "btn btn-success col-md-3 ms-2");
+  // payment.addEventListener("click", () => {
+  //   window.alert("Congractulation......");
+  // });
+  btnRow.appendChild(payment);
+
+  formDiv.appendChild(btnRow);
   formContainer.appendChild(formDiv);
   main_container.appendChild(formContainer);
+}
+
+// delete product
+function deleteProductFun(productId) {
+  let currentUser = sessionStorage.getItem("currentUser");
+  let cartList = JSON.parse(localStorage.getItem("cartList"));
+
+  // find current user cartlist
+  let currentUserCartList = cartList.find((obj) => {
+    return obj.email == currentUser;
+  });
+
+  // find cart items
+  let currentUserCartItem = currentUserCartList.cartItems;
+
+  // find delete item index
+  let deleteItemIndex = currentUserCartItem.findIndex((obj) => {
+    return obj.id == productId;
+  });
+
+  currentUserCartItem.splice(deleteItemIndex, 1);
+
+  currentUserCartList.cartItems = currentUserCartItem;
+
+  let currentUserCartListIndex = cartList.findIndex((obj) => {
+    return obj.email == currentUser;
+  });
+
+  cartList.splice(currentUserCartListIndex, 1);
+  cartList.splice(currentUserCartListIndex, 0, currentUserCartList);
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+
+  viewCartFun(1);
+}
+
+// referec product quantity
+function resetQuantity(index) {
+  let cartList = JSON.parse(localStorage.getItem("cartList"));
+  let currentUser = sessionStorage.getItem("currentUser");
+
+  let user = cartList.find((user) => {
+    return user.email == currentUser;
+  });
+
+  let qty = user.cartItems[index].qty;
+  return qty;
 }
