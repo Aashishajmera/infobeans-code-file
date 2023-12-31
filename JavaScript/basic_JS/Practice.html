@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="nameForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" class="error"></span>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            // Get the value entered in the name field
+            var nameInput = document.getElementById("name").value;
+
+            // Regular expression for a valid name (alphabets, spaces, and optionally hyphens)
+            var nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*(?:-[A-Za-z]+)*$/;
+
+            // Check if the name matches the regular expression
+            if (nameRegex.test(nameInput)) {
+                // Clear any previous error messages
+                document.getElementById("nameError").innerHTML = "";
+                return true; // Allow form submission
+            } else {
+                // Display an error message
+                document.getElementById("nameError").innerHTML = "Please enter a valid name.";
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+
+</body>
+</html>

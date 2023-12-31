@@ -1314,7 +1314,7 @@ function searchProduct() {
 // CHECK OUT FORM
 function checkOutForm() {
   // main-container
-  var main_container = document.querySelector(".main-container");
+  let main_container = document.querySelector(".main-container");
   main_container.innerHTML = "";
   createHeader();
   let formContainer = document.createElement("div");
@@ -1332,8 +1332,9 @@ function checkOutForm() {
   );
 
   // name input field
-  var name = document.createElement("input");
+  let name = document.createElement("input");
   name.setAttribute("type", "text");
+  name.setAttribute("id","nameInput")
   name.setAttribute("required", "");
   name.setAttribute("pattern", "[A-Za-z]{1,32}");
   name.setAttribute("placeholder", "full name");
@@ -1344,10 +1345,10 @@ function checkOutForm() {
   formDiv.appendChild(name);
 
   // email input field
-  var email = document.createElement("input");
+  let email = document.createElement("input");
   email.setAttribute("type", "email");
   email.setAttribute("required", "");
-  name.setAttribute("pattern", "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
+  email.setAttribute("pattern", "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$");
   email.setAttribute("class", "me-1");
   email.setAttribute("placeholder", "email");
   email.setAttribute(
@@ -1357,7 +1358,7 @@ function checkOutForm() {
   formDiv.appendChild(email);
 
   // phone input field
-  var PhoneNum = document.createElement("input");
+  let PhoneNum = document.createElement("input");
   PhoneNum.setAttribute("type", "tel");
   PhoneNum.setAttribute("required", "");
   PhoneNum.setAttribute("class", " pt-0");
@@ -1370,7 +1371,7 @@ function checkOutForm() {
   formDiv.appendChild(PhoneNum);
 
   // cart number input field
-  var cartNumber = document.createElement("input");
+  let cartNumber = document.createElement("input");
   cartNumber.setAttribute("type", "text");
   cartNumber.setAttribute("required", "");
   cartNumber.setAttribute("pattern", "[0-9]{12}");
@@ -1382,7 +1383,7 @@ function checkOutForm() {
   formDiv.appendChild(cartNumber);
 
   // email input field
-  var cvcNumber = document.createElement("input");
+  let cvcNumber = document.createElement("input");
   cvcNumber.setAttribute("type", "text");
   cvcNumber.setAttribute("class", "me-1");
   cvcNumber.setAttribute("required", "");
@@ -1395,7 +1396,7 @@ function checkOutForm() {
   formDiv.appendChild(cvcNumber);
 
   // address
-  var address = document.createElement("textarea");
+  let address = document.createElement("textarea");
   address.setAttribute("placeholder", "address");
   address.setAttribute("required", "");
   address.setAttribute(
@@ -1404,12 +1405,14 @@ function checkOutForm() {
   );
   formDiv.appendChild(address);
 
+  console.log(name.value);
+
   // button row
-  var btnRow = document.createElement("div");
+  let btnRow = document.createElement("div");
   btnRow.setAttribute("class", "row");
 
   // back button
-  var backButton = document.createElement("button");
+  let backButton = document.createElement("button");
   backButton.innerText = "Back";
   backButton.addEventListener("click", () => {
     viewCartFun(2);
@@ -1418,13 +1421,25 @@ function checkOutForm() {
   btnRow.appendChild(backButton);
 
   //  make payment button
-  var payment = document.createElement("button");
+  let payment = document.createElement("button");
   payment.setAttribute("type", "submit");
   payment.innerText = "Make Payment";
   payment.setAttribute("class", "btn btn-success col-md-3 ms-2");
-  // payment.addEventListener("click", () => {
-  //   window.alert("Congractulation......");
-  // });
+  payment.addEventListener("click", (name, email, PhoneNum, cartNumber, cvcNumber) => {
+    let checkName = /[A-Za-z]{1,32}/;
+    let checkemail = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$/;
+    let checkPhone = /[0-9]{10}/;
+    let checkcartNum = /[0-9]{12}/;
+    let checkcvcNum = /[0-9]{3}/;
+
+    let nameInput = document.querySelector("#nameInput").value;
+
+    if((nameInput.value).test(checkName)){
+      console.log("ok");
+    }else{
+      console.log("NOt");
+    }
+  });
   btnRow.appendChild(payment);
 
   formDiv.appendChild(btnRow);
