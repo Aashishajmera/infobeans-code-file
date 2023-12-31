@@ -1,0 +1,18 @@
+<script>
+
+    // SIMPLE FUNCTION
+    function simpleFun(returnCallFuc) {
+        document.write("Simple function called....<br>");
+        returnCallFuc(10,20);
+    }
+
+   
+    simpleFun(a=>{
+        document.write(a);
+    })
+
+    simpleFun((a,b) =>{
+        document.write(a+b);
+    });
+
+</script>

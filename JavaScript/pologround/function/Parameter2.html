@@ -1,0 +1,28 @@
+<pre>
+<script>
+
+    // SIMPLE FUNCTION
+    function simpleFun(a) {
+        document.writeln("Simple function called...." + a);
+    }
+
+    // ANONYMOUS FUNCTION
+    var anonymousFun = function (a = 10) {
+        document.writeln(`Anonymous function called....` + a);
+    }
+
+    var arrowFun = (a = 10) => {
+        document.writeln(`Arrow function called....${a}`);
+    }
+
+    // SIMPLE CALLING
+    // simpleFun();
+    // anonymousFun();
+    // arrowFun();
+
+    simpleFun()
+    anonymousFun();
+    arrowFun(100);
+
+</script>
+</pre>
