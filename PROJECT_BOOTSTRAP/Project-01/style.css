@@ -1,6 +1,6 @@
 /* Design nav-bar */
 #navigation-bar{
-    width: 98.6vw;
+    /* width: 100vw; */
     background-color: #1A2E35 !important;
     /* overflow: hidden; */
 }
@@ -23,10 +23,17 @@
 
 #hmbr{
     color: white !important;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
+.humberBg{
+    border: solid transparent;
+}
 
+.humberBg:focus{
+    color: transparent;
+    /* outline: none; */
+}
 /* section- 01 */
 #section-01{
     background-color: #1CBBB4;
@@ -34,10 +41,12 @@
 
 .btn-01{
     background-color: #FF4F5A;
+    border: none;
 }
 
 .btn-01:hover{
     background-color: #e44b55;
+    border: none;
 }
 
 .btn-02{
@@ -80,14 +89,17 @@
 .btn-03, .btn-05, .btn-06{
     width: 100px;
     height: 40px;
+    border-radius: 5px;
     background-color: #e44b55;
     color: white;
     border: none;
 }
 
+
 .btn-04{
     width: 100px;
     height: 40px;
+    border-radius: 5px;
     background-color: #1A2E35;
     color: white;
     border: none;
