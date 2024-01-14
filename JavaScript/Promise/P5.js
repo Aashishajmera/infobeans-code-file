@@ -3,7 +3,7 @@ const first = (n) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(n + 2);
-    }, 1000);
+    }, 2000);
   });
 };
 
@@ -12,7 +12,7 @@ const second = (n) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(n + 2);
-    }, 1500);
+    }, 2500);
   });
 };
 
@@ -21,7 +21,7 @@ const third = (n) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(n + 2);
-    }, 1000);
+    }, 4000);
   });
 };
 

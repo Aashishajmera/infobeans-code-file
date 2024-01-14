@@ -8,7 +8,7 @@ let promise = new Promise((resolve, reject)=>{
 });
 
 promise.then(()=>{
-    console.log("EVEN");
+    console.log("EVEN"); b
 }).catch(()=>{
     console.log("ODD");
 })

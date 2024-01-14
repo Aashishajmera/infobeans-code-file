@@ -1,4 +1,6 @@
 *.class
+*.json
+*node_modules/*
 /javaNetbeans/BasicWork/target/
 /javaNetbeans/IoExceptionReal/IoPackage/nbproject/private/
 /javaNetbeans/IoException/IoPackage/nbproject/
