@@ -70,4 +70,3 @@ export const viewParticular = (req, res, next)=>{
         return res.status(400).json({err: "Server side err.."});
     })
 }
-

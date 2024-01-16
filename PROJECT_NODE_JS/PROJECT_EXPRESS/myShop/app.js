@@ -3,6 +3,7 @@ import express from 'express';
 import AdminRouter from "./routers/Admin.router.js";
 import CategoryRouter from './routers/Category.router.js';
 import UserRouter from './routers/User.router.js';
+import ProductRouter from './routers/Product.router.js';
 
 // create a object of express
 const app = express();
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 app.use('/admin', AdminRouter);
 
 // app.use((req, res, next)=>{
-
+    
 // })
 
 // to call the user router
@@ -22,6 +23,9 @@ app.use("/user", UserRouter)
 
 // to call the category router
 app.use('/category', CategoryRouter)
+
+// to call the product router
+app.use('/product', ProductRouter)
 
 // create a server
 app.listen(3000, ()=>{

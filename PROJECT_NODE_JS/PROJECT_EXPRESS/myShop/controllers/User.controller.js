@@ -9,8 +9,7 @@ export const signUp = (req, res, next) => {
   // create a object of user model
   const user = new User(null, username, password, contact);
 
-  user
-    .signUp()
+  user.signUp()
     .then((result) => {
       return res.status(201).json({ message: "SignUp successfull....." });
     })

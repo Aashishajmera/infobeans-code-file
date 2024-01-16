@@ -25,7 +25,7 @@ export const signUp = (req, res, next) => {
 export const signIn = (req, res, next) => {
   // const username = req.body.username;
   // const password = req.body.password;
-const {username,password}=req.body
+const {username,password}=req.body;
   const admin = new Admin(null, username, password);
 
   admin.signIn().then((result)=>{
