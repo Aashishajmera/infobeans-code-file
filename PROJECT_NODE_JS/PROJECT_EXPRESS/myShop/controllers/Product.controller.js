@@ -40,7 +40,7 @@ export const updateProduct = (req, res, next) => {
   // to create a object of product model
   const product = new Product(id, title);
   product
-    .updateProduct(id, title)
+    .updateProduct()
     .then((result) => {
       return res.status(201).json({ message: "Data successfully update..." });
     })

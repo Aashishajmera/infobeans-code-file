@@ -5,7 +5,7 @@ class CartItems{
         this.cartId = cartId;
         this.productId = productId;
     }
-
+9
     addToCart(){
         return new Promise((resolve, reject)=>{
             pool.getConnection((err, con)=>{

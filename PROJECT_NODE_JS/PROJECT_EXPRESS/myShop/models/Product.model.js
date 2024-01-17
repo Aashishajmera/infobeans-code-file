@@ -46,7 +46,7 @@ class Product {
   }
 
   //   UPDATE PRODUCT
-  updateProduct(id, title) {
+  updateProduct() {
     return new Promise((resolve, reject) => {
       pool.getConnection((err, con) => {
         if (err) {
@@ -54,7 +54,7 @@ class Product {
           reject(err);
         } else {
           const sql = "update product set title = ? where id = ?";
-          con.query(sql, [title, id], (err, result) => {
+          con.query(sql, [this.title, this.id], (err, result) => {
             if (err) {
               console.log("data update time err" + err);
               reject(err);
@@ -141,7 +141,7 @@ class Product {
     });
   }
 
-  
+
 }
 
 export default Product;
