@@ -5,8 +5,8 @@ class CartItems{
         this.cartId = cartId;
         this.productId = productId;
     }
-9
-    addToCart(){
+
+  static  addToCart(cartId, productId){
         return new Promise((resolve, reject)=>{
             pool.getConnection((err, con)=>{
                 if(err){
@@ -14,7 +14,8 @@ class CartItems{
                     reject(err);
                 }else{
                     const sql = 'insert into cartItems(cartId, productId) values(?, ?)';
-                    con.query(sql, [this.cartId, this.productId], (err, result)=>{
+                    con.query(sql, [cartId, productId], (err, result)=>{
+                        con.release();
                         if(err){
                             console.log("Data insert time error", err);
                             reject(err);

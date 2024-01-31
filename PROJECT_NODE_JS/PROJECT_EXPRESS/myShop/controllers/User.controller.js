@@ -1,4 +1,5 @@
 import User from "../models/User.model.js";
+import jwt from "jsonwebtoken";
 
 export const signUp = (req, res, next) => {
   // get a data into client
@@ -9,34 +10,48 @@ export const signUp = (req, res, next) => {
   // create a object of user model
   const user = new User(null, username, password, contact);
 
-  user.signUp()
+  user
+    .signUp()
     .then((result) => {
       return res.status(201).json({ message: "SignUp successfull....." });
     })
     .catch((err) => {
       return res.status(401).json({ err: "SignUp faild..." });
     });
-    // res.end();
-
+  // res.end();
 };
 
 export const signIn = (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  // const contact = req.body.contact;
 
   // create a object of usermodel
-  const user = new User(null, username, password);
+  const user = new User();
+  user.username = username;
+  user.password = password;
 
   user
     .signIn()
     .then((result) => {
-      return res.status(201).json({ message: "Sign in successfull..." });
+      if (result.length) {
+        const payload = { subject: username };
+        const token = jwt.sign(payload, "anythingKey");
+        return res
+          .status(201)
+          .json({
+            message: "Sign in successfull...",
+            result: result[0],
+            token: token,
+          });
+      } else {
+        return res.status(200).json({ error: "Unauthorized request" });
+      }
     })
     .catch((err) => {
       return res.status(401).json({ err: "Sign in fail...." });
     });
-    // res.end();
-
+  // res.end();
 };
 
 export const updateDetails = (req, res, next) => {
@@ -54,5 +69,5 @@ export const updateDetails = (req, res, next) => {
     .catch((err) => {
       return res.status(401).json({ err: "data not updated....." });
     });
-    // res.end();
+  // res.end();
 };

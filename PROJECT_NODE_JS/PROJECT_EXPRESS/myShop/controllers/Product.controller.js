@@ -8,7 +8,8 @@ export const addProduct = (req, res, next) => {
   const brand = req.body.brand;
   const price = req.body.price;
   const description = req.body.description;
-  const imageUrl = req.body.imageUrl;
+  const filename = req.file.filename;
+  const imageUrl = "images/" + filename;
   const categoryId = req.body.categoryId;
 
   //   create a object of product model
@@ -74,18 +75,17 @@ export const viewAllProduct = (req, res) => {
 
 // VIEW SAME CATEGORY PRODUCT
 export const viewSameCategoryProduct = (req, res) => {
-    // create a object of product table
-const categoryId = req.params.categoryId;
+  // create a object of product table
+  const categoryId = req.params.categoryId;
   Product.viewSameCategoryProduct(categoryId)
     .then((result) => {
-        if(result.affectedRows != 0){
-            return res.status(200).json({message: 'Data is: ', data: result})
-        }else{
-            return res.status(401).json({err: "Item not found: "})
-        }
+      if (result.affectedRows != 0) {
+        return res.status(200).json({ message: "Data is: ", data: result });
+      } else {
+        return res.status(401).json({ err: "Item not found: " });
+      }
     })
     .catch((err) => {
       return res.status(500).json({ err: "Internal server error...." });
     });
 };
-
