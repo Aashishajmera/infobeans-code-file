@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navigation_bar{
+    background-color: rgb(30, 28, 28) !important;
+    border: solid 3px rgb(214, 13, 13);
+} 
