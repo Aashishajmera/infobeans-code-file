@@ -43,6 +43,6 @@ public class AdminDao {
             }
 
         }
-        return checkAdminLog;
+        return checkAdminLog;                                                    
     }
 }
