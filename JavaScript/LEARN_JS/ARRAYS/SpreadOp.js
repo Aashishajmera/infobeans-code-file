@@ -3,6 +3,7 @@ const secondArr = ['march', 'april']
 
 
 // concate two array spread operator
+console.log("=======", ...firstArr);
 const totalArr = [...firstArr, ...secondArr];
 console.log(totalArr);
 
