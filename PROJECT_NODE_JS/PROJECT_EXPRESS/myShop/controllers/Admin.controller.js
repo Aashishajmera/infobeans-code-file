@@ -5,7 +5,7 @@ export const signUp = (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  // create a object of admin class
+  // create a object of admin class 
   const admin = new Admin(null, username, password);
 
   admin
