@@ -33,6 +33,7 @@ public class Anagram {
         count1 = 1 2
         count2 = 
     */
+    
     int count1 = 0;
     int count2 = 0;
     if (s1.length() == s2.length()) {
