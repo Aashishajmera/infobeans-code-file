@@ -1,1 +1,11 @@
-first line
+ first line
+second line
+third line
+fourth line
+fivth line
+six line
+<<<<<<< HEAD
+eight line
+=======
+seven line
+>>>>>>> 45ac4b845d712842a99c7ff1d73ce8cd94400335

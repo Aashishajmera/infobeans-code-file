@@ -15,7 +15,7 @@ export const addCategory = (req, res, next) => {
     .catch((err) => {
       return res.status(401).json({ err: "Category name not added...." });
     });
-    // res.end();
+  // res.end();
 };
 
 // VIEW LIST OF ITEM
@@ -33,7 +33,7 @@ export const listCategory = (req, res, next) => {
       return res.status(501).json({ err: "Server side error: " });
     });
 
-//   res.end();
+  //   res.end();
 };
 
 // DELETE CATEGORY
@@ -53,20 +53,22 @@ export const deleteCategory = (req, res, next) => {
     .catch((err) => {
       return res.status(401).json({ err: "server side error: " });
     });
-//   res.end();
+  //   res.end();
 };
 
 // VIEW PARTICULAR CATEGORY
-export const viewParticular = (req, res, next)=>{
-    const id = req.params.viewParticularId;
+export const viewParticular = (req, res, next) => {
+  const id = req.params.viewParticularId;
 
-    Category.viewParticular(id).then((result)=>{
-        if(result.affectedRows != 0){
-            return res.status(200).json({message: 'Data is: ', data: result})
-        }else{
-            return res.status(401).json({err: "Item not found: "})
-        }
-    }).catch((err)=>{
-        return res.status(400).json({err: "Server side err.."});
+  Category.viewParticular(id)
+    .then((result) => {
+      if (result.affectedRows != 0) {
+        return res.status(200).json({ message: "Data is: ", data: result });
+      } else {
+        return res.status(401).json({ err: "Item not found: " });
+      }
     })
-}
+    .catch((err) => {
+      return res.status(400).json({ err: "Server side err.." });
+    });
+};

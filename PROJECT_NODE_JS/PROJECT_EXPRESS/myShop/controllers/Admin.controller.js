@@ -17,7 +17,7 @@ export const signUp = (req, res, next) => {
       return res.status(401).json({ error: "Sign up fail....." });
     });
     // res.end();
-
+    
 };
 
 

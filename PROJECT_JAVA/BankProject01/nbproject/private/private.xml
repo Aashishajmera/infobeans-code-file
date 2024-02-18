@@ -5,6 +5,7 @@
         <group>
             <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/model/Account.java</file>
             <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/model/Admin.java</file>
+            <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/dao/LoanDao.java</file>
             <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/service/DatabaseConnect.java</file>
             <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/testmain/TestMain.java</file>
             <file>file:/D:/Infobeans_Foundation/PROJECT_JAVA/BankProject01/src/com/bankproject01/dao/AdminDao.java</file>
