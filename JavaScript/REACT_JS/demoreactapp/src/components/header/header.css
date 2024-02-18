@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./assits/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
+
+
+header {
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    z-index: 100;
+}
+
+.offcanvas-header {
+    /* border: solid 3px black; */
+    background-color: rgb(31, 169, 185);
+    color: rgb(227, 221, 221);
+}
+
+/* body::after{
+    content: "";
+    position: inherit;
+    top: 33px;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 22;
+} */
+
+.main-header {
+    /* width: 98vw; */
+    /* border: solid 3px black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 17px;
+    color: white;
+    background-color: rgb(41, 60, 81);
+}
+
+.main-header h5 {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.main-header h5:hover {
+    cursor: pointer;
+}
+
+.main-header .humber i {
+    font-size: 1.5em;
+}
+
+.main-header .humber i:hover {
+    cursor: pointer;
+}
+
+.offcanvas-body {
+    background-color: rgb(31, 169, 185);
+    font-size: 10px;
+}
+
+.offcanvas-body ul {
+    list-style: none;
+    /* border: solid 3px red; */
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around !important;
+    justify-content: center;
+    color: rgb(227, 221, 221);
+    font-size: 1.5em;
+}
+
+.offcanvas-body ul li:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.offcanvas-body ul li {
+    border-bottom: 1px rgb(130, 128, 128) solid;
+    width: 90%;
+    padding-bottom: 3px;
+}
