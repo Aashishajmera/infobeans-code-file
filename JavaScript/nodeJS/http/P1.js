@@ -1,6 +1,7 @@
 let http = require("http");
-http.createServer(function (request, respond){
+http
+  .createServer(function (request, respond) {
     respond.write("Hiii.jk..");
     respond.end();
-
-}).listen(8080);
+  })
+  .listen(8080);
