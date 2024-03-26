@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS POSITION</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            height: 96vh;
+            border: solid 3px black;
+        }
+
+        .container {
+            border: solid 3px red;
+            height: 300px;
+            width: 400px;
+            margin-top: 22px;
+            /* position: relative; */
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            display: grid;
+            
+        }
+
+        .first-p {
+            border: solid 3px blue;
+            height: 50px;
+            width: 50px;
+            position: inherit;
+            left: 2px;
+            top: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <p class="first-p">
+                100
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
