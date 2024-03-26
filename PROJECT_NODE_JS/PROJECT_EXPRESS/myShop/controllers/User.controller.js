@@ -13,10 +13,10 @@ export const signUp = (req, res, next) => {
   user
     .signUp()
     .then((result) => {
-      return res.status(201).json({ message: "SignUp successfull....." });
+      return res.status(201).json({ message: "SignUp successfull.....lklk" });
     })
     .catch((err) => {
-      return res.status(401).json({ err: "SignUp faild..." });
+      return res.status(401).json({ err: "SignUp faild..." , err});
     });
   // res.end();
 };
@@ -41,6 +41,7 @@ export const signIn = (req, res, next) => {
           .status(201)
           .json({
             message: "Sign in successfull...",
+            data: user,
             result: result[0],
             token: token,
           });

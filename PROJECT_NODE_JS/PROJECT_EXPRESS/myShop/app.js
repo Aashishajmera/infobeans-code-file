@@ -8,6 +8,8 @@ import CategoryRouter from "./routers/Category.router.js";
 import ProductRouter from "./routers/Product.router.js";
 import UserRouter from "./routers/User.router.js";
 
+import cors from 'cors';
+
 // create a object of express
 const app = express();
 
@@ -20,6 +22,9 @@ const __dirname = path.dirname(__filename);
 
 // get a imagefile path
 app.use(express.static(path.join(__dirname, "public")));
+
+
+app.use(cors());
 
 // to call the admin router
 app.use("/admin", AdminRouter);

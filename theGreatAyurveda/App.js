@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); 
 
+
 // get a image file path
 app.use(express.static(path.join(__dirname, 'public')));;
 
