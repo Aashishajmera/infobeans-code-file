@@ -1,8 +1,10 @@
-import Header from "./Header";
+import Navbar from "./Navbar";
 
-export default function About(){
-    return <>
-    <Header/>
-    <h2>About components ...</h2>
+export default function About() {
+  return (
+    <>
+      <Navbar />
+      <h2>About components ...</h2>
     </>
+  );
 }

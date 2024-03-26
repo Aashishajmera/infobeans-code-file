@@ -12,8 +12,9 @@ class App extends Component {
         <hr />
         <EvenOddCounter />
         <hr />
-        <InputComponent/>
-        <hr/>
+        
+        <InputComponent />
+        <hr />
       </>
     );
   }

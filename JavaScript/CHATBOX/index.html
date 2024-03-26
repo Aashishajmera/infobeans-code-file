@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consultation Chat</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="questions">
+            <p>Choose a question:</p>
+            <button onclick="askQuestion('What are the symptoms?')">What are the symptoms?</button>
+            <button onclick="askQuestion('Do I need to take any medication?')">Do I need to take any medication?</button>
+            <button onclick="askQuestion('How long will it take to recover?')">How long will it take to recover?</button>
+        </div>
+        <input type="text" placeholder="Type your message..." id="user-input">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

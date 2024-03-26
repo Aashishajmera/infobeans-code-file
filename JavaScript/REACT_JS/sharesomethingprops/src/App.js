@@ -9,12 +9,15 @@ class App extends Component {
       counter: 100,
     };
   }
+
   incrementCounter = () => {
     this.setState({ counter: this.state.counter + 1 });
   };
+
   decreament = () => {
     this.setState({ counter: this.state.counter - 1 });
   };
+
   render() {
     let n = "Aashish";
     return (
@@ -29,6 +32,8 @@ class App extends Component {
       </>
     );
   }
+
+  
 }
 
 export default App;

@@ -1,0 +1,16 @@
+.main{
+  border: solid 3px #000000;
+  height: 400px;  
+}
+
+.form-container{
+  height: 300px;
+  width: 300px;
+  flex-direction: column;
+  row-gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px black;
+  border-radius: 10px;
+}
