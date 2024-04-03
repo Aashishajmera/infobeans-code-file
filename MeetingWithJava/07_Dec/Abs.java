@@ -25,6 +25,7 @@ class B  extends A{
 
 
 
+
 public class Abs extends B {
     public static void main(String[] args) {
         
