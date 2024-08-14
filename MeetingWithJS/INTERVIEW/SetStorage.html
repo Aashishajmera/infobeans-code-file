@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiiii</title>
+</head>
+
+<body>
+    <button onclick='myfun()'>click to send array in local storage</button>
+
+    <script>
+        function myfun() {
+            let studentList = [{ name: 'Aashish', surname: 'Ajmera' }, { name: 'Sohan', surname: 'On' }];
+            console.log([...studentList]);
+            // convert json
+            let jsonStudentList = JSON.stringify(studentList);
+            localStorage.setItem('list', jsonStudentList);
+            sessionStorage.setItem('list222', jsonStudentList);
+
+            const newList = localStorage.getItem('list');
+            console.log(JSON.parse(newList));
+
+            const obj = { name: 'aashish' };
+            obj.surname = 'ajmera'
+            console.log(obj);
+        }
+    </script>
+</body>
+
+</html>

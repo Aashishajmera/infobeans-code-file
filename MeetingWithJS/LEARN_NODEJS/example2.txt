@@ -1,0 +1,2 @@
+Hello, world! This is the content written at the time of file creation.
+Hello, world! This is the content written at the time of file creation.

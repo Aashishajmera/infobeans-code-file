@@ -1,0 +1,21 @@
+ const reducer = (counter, action) => {
+    switch (action.type) {
+      case "Increment":
+        return counter + 1;
+      case "Decrement":
+        return counter - 1;
+      default:
+        return counter;
+    }
+  };
+
+  const [counter, dispatch] = useReducer(reducer, 0);
+
+  return (
+    <>
+      <h1>I am Home....</h1>
+      <p>{counter}</p>
+      <button onClick={() => dispatch({ type: "Increment" })}>Increment</button>
+      <button onClick={()=>{dispatch({type: 'Decrement'})}}>Decrement</button>
+    </>
+  );
